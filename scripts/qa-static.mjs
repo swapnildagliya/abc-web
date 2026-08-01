@@ -70,8 +70,8 @@ for (const p of pages) {
 const whatsOn = readFileSync(join(ROOT, "whats-on/index.html"), "utf8");
 const codexEvents = JSON.parse(readFileSync(join(ROOT, "src/data/events.json"), "utf8"));
 check("45 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 45);
-check("9 upcoming", (whatsOn.match(/data-status="upcoming"/g) || []).length === 9);
-check("36 past", (whatsOn.match(/data-status="past"/g) || []).length === 36);
+check("8 upcoming", (whatsOn.match(/data-status="upcoming"/g) || []).length === 8);
+check("37 past", (whatsOn.match(/data-status="past"/g) || []).length === 37);
 for (const e of codexEvents.events) check(`event anchor #${e.id}`, whatsOn.includes(`id="${e.id}"`));
 check("9 Event schemas", (whatsOn.match(/"@type":"Event"/g) || []).length === 9);
 check("ics links present", (whatsOn.match(/abc-calendar\/[a-z0-9-]+\.ics/g) || []).length >= 40);

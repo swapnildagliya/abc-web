@@ -105,16 +105,12 @@ const body = `
     <section class="scene-pad t-paper" id="events" data-scene data-cue="upcoming events">
       <div class="home-agenda-head">
         <div>
-          <p class="label fx">Upcoming events · next 5 dates</p>
+          <p class="label fx">Upcoming events · next dates</p>
           <h2 class="fx">Next places to<br><em class="solo">find us.</em></h2>
         </div>
         <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
       </div>
       <ol class="date-list">
-        <li class="fx"><a href="whats-on/#gentse-feesten-2026" data-preview="assets/img/events/gentse-feesten-2026.jpg">
-          <time datetime="2026-07-23"><b>23<i>+</i>26</b><span>JUL</span></time>
-          <span><strong>Gentse Feesten</strong><small>Indian dance at Het Bal · 23 &amp; 26 July, free sessions</small></span>
-          <span class="city">Ghent</span><b class="go" aria-hidden="true">↗</b></a></li>
         <li class="fx"><a href="whats-on/#benenwerk-2026" data-preview="assets/img/events/benenwerk-2026.jpg">
           <time datetime="2026-08-08"><b>08</b><span>AUG</span></time>
           <span><strong>Benenwerk</strong><small>An evening of Indian dance</small></span>

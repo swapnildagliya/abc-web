@@ -77,12 +77,12 @@ const body = `
     <section class="scene-pad t-night media-led spot" id="productions" data-scene data-stage data-cue="original work">
       <div style="display:grid; gap:1rem; align-self:start">
         <figure class="frame sweep fx-scale" style="aspect-ratio: 3/2">
-          <img src="../assets/img/abc/terah-taali-red-gala2023-jan-vens.jpg" alt="ABC Terah Taali performers seated in red stage smoke" loading="lazy" decoding="async" width="2400" height="1600">
-          <figcaption><span>ABC · Terah Taali · PC Jan Vens</span></figcaption>
+          <img src="../assets/img/abc/rajasthani-set-gala2023-jan-vens.jpg" alt="The ABC company in a Rajasthani set under red stage light" loading="lazy" decoding="async" width="2400" height="1600">
+          <figcaption><span>ABC company · GIDF Gala 2023 · PC Jan Vens</span></figcaption>
         </figure>
         <figure class="frame fx drift" data-scrub style="--drift:-24px; aspect-ratio: 3/2">
-          <img src="../assets/img/abc/anarkali-ensemble-gala2023-jan-vens.jpg" alt="ABC production scene: white Anarkali soloist with the ensemble in blue and red light" loading="lazy" decoding="async" width="2400" height="1600">
-          <figcaption><span>ABC · GIDF Gala 2023 · PC Jan Vens</span></figcaption>
+          <img src="../assets/img/abc/garba-ensemble-gala2023-backaert.jpg" alt="The ABC company dancing Garba together in mirrored costumes" loading="lazy" decoding="async" width="2400" height="1600">
+          <figcaption><span>ABC company · Garba · PC Michael Backaert</span></figcaption>
         </figure>
       </div>
       <div>
