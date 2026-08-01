@@ -31,7 +31,7 @@ const postcards = [
   ["gidf/finale-hero.jpg", 2000, 1333, "Company finale", "Ghent", "ABC ensemble finale on a theatre stage"],
   ["abc/garba-ensemble-gala2023-backaert.jpg", 2400, 1613, "Garba ensemble", "GIDF Gala", "ABC Garba ensemble at the GIDF Gala"],
   ["abc/terah-taali-red-gala2023-jan-vens.jpg", 2400, 1600, "Terah Taali", "Gala", "ABC Terah Taali performers in red stage smoke"],
-  ["gidf/kalbeliya-swapnil-kalbeliya-stijn-dejonckheere.jpg", 800, 1200, "Kalbeliya", "GIDF", "Kalbeliya artist on stage"],
+  ["gidf/kalbeliya-swapnil-kalbeliya-stijn-dejonckheere.jpg", 800, 1200, "Kalbeliya", "Gentse Feesten", "Swapnil performing Kalbeliya at Gentse Feesten"],
   ["abc/rajasthani-set-gala2023-jan-vens.jpg", 2400, 1600, "Rajasthani set", "Gala", "ABC Rajasthani set in red light"],
   ["events/bhangra-starter-series-2026.jpg", 1400, 2105, "Bhangra", "Belgium", "ABC performing Bhangra on stage"],
 ];

@@ -201,8 +201,7 @@ const body = `
         </div>
       </div>
       <div class="gallery">
-        <figure class="frame fx-scale sweep"><img src="../assets/img/gidf/kalbeliya-swapnil-kalbeliya-stijn-dejonckheere.jpg" alt="Kalbeliya workshop energy — swirling cobalt skirt on the GIDF floor" loading="lazy" decoding="async" width="800" height="1200"><figcaption><span>The workshop floor</span></figcaption></figure>
-        <figure class="frame fx"><img src="../assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="Solo artist silhouetted in red under a blue beam at the GIDF Gala Showcase" loading="lazy" decoding="async" width="1400" height="933"><figcaption><span>The Gala Showcase</span></figcaption></figure>
+                <figure class="frame fx"><img src="../assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="Solo artist silhouetted in red under a blue beam at the GIDF Gala Showcase" loading="lazy" decoding="async" width="1400" height="933"><figcaption><span>The Gala Showcase</span></figcaption></figure>
         <figure class="frame fx"><img src="../assets/img/gala2023/artist-semiclassical-jan-vens.jpg" alt="Guest artist in a semi-classical solo at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600"><figcaption><span>Gala solo · PC Jan Vens</span></figcaption></figure>
         <figure class="frame fx"><img src="../assets/img/gala2023/artist-seated-spin-jan-vens.jpg" alt="Seated spin with the skirt in full bloom at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600"><figcaption><span>Gala Showcase · PC Jan Vens</span></figcaption></figure>
         <figure class="frame fx"><img src="../assets/img/abc/skirt-spin-gala2023-backaert.jpg" alt="ABC dancer's skirt at full spin at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1613"><figcaption><span>ABC · PC Michael Backaert</span></figcaption></figure>
