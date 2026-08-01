@@ -1,0 +1,254 @@
+import { page, SITE, routeBar, marquee } from "../shell.mjs";
+
+const def = {
+  depth: 1,
+  nav: "festival/",
+  title: "Ghent India Dance Festival — ABC",
+  desc: "Ghent India Dance Festival brings artists, students and audiences together through Indian dance workshops, performances and shared cultural space.",
+  canonical: `${SITE}/festival/`,
+  themeColor: "#164BD8",
+  ogImage: `${SITE}/assets/img/gidf/edition-five-2027.jpg`,
+  bodyClass: "page-festival",
+  cinematic: true,
+  firstCue: "arrive",
+  headerCta: { href: "#edition-five", label: "Edition Five", glyph: "↓" },
+};
+
+const body = `
+    <!-- FILM HERO · the festival's own stage under the title. The cobalt wash
+         keeps the brand colour and holds the type; the clip list is the same
+         markup contract as the reel, and the poster carries the no-JS and
+         reduced-motion states. -->
+    <section class="gidf-hero film-hero t-blue" id="top" aria-labelledby="page-title" data-scene data-cue="arrive" data-hero-film>
+      <div class="film-hero-media">
+        <video class="film-v" muted playsinline preload="none" poster="../assets/media/hero/hero-bhangra.jpg" width="640" height="360" aria-hidden="true"></video>
+        <video class="film-v" muted playsinline preload="none" aria-hidden="true"></video>
+      </div>
+      <div class="film-hero-wash" aria-hidden="true"></div>
+      <div class="film-hero-copy">
+        <p class="inner-kicker fx">Every spring · Ghent, Belgium</p>
+        <h1 id="page-title"><span class="mask-line"><span>Gent India</span></span><span class="mask-line"><span><em class="solo">Dans Festival</em></span></span></h1>
+        <p class="inner-hero-lead fx">Three days of Indian dance in Ghent.<br>Workshops, a gala showcase and an opening party.</p>
+        <div class="button-row fx">
+          <a class="button button-yellow" href="#edition-five">Edition Five <span>↓</span></a>
+          <a class="button button-outline" href="#expect">What to expect <span>→</span></a>
+        </div>
+      </div>
+      <div class="film-hero-meta">
+        <div class="date-stamp" aria-label="Edition Five, 7 to 9 May 2027"><strong>7—9</strong><span>May 2027</span><small>Edition Five</small></div>
+        <p class="film-hero-now" aria-hidden="true"><b data-hero-title>Bhangra</b><small data-hero-who>Bhangra students · GIDF 2026</small></p>
+      </div>
+      <p class="film-hero-cue" aria-hidden="true"><i></i>Scroll</p>
+      <ul class="film-hero-clips" hidden>
+          <li data-clip="hero/hero-bhangra" data-title="Bhangra" data-who="Bhangra students · GIDF 2026"></li>
+          <li data-clip="hero/hero-madhuri" data-title="Madhuri Medley" data-who="Bollywood students &amp; ABC · GIDF 2026"></li>
+          <li data-clip="hero/hero-morya" data-title="Morya Re" data-who="Bollywood students · GIDF 2026"></li>
+          <li data-clip="hero/hero-ghoomar" data-title="Ghoomar" data-who="Bollyfolk students · GIDF 2026"></li>
+          <li data-clip="hero/hero-semiclassical" data-title="Semi-classical" data-who="students of Swapnil · GIDF 2026"></li>
+      </ul>
+    </section>
+    ${routeBar("../", "festival/")}
+    ${marquee(["Workshops", "Gala", "Opening party", "Riyaaz", "Chai", "Gupshup"], { className: "t-yellow", speed: "26s" })}
+
+    <!-- EDITION FIVE · the poster is pushed in as you scroll past it. Scrubbed,
+         NOT pinned: a pin needs a sticky frame, and a tall section without one
+         is just a tall section — content floating between two voids. -->
+    <section class="scene-pad t-night edition edition-scene" id="edition-five" data-scrub data-scene data-cue="edition five">
+      <figure class="edition-poster sweep frame" style="aspect-ratio: 1080/1350">
+        <img src="../assets/img/gidf/edition-five-2027.jpg" alt="Gent India Dans Festival Edition Five poster — Until we dance again, 7 to 9 May 2027" loading="lazy" decoding="async" width="1080" height="1350">
+      </figure>
+      <div>
+        <p class="label fx" style="color:var(--yellow)">The next edition</p>
+        <h2 class="fx h-act">Edition <em class="solo">Five.</em></h2>
+        <p class="edition-date fx">7—9 May 2027</p>
+        <p class="lead fx">Until we dance again. Faculty, the day-by-day programme and tickets will be announced as Edition Five takes shape.</p>
+        <p class="fx">Curated by Swapnil Dagliya · Organised by ABC a bollywood company · Hosted at Shoonya Dance Centre, Ghent.</p>
+        <p class="fx"><a class="button button-yellow" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener">Follow GIDF for first news <span>↗</span></a></p>
+      </div>
+    </section>
+
+    <section class="scene-pad t-paper" id="about" data-scene data-cue="what is gidf">
+      <p class="label fx">What is GIDF</p>
+      <div class="intro">
+        <h2 class="fx">Indian dance is<br><em class="solo">not one thing.</em></h2>
+        <div class="intro-copy fx">
+          <p>It is Kalbeliya from the desert of Rajasthan. Chhau from Odisha. Lavani from Maharashtra. Kuthu from Tamil Nadu. Giddha from Punjab—each with its own history, community and way of moving through the world.</p>
+          <p>Every spring, GIDF brings these traditions to Ghent—not as performance alone, but as experience. You learn from teachers who carry the forms, watch them on stage and celebrate together into the night.</p>
+          <p class="editorial-line">Three days. Master teachers from across India. One curious city.</p>
+        </div>
+      </div>
+      <div class="style-field" aria-hidden="true">
+        <span class="fx">Kalbeliya</span><span class="fx">Chhau</span><span class="fx">Lavani</span><span class="fx">Kuthu</span><span class="fx">Giddha</span><span class="fx">Kathak</span><span class="fx">Bharatanatyam</span>
+      </div>
+      <div class="media-led" style="margin-top:2.4rem">
+        <figure class="frame sweep fx-scale" style="aspect-ratio: 3/2">
+          <img src="../assets/img/gala2023/artist-mudra-jan-vens.jpg" alt="Guest artist holding a mudra mid-turn at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600">
+          <figcaption><span>Gala Showcase · PC Jan Vens</span></figcaption>
+        </figure>
+        <figure class="frame fx" style="aspect-ratio: 3/2">
+          <img src="../assets/img/gala2023/students-gala-wave-jan-vens.jpg" alt="Students and faculty filling the GIDF Gala stage together" loading="lazy" decoding="async" width="2400" height="1600">
+          <figcaption><span>Students share the gala stage · PC Jan Vens</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="scene-pad t-bone" id="expect" data-scene data-cue="three days">
+      <p class="label fx">What to expect</p>
+      <div class="intro">
+        <h2 class="fx">Three days.<br><em class="solo">Many ways in.</em></h2>
+        <p class="intro-copy fx lead">Every edition is built from the same parts: workshops by day, a gala by night and a party to open it all.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card fx"><small>01 · Learn</small><h3>The Workshops</h3><p>One tradition, one teacher—master artists from across India, taught hands-on across the weekend.</p></article>
+        <article class="card fx"><small>02 · Watch</small><h3>The Gala Showcase</h3><p>A seated theatrical evening on the Shoonya stage with faculty, guest artists and ABC together.</p></article>
+        <article class="card fx"><small>03 · Enter</small><h3>The Opening Party</h3><p>A community class, live music, performances and a DJ until late—the night it all begins.</p></article>
+        <article class="card fx"><small>04 · Meet</small><h3>The Artists</h3><p>The teachers and performers who carry their traditions to the GIDF floor and wider European scene.</p></article>
+      </div>
+    </section>
+
+    <!-- THE SHOWCASE, IN MOTION · four loops cut from the GIDF 2026 Gala
+         Showcase recording. Muted, no controls, and they only load and play
+         once the tile is actually on screen — four autoplaying videos would
+         otherwise cost more than the rest of the page put together. -->
+    <section class="scene-pad t-night showcase" id="showcase" data-scene data-cue="the showcase">
+      <div class="intro">
+        <div>
+          <p class="label fx" style="color:var(--yellow)">The Gala Showcase</p>
+          <h2 class="fx">The stage,<br><em class="solo">in motion.</em></h2>
+        </div>
+        <p class="intro-copy fx lead">The gala showcase: guest artists, students and ABC on one stage. Twelve performances from four editions, 2023 to 2026.</p>
+      </div>
+      <figure class="reel" data-reel-stage>
+        <div class="reel-frame">
+          <video class="reel-v" muted playsinline preload="none"></video>
+          <video class="reel-v" muted playsinline preload="none"></video>
+          <div class="reel-wash" aria-hidden="true"></div>
+          <figcaption class="reel-cap"><b data-reel-title>Rajasthani</b><small data-reel-who>Colleena Shakti · GIDF 2026</small></figcaption>
+          <div class="reel-ticks" aria-hidden="true"></div>
+        </div>
+        <ul class="reel-stills">
+          <li data-clip="showcase/colleena-rajasthani" data-title="Rajasthani" data-who="Colleena Shakti · GIDF 2026">
+            <img src="../assets/media/showcase/colleena-rajasthani.jpg" alt="Colleena Shakti mid-spin, skirt opened into a full circle" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Rajasthani</b><small>Colleena Shakti · GIDF 2026</small></span>
+          </li>
+          <li data-clip="editions/reel-2024" data-title="Kathak" data-who="Vanisha · GIDF 2024">
+            <img src="../assets/media/editions/reel-2024.jpg" alt="Vanisha dancing Kathak on the Shoonya stage" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Kathak</b><small>Vanisha · GIDF 2024</small></span>
+          </li>
+          <li data-clip="editions/guest-shreyashee" data-title="Solo" data-scale="2.4" data-origin="56% 66%" data-who="Shreyashee Nag · GIDF 2023">
+            <img src="../assets/media/editions/guest-shreyashee.jpg" alt="Shreyashee Nag in orange and gold, mid-spin with skirt open" loading="lazy" decoding="async" width="1280" height="720">
+            <span><b>Solo</b><small>Shreyashee Nag · GIDF 2023</small></span>
+          </li>
+          <li data-clip="showcase/madhuri-medley" data-title="Madhuri Medley" data-who="Bollywood students &amp; ABC · GIDF 2026">
+            <img src="../assets/media/showcase/madhuri-medley.jpg" alt="Dancers spinning, skirts opened into full circles" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Madhuri Medley</b><small>Bollywood students &amp; ABC · GIDF 2026</small></span>
+          </li>
+          <li data-clip="editions/reel-2025" data-title="Solo" data-who="Shampa Gopikrishna · GIDF 2025">
+            <img src="../assets/media/editions/reel-2025.jpg" alt="Shampa Gopikrishna performing under a blue wash" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Solo</b><small>Shampa Gopikrishna · GIDF 2025</small></span>
+          </li>
+          <li data-clip="editions/guest-girish" data-title="Solo" data-scale="2.4" data-origin="48% 56%" data-who="Girish Kumar · GIDF 2023">
+            <img src="../assets/media/editions/guest-girish.jpg" alt="Girish Kumar in a deep lunge under warm light" loading="lazy" decoding="async" width="1280" height="720">
+            <span><b>Solo</b><small>Girish Kumar · GIDF 2023</small></span>
+          </li>
+          <li data-clip="showcase/bhangra" data-title="Bhangra" data-who="Bhangra students · GIDF 2026">
+            <img src="../assets/media/showcase/bhangra.jpg" alt="A Bhangra group moving together across the stage" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Bhangra</b><small>Bhangra students · GIDF 2026</small></span>
+          </li>
+          <li data-clip="editions/julien-2024" data-title="Solo" data-who="Julien · GIDF 2024">
+            <img src="../assets/media/editions/julien-2024.jpg" alt="Julien on a candle-lit platform under a single spotlight" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Solo</b><small>Julien · GIDF 2024</small></span>
+          </li>
+          <li data-clip="editions/guest-jana" data-title="Solo" data-scale="2.4" data-origin="62% 56%" data-who="Jana Jayanti · GIDF 2023">
+            <img src="../assets/media/editions/guest-jana.jpg" alt="Jana Jayanti in a backbend under violet light" loading="lazy" decoding="async" width="1280" height="720">
+            <span><b>Solo</b><small>Jana Jayanti · GIDF 2023</small></span>
+          </li>
+          <li data-clip="showcase/ghoomar" data-title="Ghoomar" data-who="Bollyfolk students · GIDF 2026">
+            <img src="../assets/media/showcase/ghoomar.jpg" alt="A line of dancers in mirrored folk costume" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Ghoomar</b><small>Bollyfolk students · GIDF 2026</small></span>
+          </li>
+          <li data-clip="showcase/semiclassical-abc" data-title="Semi-classical" data-who="ABC · GIDF 2026">
+            <img src="../assets/media/showcase/semiclassical-abc.jpg" alt="The ABC company dancing semi-classical" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Semi-classical</b><small>ABC · GIDF 2026</small></span>
+          </li>
+          <li data-clip="showcase/grand-finale" data-title="Grand Finale" data-who="GIDF 2026">
+            <img src="../assets/media/showcase/grand-finale.jpg" alt="The full cast on stage at the curtain call" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Grand Finale</b><small>GIDF 2026</small></span>
+          </li>
+        </ul>
+      </figure>
+    </section>
+
+    <section class="scene-pad t-blue" data-scene data-cue="small traditions">
+      <div class="intro">
+        <div>
+          <p class="label fx" style="color:var(--yellow)">The small traditions</p>
+          <h2 class="fx">What makes GIDF<br><em class="solo">feel like GIDF.</em></h2>
+        </div>
+      </div>
+      <ol class="rituals">
+        <li class="fx"><span><b>Rise &amp; Riyaaz</b><span>A short morning practice to begin grounded, together.</span></span></li>
+        <li class="fx"><span><b>Spill the Chai</b><span>The mid-session pause—chai, reflection and conversation.</span></span></li>
+        <li class="fx"><span><b>One Last Gupshup</b><span>The final circle: stories, questions, goodbyes and one last laugh.</span></span></li>
+      </ol>
+    </section>
+
+    <section class="scene-pad t-night" id="gallery" data-scene data-cue="the floor & the stage">
+      <div class="intro">
+        <div>
+          <p class="label fx" style="color:var(--yellow)">On the floor · On the stage</p>
+          <h2 class="fx">On the floor.<br><em class="solo">On the stage.</em></h2>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure class="frame fx-scale sweep"><img src="../assets/img/gidf/kalbeliya-swapnil-kalbeliya-stijn-dejonckheere.jpg" alt="Kalbeliya workshop energy — swirling cobalt skirt on the GIDF floor" loading="lazy" decoding="async" width="800" height="1200"><figcaption><span>The workshop floor</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="Solo artist silhouetted in red under a blue beam at the GIDF Gala Showcase" loading="lazy" decoding="async" width="1400" height="933"><figcaption><span>The Gala Showcase</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/gala2023/artist-semiclassical-jan-vens.jpg" alt="Guest artist in a semi-classical solo at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600"><figcaption><span>Gala solo · PC Jan Vens</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/gala2023/artist-seated-spin-jan-vens.jpg" alt="Seated spin with the skirt in full bloom at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600"><figcaption><span>Gala Showcase · PC Jan Vens</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/abc/skirt-spin-gala2023-backaert.jpg" alt="ABC dancer's skirt at full spin at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1613"><figcaption><span>ABC · PC Michael Backaert</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/gala2023/students-sticks-jan-vens.jpg" alt="Students mid-jump with sticks aloft at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600"><figcaption><span>Students on stage · PC Jan Vens</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/gidf/tera-taali-gidf-2023.jpg" alt="Terah Taali artist playing manjeera at the first GIDF edition in 2023" loading="lazy" decoding="async" width="2400" height="1613"><figcaption><span>Edition One · 2023</span></figcaption></figure>
+        <figure class="frame fx"><img src="../assets/img/gala2023/artist-peach-anarkali-jan-vens.jpg" alt="Guest artist mid-reach in a peach anarkali at the GIDF Gala" loading="lazy" decoding="async" width="2400" height="1600"><figcaption><span>Gala Showcase · PC Jan Vens</span></figcaption></figure>
+      </div>
+      <p class="gallery-credit fx">Festival photography · Stijn Dejonckheere · Michael Backaert · Jan Vens</p>
+    </section>
+
+    <!-- FOUR EDITIONS · vertical scroll becomes lateral travel, 1:1 with the
+         strip's own overflow. Four editions in sequence is a horizontal idea. -->
+    <section class="road t-blue" id="archive" data-pin data-track data-scene data-cue="four editions">
+      <div class="road-fix">
+        <div class="intro" style="padding-inline:var(--pad)">
+          <div>
+            <p class="label fx" style="color:var(--yellow)">Past editions</p>
+            <h2 class="fx">Four editions<br><em class="solo">so far.</em></h2>
+          </div>
+          <p class="intro-copy fx lead">Ghent’s annual festival of Indian dance since 2023—workshops, showcases, an opening party and a community that keeps returning.</p>
+        </div>
+        <div class="edition-strip" data-strip>
+          <article class="edition-card"><figure class="edition-film"><video data-lazyvid data-src="../assets/media/editions/edition-2023.mp4" data-src-hd="../assets/media/editions/edition-2023-hd.mp4" poster="../assets/media/editions/edition-2023.jpg" muted loop playsinline preload="none" width="640" height="360" aria-label="Bhangra ensemble with sticks under green stage light, GIDF 2023"></video><figcaption>Bhangra ensemble</figcaption></figure><time>2023</time><small>Edition One · Inaugural</small><h3>Eight teachers. Eight traditions.</h3><p>From Bharatanatyam to BollyHop, from Punjab’s Bhangra to North India’s Kathak: the first edition made the proposition clear—Indian dance in its breadth, not narrowed to one school.</p></article>
+          <article class="edition-card"><figure class="edition-film"><video data-lazyvid data-src="../assets/media/editions/edition-2024.mp4" data-src-hd="../assets/media/editions/edition-2024-hd.mp4" poster="../assets/media/editions/edition-2024.jpg" muted loop playsinline preload="none" width="640" height="360" aria-label="Vanisha dancing Kathak on the Shoonya stage, GIDF 2024"></video><figcaption>Vanisha · Kathak</figcaption></figure><time>2024</time><small>Edition Two · The growth year</small><h3>Kathakali enters the programme.</h3><p>A precision form rarely taught in Belgium joined the line-up. The festival aimed deeper, not only wider, and learned its first lessons in international logistics.</p></article>
+          <article class="edition-card"><figure class="edition-film"><video data-lazyvid data-src="../assets/media/editions/edition-2025.mp4" data-src-hd="../assets/media/editions/edition-2025-hd.mp4" poster="../assets/media/editions/edition-2025.jpg" muted loop playsinline preload="none" width="640" height="360" aria-label="Shampa Gopikrishna performing on the Shoonya stage, GIDF 2025"></video><figcaption>Shampa Gopikrishna</figcaption></figure><time>2025</time><small>Edition Three · The year of joy</small><h3>A Friday for the city.</h3><p>The first community class opened GIDF to new people. The class stayed, the competitions did not, and Shampa—kept away by a visa the year before—finally taught.</p></article>
+          <article class="edition-card"><figure class="edition-film"><video data-lazyvid data-src="../assets/media/editions/edition-2026.mp4" data-src-hd="../assets/media/editions/edition-2026-hd.mp4" poster="../assets/media/editions/edition-2026.jpg" muted loop playsinline preload="none" width="640" height="360" aria-label="Colleena Shakti mid-spin on the Shoonya stage, GIDF 2026"></video><figcaption>Colleena Shakti</figcaption></figure><time>2026</time><small>Edition Four · The year music arrived</small><h3>Live music. Sold-out gala. Seven traditions.</h3><p>Tabla entered the workshop floor, a live band opened the party and a new four-hour deep-dive format gave one tradition more time to breathe.</p></article>
+          <blockquote class="edition-card edition-quote">
+            <p>“Thoughtful, grounded and honest. Not rushed. Not reduced to trends.”</p>
+            <cite>Swapnil Dagliya · Festival curator</cite>
+          </blockquote>
+        </div>
+        <div class="road-rule" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <section class="closing t-night" data-scene data-cue="until we dance">
+      <div>
+        <p class="label fx" style="color:var(--yellow)">Edition Five · 7—9 May 2027</p>
+        <h2 class="fx">7–9 May 2027.<br><em class="solo">Ghent.</em></h2>
+        <p class="fx">Faculty, programme and tickets are announced on the GIDF Instagram first.</p>
+      </div>
+      <div class="button-row fx">
+        <a class="button button-yellow" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener">Follow GIDF <span>↗</span></a>
+        <a class="button button-outline" href="../contact/">Contact the festival <span>→</span></a>
+      </div>
+    </section>`;
+
+export const outputs = () => [{ path: "festival/index.html", html: page(def, body) }];
+export default { def, body: () => page(def, body) };

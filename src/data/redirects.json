@@ -1,0 +1,642 @@
+[
+ {
+  "route": "abc-calendar",
+  "target": "../whats-on/",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/",
+  "title": "Agenda",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/benenwerk-2026",
+  "target": "../../whats-on/#benenwerk-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#benenwerk-2026",
+  "title": "Benenwerk · Indian dance day — Brugge",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/bhangra-starter-series-2026",
+  "target": "../../whats-on/#bhangra-starter-series-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#bhangra-starter-series-2026",
+  "title": "Bhangra · Starter Series",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/bollywood-dhamaka-dance-workshop-in-prague",
+  "target": "../../whats-on/#bollywood-dhamaka-dance-workshop-in-prague",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#bollywood-dhamaka-dance-workshop-in-prague",
+  "title": "Bollywood Dhamaka Dance Workshop Prague | Indian Film &amp;amp; Dance Festival",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/dance-yoga-summer-retreat-2026",
+  "target": "../../whats-on/#dance-yoga-summer-retreat-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#dance-yoga-summer-retreat-2026",
+  "title": "Dance &amp;amp; Yoga Summer Retreat — South of France",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/dansen-in-t-park-2026",
+  "target": "../../whats-on/#dansen-in-t-park-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#dansen-in-t-park-2026",
+  "title": "Dansen in &amp;#x27;t Park 2026 — Indian dance weekend",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/diwali-gala-luxembourg-2025",
+  "target": "../../whats-on/#diwali-gala-luxembourg-2025",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#diwali-gala-luxembourg-2025",
+  "title": "ABC a bollywood company Performs at Diwali Gala Luxembourg 2025 | Indian Dance, Bollywood &amp;amp; Folk",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/dokfeesten-2026",
+  "target": "../../whats-on/#dokfeesten-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#dokfeesten-2026",
+  "title": "Dokfeesten — Indian dance",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/duo-folk-fiesta-garba-lavani-in-berlin",
+  "target": "../../whats-on/#duo-folk-fiesta-garba-lavani-in-berlin",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#duo-folk-fiesta-garba-lavani-in-berlin",
+  "title": "Indian Folk Dance Workshop in Berlin | Garba &amp;amp; Lavani with Swapnil &amp;amp; Shampa",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/event-three-g4c43",
+  "target": "../../whats-on/#event-three-g4c43",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#event-three-g4c43",
+  "title": "Garba Indian Folk Dance Miniseries at Shoonya Dance Centre in Ghent",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/free-trial-classes-indian-dance-open-class-week-at-shoonya-dance-centre",
+  "target": "../../whats-on/#free-trial-classes-indian-dance-open-class-week-at-shoonya-dance-centre",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#free-trial-classes-indian-dance-open-class-week-at-shoonya-dance-centre",
+  "title": "Free Trial Classes - Indian dance | Open Class Week at Shoonya Dance Centre",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-dandiya-workshop-with-swapnil-mastani-lille-france",
+  "target": "../../whats-on/#garba-dandiya-workshop-with-swapnil-mastani-lille-france",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-dandiya-workshop-with-swapnil-mastani-lille-france",
+  "title": "Garba/Dandiya Workshop in Lille with Swapnil Dagliya | 30th March",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-folk-fusion-performance-in-france",
+  "target": "../../whats-on/#garba-folk-fusion-performance-in-france",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-folk-fusion-performance-in-france",
+  "title": "Join Swapnil at Diwali Dance Festival 2024 in Montpellier for Garba &amp;amp; Folk Fusion Workshops",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-indian-folk-dance-workshop-in-eindhoven",
+  "target": "../../whats-on/#garba-indian-folk-dance-workshop-in-eindhoven",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-indian-folk-dance-workshop-in-eindhoven",
+  "title": "Garba Dance Workshop with Swapnil Dagliya in Eindhoven, Netherlands",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-semi-classical-dance-workshops-with-swapnil-dagliya-in-amsterdam",
+  "target": "../../whats-on/#garba-semi-classical-dance-workshops-with-swapnil-dagliya-in-amsterdam",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-semi-classical-dance-workshops-with-swapnil-dagliya-in-amsterdam",
+  "title": "Garba &amp;amp; Semi-Classical Dance Workshop in Amsterdam | Learn with Swapnil &amp;amp; Bloomleela Bollywood Dance",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-the-festive-spirit-of-gujarat-with-swapnil",
+  "target": "../../whats-on/#garba-the-festive-spirit-of-gujarat-with-swapnil",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-the-festive-spirit-of-gujarat-with-swapnil",
+  "title": "Garba Dance Class with Swapnil | Shoonya Dance Centre Ghent",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-workshop-in-antwerp",
+  "target": "../../whats-on/#garba-workshop-in-antwerp",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-workshop-in-antwerp",
+  "title": "Garba Workshops by Swapnil Dagliya in Brussels, Antwerp, and Ghent - Learn Traditional Indian Dance",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-workshop-in-brussels",
+  "target": "../../whats-on/#garba-workshop-in-brussels",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-workshop-in-brussels",
+  "title": "Garba Workshops with Swapnil Dagliya in Brussels, Antwerp, and Ghent | Learn Traditional Indian Dance",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-workshop-in-brussels-w9ypc",
+  "target": "../../whats-on/#garba-workshop-in-brussels-w9ypc",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-workshop-in-brussels-w9ypc",
+  "title": "Garba Workshops with Swapnil Dagliya in Brussels, Antwerp, &amp;amp; Ghent | Learn Traditional Indian Dance",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/garba-workshop-in-frankfurt",
+  "target": "../../whats-on/#garba-workshop-in-frankfurt",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-workshop-in-frankfurt",
+  "title": "Garba Workshop in Frankfurt | Learn with Swapnil Dagliya &amp;amp; Desihop",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/gent-india-dance-festival-2026",
+  "target": "../../whats-on/#gent-india-dance-festival-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#gent-india-dance-festival-2026",
+  "title": "Gent India Dans Festival 2026 | Indian Dance Festival in Ghent",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/gent-india-dans-festival-2025-3rd-edition",
+  "target": "../../whats-on/#gent-india-dans-festival-2025-3rd-edition",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#gent-india-dans-festival-2025-3rd-edition",
+  "title": "Gent India Dans Festival 2025 | Indian Dance Workshops &amp;amp; Performances in Ghent, Belgium",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/gentse-feesten-2026",
+  "target": "../../whats-on/#gentse-feesten-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#gentse-feesten-2026",
+  "title": "Gentse Feesten 2026 — Indian dance at Het Bal",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/indian-dance-summer-intensive-2026",
+  "target": "../../whats-on/#indian-dance-summer-intensive-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#indian-dance-summer-intensive-2026",
+  "title": "Indian Dance Summer Intensive 2026",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/indian-dance-summer-intensive-in-belgium",
+  "target": "../../whats-on/#indian-dance-summer-intensive-in-belgium",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#indian-dance-summer-intensive-in-belgium",
+  "title": "Indian Dance Summer Intensive in Ghent – Bhangra, Garba &amp;amp; Folk Dance with Swapnil Dagliya",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/indian-dance-winter-intensive-2026",
+  "target": "../../whats-on/#indian-dance-winter-intensive-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#indian-dance-winter-intensive-2026",
+  "title": "Winter Intensive 2026 in Ghent | Bhangra, Semi-Classical &amp;amp; Indian Folk Dance with Swapnil Dagliya",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/indian-dance-workshop-with-alexander-noel-at-shoonya-dance-centre",
+  "target": "../../whats-on/#indian-dance-workshop-with-alexander-noel-at-shoonya-dance-centre",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#indian-dance-workshop-with-alexander-noel-at-shoonya-dance-centre",
+  "title": "Noel Alexander Indian Dance Workshop in Europe | Shoonya Dance Centre &amp;amp; ABC a bollywood company",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/jetczjuw41wlwmxk71w00i4g0pma50",
+  "target": "../../whats-on/#jetczjuw41wlwmxk71w00i4g0pma50",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#jetczjuw41wlwmxk71w00i4g0pma50",
+  "title": "Garba Workshop in Ghent 2025 | Learn Traditional Indian Dance Before Navratri",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/kalbeliya-the-soul-of-rajasthan-with-swapnil",
+  "target": "../../whats-on/#kalbeliya-the-soul-of-rajasthan-with-swapnil",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#kalbeliya-the-soul-of-rajasthan-with-swapnil",
+  "title": "Kalbeliya Dance Course with Swapnil | Shoonya Dance Centre",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/lavani-workshop-in-rome-italy",
+  "target": "../../whats-on/#lavani-workshop-in-rome-italy",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#lavani-workshop-in-rome-italy",
+  "title": "Lavani Dance Workshop in Rome, Italy - Bollywood Espresso Festival | 22-23 March",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/online-classes-discover-indian-dance",
+  "target": "../../whats-on/#online-classes-discover-indian-dance",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#online-classes-discover-indian-dance",
+  "title": "Personalized Online Indian Dance Classes with Swapnil Dagliya - Learn Bollywood, Bhangra, Garba &amp;amp; More",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/opendeurdag-2026",
+  "target": "../../whats-on/#opendeurdag-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#opendeurdag-2026",
+  "title": "Opendeurdag · Season opener",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/paris-garba-workshop-with-swapnil-dagliya",
+  "target": "../../whats-on/#paris-garba-workshop-with-swapnil-dagliya",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#paris-garba-workshop-with-swapnil-dagliya",
+  "title": "Authentic Garba Workshop in Paris with Swapnil Dagliya | Indian Folk Dance 2025",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/ruipiy2k5toglyovl5rihc9up4p15r",
+  "target": "../../whats-on/#ruipiy2k5toglyovl5rihc9up4p15r",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#ruipiy2k5toglyovl5rihc9up4p15r",
+  "title": "Join Indian Dance Classes in Belgium - Bollywood, Garba, Yoga &amp;amp; More at Shoonya Dance Centre | Ghent",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/sangam-2026",
+  "target": "../../whats-on/#sangam-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#sangam-2026",
+  "title": "Sangam 2026 — Indian dance production",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/semi-classical-garba-workshop-in-brussels",
+  "target": "../../whats-on/#semi-classical-garba-workshop-in-brussels",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#semi-classical-garba-workshop-in-brussels",
+  "title": "Indian Dance Workshops in Brussels – Semi-Classical &amp;amp; Garba with Swapnil Dagliya",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/semi-classical-intensive-ghent",
+  "target": "../../whats-on/#semi-classical-intensive-ghent",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#semi-classical-intensive-ghent",
+  "title": "Indian Semi-Classical Dance Intensive at Shoonya Dance Centre in Ghent | Swapnil Dagliya",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/semi-classical-lavani-dance-workshops-brussels",
+  "target": "../../whats-on/#semi-classical-lavani-dance-workshops-brussels",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#semi-classical-lavani-dance-workshops-brussels",
+  "title": "Indian Dance Workshops Brussels: Semi-Classical &amp;amp; Lavani with Swapnil Dagliya",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/semi-classical-starter-series-2026",
+  "target": "../../whats-on/#semi-classical-starter-series-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#semi-classical-starter-series-2026",
+  "title": "Indian Semi-Classical · Starter Series",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/semi-classical-workshop-amsterdam",
+  "target": "../../whats-on/#semi-classical-workshop-amsterdam",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#semi-classical-workshop-amsterdam",
+  "title": "Indian Semi-Classical Dance Workshop in Amsterdam - Learn with Swapnil Dagliya | Bloomleela",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/shoonya-diwali-celebration-3rd-edition-ghent-city",
+  "target": "../../whats-on/#shoonya-diwali-celebration-3rd-edition-ghent-city",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#shoonya-diwali-celebration-3rd-edition-ghent-city",
+  "title": "Diwali Celebration in Ghent – Dance, Music, and Indian Culture | 16th Nov 2024",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/shoonya-navratri-garba-dandiya-night-5th-edition",
+  "target": "../../whats-on/#shoonya-navratri-garba-dandiya-night-5th-edition",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#shoonya-navratri-garba-dandiya-night-5th-edition",
+  "title": "Navratri 2025 Garba &amp;amp; Dandiya Night in Ghent | Shoonya 5th Edition Celebration",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/shoonya-navratri-garba-dandiya-night-in-gent",
+  "target": "../../whats-on/#shoonya-navratri-garba-dandiya-night-in-gent",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#shoonya-navratri-garba-dandiya-night-in-gent",
+  "title": "Shoonya Navaratri 4th Edition in Ghent | Celebrate with Indian Dance &amp;amp; Culture",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/the-four-loves-show",
+  "target": "../../whats-on/#the-four-loves-show",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#the-four-loves-show",
+  "title": "Bollywood-Inspired Indian Dance Show &amp;#x27;The Four Loves&amp;#x27; in Ghent by ABC &amp;amp; Shoonya",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "abc-calendar/weekend-workshops-with-jainil-mehta",
+  "target": "../../whats-on/#weekend-workshops-with-jainil-mehta",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#weekend-workshops-with-jainil-mehta",
+  "title": "Jainil Mehta Weekend Intensive Ghent | Early Bird Ends Jan 25",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "about-us",
+  "target": "../about/#story",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/#story",
+  "title": "About ABC a bollywood dance company - Belgium",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "bio",
+  "target": "../about/#story",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/#story",
+  "title": "ABC",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "classes",
+  "target": "../learn/#classes",
+  "canonical": "https://www.abcbollywoodbelgium.com/learn/#classes",
+  "title": "Indian Dance Classes Belgium | Bollywood &amp;amp; Garba in Ghent",
+  "desc": "This ABC page now lives in Classes and learning.",
+  "dest": "Classes and learning"
+ },
+ {
+  "route": "discover-indian-dance",
+  "target": "../learn/#online",
+  "canonical": "https://www.abcbollywoodbelgium.com/learn/#online",
+  "title": "Private Online Indian Dance Classes | Bollywood, Folk &amp;amp; More in Europe",
+  "desc": "This ABC page now lives in Classes and learning.",
+  "dest": "Classes and learning"
+ },
+ {
+  "route": "garba-semi-classical-dance-workshop-amsterdam",
+  "target": "../whats-on/#garba-semi-classical-dance-workshops-with-swapnil-dagliya-in-amsterdam",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#garba-semi-classical-dance-workshops-with-swapnil-dagliya-in-amsterdam",
+  "title": "ABC",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "gent-india-dans-festival",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "gentle-feesten-shoonya-indian-night",
+  "target": "../whats-on/#gentse-feesten-2024",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#gentse-feesten-2024",
+  "title": "Experience the Vibrant Culture of India at Gentse Feesten 2024: Dance, Music, and Joy!",
+  "desc": "This ABC page now lives in What’s on.",
+  "dest": "What’s on"
+ },
+ {
+  "route": "gidf",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "home",
+  "target": "../",
+  "canonical": "https://www.abcbollywoodbelgium.com/",
+  "title": "ABC a bollywood company - Indian dance in Belgium",
+  "desc": "This ABC page now lives in ABC home.",
+  "dest": "ABC home"
+ },
+ {
+  "route": "home-scroll",
+  "target": "../",
+  "canonical": "https://www.abcbollywoodbelgium.com/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in ABC home.",
+  "dest": "ABC home"
+ },
+ {
+  "route": "indian-dance-in-europe",
+  "target": "../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/blog-post-title-three-5wg6x-8ecwr",
+  "target": "../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/category/Gent+India+dans+festival",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/category/Indian+dance+in+Europe",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/tag/Bhangra",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/tag/Indian+dance+in+Europe",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/tag/Indian+folk+dance+europe",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/tag/folk+dance",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/tag/garba",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/tag/indian+dance+in+belgium",
+  "target": "../../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "Indian dance in Europe",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "indian-dance-in-europe/the-rise-of-indian-folk-dance-in-europe-why-bhangra-amp-garba-are-everywhere-now",
+  "target": "../../about/",
+  "canonical": "https://www.abcbollywoodbelgium.com/about/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in About ABC.",
+  "dest": "About ABC"
+ },
+ {
+  "route": "learn-garba-europe",
+  "target": "../learn/#garba-europe",
+  "canonical": "https://www.abcbollywoodbelgium.com/learn/#garba-europe",
+  "title": "Learn Garba in Europe | Authentic Workshops by Swapnil Dagliya",
+  "desc": "This ABC page now lives in Classes and learning.",
+  "dest": "Classes and learning"
+ },
+ {
+  "route": "lets-work-together",
+  "target": "../contact/",
+  "canonical": "https://www.abcbollywoodbelgium.com/contact/",
+  "title": "Let&amp;#x27;s Work Together for Indian dance classes, workshops &amp;amp; performances in Ghent, Belgium",
+  "desc": "This ABC page now lives in Contact ABC.",
+  "dest": "Contact ABC"
+ },
+ {
+  "route": "light-tech-pack-gidf-2026",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "performances",
+  "target": "../book/#performances",
+  "canonical": "https://www.abcbollywoodbelgium.com/book/#performances",
+  "title": "Bollywood, Bhangra &amp;amp; Garba Performances in Belgium",
+  "desc": "This ABC page now lives in Performances and workshops.",
+  "dest": "Performances and workshops"
+ },
+ {
+  "route": "private-online-coaching",
+  "target": "../learn/#online",
+  "canonical": "https://www.abcbollywoodbelgium.com/learn/#online",
+  "title": "Private online coaching",
+  "desc": "This ABC page now lives in Classes and learning.",
+  "dest": "Classes and learning"
+ },
+ {
+  "route": "productions",
+  "target": "../book/#productions",
+  "canonical": "https://www.abcbollywoodbelgium.com/book/#productions",
+  "title": "ABC Dance Productions - Uniting Cultures Through Indian Dance | Belgium",
+  "desc": "This ABC page now lives in Performances and workshops.",
+  "dest": "Performances and workshops"
+ },
+ {
+  "route": "refund-policy",
+  "target": "../contact/#refunds",
+  "canonical": "https://www.abcbollywoodbelgium.com/contact/#refunds",
+  "title": "Refund Policy",
+  "desc": "This ABC page now lives in Contact ABC.",
+  "dest": "Contact ABC"
+ },
+ {
+  "route": "services",
+  "target": "../book/#services",
+  "canonical": "https://www.abcbollywoodbelgium.com/book/#services",
+  "title": "ABC - Premier Indian Dance Company in Belgium | Bollywood, Bhangra, Garba &amp;amp; More",
+  "desc": "This ABC page now lives in Performances and workshops.",
+  "dest": "Performances and workshops"
+ },
+ {
+  "route": "start-dancing",
+  "target": "../learn/",
+  "canonical": "https://www.abcbollywoodbelgium.com/learn/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Classes and learning.",
+  "dest": "Classes and learning"
+ },
+ {
+  "route": "student-pack-gidf-2026",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "the-artists",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "the-gala-showcase",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "the-opening-party",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "the-workshops",
+  "target": "../festival/",
+  "canonical": "https://www.abcbollywoodbelgium.com/festival/",
+  "title": "ABC",
+  "desc": "This ABC page now lives in Ghent India Dance Festival.",
+  "dest": "Ghent India Dance Festival"
+ }
+]

@@ -1,0 +1,5 @@
+node_modules/
+checkpoints/
+exports/
+.DS_Store
+*.log

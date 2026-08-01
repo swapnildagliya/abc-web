@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ABC a bollywood company//Agenda//EN
+BEGIN:VEVENT
+UID:dansen-in-t-park-2026@abcbollywoodbelgium.com
+DTSTAMP:20260821T000000Z
+DTSTART;VALUE=DATE:20260821
+DTEND;VALUE=DATE:20260824
+SUMMARY:Dansen in 't Park 2026 — Indian dance weekend
+LOCATION:Azaleapark, Gent
+URL:https://www.abcbollywoodbelgium.com/whats-on/#dansen-in-t-park-2026
+END:VEVENT
+END:VCALENDAR
