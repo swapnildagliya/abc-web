@@ -1,10 +1,22 @@
 // One-time extractor: pulls factual content out of the Codex build (the content
 // authority) into JSON data files consumed by build.mjs. Never edits the source.
+//
+// DO NOT RERUN CASUALLY. The Codex snapshot was frozen on 2026-07-18 and archived on
+// 2026-08-05. src/data/*.json has been corrected by hand since — Dansen in 't Park 2026
+// was removed after Swapnil confirmed ABC is not part of it. Rerunning this overwrites
+// events.json / redirects.json wholesale and puts that event back on a live site.
+// Set ABC_EXTRACT_CONFIRM=1 to run it anyway, then re-apply the corrections by hand.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const CODEX = "/Users/swapnil/Documents/Claude/Projects/ABC website/ABC Codex Rebuild 2026-07-16";
+if (!process.env.ABC_EXTRACT_CONFIRM) {
+  console.error("extract.mjs refuses to run: it would overwrite hand-corrected event data.");
+  console.error("See the header comment. Re-run with ABC_EXTRACT_CONFIRM=1 if you mean it.");
+  process.exit(1);
+}
+
+const CODEX = "/Users/swapnil/Documents/Claude/Projects/ABC website/_archive/ABC Codex Rebuild 2026-07-16";
 const OUT = fileURLToPath(new URL("./data/", import.meta.url));
 
 /* ---------- events from whats-on ---------- */
