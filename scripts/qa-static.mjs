@@ -35,7 +35,7 @@ check("404 uses root-absolute assets", readFileSync(join(ROOT, "404.html"), "utf
 check("_redirects has 80 lines", readFileSync(join(ROOT, "_redirects"), "utf8").trim().split("\n").length === 80);
 check("robots.txt present", readFileSync(join(ROOT, "robots.txt"), "utf8").includes("sitemap.xml"));
 check("sitemap has 18 URLs", (readFileSync(join(ROOT, "sitemap.xml"), "utf8").match(/<loc>/g) || []).length === 18);
-check("44 calendar files", readdirSync(join(ROOT, "abc-calendar")).filter(f => f.endsWith(".ics")).length === 44);
+check("43 calendar files", readdirSync(join(ROOT, "abc-calendar")).filter(f => f.endsWith(".ics")).length === 43);
 
 /* ---------- page-level checks ---------- */
 const pages = ["index.html", ...fullPages.map(r => `${r}/index.html`)];
@@ -69,11 +69,11 @@ for (const p of pages) {
 /* ---------- whats-on specifics ---------- */
 const whatsOn = readFileSync(join(ROOT, "whats-on/index.html"), "utf8");
 const codexEvents = JSON.parse(readFileSync(join(ROOT, "src/data/events.json"), "utf8"));
-check("45 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 45);
-check("8 upcoming", (whatsOn.match(/data-status="upcoming"/g) || []).length === 8);
+check("44 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 44);
+check("7 upcoming", (whatsOn.match(/data-status="upcoming"/g) || []).length === 7);
 check("37 past", (whatsOn.match(/data-status="past"/g) || []).length === 37);
 for (const e of codexEvents.events) check(`event anchor #${e.id}`, whatsOn.includes(`id="${e.id}"`));
-check("9 Event schemas", (whatsOn.match(/"@type":"Event"/g) || []).length === 9);
+check("8 Event schemas", (whatsOn.match(/"@type":"Event"/g) || []).length === 8);
 check("ics links present", (whatsOn.match(/abc-calendar\/[a-z0-9-]+\.ics/g) || []).length >= 40);
 check("Kathak stays North Indian", !/South India.?s Kathak/i.test(whatsOn));
 check("Summer Intensive uses its artwork", whatsOn.includes("summer-intensive-2026.png") && !whatsOn.includes("dance-yoga-summer-retreat-2026.jpg"));

@@ -41,9 +41,9 @@
  },
  {
   "route": "abc-calendar/dansen-in-t-park-2026",
-  "target": "../../whats-on/#dansen-in-t-park-2026",
-  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#dansen-in-t-park-2026",
-  "title": "Dansen in &amp;#x27;t Park 2026 — Indian dance weekend",
+  "target": "../../whats-on/",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/",
+  "title": "This page has moved — ABC a bollywood company",
   "desc": "This ABC page now lives in What’s on.",
   "dest": "What’s on"
  },
