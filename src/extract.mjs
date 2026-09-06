@@ -16,7 +16,7 @@ if (!process.env.ABC_EXTRACT_CONFIRM) {
   process.exit(1);
 }
 
-const CODEX = "/Users/swapnil/Documents/Claude/Projects/ABC website/_archive/ABC Codex Rebuild 2026-07-16";
+const CODEX = "/Users/swapnil/Documents/Claude/Projects/ABC/design-lab/_archive/ABC Codex Rebuild 2026-07-16";
 const OUT = fileURLToPath(new URL("./data/", import.meta.url));
 
 /* ---------- events from whats-on ---------- */
@@ -66,6 +66,22 @@ console.log(`events: ${events.length} (${upcoming.length} upcoming, ${past.lengt
 /* event schema blobs (9 upcoming Event JSON-LD) */
 const schemas = [...whatsOn.matchAll(/<script type="application\/ld\+json" data-publish-schema>(\{"@context":"https:\/\/schema.org","@type":"Event"[\s\S]*?)<\/script>/g)].map(m => m[1]);
 console.log(`event schemas: ${schemas.length}`);
+
+// `image` and `blurb` are curated here, not present in the Codex source. A
+// straight overwrite would silently drop them and every event would fall back
+// to one shared photo again — so carry them across on the event id.
+const CURATED = ["image", "blurb"];
+const previous = existsSync(join(OUT, "events.json"))
+  ? JSON.parse(readFileSync(join(OUT, "events.json"), "utf8")).events
+  : [];
+const keep = new Map(previous.map(e => [e.id, e]));
+let carried = 0;
+for (const e of events) {
+  const before = keep.get(e.id);
+  if (!before) continue;
+  for (const field of CURATED) if (before[field] !== undefined) { e[field] = before[field]; carried++; }
+}
+console.log(`carried ${carried} curated field(s) forward`);
 
 writeFileSync(join(OUT, "events.json"), JSON.stringify({ events, schemas }, null, 1));
 

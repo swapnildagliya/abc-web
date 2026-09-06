@@ -1,10 +1,14 @@
 import { page, SITE, routeBar, marquee } from "../shell.mjs";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { eventSets, currentEventSchemas, dateParts } from "../events.mjs";
 
-const { events, schemas } = JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8"));
-const upcoming = events.filter(e => e.status === "upcoming");
-const past = events.filter(e => e.status === "past");
+const raw = JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8"));
+// status is DERIVED from end-date vs build date — never read from the file, or
+// an event goes stale the morning after it happens. Same for the Event schemas:
+// a finished event must not keep advertising itself to search engines.
+const { upcoming, past } = eventSets(raw.events);
+const schemas = currentEventSchemas(raw.schemas);
 
 const def = {
   depth: 1,
@@ -13,7 +17,7 @@ const def = {
   desc: "Upcoming ABC performances, Indian dance workshops, classes and productions in Ghent, Belgium and across Europe.",
   canonical: `${SITE}/whats-on/`,
   themeColor: "#10121A",
-  ogImage: `${SITE}/assets/img/events/gentse-feesten-2026.jpg`,
+  ogImage: `${SITE}/${(upcoming.find(e => e.image) || past.find(e => e.image)).image.src}`,
   bodyClass: "page-agenda",
   cinematic: true,
   firstCue: "tonight",
@@ -21,26 +25,56 @@ const def = {
   schemas,
 };
 
-// Summary date badge, computed from data-start/data-end so multi-day events
-// never show only their first day. A few events run on specific non-contiguous
-// days rather than a continuous span — those carry an explicit override.
-const DATE_OVERRIDE = {
-  "gentse-feesten-2026": { big: "23 & 26", small: "JUL" },
-};
-const MON = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-function dateParts(e) {
-  if (DATE_OVERRIDE[e.id]) return DATE_OVERRIDE[e.id];
-  const iso = /^\d{4}-\d{2}-\d{2}$/;
-  if (!iso.test(e.start) || !iso.test(e.end)) {
-    const m = e.date.trim().match(/^(.+?)\s+([A-Za-z]+)\s*(\d{2})?$/);
-    return m ? { big: m[1], small: (m[2] || "").toUpperCase() + (m[3] ? ` ’${m[3]}` : "") } : { big: e.date, small: "" };
-  }
-  const [, sm, sd] = e.start.split("-").map(Number);
-  const [, em, ed] = e.end.split("-").map(Number);
-  const yr = e.status === "past" ? ` ’${String(e.year).slice(2)}` : "";
-  if (e.start === e.end) return { big: String(sd), small: MON[sm - 1] + yr };
-  if (sm === em) return { big: `${sd}–${ed}`, small: MON[sm - 1] + yr };
-  return { big: `${sd} ${MON[sm - 1]}`, small: `– ${ed} ${MON[em - 1]}${yr}` };
+// The two agenda features used to be hand-written HTML for whichever event was
+// next when the page was authored. They then advertised a finished event for
+// weeks. Both are now built from the upcoming set, so they move on their own.
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function longRange(e) {
+  const [sy, sm, sd] = e.start.split("-").map(Number);
+  const [ey, em, ed] = e.end.split("-").map(Number);
+  if (e.start === e.end) return `${sd} ${MONTHS[sm - 1]} ${sy}`;
+  if (sy === ey && sm === em) return `${sd}–${ed} ${MONTHS[sm - 1]} ${sy}`;
+  if (sy === ey) return `${sd} ${MONTHS[sm - 1]} – ${ed} ${MONTHS[em - 1]} ${sy}`;
+  return `${sd} ${MONTHS[sm - 1]} ${sy} – ${ed} ${MONTHS[em - 1]} ${ey}`;
+}
+// The venue line already exists inside each event body — read it, don't retype
+// it. The first span in that block is the date range, so skip anything that
+// looks like a date and take the line carrying a street address.
+function venueOf(e) {
+  const spans = [...e.body.matchAll(/<span>(?:<svg[\s\S]*?<\/svg>)?([^<]+)<\/span>/g)].map(m => m[1].trim());
+  const isDate = t => /→/.test(t) || /\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun),/.test(t);
+  return spans.find(t => !isDate(t) && /\d{4}\s|\d{4}\b.*[A-Za-z]|straat|plein|laan|Centre/i.test(t) && /[A-Za-z]{4}/.test(t)) || "";
+}
+// Ghent/Gent are the same city — don't print it twice under the venue.
+function namesCity(venue, city) {
+  if (!venue) return false;
+  const norm = t => t.toLowerCase().replace(/ghent/g, "gent");
+  return norm(venue).includes(norm(city));
+}
+function agendaFeature(e, kicker) {
+  if (!e) return "";
+  const img = e.image
+    ? `<figure class="frame sweep"><img src="../${e.image.src}" alt="${e.image.alt}" loading="lazy" decoding="async" width="${e.image.w}" height="${e.image.h}"></figure>`
+    : "";
+  return `<article class="agenda-feature fx${img ? "" : " agenda-feature-plain"}" id="spotlight-${e.id}">
+        ${img}
+        <div class="agenda-feature-copy">
+          <p class="agenda-feature-kicker"><i aria-hidden="true"></i>${kicker}</p>
+          <h3>${e.title}</h3>
+          ${e.blurb ? `<p class="lead">${e.blurb}</p>` : ""}
+          <div class="agenda-venue"><small>${longRange(e)}</small><strong>${venueOf(e) || e.city}</strong>${namesCity(venueOf(e), e.city) ? "" : `<span>${e.city}</span>`}</div>
+          <p style="margin:0"><a class="button button-yellow" href="#${e.id}">Full event details <span>↓</span></a></p>
+        </div>
+      </article>`;
+}
+
+// The "go deeper" scene picks the next upcoming event that actually has a
+// picture and is not already the lead feature. Its lead sentence is read out of
+// the event body, so the scene can never describe an event it is not showing.
+const deeper = upcoming.slice(1).find(e => e.image) || upcoming.slice(1)[0];
+function leadOf(e) {
+  const m = e.body.match(/<p\s*>([\s\S]*?)<\/p>/);
+  return m ? m[1].replace(/<[^>]+>/g, "").trim() : "";
 }
 
 function eventDetail(e) {
@@ -95,55 +129,36 @@ const body = `
     </nav>
 
     <section class="scene-pad t-paper" id="agenda" data-scene data-cue="upcoming">
-      <p class="label fx">Upcoming events · ${upcoming.length} dates</p>
+      <p class="label fx">Upcoming events${upcoming.length ? ` · ${upcoming.length} date${upcoming.length > 1 ? "s" : ""}` : ""}</p>
       <div class="intro">
         <h2 class="fx">Next on<br><em class="solo">the floor.</em></h2>
         <div class="intro-copy fx">
-          <p>Free city events open the season, followed by intensive training, the Shoonya open day and ABC’s new stage production in November.</p>
+          <p>Open days, starter series, workshops and full stage productions — every ABC date in Ghent, across Belgium and on the road.</p>
           <p>Programme times can vary across multi-day events. Use the event organiser’s final schedule before travelling.</p>
         </div>
       </div>
 
-      <article class="agenda-feature fx" id="spotlight-gentse-feesten-2026">
-        <figure class="frame sweep">
-          <img src="../assets/img/events/gentse-feesten-2026.jpg" alt="Swapnil leading an outdoor Indian dance session at Gentse Feesten" loading="lazy" decoding="async" width="1400" height="933">
-        </figure>
-        <div class="agenda-feature-copy">
-          <p class="agenda-feature-kicker"><i aria-hidden="true"></i>Next · free dance sessions</p>
-          <h3>Gentse Feesten</h3>
-          <ul class="agenda-schedule" aria-label="Gentse Feesten programme">
-            <li><time datetime="2026-07-23T18:00"><strong>Thu 23 Jul</strong><span>18:00</span></time><b>Bhangra</b></li>
-            <li><time datetime="2026-07-26T18:00"><strong>Sun 26 Jul</strong><span>18:00</span></time><b>Bollyfolk</b></li>
-            <li><time datetime="2026-07-26T19:00"><strong>Sun 26 Jul</strong><span>19:00</span></time><b>Garba</b></li>
-          </ul>
-          <div class="agenda-venue"><small>All three sessions</small><strong>Baudelopark · Het Bal</strong><span>Ghent · Free · Just show up</span></div>
-          <p style="margin:0"><a class="button button-yellow" href="#gentse-feesten-2026">Full event details <span>↓</span></a></p>
-        </div>
-      </article>
+      ${agendaFeature(upcoming[0], "Next on the floor")}
 
       <div class="event-board" data-event-library>
-        <p class="event-board-lead fx">All ${upcoming.length} current and future dates, in order — each with its practical details and calendar file.</p>
+        <p class="event-board-lead fx">${upcoming.length
+          ? `All ${upcoming.length} current and future date${upcoming.length > 1 ? "s" : ""}, in order — each with its practical details and calendar file.`
+          : `The next season is being programmed. Every past date is in the archive below, and the <a href="../contact/">contact page</a> is the fastest way to hear about the next one first.`}</p>
         ${upcoming.map(eventDetail).join("\n        ")}
       </div>
     </section>
 
-    <section class="scene-pad t-yellow media-led" data-scene data-scrub data-cue="go deeper">
-      <figure class="frame fx-scale" style="aspect-ratio: 4/5; align-self:start; max-width: 460px">
-        <img src="../assets/img/events/summer-intensive-2026.png" alt="Indian Dance Summer Intensive with Swapnil Dagliya, 26–29 August in Ghent — official artwork" loading="lazy" decoding="async" width="1080" height="1350">
-      </figure>
+    ${deeper ? `<section class="scene-pad t-yellow media-led" data-scene data-scrub data-cue="go deeper">
+      ${deeper.image ? `<figure class="frame fx-scale" style="aspect-ratio: 4/5; align-self:start; max-width: 460px">
+        <img src="../${deeper.image.src}" alt="${deeper.image.alt}" loading="lazy" decoding="async" width="${deeper.image.w}" height="${deeper.image.h}">
+      </figure>` : ""}
       <div>
-        <p class="label fx">26–29 August · Ghent</p>
-        <h2 class="fx">Go deeper<br><em class="solo">for four days.</em></h2>
-        <p class="lead fx">The Indian Dance Summer Intensive moves from Punjabi folk mechanics and semi-classical rhythm to prop-based folk fusion and a Rajasthani finale.</p>
-        <div class="act-list">
-          <article class="fx"><small>WED</small><span><strong>Bhangra &amp; Jhoomar</strong><em>18:30</em></span></article>
-          <article class="fx"><small>THU</small><span><strong>Semi-Classical &amp; Teentaal</strong><em>18:30</em></span></article>
-          <article class="fx"><small>FRI</small><span><strong>Tippani &amp; Bihu</strong><em>18:30</em></span></article>
-          <article class="fx"><small>SAT</small><span><strong>Rajasthani finale</strong><em>Day session</em></span></article>
-        </div>
-        <p class="fx" style="margin-top:1.4rem"><a class="button button-dark" href="#indian-dance-summer-intensive-2026">Full programme &amp; pricing <span>↑</span></a></p>
+        <p class="label fx">${longRange(deeper)} · ${deeper.city}</p>
+        <h2 class="fx">Go deeper<br><em class="solo">with us.</em></h2>
+        <p class="lead fx">${leadOf(deeper)}</p>
+        <p class="fx" style="margin-top:1.4rem"><a class="button button-dark" href="#${deeper.id}">Full programme &amp; pricing <span>↑</span></a></p>
       </div>
-    </section>
+    </section>` : ""}
 
     <section class="perf-break t-night-2 spot" data-scene data-stage data-cue="meet us there">
       <div>

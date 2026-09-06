@@ -1,4 +1,29 @@
 import { page, SITE, marquee } from "../shell.mjs";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { eventSets } from "../events.mjs";
+
+// The homepage list used to be hand-written <li>s and kept showing an event
+// that had already happened. It now reads the same derived upcoming set as
+// /whats-on/, so both pages age together.
+const { upcoming } = eventSets(JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8")).events);
+const MON3 = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+function dateChip(e) {
+  const [, sm, sd] = e.start.split("-").map(Number);
+  const [, em, ed] = e.end.split("-").map(Number);
+  const day = e.start === e.end ? String(sd).padStart(2, "0")
+            : sm === em ? `${String(sd).padStart(2, "0")}\u2013${String(ed).padStart(2, "0")}`
+            : String(sd).padStart(2, "0");
+  return `<time datetime="${e.start}"><b>${day}</b><span>${MON3[sm - 1]}</span></time>`;
+}
+function dateRow(e) {
+  const preview = e.image ? ` data-preview="${e.image.src}"` : "";
+  const sub = e.blurb ? `<small>${e.blurb}</small>` : "";
+  return `<li class="fx"><a href="whats-on/#${e.id}"${preview}>
+          ${dateChip(e)}
+          <span><strong>${e.title.split(/\s+[·—]\s+/)[0]}</strong>${sub}</span>
+          <span class="city">${e.city}</span><b class="go" aria-hidden="true">\u2197</b></a></li>`;
+}
 
 const def = {
   depth: 0,
@@ -110,20 +135,9 @@ const body = `
         </div>
         <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
       </div>
-      <ol class="date-list">
-        <li class="fx"><a href="whats-on/#benenwerk-2026" data-preview="assets/img/events/benenwerk-2026.jpg">
-          <time datetime="2026-08-08"><b>08</b><span>AUG</span></time>
-          <span><strong>Benenwerk</strong><small>An evening of Indian dance</small></span>
-          <span class="city">Bruges</span><b class="go" aria-hidden="true">↗</b></a></li>
-        <li class="fx"><a href="whats-on/#opendeurdag-2026" data-preview="assets/img/events/opendeurdag-2026.jpg">
-          <time datetime="2026-09-13"><b>13</b><span>SEP</span></time>
-          <span><strong>Opendeurdag</strong><small>Season opener · free entry</small></span>
-          <span class="city">Ghent</span><b class="go" aria-hidden="true">↗</b></a></li>
-        <li class="fx"><a href="whats-on/#sangam-2026">
-          <time datetime="2026-11-07"><b>07–08</b><span>NOV</span></time>
-          <span><strong>Sangam</strong><small>A new ABC Indian dance production</small></span>
-          <span class="city">Ghent</span><b class="go" aria-hidden="true">↗</b></a></li>
-      </ol>
+      ${upcoming.length ? `<ol class="date-list">
+        ${upcoming.slice(0, 4).map(dateRow).join("\n        ")}
+      </ol>` : `<p class="lead fx">The next season is being programmed — the full archive of where we have danced is on the agenda page.</p>`}
       <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See all upcoming dates <span>→</span></a></p>
     </section>
 

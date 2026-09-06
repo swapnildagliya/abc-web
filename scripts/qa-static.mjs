@@ -3,6 +3,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { eventSets, currentEventSchemas, BUILD_TODAY } from "../src/events.mjs";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 let pass = 0, fail = 0;
@@ -70,13 +71,29 @@ for (const p of pages) {
 const whatsOn = readFileSync(join(ROOT, "whats-on/index.html"), "utf8");
 const codexEvents = JSON.parse(readFileSync(join(ROOT, "src/data/events.json"), "utf8"));
 check("44 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 44);
-check("7 upcoming", (whatsOn.match(/data-status="upcoming"/g) || []).length === 7);
-check("37 past", (whatsOn.match(/data-status="past"/g) || []).length === 37);
+// Counts are DERIVED, not frozen: a hardcoded "7 upcoming" silently becomes a
+// lie the morning after an event ends, which is exactly how three finished
+// events stayed on the agenda. Compare the page against the same date logic
+// the build uses instead.
+const sets = eventSets(codexEvents.events);
+check(`${sets.upcoming.length} upcoming (as of ${BUILD_TODAY})`, (whatsOn.match(/data-status="upcoming"/g) || []).length === sets.upcoming.length);
+check(`${sets.past.length} past (as of ${BUILD_TODAY})`, (whatsOn.match(/data-status="past"/g) || []).length === sets.past.length);
+check("no finished event is still labelled upcoming", sets.upcoming.every(e => e.end >= BUILD_TODAY));
 for (const e of codexEvents.events) check(`event anchor #${e.id}`, whatsOn.includes(`id="${e.id}"`));
-check("8 Event schemas", (whatsOn.match(/"@type":"Event"/g) || []).length === 8);
+check("Event schemas match the upcoming set", (whatsOn.match(/"@type":"Event"/g) || []).length === currentEventSchemas(codexEvents.schemas).length);
 check("ics links present", (whatsOn.match(/abc-calendar\/[a-z0-9-]+\.ics/g) || []).length >= 40);
 check("Kathak stays North Indian", !/South India.?s Kathak/i.test(whatsOn));
-check("Summer Intensive uses its artwork", whatsOn.includes("summer-intensive-2026.png") && !whatsOn.includes("dance-yoga-summer-retreat-2026.jpg"));
+// No past event may supply a picture to the agenda, and no event may borrow
+// another event's photo — one shared fallback image is how every ABC date
+// ended up illustrated by the same July crowd shot.
+// Scoped to the agenda itself: the page hero legitimately carries a credited
+// archive shot ("Benenwerk · Bruges"), which is mood, not a listing.
+const agenda = whatsOn.slice(whatsOn.indexOf('id="agenda"'), whatsOn.indexOf('id="past-events"') + 1 || whatsOn.length);
+const pastImages = sets.past.filter(e => e.image).map(e => e.image.src);
+check("no past event's photo is shown in the agenda", pastImages.every(src => !agenda.includes(src)));
+const usedEventPhotos = [...agenda.matchAll(/assets\/img\/events\/[a-z0-9._-]+/g)].map(m => m[0].split("/").pop());
+check("every agenda photo belongs to an upcoming event",
+  usedEventPhotos.every(f => sets.upcoming.some(e => e.image && e.image.src.endsWith(f))));
 check("past never labelled upcoming", !/data-status="past"[^>]*data-status="upcoming"/.test(whatsOn));
 
 /* ---------- lessons ---------- */
