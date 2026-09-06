@@ -54,7 +54,7 @@ function namesCity(venue, city) {
 function agendaFeature(e, kicker) {
   if (!e) return "";
   const img = e.image
-    ? `<figure class="frame sweep"><img src="../${e.image.src}" alt="${e.image.alt}" loading="lazy" decoding="async" width="${e.image.w}" height="${e.image.h}"></figure>`
+    ? `<figure class="frame sweep"><img src="../${e.image.src}" alt="${e.image.alt}" loading="lazy" decoding="async" width="${e.image.w}" height="${e.image.h}">${e.image.credit ? `<figcaption><span>\u00A9 ${e.image.credit}</span></figcaption>` : ""}</figure>`
     : "";
   return `<article class="agenda-feature fx${img ? "" : " agenda-feature-plain"}" id="spotlight-${e.id}">
         ${img}
@@ -150,7 +150,7 @@ const body = `
 
     ${deeper ? `<section class="scene-pad t-yellow media-led" data-scene data-scrub data-cue="go deeper">
       ${deeper.image ? `<figure class="frame fx-scale" style="aspect-ratio: 4/5; align-self:start; max-width: 460px">
-        <img src="../${deeper.image.src}" alt="${deeper.image.alt}" loading="lazy" decoding="async" width="${deeper.image.w}" height="${deeper.image.h}">
+        <img src="../${deeper.image.src}" alt="${deeper.image.alt}" loading="lazy" decoding="async" width="${deeper.image.w}" height="${deeper.image.h}">${deeper.image.credit ? `<figcaption><span>\u00A9 ${deeper.image.credit}</span></figcaption>` : ""}
       </figure>` : ""}
       <div>
         <p class="label fx">${longRange(deeper)} · ${deeper.city}</p>

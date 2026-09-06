@@ -16,7 +16,7 @@
   --bone: oklch(98% .008 96);
   --paper: oklch(99% .004 96);
   --ink: oklch(17% .018 64);
-  --red: oklch(61% .235 29);
+  --red: #E5231B; /* ABC bindu red, D-066: this exact value only, never recoloured */
   --muted: oklch(44% .02 70);
   --muted-light: oklch(78% .02 96);
   --line: color-mix(in srgb, var(--ink) 20%, transparent);
