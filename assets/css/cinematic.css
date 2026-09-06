@@ -282,8 +282,23 @@
   .js:not(.reduce) .gather { height: auto; }
   .js:not(.reduce) .gather-fix { position: static; height: auto; }
   .gather .stage { position: relative; inset: auto; perspective: none; }
+  /* Below the stack point the collage drops BELOW the copy, so there is no
+     second column left to stay out of — and 42vw then squeezes the whole
+     block into the left 42% of the screen (164px of a 390px phone, with the
+     headline, the date row and the CTA all wrapping inside it). Give the copy
+     the full measure back. */
+  .gather-copy { max-width: 34rem; }
   .collage { position: relative; inset: auto; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: 2rem; }
-  .collage figure { position: static; width: auto !important; opacity: 1; transform: none; aspect-ratio: 3/2; }
+  /* The inline aspect-ratio on the Kathak frame (2/3) beats this rule on
+     specificity, so it stayed portrait in a 2-col grid: ragged rows, and the
+     two bottom captions printed over each other. Force one ratio here. */
+  /* `position: static` here left every figcaption anchoring to the collage
+     instead of its own frame, so all four captions stacked in one corner and
+     printed over each other. Keep the figure positioned; the inline top/right
+     offsets are ignored in grid flow anyway. The inline aspect-ratio on the
+     Kathak frame (2/3) also beats this rule on specificity — force one ratio
+     so the grid rows stay level. */
+  .collage figure { position: relative; inset: auto !important; width: auto !important; opacity: 1; transform: none; aspect-ratio: 3/2 !important; }
 }
 
 /* ============================================================
