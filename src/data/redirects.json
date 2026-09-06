@@ -537,11 +537,11 @@
  },
  {
   "route": "lets-work-together",
-  "target": "../contact/",
-  "canonical": "https://www.abcbollywoodbelgium.com/contact/",
+  "target": "../contact/#book",
+  "canonical": "https://www.abcbollywoodbelgium.com/contact/#book",
   "title": "Let&amp;#x27;s Work Together for Indian dance classes, workshops &amp;amp; performances in Ghent, Belgium",
-  "desc": "This ABC page now lives in Contact ABC.",
-  "dest": "Contact ABC"
+  "desc": "This ABC page now lives in Book ABC.",
+  "dest": "Book ABC"
  },
  {
   "route": "light-tech-pack-gidf-2026",
@@ -561,11 +561,11 @@
  },
  {
   "route": "private-online-coaching",
-  "target": "../learn/#online",
-  "canonical": "https://www.abcbollywoodbelgium.com/learn/#online",
+  "target": "../contact/#coaching",
+  "canonical": "https://www.abcbollywoodbelgium.com/contact/#coaching",
   "title": "Private online coaching",
-  "desc": "This ABC page now lives in Classes and learning.",
-  "dest": "Classes and learning"
+  "desc": "This ABC page now lives in Private coaching.",
+  "dest": "Private coaching"
  },
  {
   "route": "productions",

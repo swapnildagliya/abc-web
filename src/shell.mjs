@@ -27,7 +27,7 @@ export function head(page, rel) {
   <script>document.documentElement.className="js"</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(page.title)}</title>
-  <link rel="canonical" href="${page.canonical}">
+  <link rel="canonical" href="${page.canonical}">${page.noindex ? `\n  <meta name="robots" content="noindex,follow">` : ""}
   <meta name="description" content="${esc(page.desc)}">
   <meta name="theme-color" content="${page.themeColor || "#10121A"}">
   <link rel="icon" href="${rel}assets/img/abc-mark-clean.png" type="image/png">

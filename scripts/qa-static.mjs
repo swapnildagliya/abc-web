@@ -28,7 +28,11 @@ function walkRoutes(dir = ROOT, base = "") {
 const routes = walkRoutes();
 const fullPages = routes.filter(r => !readFileSync(join(ROOT, r, "index.html"), "utf8").includes('http-equiv="refresh"'));
 const stubs = routes.filter(r => readFileSync(join(ROOT, r, "index.html"), "utf8").includes('http-equiv="refresh"'));
-check("18 full pages (17 route dirs + homepage)", fullPages.length === 17, `got ${fullPages.length}: ${fullPages.join(", ")}`);
+// 18 route dirs since 2026-09-06: contact/thank-you/ is where a no-JS form POST
+// lands. It is noindex and deliberately absent from sitemap.xml.
+check("19 full pages (18 route dirs + homepage)", fullPages.length === 18, `got ${fullPages.length}: ${fullPages.join(", ")}`);
+check("thank-you page is noindex", readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8").includes('name="robots" content="noindex'));
+check("thank-you page stays out of the sitemap", !readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes("thank-you"));
 check("80 redirect stubs", stubs.length === 80, `got ${stubs.length}`);
 check("homepage exists", existsSync(join(ROOT, "index.html")));
 check("404.html exists", existsSync(join(ROOT, "404.html")));
@@ -95,6 +99,23 @@ const usedEventPhotos = [...agenda.matchAll(/assets\/img\/events\/[a-z0-9._-]+/g
 check("every agenda photo belongs to an upcoming event",
   usedEventPhotos.every(f => sets.upcoming.some(e => e.image && e.image.src.endsWith(f))));
 check("past never labelled upcoming", !/data-status="past"[^>]*data-status="upcoming"/.test(whatsOn));
+
+/* ---------- enquiry forms ---------- */
+const contact = readFileSync(join(ROOT, "contact/index.html"), "utf8");
+check("contact carries both enquiry forms", (contact.match(/class="enquiry-form"/g) || []).length === 2);
+check("booking form anchor #book", contact.includes('id="book-abc"') && contact.includes('id="book"'));
+check("coaching form anchor #coaching", contact.includes('id="coaching"'));
+check("forms post to Web3Forms", (contact.match(/action="https:\/\/api\.web3forms\.com\/submit"/g) || []).length === 2);
+check("forms carry an access key", (contact.match(/name="access_key" value="[0-9a-f-]{36}"/g) || []).length === 2);
+// Must be absolute: Web3Forms redirects server-side, so a relative path would
+// resolve against api.web3forms.com.
+check("forms have an absolute no-JS redirect to the thank-you page", (contact.match(/name="redirect" value="https:\/\/[^"]+\/contact\/thank-you\/"/g) || []).length === 2);
+check("forms carry a honeypot", (contact.match(/name="botcheck"/g) || []).length === 2);
+check("each form has a distinct subject", new Set(contact.match(/name="subject" value="([^"]+)"/g) || []).size === 2);
+// D-074: no address may appear in markup we author, on any page.
+for (const [route, html] of Object.entries({ "contact/": contact, "contact/thank-you/": readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8") })) {
+  check(`no email address in ${route}`, !/mailto:|[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(html));
+}
 
 /* ---------- lessons ---------- */
 const lessons = JSON.parse(readFileSync(join(ROOT, "src/data/lessons.json"), "utf8"));

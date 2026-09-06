@@ -752,3 +752,70 @@
 
 /* ready-class hides pre-paint flash for scrubbed heroes */
 .js:not(.reduce) .overture-video { --p: 0; }
+
+/* ============================================================
+   ENQUIRY FORMS · /contact/ (booking + private coaching)
+   Light scenes only (t-bone / t-paper), so one ink-on-paper
+   treatment covers both. Controls are deliberately large: on a
+   phone this is the page's real work, not decoration.
+   ============================================================ */
+.form-scene .enquiry-form { margin-top: clamp(2rem, 4vw, 3rem); max-width: 54rem; }
+.field-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.1rem 1.4rem; }
+.field { margin: 0; display: flex; flex-direction: column; gap: .45rem; }
+.field[data-wide] { grid-column: 1 / -1; }
+.field label,
+.field-check label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.field label abbr { color: var(--red); text-decoration: none; border: 0; }
+.field input,
+.field select,
+.field textarea {
+  font: inherit; font-size: 1rem; color: var(--ink); background-color: var(--paper);
+  border: 1.5px solid var(--line); border-radius: 8px; padding: .8rem .9rem; width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+}
+/* background-color, not the `background` shorthand — the shorthand wipes the
+   select's chevron (a background-image) set a few rules below. */
+.t-bone .field input, .t-bone .field select, .t-bone .field textarea { background-color: #fff; }
+.field textarea { resize: vertical; min-height: 8rem; }
+.field select { appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 1.1rem center, right .85rem center; background-size: .35rem .35rem; background-repeat: no-repeat;
+  padding-right: 2.2rem;
+}
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: none; border-color: var(--blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 22%, transparent);
+}
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"],
+.field textarea[aria-invalid="true"] { border-color: var(--red); }
+.field-hint { font-size: .8rem; color: var(--muted); letter-spacing: 0; text-transform: none; font-weight: 400; }
+
+/* honeypot — off-screen rather than display:none, which some bots skip */
+.enquiry-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.field-check { display: flex; align-items: flex-start; gap: .7rem; margin: 1.3rem 0 0; }
+.field-check input { width: 1.15rem; height: 1.15rem; margin-top: .1rem; accent-color: var(--blue); flex: none; }
+.field-check label { text-transform: none; letter-spacing: 0; font-weight: 400; font-size: .95rem; color: var(--muted); }
+
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.4rem; margin-top: 1.8rem; }
+.form-status { margin: 0; font-size: .95rem; font-weight: 600; }
+.form-status[data-state="sending"] { color: var(--muted); }
+.form-status[data-state="ok"] { color: var(--blue); }
+.form-status[data-state="error"] { color: var(--red); }
+.form-fallback { margin: 1.1rem 0 0; font-size: .88rem; color: var(--muted); }
+.form-fallback a { color: inherit; }
+
+/* A submitted form is replaced by its confirmation — leaving the fields
+   sitting there invites a second, identical submission. */
+.enquiry-form[data-sent] .field-grid,
+.enquiry-form[data-sent] .field-check,
+.enquiry-form[data-sent] .form-foot button,
+.enquiry-form[data-sent] .form-fallback { display: none; }
+.enquiry-form[data-sent] .form-status { font-size: 1.15rem; }
+
+@media (max-width: 640px) {
+  .field-grid { grid-template-columns: 1fr; }
+}

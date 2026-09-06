@@ -1,4 +1,5 @@
 import { page, SITE, routeBar, marquee } from "../shell.mjs";
+import { enquiryForm, BOOKING_FIELDS, COACHING_FIELDS, FALLBACK_URL } from "../forms.mjs";
 
 const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
@@ -25,7 +26,7 @@ const def = {
   schemas: [FAQ_SCHEMA],
 };
 
-const FORM = `https://www.shoonyadance.com/contact`;
+const FORM = FALLBACK_URL; // still correct for weekly classes and festival enquiries — Shoonya owns those
 
 const body = `
     <section class="inner-hero t-blue spot" id="top" aria-labelledby="page-title" data-scene data-stage data-cue="hello">
@@ -36,7 +37,8 @@ const body = `
         <h1 id="page-title"><span class="mask-line"><span>Tell us what</span></span><span class="mask-line"><span><em class="solo">you’re planning.</em></span></span></h1>
         <p class="inner-hero-lead fx">A date, an event, a class question or the beginning of an idea. Give us the useful details; we will help shape the next step.</p>
         <div class="button-row fx">
-          <a class="button button-yellow" href="#start">Choose your enquiry <span>↓</span></a>
+          <a class="button button-yellow" href="#book">Invite us to perform <span>↓</span></a>
+          <a class="button button-glass" href="#start">Other enquiries <span>↓</span></a>
         </div>
       </div>
       <div class="inner-hero-visual contain" style="align-self:end">
@@ -53,15 +55,50 @@ const body = `
       <div class="intro">
         <h2 class="fx">What kind<br><em class="solo">of question?</em></h2>
         <div class="intro-copy fx">
-          <p>ABC uses the Shoonya Dance Centre contact form so enquiries stay in one place. Choose your route below, then include the details listed for it.</p>
+          <p>Two of these are forms on this page. Weekly classes and festival enquiries belong to Shoonya Dance Centre, so those routes hand you over there.</p>
           <p>We normally reply within three working days.</p>
         </div>
       </div>
       <div class="contact-options">
-        <article class="contact-option fx"><small>01 · Booking</small><h3>Performance or workshop</h3><p>Include the date, city, venue, event type, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Open contact form <span>↗</span></a></article>
-        <article class="contact-option fx"><small>02 · Learning</small><h3>Class or coaching</h3><p>Tell us the class, your experience, whether you are in Ghent or online, and the question you need answered.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Ask about classes <span>↗</span></a></article>
-        <article class="contact-option fx"><small>03 · Festival</small><h3>Artist or festival idea</h3><p>Mention Ghent India Dance Festival and whether you are writing about an artist proposal, partnership, access or volunteering.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Contact the festival <span>↗</span></a></article>
+        <article class="contact-option fx"><small>01 · Booking</small><h3>Performance or workshop</h3><p>A theatre, a festival, a company party or a wedding. Bring the date, city, venue, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="#book">Invite us to perform <span>↓</span></a></article>
+        <article class="contact-option fx"><small>02 · Coaching</small><h3>One to one, online or here</h3><p>Private sessions with Swapnil for a performance, a wedding, technique or confidence on stage.</p><a class="button button-dark" href="#coaching">Ask about coaching <span>↓</span></a></article>
+        <article class="contact-option fx"><small>03 · Classes &amp; festival</small><h3>Weekly classes or a GIDF idea</h3><p>Weekly classes run at Shoonya Dance Centre, and the Ghent India Dance Festival keeps its own inbox for artist proposals, partnerships and volunteering.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Go to the Shoonya form <span>↗</span></a></article>
       </div>
+    </section>
+
+    <section class="scene-pad t-bone form-scene" id="book" data-scene data-cue="invite us">
+      <p class="label fx">01 · Booking</p>
+      <div class="intro">
+        <h2 class="fx">Invite us<br><em class="solo">to perform.</em></h2>
+        <div class="intro-copy fx">
+          <p>Forty-plus stages since 2017 — theatres, city squares, festivals, company evenings and weddings, from a solo to the full company.</p>
+          <p>Nothing here is binding. A rough date and a rough budget are enough to start a useful conversation.</p>
+        </div>
+      </div>
+      ${enquiryForm({
+        id: "book-abc",
+        subject: "ABC website — performance / workshop booking",
+        submit: "Send the booking enquiry",
+        fields: BOOKING_FIELDS,
+        consent: "Send me occasional ABC news — new shows, festival dates and classes. No more than a few times a year.",
+      })}
+    </section>
+
+    <section class="scene-pad t-paper form-scene" id="coaching" data-scene data-cue="one to one">
+      <p class="label fx">02 · Coaching</p>
+      <div class="intro">
+        <h2 class="fx">One to one,<br><em class="solo">at your pace.</em></h2>
+        <div class="intro-copy fx">
+          <p>Private coaching with Swapnil — online from anywhere, or in person in Ghent. A first dance, a stage piece, or the technique underneath whichever style you are learning.</p>
+          <p>Tell us where you are starting from; the answer comes back with a format and a next step, not a price list.</p>
+        </div>
+      </div>
+      ${enquiryForm({
+        id: "coaching",
+        subject: "ABC website — private coaching enquiry",
+        submit: "Send the coaching enquiry",
+        fields: COACHING_FIELDS,
+      })}
     </section>
 
     <section class="perf-break t-night spot" data-scene data-stage data-cue="start with hello">
@@ -89,7 +126,7 @@ const body = `
         <div><b>3</b><span>Working days to reply</span></div>
         <div><b>Ghent</b><span>Home base</span></div>
         <div><b>Europe</b><span>Bookings and workshops</span></div>
-        <div><b>One</b><span>Contact route</span></div>
+        <div><b>Two</b><span>Forms on this page</span></div>
       </div>
     </section>
 
@@ -101,7 +138,7 @@ const body = `
           <p><strong>Shoonya Dance Centre</strong><br>Stapelplein 41<br>9000 Ghent, Belgium</p>
           <p>Classes, rehearsals and much of the festival programme begin here. Event bookings can travel across Belgium and internationally.</p>
           <div class="button-row">
-            <a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Open contact form <span>↗</span></a>
+            <a class="button button-dark" href="#book">Invite us to perform <span>↑</span></a>
             <a class="button button-outline" href="../whats-on/">See upcoming dates <span>→</span></a>
           </div>
         </div>
@@ -125,8 +162,44 @@ const body = `
         <h2 class="fx">Start with the<br><em class="solo">useful details.</em></h2>
         <p class="fx">Date, city and audience for a booking. Experience and goals for a class. The kind of idea for the festival.</p>
       </div>
-      <p class="fx"><a class="button button-yellow" href="${FORM}" target="_blank" rel="noopener">Open the contact form <span>↗</span></a></p>
+      <p class="fx"><a class="button button-yellow" href="#book">Invite us to perform <span>↑</span></a></p>
     </section>`;
 
-export const outputs = () => [{ path: "contact/index.html", html: page(def, body) }];
+// Where a native (no-JS) form POST lands. Web3Forms redirects here itself, so
+// people without JavaScript still get a branded confirmation rather than the
+// Web3Forms default page. noindex: it is a form endpoint, not a destination.
+const thanksDef = {
+  ...def,
+  depth: 2,
+  title: "Message sent — ABC a bollywood company",
+  desc: "Your enquiry has reached ABC a bollywood company.",
+  canonical: `${SITE}/contact/thank-you/`,
+  noindex: true,
+  cinematic: false,
+  rail: false,
+  firstCue: "thank you",
+  headerCta: { href: "../../whats-on/", label: "What's on", glyph: "→" },
+  schemas: [],
+};
+
+const thanksBody = `
+    <section class="scene-pad t-blue thanks-scene" data-scene data-cue="thank you">
+      <p class="label fx" style="color:var(--yellow)">Message sent</p>
+      <div class="intro">
+        <h2 class="fx">Thank you.<br><em class="solo">We have it.</em></h2>
+        <div class="intro-copy fx">
+          <p>Your enquiry is with us. We normally reply within three working days — if the date is tight, say so in a follow-up and we will move it up the pile.</p>
+          <p>Nothing is booked yet. The reply comes back with questions, options and what the event would actually involve.</p>
+        </div>
+      </div>
+      <div class="button-row fx">
+        <a class="button button-yellow" href="../../whats-on/">See upcoming dates <span>→</span></a>
+        <a class="button button-outline" href="../../">Back to the homepage <span>→</span></a>
+      </div>
+    </section>`;
+
+export const outputs = () => [
+  { path: "contact/index.html", html: page(def, body) },
+  { path: "contact/thank-you/index.html", html: page(thanksDef, thanksBody) },
+];
 export default { def, body: () => page(def, body) };

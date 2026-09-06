@@ -577,4 +577,59 @@
   }
   openFragment();
   addEventListener("hashchange", openFragment);
+
+  /* ---------- enquiry forms (progressive enhancement) ----------
+     The forms POST natively to Web3Forms and land on /contact/thank-you/,
+     so they work with this file switched off. Here we upgrade them to an
+     inline submit: no page change, no lost scroll position, and the reply
+     appears where the button was. If anything at all goes wrong we fall
+     back to letting the browser submit the form the ordinary way. */
+  document.querySelectorAll("form[data-web3form]").forEach(form => {
+    const status = form.querySelector(".form-status");
+    const button = form.querySelector("button[type=submit]");
+    if (!status || !button) return;
+
+    const say = (state, text) => { status.dataset.state = state; status.textContent = text; };
+
+    // `novalidate` is on the markup so we can style our own invalid state;
+    // ask the browser for the verdict ourselves before sending anything.
+    form.addEventListener("submit", async event => {
+      form.querySelectorAll("[aria-invalid]").forEach(el => el.removeAttribute("aria-invalid"));
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        const bad = [...form.elements].filter(el => el.willValidate && !el.checkValidity());
+        bad.forEach(el => el.setAttribute("aria-invalid", "true"));
+        bad[0]?.focus();
+        say("error", bad.length === 1 ? "One field still needs an answer." : `${bad.length} fields still need an answer.`);
+        return;
+      }
+
+      event.preventDefault();
+      button.disabled = true;
+      say("sending", "Sending…");
+
+      try {
+        const data = new FormData(form);
+        data.delete("redirect"); // that field is only for the no-JS path
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: data,
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || out.success === false) throw new Error(out.message || `HTTP ${res.status}`);
+        form.setAttribute("data-sent", "");
+        say("ok", "Sent. We normally reply within three working days.");
+        status.setAttribute("tabindex", "-1");
+        status.focus();
+      } catch (err) {
+        // Never strand the message: hand the page back to the native POST,
+        // which lands on the branded thank-you page.
+        button.disabled = false;
+        say("error", "That did not send. Trying again the ordinary way…");
+        form.removeAttribute("novalidate");
+        setTimeout(() => form.submit(), 900);
+      }
+    });
+  });
 })();

@@ -75,7 +75,8 @@
         <h1 id="page-title"><span class="mask-line"><span>Tell us what</span></span><span class="mask-line"><span><em class="solo">you’re planning.</em></span></span></h1>
         <p class="inner-hero-lead fx">A date, an event, a class question or the beginning of an idea. Give us the useful details; we will help shape the next step.</p>
         <div class="button-row fx">
-          <a class="button button-yellow" href="#start">Choose your enquiry <span>↓</span></a>
+          <a class="button button-yellow" href="#book">Invite us to perform <span>↓</span></a>
+          <a class="button button-glass" href="#start">Other enquiries <span>↓</span></a>
         </div>
       </div>
       <div class="inner-hero-visual contain" style="align-self:end">
@@ -94,15 +95,183 @@
       <div class="intro">
         <h2 class="fx">What kind<br><em class="solo">of question?</em></h2>
         <div class="intro-copy fx">
-          <p>ABC uses the Shoonya Dance Centre contact form so enquiries stay in one place. Choose your route below, then include the details listed for it.</p>
+          <p>Two of these are forms on this page. Weekly classes and festival enquiries belong to Shoonya Dance Centre, so those routes hand you over there.</p>
           <p>We normally reply within three working days.</p>
         </div>
       </div>
       <div class="contact-options">
-        <article class="contact-option fx"><small>01 · Booking</small><h3>Performance or workshop</h3><p>Include the date, city, venue, event type, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Open contact form <span>↗</span></a></article>
-        <article class="contact-option fx"><small>02 · Learning</small><h3>Class or coaching</h3><p>Tell us the class, your experience, whether you are in Ghent or online, and the question you need answered.</p><a class="button button-dark" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Ask about classes <span>↗</span></a></article>
-        <article class="contact-option fx"><small>03 · Festival</small><h3>Artist or festival idea</h3><p>Mention Ghent India Dance Festival and whether you are writing about an artist proposal, partnership, access or volunteering.</p><a class="button button-dark" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Contact the festival <span>↗</span></a></article>
+        <article class="contact-option fx"><small>01 · Booking</small><h3>Performance or workshop</h3><p>A theatre, a festival, a company party or a wedding. Bring the date, city, venue, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="#book">Invite us to perform <span>↓</span></a></article>
+        <article class="contact-option fx"><small>02 · Coaching</small><h3>One to one, online or here</h3><p>Private sessions with Swapnil for a performance, a wedding, technique or confidence on stage.</p><a class="button button-dark" href="#coaching">Ask about coaching <span>↓</span></a></article>
+        <article class="contact-option fx"><small>03 · Classes &amp; festival</small><h3>Weekly classes or a GIDF idea</h3><p>Weekly classes run at Shoonya Dance Centre, and the Ghent India Dance Festival keeps its own inbox for artist proposals, partnerships and volunteering.</p><a class="button button-dark" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Go to the Shoonya form <span>↗</span></a></article>
       </div>
+    </section>
+
+    <section class="scene-pad t-bone form-scene" id="book" data-scene data-cue="invite us">
+      <p class="label fx">01 · Booking</p>
+      <div class="intro">
+        <h2 class="fx">Invite us<br><em class="solo">to perform.</em></h2>
+        <div class="intro-copy fx">
+          <p>Forty-plus stages since 2017 — theatres, city squares, festivals, company evenings and weddings, from a solo to the full company.</p>
+          <p>Nothing here is binding. A rough date and a rough budget are enough to start a useful conversation.</p>
+        </div>
+      </div>
+      <form class="enquiry-form" id="book-abc" data-web3form method="POST" action="https://api.web3forms.com/submit" novalidate>
+        <input type="hidden" name="access_key" value="2bb1d384-ba9a-4c74-b300-09087117f016">
+        <input type="hidden" name="subject" value="ABC website — performance / workshop booking">
+        <input type="hidden" name="from_name" value="ABC a bollywood company — website">
+        <!-- Web3Forms redirects server-side, so this must be ABSOLUTE — a
+             relative path resolves against api.web3forms.com and 404s. -->
+        <input type="hidden" name="redirect" value="https://www.abcbollywoodbelgium.com/contact/thank-you/">
+        <!-- honeypot: real people never see it, bots fill it in -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field-grid">
+          <p class="field">
+          <label for="book-abc-First name">First name <abbr title="required">*</abbr></label>
+          <input id="book-abc-First name" type="text" name="First name" required autocomplete="given-name" placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-Last name">Last name <abbr title="required">*</abbr></label>
+          <input id="book-abc-Last name" type="text" name="Last name" required autocomplete="family-name" placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-Email">Email <abbr title="required">*</abbr></label>
+          <input id="book-abc-Email" type="email" name="Email" required autocomplete="email" placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-Phone">Phone <abbr title="required">*</abbr></label>
+          <input id="book-abc-Phone" type="tel" name="Phone" required autocomplete="tel" placeholder="">
+          <small class="field-hint">Include the country code.</small>
+        </p>
+          <p class="field">
+          <label for="book-abc-Booking type">What are you booking? <abbr title="required">*</abbr></label>
+          <select id="book-abc-Booking type" name="Booking type" required>
+            <option value="">Select an option</option>
+            <option value="Performance">Performance</option>
+            <option value="Dance workshop">Dance workshop</option>
+            <option value="Performance and workshop">Performance and workshop</option>
+            <option value="Something else">Something else</option>
+          </select>
+        </p>
+          <p class="field">
+          <label for="book-abc-Preferred date">Preferred date</label>
+          <input id="book-abc-Preferred date" type="date" name="Preferred date" placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-City and venue">City and venue</label>
+          <input id="book-abc-City and venue" type="text" name="City and venue" placeholder="Ghent · De Bijloke">
+        </p>
+          <p class="field">
+          <label for="book-abc-Audience size">Rough audience size</label>
+          <input id="book-abc-Audience size" type="text" name="Audience size" placeholder="80 people">
+        </p>
+          <p class="field">
+          <label for="book-abc-Budget">Budget <abbr title="required">*</abbr></label>
+          <input id="book-abc-Budget" type="text" name="Budget" required placeholder="">
+          <small class="field-hint">A range is fine. It tells us what shape of company fits.</small>
+        </p>
+          <p class="field">
+          <label for="book-abc-Heard about us">How did you hear about us? <abbr title="required">*</abbr></label>
+          <select id="book-abc-Heard about us" name="Heard about us" required>
+            <option value="">Select an option</option>
+            <option value="Google search">Google search</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Through friends">Through friends</option>
+            <option value="Saw us perform">Saw us perform</option>
+            <option value="Other">Other</option>
+          </select>
+        </p>
+          <p class="field" data-wide="true">
+          <label for="book-abc-Message">What are you planning? <abbr title="required">*</abbr></label>
+          <textarea id="book-abc-Message" name="Message" rows="5" required placeholder="The event, the moment the dance has to land, and the feeling you want to create."></textarea>
+        </p>
+        </div>
+        <p class="field-check">
+          <input id="book-abc-consent" type="checkbox" name="Newsletter opt-in" value="Yes">
+          <label for="book-abc-consent">Send me occasional ABC news — new shows, festival dates and classes. No more than a few times a year.</label>
+        </p>
+        <div class="form-foot">
+          <button class="button button-yellow" type="submit">Send the booking enquiry <span>→</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+        <p class="form-fallback">Trouble sending? <a href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Use the Shoonya contact form</a> instead — it reaches the same desk.</p>
+      </form>
+    </section>
+
+    <section class="scene-pad t-paper form-scene" id="coaching" data-scene data-cue="one to one">
+      <p class="label fx">02 · Coaching</p>
+      <div class="intro">
+        <h2 class="fx">One to one,<br><em class="solo">at your pace.</em></h2>
+        <div class="intro-copy fx">
+          <p>Private coaching with Swapnil — online from anywhere, or in person in Ghent. A first dance, a stage piece, or the technique underneath whichever style you are learning.</p>
+          <p>Tell us where you are starting from; the answer comes back with a format and a next step, not a price list.</p>
+        </div>
+      </div>
+      <form class="enquiry-form" id="coaching" data-web3form method="POST" action="https://api.web3forms.com/submit" novalidate>
+        <input type="hidden" name="access_key" value="2bb1d384-ba9a-4c74-b300-09087117f016">
+        <input type="hidden" name="subject" value="ABC website — private coaching enquiry">
+        <input type="hidden" name="from_name" value="ABC a bollywood company — website">
+        <!-- Web3Forms redirects server-side, so this must be ABSOLUTE — a
+             relative path resolves against api.web3forms.com and 404s. -->
+        <input type="hidden" name="redirect" value="https://www.abcbollywoodbelgium.com/contact/thank-you/">
+        <!-- honeypot: real people never see it, bots fill it in -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field-grid">
+          <p class="field">
+          <label for="coaching-Name">Name <abbr title="required">*</abbr></label>
+          <input id="coaching-Name" type="text" name="Name" required autocomplete="name" placeholder="">
+        </p>
+          <p class="field">
+          <label for="coaching-Email">Email <abbr title="required">*</abbr></label>
+          <input id="coaching-Email" type="email" name="Email" required autocomplete="email" placeholder="">
+        </p>
+          <p class="field">
+          <label for="coaching-Location and time zone">Location and time zone <abbr title="required">*</abbr></label>
+          <input id="coaching-Location and time zone" type="text" name="Location and time zone" required placeholder="Berlin · CET">
+        </p>
+          <p class="field">
+          <label for="coaching-Dance style">Dance style <abbr title="required">*</abbr></label>
+          <select id="coaching-Dance style" name="Dance style" required>
+            <option value="">Select an option</option>
+            <option value="Bollywood">Bollywood</option>
+            <option value="Bhangra">Bhangra</option>
+            <option value="Garba">Garba</option>
+            <option value="Indian semi-classical">Indian semi-classical</option>
+            <option value="Indian folk">Indian folk</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </p>
+          <p class="field">
+          <label for="coaching-Format">Format <abbr title="required">*</abbr></label>
+          <select id="coaching-Format" name="Format" required>
+            <option value="">Select an option</option>
+            <option value="Online">Online</option>
+            <option value="In person in Ghent">In person in Ghent</option>
+            <option value="Either">Either</option>
+          </select>
+        </p>
+          <p class="field">
+          <label for="coaching-Experience">Experience <abbr title="required">*</abbr></label>
+          <select id="coaching-Experience" name="Experience" required>
+            <option value="">Select an option</option>
+            <option value="Complete beginner">Complete beginner</option>
+            <option value="Some classes">Some classes</option>
+            <option value="Trained in another style">Trained in another style</option>
+            <option value="Experienced dancer">Experienced dancer</option>
+          </select>
+        </p>
+          <p class="field" data-wide="true">
+          <label for="coaching-Goal">What do you want to work on? <abbr title="required">*</abbr></label>
+          <textarea id="coaching-Goal" name="Goal" rows="5" required placeholder="A performance, a wedding, technique, confidence on stage — whatever the sessions are for."></textarea>
+        </p>
+        </div>
+        
+        <div class="form-foot">
+          <button class="button button-yellow" type="submit">Send the coaching enquiry <span>→</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </div>
+        <p class="form-fallback">Trouble sending? <a href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Use the Shoonya contact form</a> instead — it reaches the same desk.</p>
+      </form>
     </section>
 
     <section class="perf-break t-night spot" data-scene data-stage data-cue="start with hello">
@@ -130,7 +299,7 @@
         <div><b>3</b><span>Working days to reply</span></div>
         <div><b>Ghent</b><span>Home base</span></div>
         <div><b>Europe</b><span>Bookings and workshops</span></div>
-        <div><b>One</b><span>Contact route</span></div>
+        <div><b>Two</b><span>Forms on this page</span></div>
       </div>
     </section>
 
@@ -142,7 +311,7 @@
           <p><strong>Shoonya Dance Centre</strong><br>Stapelplein 41<br>9000 Ghent, Belgium</p>
           <p>Classes, rehearsals and much of the festival programme begin here. Event bookings can travel across Belgium and internationally.</p>
           <div class="button-row">
-            <a class="button button-dark" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Open contact form <span>↗</span></a>
+            <a class="button button-dark" href="#book">Invite us to perform <span>↑</span></a>
             <a class="button button-outline" href="../whats-on/">See upcoming dates <span>→</span></a>
           </div>
         </div>
@@ -166,7 +335,7 @@
         <h2 class="fx">Start with the<br><em class="solo">useful details.</em></h2>
         <p class="fx">Date, city and audience for a booking. Experience and goals for a class. The kind of idea for the festival.</p>
       </div>
-      <p class="fx"><a class="button button-yellow" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Open the contact form <span>↗</span></a></p>
+      <p class="fx"><a class="button button-yellow" href="#book">Invite us to perform <span>↑</span></a></p>
     </section>
   </main>
 
