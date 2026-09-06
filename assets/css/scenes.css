@@ -632,7 +632,11 @@
 .date-stamp {
   position: relative; z-index: 6; justify-self: start; margin-top: 1.8rem;
   display: inline-grid; gap: .1rem; padding: 1rem 1.3rem; border-radius: 10px;
-  background: var(--red); color: var(--bone); transform: rotate(-2.4deg);
+  /* D-066: bindu red is logo-only. A solid red panel this size competes with
+     the mark; marigold is ABC's vibrant and carries the same stamp energy.
+     Small red punctuation (eyebrow and marquee dots) stays — the identity
+     note sanctions it. */
+  background: var(--yellow); color: var(--ink); transform: rotate(-2.4deg);
   box-shadow: 0 18px 44px -20px rgba(0,0,0,.6);
 }
 .date-stamp strong { font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 790; font-variation-settings: "wdth" 84; line-height: 1; }

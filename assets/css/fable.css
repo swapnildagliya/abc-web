@@ -385,7 +385,8 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 }
 .stamp strong { font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; line-height: 1.05; }
 .stamp span { font-family: var(--serif); font-style: italic; font-size: .78rem; }
-.stamp-red { background: var(--red); color: var(--bone); }
+/* .stamp-red removed 2026-09-06 — an unused solid-red panel class, exactly the
+   D-066 breach we just fixed on .date-stamp, waiting to be reached for again. */
 .stamp-blue { background: var(--blue); color: var(--bone); }
 .js:not(.reduce) [data-scene].is-on .stamp {
   animation: stamp-in .55s var(--swing) backwards;
