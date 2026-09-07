@@ -31,7 +31,9 @@
   /* choreography */
   --beat: 95ms;                                   /* one count of the ensemble */
   --out: cubic-bezier(.16, .84, .28, 1);          /* settling entrance */
-  --swing: cubic-bezier(.55, -.12, .3, 1.14);     /* playful accents only */
+  /* --swing (cubic-bezier(.55, -.12, .3, 1.14)) retired 2026-09-07: it
+     overshot at both ends, which D-037 bans. Its two uses now settle. */
+  --swing: var(--out);
   --rise: 30px;
 
   --display-w: 80;   /* condensed display width axis */
@@ -132,7 +134,7 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
   font-size: .78rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase;
   font-variation-settings: "wdth" 108;
   border: 1.5px solid transparent; border-radius: 999px;
-  transition: transform .3s var(--out), background .3s, color .3s, border-color .3s;
+  transition: transform 160ms var(--out), background 200ms, color 200ms, border-color 200ms;
   overflow: hidden;
 }
 .button span { display: inline-flex; transition: transform .3s var(--out); }
@@ -142,7 +144,10 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 @media (hover: hover) and (pointer: fine) {
   .button:hover span { transform: translate(2px, -1px); }
 }
-.button:active { transform: translateY(0); }
+/* Was translateY(0) — it only cancelled the hover lift, so on touch, where
+   there is no hover, pressing a button did nothing at all. Nothing on this
+   site acknowledged a tap. */
+.button:active { transform: scale(.97); }
 .button-yellow { background: var(--yellow); color: var(--ink); }
 .button-yellow:hover { background: var(--yellow-deep); }
 .button-dark { background: var(--night); color: var(--bone); }
