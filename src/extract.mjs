@@ -71,6 +71,13 @@ console.log(`event schemas: ${schemas.length}`);
 // straight overwrite would silently drop them and every event would fall back
 // to one shared photo again — so carry them across on the event id.
 const CURATED = ["image", "blurb"];
+// Past bodies are hand-edited here and must survive re-extraction. On
+// 2026-09-07 the 21 archive bodies carrying inherited Squarespace marketing
+// copy were rewritten; the Codex source still holds the original text, so a
+// plain re-extract would silently restore every "immerse yourself" and
+// "unforgettable". Upcoming events still take their body from upstream —
+// a live event's details must never be frozen to an old copy.
+const CURATED_PAST = ["body"];
 const previous = existsSync(join(OUT, "events.json"))
   ? JSON.parse(readFileSync(join(OUT, "events.json"), "utf8")).events
   : [];
@@ -80,6 +87,8 @@ for (const e of events) {
   const before = keep.get(e.id);
   if (!before) continue;
   for (const field of CURATED) if (before[field] !== undefined) { e[field] = before[field]; carried++; }
+  const isPast = e.end && e.end < new Date().toISOString().slice(0, 10);
+  if (isPast) for (const field of CURATED_PAST) if (before[field] !== undefined) { e[field] = before[field]; carried++; }
 }
 console.log(`carried ${carried} curated field(s) forward`);
 
