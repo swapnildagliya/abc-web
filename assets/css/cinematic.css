@@ -208,7 +208,9 @@
 .line-up figure { margin: 0; aspect-ratio: 4/5; overflow: hidden; background: var(--night-2); }
 .line-up img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .js:not(.reduce) .line-up img { transition: transform 1s var(--out); }
-.js:not(.reduce) .line-up .card:hover img { transform: scale(1.06); }
+@media (hover: hover) and (pointer: fine) {
+  .js:not(.reduce) .line-up .card:hover img { transform: scale(1.06); }
+}
 .line-up span { display: block; padding: .6rem .7rem .7rem; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-variation-settings: "wdth" 92; opacity: .88; }
 .js:not(.reduce) [data-scene].is-on .line-up li { animation: bow .7s var(--out) backwards; animation-delay: calc(var(--i, 0) * 85ms); }
 @keyframes bow { from { opacity: .001; transform: translateY(26px) rotateX(6deg); } }
