@@ -184,7 +184,7 @@ const body = `
       <details class="past-shell fx" id="past-events">
         <summary>
           <span><small>Past events</small><strong>The complete archive</strong></span>
-          <em>${past.length} dates · ${Math.min(...years)}–${Math.max(...years)}</em>
+          <em>${past.length} dates · ${(y => `${Math.min(...y)}–${Math.max(...y)}`)(years.map(Number).filter(Boolean))}</em>
         </summary>
         <div class="past-body">
           ${pastGroups}
