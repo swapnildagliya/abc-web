@@ -855,3 +855,91 @@
 @media (max-width: 640px) {
   .field-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- SANGAM production page ----------
+   The Madhubani artwork carries the whole palette — ochre, indigo, forest,
+   and its own red. Marigold stays on the buttons only; pulling any colour
+   out of the painting into the UI would put it in competition with itself. */
+/* Deliberately NOT .t-night. A theme class's ground paints above this
+   section's own artwork child, so the dark base is set here instead. */
+.sangam-hero {
+  background: var(--night); color: var(--bone);
+  position: relative; min-height: 100svh;
+  display: grid; grid-template-rows: 1fr auto;
+  padding: 0; overflow: hidden;
+}
+/* The header sits over the painting's busiest corner; without this the nav
+   competes with foliage. Short, top-anchored, invisible once scrolled past. */
+.sangam-hero::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 34vh; z-index: 2;
+  background: linear-gradient(to bottom, color-mix(in srgb, var(--night) 72%, transparent), transparent);
+  pointer-events: none;
+}
+
+/* Explicit layers. The scene system paints section grounds in a way that
+   swallowed an auto-z-index child, so all three layers are numbered rather
+   than left to source order. */
+.sangam-art { position: absolute; inset: 0; z-index: 1; }
+.sangam-art img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%; }
+/* The copy sits on a gradient, not a flat scrim: the painting's dry left side
+   is pale and its night sky is dark, so a single overlay opacity cannot serve
+   both. The gradient only thickens where the text actually lands. */
+.sangam-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(to top, var(--night) 6%, color-mix(in srgb, var(--night) 82%, transparent) 34%, transparent 68%);
+}
+.sangam-hero-copy {
+  position: relative; z-index: 3; grid-row: 2;
+  padding: clamp(2rem, 5vw, 4.5rem) clamp(1.2rem, 5vw, 5rem) clamp(2.4rem, 6vw, 4.5rem);
+  max-width: 62rem;
+}
+.sangam-deva { font-weight: 500; opacity: 0.9; }
+.sangam-tagline {
+  font-family: var(--serif); font-size: clamp(1.35rem, 2.6vw, 2.1rem);
+  line-height: 1.25; margin: 0.9rem 0 1.1rem; color: var(--bone);
+}
+.sangam-when {
+  display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: baseline;
+  font-size: 0.94rem; font-weight: 600; letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--bone) 82%, transparent); margin-bottom: 1.5rem;
+}
+.sangam-when i { font-style: normal; opacity: 0.5; }
+
+.sangam-characters { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.sangam-character {
+  display: grid; gap: 0.35rem 1.6rem; align-items: start;
+  padding: 1.7rem 0; border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+}
+.sangam-character:last-child { border-bottom: 1px solid color-mix(in srgb, currentColor 16%, transparent); }
+.sangam-character small { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; opacity: 0.55; }
+.sangam-character h3 { margin: 0; font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.15; }
+.sangam-character h3 em { display: block; font-size: 0.92rem; font-weight: 600; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-top: 0.3rem; }
+.sangam-character p { margin: 0; max-width: 42ch; font-size: 1.02rem; line-height: 1.55; }
+.sangam-character span { font-size: 0.92rem; font-weight: 600; opacity: 0.72; }
+@media (min-width: 860px) {
+  .sangam-character { grid-template-columns: 3.5rem 17rem 1fr 14rem; align-items: baseline; padding: 2rem 0; }
+}
+
+.sangam-facts { display: grid; gap: 0; }
+.sangam-facts > div {
+  display: grid; gap: 0.2rem 1.6rem; padding: 1rem 0;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+.sangam-facts > div:last-child { border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent); }
+.sangam-facts b { font-size: 1rem; font-weight: 700; }
+.sangam-facts span { font-size: 1rem; opacity: 0.78; }
+@media (min-width: 720px) { .sangam-facts > div { grid-template-columns: 20rem 1fr; align-items: baseline; } }
+
+.sangam-ensemble {
+  list-style: none; margin: 1.8rem 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.5rem 1.6rem;
+  font-size: 1.02rem;
+}
+.sangam-credits { margin: 2.2rem 0 0; display: grid; gap: 0; }
+.sangam-credits > div {
+  display: grid; gap: 0.2rem 1.6rem; padding: 0.85rem 0;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+.sangam-credits dt { font-size: 0.86rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
+.sangam-credits dd { margin: 0; font-size: 1rem; }
+@media (min-width: 720px) { .sangam-credits > div { grid-template-columns: 14rem 1fr; align-items: baseline; } }

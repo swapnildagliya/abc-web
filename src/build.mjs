@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 
-const pageModules = ["home", "book", "learn", "whatson", "festival", "about", "contact", "course", "redirects"];
+const pageModules = ["home", "book", "learn", "whatson", "sangam", "festival", "about", "contact", "course", "redirects"];
 let written = 0;
 
 for (const name of pageModules) {

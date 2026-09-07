@@ -28,9 +28,10 @@ function walkRoutes(dir = ROOT, base = "") {
 const routes = walkRoutes();
 const fullPages = routes.filter(r => !readFileSync(join(ROOT, r, "index.html"), "utf8").includes('http-equiv="refresh"'));
 const stubs = routes.filter(r => readFileSync(join(ROOT, r, "index.html"), "utf8").includes('http-equiv="refresh"'));
+// 19 route dirs since 2026-09-07: sangam/ is the production's own page.
 // 18 route dirs since 2026-09-06: contact/thank-you/ is where a no-JS form POST
 // lands. It is noindex and deliberately absent from sitemap.xml.
-check("19 full pages (18 route dirs + homepage)", fullPages.length === 18, `got ${fullPages.length}: ${fullPages.join(", ")}`);
+check("20 full pages (19 route dirs + homepage)", fullPages.length === 19, `got ${fullPages.length}: ${fullPages.join(", ")}`);
 check("thank-you page is noindex", readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8").includes('name="robots" content="noindex'));
 check("thank-you page stays out of the sitemap", !readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes("thank-you"));
 check("80 redirect stubs", stubs.length === 80, `got ${stubs.length}`);
