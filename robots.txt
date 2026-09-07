@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://www.abcbollywoodbelgium.com/sitemap.xml
+# Preview host. The canonical site is elsewhere and this build is noindex on
+# every page; remove this Disallow only when the real domain is connected.

@@ -38,7 +38,15 @@ check("homepage exists", existsSync(join(ROOT, "index.html")));
 check("404.html exists", existsSync(join(ROOT, "404.html")));
 check("404 uses root-absolute assets", readFileSync(join(ROOT, "404.html"), "utf8").includes('href="/assets/'));
 check("_redirects has 80 lines", readFileSync(join(ROOT, "_redirects"), "utf8").trim().split("\n").length === 80);
-check("robots.txt present", readFileSync(join(ROOT, "robots.txt"), "utf8").includes("sitemap.xml"));
+// While the site is a preview host it must disallow crawling and carry no
+// sitemap line; a launch build restores the sitemap reference.
+const robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
+const previewBuild = readFileSync(join(ROOT, "index.html"), "utf8").includes('name="robots" content="noindex');
+check("robots.txt matches the build mode",
+  previewBuild ? robots.includes("Disallow: /") : robots.includes("sitemap.xml"));
+check("every page is noindex in a preview build, or none is",
+  ["index.html","festival/index.html","contact/index.html","about/index.html"]
+    .every(f => readFileSync(join(ROOT, f), "utf8").includes('content="noindex') === previewBuild));
 check("sitemap has 18 URLs", (readFileSync(join(ROOT, "sitemap.xml"), "utf8").match(/<loc>/g) || []).length === 18);
 check("43 calendar files", readdirSync(join(ROOT, "abc-calendar")).filter(f => f.endsWith(".ics")).length === 43);
 

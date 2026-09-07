@@ -18,6 +18,14 @@ export function esc(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
+/* The site lives on a preview host while the domain is undecided, and every
+   canonical still points at the live Squarespace site. Publishing it crawlable
+   would put a duplicate of the real site on the open web, so every page is
+   noindex UNLESS the build is explicitly a launch build:
+       ABC_LAUNCH=1 node src/build.mjs
+   Anything else — including a plain `node src/build.mjs` — stays noindex. */
+export const PREVIEW = process.env.ABC_LAUNCH !== "1";
+
 export function head(page, rel) {
   const schemas = [ORG_SCHEMA, ...(page.schemas || [])];
   return `<!doctype html>
@@ -27,7 +35,7 @@ export function head(page, rel) {
   <script>document.documentElement.className="js"</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(page.title)}</title>
-  <link rel="canonical" href="${page.canonical}">${page.noindex ? `\n  <meta name="robots" content="noindex,follow">` : ""}
+  <link rel="canonical" href="${page.canonical}">${(page.noindex || PREVIEW) ? `\n  <meta name="robots" content="noindex,follow">` : ""}
   <meta name="description" content="${esc(page.desc)}">
   <meta name="theme-color" content="${page.themeColor || "#10121A"}">
   <link rel="icon" href="${rel}assets/img/abc-mark-clean.png" type="image/png">
