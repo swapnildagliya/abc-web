@@ -109,6 +109,18 @@ check("every agenda photo belongs to an upcoming event",
   usedEventPhotos.every(f => sets.upcoming.some(e => e.image && e.image.src.endsWith(f))));
 check("past never labelled upcoming", !/data-status="past"[^>]*data-status="upcoming"/.test(whatsOn));
 
+// The archive legitimately carries the marketing voice each event was sold
+// with at the time — 22 of the 40 past bodies say "dive into", "immerse
+// yourself", "unforgettable". That is a record and it is collapsed behind
+// <details>. What must not happen is a NEW event importing that language into
+// the live agenda, where it is the first thing a programmer reads.
+const SLOP = /\b(dive into|immerse yourself|unforgettable|vibrant world|essence of|whether you(?:'re| are)|get ready to|thrilled to|exhilarating|mesmeriz\w+|embark|unlock your|elevat\w+|seamless\w*)\b/i;
+for (const e of sets.upcoming) {
+  const prose = (e.body || "").replace(/<[^>]+>/g, " ");
+  const found = prose.match(SLOP);
+  check(`upcoming event "${e.id}" is free of marketing filler`, !found, found && found[0]);
+}
+
 // Every upcoming event must offer a way to act on it. The agenda template
 // carries no ticket link of its own — the button lives inside each event's
 // body HTML in events.json. An event added without one renders as a date the
