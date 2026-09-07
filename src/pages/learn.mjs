@@ -46,7 +46,7 @@ const body = `
       </div>
     </section>
     ${routeBar("../", "learn/")}
-    ${marquee(["Start here", "Try free", "Find your rhythm", "Go deeper", "Perform"], { className: "t-night", speed: "24s" })}
+    ${marquee(["Start here", "Try free", "Ten classes", "Go deeper", "Perform"], { className: "t-night", speed: "24s" })}
 
     <section class="scene-pad t-paper" data-scene data-cue="ways in">
       <p class="label fx">Find your way in</p>
@@ -192,7 +192,7 @@ const body = `
           <h2>Indian dance classes in Ghent — with Swapnil Dagliya</h2>
           <p>Swapnil Dagliya — Artistic Director of ABC a bollywood company, trained at Broadway Dance Center (New York) and Opus Ballet (Florence) — teaches 10 weekly Indian dance classes at Shoonya Dance Centre in Ghent. Bollywood, Bhangra, Bollyfolk, Garba, Semi-Classical, Indian Technique, and Yoga. Semester: Sep 2026 – Jan 2027.</p>
           <h3>Which class is right for me?</h3>
-          <p><strong>I'm a total beginner and just want to have fun.</strong> Start with Bollyfolk (Wed) or Yoga — no experience needed, all levels welcome.</p>
+          <p><strong>I'm a total beginner and just want to have fun.</strong> Start with Bollyfolk (Wed) or Yoga — no experience needed.</p>
           <p><strong>I want a massive cardio workout.</strong> You'll love Bhangra — high-energy, full-body, loud. Bollyfolk (Wed) is a great entry point first.</p>
           <p><strong>I love the drama and expressions of Bollywood films.</strong> Bollywood is your match — expressive choreography, personality, and performance energy.</p>
           <p><strong>I want to improve my balance, spins, and grace.</strong> Join Indian Semi-Classical or Indian Dance Technique — both focus on precision and control.</p>
