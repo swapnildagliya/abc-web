@@ -61,7 +61,7 @@
 .overture-paths a:hover span { transform: translateX(3px); }
 .overture-scroll {
   display: inline-flex; align-items: center; gap: .7rem; min-height: 44px;
-  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; opacity: .85;
+  font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; opacity: .85;
 }
 .js:not(.reduce) .overture-scroll b { display: inline-block; animation: bob 2.1s ease-in-out infinite; font-weight: 400; }
 @keyframes bob { 50% { transform: translateY(5px); } }
@@ -71,7 +71,7 @@
   display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; padding: .5rem 1rem;
   background: color-mix(in srgb, var(--night) 42%, transparent); color: var(--bone);
   border: 1px solid color-mix(in srgb, var(--bone) 36%, transparent); border-radius: 999px;
-  font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
 .video-control i { width: 8px; height: 8px; border-radius: 2px; background: var(--yellow); }
@@ -105,7 +105,7 @@
 .manifesto-cast .mm-3 { height: 52%; right: -8%; z-index: 3; }        /* Swapnil — seated, grounds the front */
 .manifesto-cast-credit {
   position: absolute; left: 0; bottom: -1.6rem; z-index: 4;
-  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 650; opacity: .7;
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 650; opacity: .7;
 }
 /* accumulate: each phase keeps the earlier dancers on stage */
 .manifesto[data-phase="1"] .mm-1,
@@ -180,7 +180,7 @@
 .js:not(.reduce) .panorama[data-scrub] img { transform: translateY(calc((var(--p, .5) - .5) * -9%)); will-change: transform; }
 .panorama figcaption {
   position: absolute; right: var(--pad); bottom: 1rem; z-index: 2;
-  font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 650;
+  font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 650;
   color: var(--bone); opacity: .85; text-shadow: 0 1px 8px rgba(0,0,0,.6);
 }
 .panorama::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(9,10,16,.22), transparent 28%, transparent 70%, rgba(9,10,16,.66)); }
@@ -262,7 +262,7 @@
 .festival-collage figcaption {
   position: absolute; left: 0; right: 0; bottom: 0; padding: 1.4rem 1rem .7rem;
   background: linear-gradient(transparent, rgba(8,9,14,.7));
-  font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 650; color: var(--bone);
+  font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 650; color: var(--bone);
 }
 .collage-a { width: 82%; aspect-ratio: 3 / 2; left: 0; top: 0; }
 .collage-b { width: 46%; aspect-ratio: 3 / 2; right: 0; bottom: 6%; z-index: 2; border: 4px solid var(--bone); }
@@ -288,7 +288,7 @@
 .js:not(.reduce) .company-strip figure img { transition: transform 1s var(--out); }
 .company-strip li:hover figure { transform: translateY(-4px); }
 .js:not(.reduce) .company-strip li:hover figure img { transform: scale(1.05); }
-.company-strip span { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; font-variation-settings: "wdth" 92; opacity: .82; }
+.company-strip span { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; font-variation-settings: "wdth" 92; opacity: .82; }
 @media (max-width: 900px) { .meet-head { grid-template-columns: 1fr; } .company-strip { grid-template-columns: repeat(4, 1fr); } .company-strip li:nth-child(n+5) { display: none; } }
 @media (max-width: 520px) { .company-strip { grid-template-columns: repeat(3, 1fr); } .company-strip li:nth-child(n+4) { display: none; } }
 
@@ -314,7 +314,7 @@
 .postcard-strip .pc-img { display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 3px; }
 .postcard-strip img { width: 100%; height: 100%; object-fit: cover; }
 .postcard-strip figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-top: .7rem; }
-.postcard-strip figcaption span { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--blue); }
+.postcard-strip figcaption span { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--blue); }
 .postcard-strip figcaption strong { font-size: .95rem; text-transform: uppercase; font-variation-settings: "wdth" 92; }
 
 /* ============ HOME · FINALE ============ */
@@ -424,7 +424,7 @@
 .schedule-day:nth-child(3) .schedule-head { background: var(--yellow); color: var(--ink); }
 .class-cell { padding: 1.05rem 1.2rem; border-top: 1px solid var(--line); }
 .class-cell:first-of-type { border-top: 0; }
-.class-cell small { display: block; font-size: .68rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin-bottom: .35rem; }
+.class-cell small { display: block; font-size: .72rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin-bottom: .35rem; }
 .class-cell h3 { font-size: 1.1rem; text-transform: uppercase; font-variation-settings: "wdth" 92; margin-bottom: .3rem; }
 .class-cell p { font-size: .88rem; opacity: .85; margin: 0; }
 @media (max-width: 900px) { .schedule { grid-template-columns: 1fr; } }
@@ -525,7 +525,7 @@
 .agenda-schedule time span { opacity: .7; font-weight: 600; }
 .agenda-schedule b { text-transform: uppercase; font-variation-settings: "wdth" 94; }
 .agenda-venue { font-size: .9rem; }
-.agenda-venue small { display: block; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; opacity: .66; margin-bottom: .2rem; }
+.agenda-venue small { display: block; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; opacity: .66; margin-bottom: .2rem; }
 .agenda-venue strong { text-transform: uppercase; font-variation-settings: "wdth" 94; }
 .agenda-venue span { display: block; opacity: .78; }
 @media (max-width: 860px) { .agenda-feature { grid-template-columns: 1fr; } .agenda-feature .frame { min-height: 220px; } }
@@ -567,7 +567,7 @@
 .event-detail summary:hover { background: color-mix(in srgb, var(--yellow) 22%, transparent); }
 .event-detail .e-date { display: grid; line-height: 1.05; font-variation-settings: "wdth" 82; }
 .event-detail .e-date b { font-size: clamp(1.35rem, 2.4vw, 2rem); font-weight: 790; text-transform: uppercase; white-space: nowrap; }
-.event-detail .e-date small { font-size: .68rem; letter-spacing: .16em; font-weight: 700; opacity: .62; text-transform: uppercase; }
+.event-detail .e-date small { font-size: .72rem; letter-spacing: .16em; font-weight: 700; opacity: .62; text-transform: uppercase; }
 .event-detail .e-title { font-size: clamp(1rem, 1.7vw, 1.3rem); font-weight: 760; text-transform: uppercase; font-variation-settings: "wdth" 90; line-height: 1.15; }
 .event-detail .e-city { font-size: .72rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; opacity: .68; white-space: nowrap; }
 .event-detail .e-toggle {
@@ -595,7 +595,7 @@
 }
 .past-shell > summary::-webkit-details-marker { display: none; }
 .past-shell > summary:hover { background: color-mix(in srgb, var(--bone) 7%, transparent); }
-.past-shell > summary small { display: block; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 720; color: var(--yellow); margin-bottom: .3rem; }
+.past-shell > summary small { display: block; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 720; color: var(--yellow); margin-bottom: .3rem; }
 .past-shell > summary strong { font-size: clamp(1.3rem, 2.6vw, 2rem); text-transform: uppercase; font-variation-settings: "wdth" 86; }
 .past-shell > summary em { font-style: normal; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; opacity: .75; white-space: nowrap; }
 .past-body { padding: .4rem 1.2rem 1.6rem; }
@@ -641,7 +641,7 @@
 }
 .date-stamp strong { font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 790; font-variation-settings: "wdth" 84; line-height: 1; }
 .date-stamp span { font-size: .92rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
-.date-stamp small { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; opacity: .85; }
+.date-stamp small { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; opacity: .85; }
 @media (max-width: 900px) {
   .gidf-hero { grid-template-columns: 1fr; min-height: 0; }
   .gidf-stage { min-height: 0; display: grid; grid-template-columns: 1.3fr .9fr; gap: .8rem; }
@@ -718,7 +718,7 @@
   background: color-mix(in srgb, var(--yellow) 14%, transparent); border-radius: 0 10px 10px 0;
   max-width: 46rem;
 }
-.lesson-moment small { display: block; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 720; margin-bottom: .3rem; color: var(--blue); }
+.lesson-moment small { display: block; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 720; margin-bottom: .3rem; color: var(--blue); }
 .lesson-moment p { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.15rem; }
 .lesson-copy { padding: clamp(2.6rem, 6vw, 4.5rem) var(--pad); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 1.6rem 5vw; }
 .lesson-copy h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); text-transform: uppercase; font-variation-settings: "wdth" 86; }
@@ -734,7 +734,7 @@
   transition: background .3s, transform .3s var(--out), border-color .3s;
 }
 .lesson-nav a:hover { background: var(--night); color: var(--bone); border-color: var(--night); transform: translateY(-4px); }
-.lesson-nav small { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 720; opacity: .7; }
+.lesson-nav small { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 720; opacity: .7; }
 .lesson-nav strong { font-size: 1.05rem; text-transform: uppercase; font-variation-settings: "wdth" 90; }
 .lesson-nav a:nth-child(2) { text-align: center; }
 .lesson-nav a:last-child { text-align: right; }
