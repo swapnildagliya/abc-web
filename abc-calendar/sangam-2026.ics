@@ -2,11 +2,22 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//ABC a bollywood company//Agenda//EN
 BEGIN:VEVENT
-UID:sangam-2026@abcbollywoodbelgium.com
-DTSTAMP:20261107T000000Z
-DTSTART;VALUE=DATE:20261107
-DTEND;VALUE=DATE:20261109
-SUMMARY:Sangam 2026 — Indian dance production
+UID:sangam-2026-sat@abcbollywoodbelgium.com
+DTSTAMP:20260907T000000Z
+DTSTART;TZID=Europe/Brussels:20261107T193000
+DTEND;TZID=Europe/Brussels:20261107T204500
+SUMMARY:Sangam 2026 — Indian dance production (Saturday)
+DESCRIPTION:Sixty minutes on stage with a fifteen-minute interval. The bar opens 30 minutes before curtain.
+LOCATION:Shoonya Dance Centre, Stapelplein 41, 9000 Gent
+URL:https://www.abcbollywoodbelgium.com/whats-on/#sangam-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:sangam-2026-sun@abcbollywoodbelgium.com
+DTSTAMP:20260907T000000Z
+DTSTART;TZID=Europe/Brussels:20261108T150000
+DTEND;TZID=Europe/Brussels:20261108T161500
+SUMMARY:Sangam 2026 — Indian dance production (Sunday matinee)
+DESCRIPTION:Sixty minutes on stage with a fifteen-minute interval. The bar opens 30 minutes before curtain.
 LOCATION:Shoonya Dance Centre, Stapelplein 41, 9000 Gent
 URL:https://www.abcbollywoodbelgium.com/whats-on/#sangam-2026
 END:VEVENT
