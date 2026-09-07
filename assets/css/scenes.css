@@ -495,7 +495,9 @@
 }
 .timeline time { font-size: clamp(1.8rem, 3.4vw, 3rem); font-weight: 790; font-variation-settings: "wdth" 80; line-height: 1; }
 .timeline small { display: block; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 720; color: var(--yellow); margin-bottom: .4rem; }
-.timeline h3 { font-size: clamp(1.2rem, 2.2vw, 1.7rem); text-transform: uppercase; font-variation-settings: "wdth" 90; margin-bottom: .5rem; }
+/* Edition headlines are full sentences ("Live music. Sold-out gala. Seven
+   traditions.") — three of them in caps is a shout, not a heading. */
+.timeline h3 { font-size: clamp(1.2rem, 2.2vw, 1.7rem); font-variation-settings: "wdth" 90; margin-bottom: .5rem; }
 .timeline p { max-width: 52em; opacity: .88; margin: 0; }
 .t-paper .timeline article, .t-bone .timeline article { border-color: var(--line); }
 .t-paper .timeline small, .t-bone .timeline small { color: var(--blue); }
@@ -589,7 +591,9 @@
 .event-detail .e-date small { font-size: .72rem; letter-spacing: .16em; font-weight: 700; opacity: .62; text-transform: uppercase; }
 /* 1.15 is fine on one line, but on a phone almost every event title wraps to
    two or three and the lines close up. Uppercase has no descenders to help. */
-.event-detail .e-title { font-size: clamp(1rem, 1.7vw, 1.3rem); font-weight: 760; text-transform: uppercase; font-variation-settings: "wdth" 90; line-height: 1.15; }
+/* Was uppercase. These are event titles, not labels — several ran past 100
+   characters, and a sentence in caps is unreadable. Caps are for short labels. */
+.event-detail .e-title { font-size: clamp(1rem, 1.7vw, 1.3rem); font-weight: 760; font-variation-settings: "wdth" 90; line-height: 1.15; }
 @media (max-width: 700px) { .event-detail .e-title { line-height: 1.26; } }
 .event-detail .e-city { font-size: .72rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; opacity: .68; white-space: nowrap; }
 .event-detail .e-toggle {

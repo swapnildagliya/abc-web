@@ -470,7 +470,10 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 .folds summary {
   list-style: none; cursor: pointer; display: flex; align-items: center; gap: 1rem;
   min-height: 56px; padding: 1rem 1.3rem; font-weight: 750; font-size: 1.02rem;
-  text-transform: uppercase; font-variation-settings: "wdth" 94; letter-spacing: .02em;
+  /* These are FAQ questions — "What should a booking enquiry include?" — not
+     labels. A question mark in caps reads as shouting, and the sentence is
+     harder to scan. Weight and size carry the hierarchy instead. */
+  font-variation-settings: "wdth" 94; letter-spacing: .01em;
   transition: background .25s;
 }
 .folds summary::-webkit-details-marker { display: none; }
