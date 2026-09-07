@@ -108,6 +108,21 @@ check("every agenda photo belongs to an upcoming event",
   usedEventPhotos.every(f => sets.upcoming.some(e => e.image && e.image.src.endsWith(f))));
 check("past never labelled upcoming", !/data-status="past"[^>]*data-status="upcoming"/.test(whatsOn));
 
+// Every upcoming event must offer a way to act on it. The agenda template
+// carries no ticket link of its own — the button lives inside each event's
+// body HTML in events.json. An event added without one renders as a date the
+// visitor can read and cannot book, and nothing else in the build notices.
+for (const e of sets.upcoming) {
+  const body = e.body || "";
+  // Any outbound destination counts — a ticket shop, a Shoonya class page, the
+  // booking form. The .ics download does not: adding a date to a calendar is
+  // not the same as being able to attend it.
+  const actionable = [...body.matchAll(/href="([^"]+)"/g)]
+    .map(m => m[1])
+    .some(h => !/\.ics$/i.test(h) && (/^https?:/i.test(h) || /\/(book|contact)\//.test(h)));
+  check(`upcoming event "${e.id}" offers a booking or ticket link`, actionable);
+}
+
 /* ---------- enquiry forms ---------- */
 const contact = readFileSync(join(ROOT, "contact/index.html"), "utf8");
 check("contact carries both enquiry forms", (contact.match(/class="enquiry-form"/g) || []).length === 2);
