@@ -5,7 +5,7 @@ const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: [
     { "@type": "Question", name: "Are tickets and event registrations refundable?", acceptedAnswer: { "@type": "Answer", text: "Tickets for showcases, workshops and events are non-transferable and non-refundable. Missed sessions are not refunded." } },
-    { "@type": "Question", name: "Can a class registration be transferred?", acceptedAnswer: { "@type": "Answer", text: "Class, workshop and miniseries fees are fixed and non-transferable. In a serious medical emergency, an eligible registration may be frozen and transferred to another season." } },
+    { "@type": "Question", name: "Can a class registration be transferred?", acceptedAnswer: { "@type": "Answer", text: "Membership fees are refundable if cancelled at least two weeks before classes start. Workshop and miniseries fees are fixed and non-transferable. In a serious medical emergency, an eligible registration may be frozen and transferred to another season." } },
     { "@type": "Question", name: "What happens if ABC cancels?", acceptedAnswer: { "@type": "Answer", text: "If ABC cancels a class, workshop or miniseries session, a replacement or rescheduled session will be provided." } },
     { "@type": "Question", name: "What should I include in an enquiry?", acceptedAnswer: { "@type": "Answer", text: "For bookings include the date, city, venue, event type and audience. For classes include your experience and goals. ABC normally replies within three working days." } },
   ],
@@ -150,8 +150,9 @@ const body = `
       <h2 class="fx" style="margin-bottom:1.6rem">The practical<br><em class="solo">small print.</em></h2>
       <div class="folds fx">
         <details><summary>Tickets and event registrations</summary><div class="fold-body prose"><p>Tickets for showcases, workshops and events are non-transferable and non-refundable. Missed sessions are not refunded.</p></div></details>
-        <details><summary>Classes and miniseries</summary><div class="fold-body prose"><p>Membership, workshop and miniseries fees are fixed and non-transferable. In a serious medical emergency, a request may be made to freeze and transfer eligible registration to another season; transferred credit expires one year after the original start date.</p></div></details>
+        <details><summary>Classes and miniseries</summary><div class="fold-body prose"><p>Membership fees are refundable if you cancel at least two weeks before your classes start. After that, and for workshop and miniseries fees, they are fixed and non-transferable. In a serious medical emergency, a request may be made to freeze and transfer eligible registration to another season; transferred credit expires one year after the original start date.</p></div></details>
         <details><summary>If ABC cancels</summary><div class="fold-body prose"><p>If ABC cancels a class, workshop or miniseries session, a replacement or rescheduled session will be provided.</p></div></details>
+        <details><summary>Where you actually pay</summary><div class="fold-body prose"><p>ABC does not take payment on this site. Registrations and tickets are handled at Shoonya Dance Centre — through shoonyadance.com and its registration system — and this policy is the one that applies there.</p><p>Some dates are sold by the festival or venue hosting them, through their own box office. Those sales run under that organiser’s terms, not these, so check theirs before you buy.</p></div></details>
         <details><summary>Force majeure and administration</summary><div class="fold-body prose"><p>Events that cannot proceed due to circumstances beyond the organiser’s control are not refundable. Cancellation requests may carry a €25 administration fee per person. Policy updates are made with fairness and transparency.</p></div></details>
       </div>
     </section>
