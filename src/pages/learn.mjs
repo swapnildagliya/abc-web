@@ -33,7 +33,7 @@ const body = `
       <div class="inner-hero-copy">
         <p class="inner-kicker fx">Weekly classes · Ghent · Sep 2026</p>
         <h1 id="page-title"><span class="mask-line"><span>Start where</span></span><span class="mask-line"><span><em class="solo">your feet are.</em></span></span></h1>
-        <p class="inner-hero-lead fx">Ten weekly classes with Swapnil Dagliya—from your first Bollyfolk step to advanced Bollywood and Indian semi-classical work.</p>
+        <p class="inner-hero-lead fx">Nine weekly classes with Swapnil Dagliya—from your first Bollyfolk step to advanced Bollywood and Indian semi-classical work.</p>
         <div class="button-row fx">
           <a class="button button-dark" href="#classes">See the timetable <span>↓</span></a>
           <a class="button button-outline" href="#trial">Try a class free <span>→</span></a>
@@ -100,16 +100,16 @@ const body = `
           <article class="class-cell"><small>All levels</small><h3>Indian Dance Technique</h3><p>Alignment, footwork, Kathak turns, mudras and body control.</p></article>
         </div>
         <div class="schedule-day fx">
-          <div class="schedule-head"><b>Wednesday</b><small>18:30–21:45</small></div>
+          <div class="schedule-head"><b>Wednesday</b><small>17:20–21:45</small></div>
+          <article class="class-cell"><small>Open level · 16+</small><h3>Yoga</h3><p>The early slot, before the dance evening starts. Same Iyengar-influenced work as Tuesday.</p></article>
           <article class="class-cell"><small>Open level</small><h3>Bollyfolk</h3><p>The main entry point: Garba and Khoriya this semester.</p></article>
-          <article class="class-cell"><small>Foundation</small><h3>Bhangra</h3><p>Punjabi folk energy, shoulder work, jumps and rhythmic stamina.</p></article>
+          <article class="class-cell"><small>Progressive</small><h3>Bhangra</h3><p>Punjabi folk energy, shoulder work, jumps and rhythmic stamina.</p></article>
           <article class="class-cell"><small>Level 2</small><h3>Indian Semi-Classical</h3><p>Kathak-shaped footwork, mudras, eye expression and precision.</p></article>
         </div>
         <div class="schedule-day fx">
           <div class="schedule-head"><b>Thursday</b><small>18:30–20:30</small></div>
           <article class="class-cell"><small>Foundation</small><h3>Bollywood</h3><p>Expressive choreography with personality, musicality and drama.</p></article>
           <article class="class-cell"><small>Advanced</small><h3>Bollywood</h3><p>Technique-first choreography with clean timing and strong posture.</p></article>
-          <article class="class-cell"><small>Across the week</small><h3>Starter pathways</h3><p>Short introductions support new Bhangra and semi-classical dancers.</p></article>
         </div>
       </div>
     </section>

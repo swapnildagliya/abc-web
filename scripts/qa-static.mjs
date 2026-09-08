@@ -123,6 +123,22 @@ for (const id of offered) {
 }
 check("\"Next on stage\" is not empty", offered.length > 0);
 
+/* /learn/ claimed "Ten weekly classes" over a grid of eight, with Wednesday
+   Yoga 17:20 missing altogether. The authority is Event Submission's
+   docs/sep-2026-canonical.md, which lists nine Swapnil-taught slots:
+     Tue 18:30 Bollyfolk L2 · Tue 19:35 Yoga · Tue 20:40 Indian Dance Technique
+     Wed 17:20 Yoga · Wed 18:30 Bollyfolk Open · Wed 19:30 Bhangra L2
+     Wed 20:30 Indian Semi-Classical L2
+     Thu 18:30 Bollywood L2 · Thu 19:30 Bollywood L3
+   The written number and the grid must agree, and both must equal nine. */
+const learnPage = readFileSync(join(ROOT, "learn/index.html"), "utf8");
+const WORDS = { eight: 8, nine: 9, ten: 10, eleven: 11 };
+const cells = (learnPage.match(/class="class-cell"/g) || []).length;
+const written = (learnPage.match(/\b(eight|nine|ten|eleven)\s+weekly classes/i) || [])[1];
+check("/learn/ shows nine weekly classes", cells === 9, `${cells} cells`);
+check("/learn/ says the same number it shows", WORDS[String(written).toLowerCase()] === cells, `says ${written}, shows ${cells}`);
+check("/learn/ lists Wednesday Yoga", /Wednesday<\/b><small>17:20/.test(learnPage));
+
 // The filter above drops anything unclassified, so a new performance added
 // without a "kind" would vanish from /book/ silently rather than loudly.
 for (const e of sets.upcoming) {
@@ -239,7 +255,10 @@ for (const p of FULL_PAGES) {
   // Scope: template-authored headings only — event bodies and fold prose are
   // carried verbatim from the authority build and are not ours to rewrite.
   // Class names legitimately repeat across levels (two Bollyfolk classes).
-  const DUPE_OK = new Set(["bollyfolk", "bollywood"]);
+  // Swapnil teaches Yoga twice a week (Tue 19:35, Wed 17:20), the same way
+// Bollyfolk and Bollywood run at two levels. A repeat here is the timetable
+// being complete, not a duplicated heading.
+const DUPE_OK = new Set(["bollyfolk", "bollywood", "yoga"]);
   const templated = html
     .replace(/<div class="event-detail-body">[\s\S]*?<\/details>/g, "</details>")
     .replace(/<div class="fold-body">[\s\S]*?<\/details>/g, "</details>");
