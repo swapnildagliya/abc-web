@@ -73,7 +73,7 @@ const body = `
       <h2 class="fx" style="margin-bottom:1rem">One service,<br><em class="solo">named plainly.</em></h2>
       <div class="prose fx">
         <p>When you submit a form, it is delivered to us by <strong>Web3Forms</strong> (<span>web3forms.com</span>), which turns the submission into an email. Everything you typed passes through their service on the way to us. They act as our processor for that delivery and for nothing else.</p>
-        <p>Nobody else receives your enquiry. We do not sell, rent or share it, and it is not used to build any profile of you.</p>
+        <p>From there it lands in our own mailbox and stays there. Nobody else receives your enquiry, we do not sell, rent or share it, and it is not used to build any profile of you.</p>
         <p>Some pages link out to Instagram, Facebook, YouTube, Google Maps and our ticketing and class pages. Those are ordinary links — nothing is embedded, and none of those companies learns anything about you unless you choose to follow the link.</p>
       </div>
     </section>
@@ -92,7 +92,7 @@ const body = `
       <h2 class="fx" style="margin-bottom:1rem">As long as the<br><em class="solo">conversation needs.</em></h2>
       <div class="prose fx">
         <p>Enquiries live in our mailbox. An enquiry that turns into a booking is kept with the rest of that booking's paperwork, because Belgian bookkeeping rules require it. An enquiry that goes nowhere is deleted once it is clear nothing will come of it.</p>
-        <p>If you asked for news, you stay on that list until you ask to come off it. Every such message includes a way to stop receiving them.</p>
+        <p>If you asked for news, your address sits in our own mailbox at Shoonya Dance VZW. There is no mailing platform behind this site — no Mailchimp, no Brevo, no list held by anyone else — so nothing about you is passed to a marketing service. You stay on it until you ask to come off, and replying to any of those messages is enough.</p>
         <p>The lawful basis is our legitimate interest in answering people who contact us about work, and your consent for the optional news.</p>
       </div>
     </section>
