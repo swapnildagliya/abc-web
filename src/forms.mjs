@@ -73,6 +73,9 @@ export function enquiryForm({ id, subject, submit, fields, thanks = `${SITE}/con
           <input id="${id}-consent" type="checkbox" name="Newsletter opt-in" value="Yes">
           <label for="${id}-consent">${esc(consent)}</label>
         </p>` : ""}
+        <!-- Said before the button, not after it: a visitor is entitled to know
+             where their details go while they can still decide not to send them. -->
+        <p class="form-privacy">What you send reaches us by email through Web3Forms, and goes nowhere else. <a href="../privacy/">How we handle it</a>.</p>
         <div class="form-foot">
           <button class="button button-yellow" type="submit">${esc(submit)} <span>→</span></button>
           <p class="form-status" role="status" aria-live="polite"></p>

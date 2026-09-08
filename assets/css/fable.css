@@ -624,3 +624,11 @@ h1 em, h2 em, h3 em { font-family: var(--serif); font-style: italic; font-weight
 @media (max-width: 560px) {
   .act-list a, .act-list article { grid-template-columns: 2rem 1fr auto; gap: .8rem; }
 }
+
+/* Said before the submit button, not in the small print underneath it. */
+.form-privacy {
+  margin: 0 0 0.9rem; max-width: 54ch;
+  font-size: 0.92rem; line-height: 1.5;
+  color: color-mix(in srgb, currentColor 74%, transparent);
+}
+.form-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }

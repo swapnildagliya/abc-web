@@ -125,7 +125,7 @@ export function footer(rel) {
         <p class="footer-tag">Indian dance with roots, context and joy.</p>
       </div>
       <nav aria-label="Explore"><span>Explore</span><a href="${rel}book/">Performances</a><a href="${rel}learn/">Classes</a><a href="${rel}whats-on/">What’s on</a><a href="${rel}festival/">Festival</a></nav>
-      <nav aria-label="Company"><span>Company</span><a href="${rel}about/">About ABC</a><a href="${rel}contact/">Contact</a><a href="${rel}contact/#refunds">Refund policy</a></nav>
+      <nav aria-label="Company"><span>Company</span><a href="${rel}about/">About ABC</a><a href="${rel}contact/">Contact</a><a href="${rel}contact/#refunds">Refund policy</a><a href="${rel}privacy/">Privacy</a></nav>
       <nav aria-label="Follow"><span>Follow</span><a href="https://instagram.com/abollywoodcompany" target="_blank" rel="noopener">Instagram ↗</a><a href="https://facebook.com/abollywoodcompany" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.youtube.com/c/swapkebolly" target="_blank" rel="noopener">YouTube ↗</a></nav>
       <div class="footer-address"><span>Home base</span><p>Shoonya Dance Centre<br>Stapelplein 41<br>9000 Ghent, Belgium</p></div>
     </div>
