@@ -18,4 +18,12 @@
   <url><loc>https://www.abcbollywoodbelgium.com/learn-to-dance-bollywood/lesson-5-shoulder-step/</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://www.abcbollywoodbelgium.com/learn-to-dance-bollywood/lesson-5-touch-up-revision/</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://www.abcbollywoodbelgium.com/whats-on/</loc><lastmod>2026-07-18</lastmod></url>
+  <url>
+    <loc>https://www.abcbollywoodbelgium.com/sangam/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.abcbollywoodbelgium.com/privacy/</loc>
+    <priority>0.3</priority>
+  </url>
 </urlset>

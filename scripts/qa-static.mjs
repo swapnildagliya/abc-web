@@ -49,7 +49,14 @@ check("robots.txt matches the build mode",
 check("every page is noindex in a preview build, or none is",
   ["index.html","festival/index.html","contact/index.html","about/index.html"]
     .every(f => readFileSync(join(ROOT, f), "utf8").includes('content="noindex') === previewBuild));
-check("sitemap has 18 URLs", (readFileSync(join(ROOT, "sitemap.xml"), "utf8").match(/<loc>/g) || []).length === 18);
+// 20 since 2026-09-08: /sangam/ and /privacy/ were added after the sitemap was
+// last written by hand, and a page missing from the sitemap on launch day is a
+// page Google has no reason to look for.
+const sitemapUrls = (readFileSync(join(ROOT, "sitemap.xml"), "utf8").match(/<loc>/g) || []).length;
+check("sitemap has 20 URLs", sitemapUrls === 20, String(sitemapUrls));
+for (const route of ["sangam", "privacy"]) {
+  check(`sitemap lists /${route}/`, readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes(`/${route}/`));
+}
 check("43 calendar files", readdirSync(join(ROOT, "abc-calendar")).filter(f => f.endsWith(".ics")).length === 43);
 
 /* ---------- page-level checks ---------- */
