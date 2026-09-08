@@ -3,3 +3,6 @@ checkpoints/
 exports/
 .DS_Store
 *.log
+
+# Edit masters — never published, never linked from a page.
+assets/media/_originals/

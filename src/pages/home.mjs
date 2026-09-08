@@ -71,7 +71,7 @@ const body = `
             <div class="overture-video">
               <video autoplay muted loop playsinline preload="auto" poster="assets/img/gidf/finale-hero.jpg" width="1920" height="1080">
                 <source src="assets/media/hero-loop.mp4" type="video/mp4" media="(max-width: 720px)">
-                <source src="assets/media/hero-loop-1080p-master.mp4" type="video/mp4">
+                <source src="assets/media/hero-loop-1080p.mp4" type="video/mp4">
               </video>
             </div>
           </div>

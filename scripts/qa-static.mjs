@@ -39,7 +39,12 @@ check("83 redirect stubs", stubs.length === 83, `got ${stubs.length}`);
 check("homepage exists", existsSync(join(ROOT, "index.html")));
 check("404.html exists", existsSync(join(ROOT, "404.html")));
 check("404 uses root-absolute assets", readFileSync(join(ROOT, "404.html"), "utf8").includes('href="/assets/'));
-check("_redirects has 83 lines", readFileSync(join(ROOT, "_redirects"), "utf8").trim().split("\n").length === 83);
+const redirectsFile = readFileSync(join(ROOT, "_redirects"), "utf8");
+const rules = redirectsFile.split("\n").filter(l => l.trim() && !l.startsWith("#"));
+check("_redirects has 83 rules", rules.length === 83, String(rules.length));
+// Unforced rules lose to the HTML stubs on Netlify. All of them must be forced.
+check("every redirect rule is forced", rules.every(l => l.trim().endsWith("301!")),
+  rules.find(l => !l.trim().endsWith("301!")));
 // While the site is a preview host it must disallow crawling and carry no
 // sitemap line; a launch build restores the sitemap reference.
 const robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
@@ -244,7 +249,11 @@ const homeText = home.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>
 check("central statement present", /Not one dance/i.test(homeText) && /Not one stage/i.test(homeText)
   && /Not one way to move/i.test(homeText) && /This is ABC/i.test(homeText));
 check("no room metaphor", !/room to move|kind of room/i.test(home));
-check("hero uses master + mobile source", home.includes("hero-loop-1080p-master.mp4") && home.includes("hero-loop.mp4"));
+// The homepage linked the 17.1 MiB edit master until 2026-09-08, so every
+// desktop visitor downloaded it. Masters live in assets/media/_originals/ and
+// must never be linked from a page.
+check("hero uses the web cut + mobile source", home.includes("hero-loop-1080p.mp4") && home.includes("hero-loop.mp4"));
+check("no page links an edit master", !home.includes("_originals/") && !home.includes("-master.mp4"));
 check("hero muted looped playsinline", /<video[^>]*autoplay[^>]*muted[^>]*loop[^>]*playsinline/.test(home));
 const learn = readFileSync(join(ROOT, "learn/index.html"), "utf8");
 check("online coaching is Zoom", learn.includes("Zoom"));
