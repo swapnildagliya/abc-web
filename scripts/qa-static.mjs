@@ -35,11 +35,11 @@ const stubs = routes.filter(r => readFileSync(join(ROOT, r, "index.html"), "utf8
 check("21 full pages (20 route dirs + homepage)", fullPages.length === 20, `got ${fullPages.length}: ${fullPages.join(", ")}`);
 check("thank-you page is noindex", readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8").includes('name="robots" content="noindex'));
 check("thank-you page stays out of the sitemap", !readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes("thank-you"));
-check("80 redirect stubs", stubs.length === 80, `got ${stubs.length}`);
+check("83 redirect stubs", stubs.length === 83, `got ${stubs.length}`);
 check("homepage exists", existsSync(join(ROOT, "index.html")));
 check("404.html exists", existsSync(join(ROOT, "404.html")));
 check("404 uses root-absolute assets", readFileSync(join(ROOT, "404.html"), "utf8").includes('href="/assets/'));
-check("_redirects has 80 lines", readFileSync(join(ROOT, "_redirects"), "utf8").trim().split("\n").length === 80);
+check("_redirects has 83 lines", readFileSync(join(ROOT, "_redirects"), "utf8").trim().split("\n").length === 83);
 // While the site is a preview host it must disallow crawling and carry no
 // sitemap line; a launch build restores the sitemap reference.
 const robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
@@ -216,7 +216,7 @@ for (const l of lessons) {
 
 /* ---------- redirects parity with Codex ---------- */
 const dataRedirects = JSON.parse(readFileSync(join(ROOT, "src/data/redirects.json"), "utf8"));
-check("80 redirect definitions", dataRedirects.length === 80);
+check("83 redirect definitions", dataRedirects.length === 83);
 for (const r of dataRedirects) {
   const f = join(ROOT, r.route, "index.html");
   check(`stub ${r.route}`, existsSync(f) && readFileSync(f, "utf8").includes(`url=${r.target}`));

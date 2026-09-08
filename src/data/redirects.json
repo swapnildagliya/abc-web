@@ -638,5 +638,20 @@
   "title": "ABC",
   "desc": "This ABC page now lives in Ghent India Dance Festival.",
   "dest": "Ghent India Dance Festival"
+ },
+ {
+  "route": "abc-calendar/bhangra-starter-series-september",
+  "target": "../../whats-on/#bhangra-starter-series-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#bhangra-starter-series-2026"
+ },
+ {
+  "route": "abc-calendar/indian-semi-classical-starter-series-september",
+  "target": "../../whats-on/#semi-classical-starter-series-2026",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#semi-classical-starter-series-2026"
+ },
+ {
+  "route": "abc-calendar/garba-miniseries-brussels",
+  "target": "../../whats-on/#past-events",
+  "canonical": "https://www.abcbollywoodbelgium.com/whats-on/#past-events"
  }
 ]
