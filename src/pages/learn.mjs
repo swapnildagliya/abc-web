@@ -3,7 +3,7 @@ import { page, SITE, routeBar, marquee } from "../shell.mjs";
 const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: [
-    { "@type": "Question", name: "Do I need dance experience?", acceptedAnswer: { "@type": "Answer", text: "No prior experience is needed for Wednesday Bollyfolk, Yoga or Indian Dance Technique. Progressive classes list the foundation they expect." } },
+    { "@type": "Question", name: "Do I need dance experience?", acceptedAnswer: { "@type": "Answer", text: "No prior experience is needed for Wednesday Bollyfolk, Yoga or Indian Dance Technique. Level 2 and Level 3 classes build on an Indian dance foundation." } },
     { "@type": "Question", name: "What does a semester cost?", acceptedAnswer: { "@type": "Answer", text: "Public full price is €173 for a 60-minute weekly class per semester. Indian Semi-Classical, at 75 minutes, is €202. Registration options continue through Shoonya Dance Centre." } },
     { "@type": "Question", name: "How long is the semester?", acceptedAnswer: { "@type": "Answer", text: "The semester runs from 14 September 2026 to 30 January 2027, with 14 to 16 weekly sessions depending on the class." } },
     { "@type": "Question", name: "Is there an age limit?", acceptedAnswer: { "@type": "Answer", text: "Most classes are open from age 12. Yoga is open from age 16. There is no upper age limit for open-level classes." } },
@@ -89,27 +89,27 @@ const body = `
         <h2 class="fx">The weekly<br><em class="solo">practice.</em></h2>
         <div class="intro-copy fx">
           <p>Tuesday, Wednesday and Thursday evenings at Shoonya Dance Centre, Stapelplein 41, Ghent.</p>
-          <p>Level guidance protects the learning experience. Open-level classes welcome complete beginners; progressive classes build on an Indian dance foundation.</p>
+          <p>Open-level classes welcome complete beginners. Level 2 and Level 3 build on an Indian dance foundation — the same numbering Shoonya Dance Centre uses, so a class means the same thing wherever you read about it.</p>
         </div>
       </div>
       <div class="schedule">
         <div class="schedule-day fx">
           <div class="schedule-head"><b>Tuesday</b><small>18:30–21:40</small></div>
-          <article class="class-cell"><small>Progressive</small><h3>Bollyfolk</h3><p>Cheraw and Lavani at a quicker pace. Best after an open-level semester.</p></article>
+          <article class="class-cell"><small>Level 2</small><h3>Bollyfolk</h3><p>Cheraw and Lavani at a quicker pace. Best after an open-level semester.</p></article>
           <article class="class-cell"><small>Open level · 16+</small><h3>Yoga</h3><p>Iyengar-influenced alignment, breath and stillness for all bodies.</p></article>
-          <article class="class-cell"><small>All levels</small><h3>Indian Dance Technique</h3><p>Alignment, footwork, Kathak turns, mudras and body control.</p></article>
+          <article class="class-cell"><small>Open level</small><h3>Indian Dance Technique</h3><p>Alignment, footwork, Kathak turns, mudras and body control.</p></article>
         </div>
         <div class="schedule-day fx">
           <div class="schedule-head"><b>Wednesday</b><small>17:20–21:45</small></div>
           <article class="class-cell"><small>Open level · 16+</small><h3>Yoga</h3><p>The early slot, before the dance evening starts. Same Iyengar-influenced work as Tuesday.</p></article>
           <article class="class-cell"><small>Open level</small><h3>Bollyfolk</h3><p>The main entry point: Garba and Khoriya this semester.</p></article>
-          <article class="class-cell"><small>Progressive</small><h3>Bhangra</h3><p>Punjabi folk energy, shoulder work, jumps and rhythmic stamina.</p></article>
+          <article class="class-cell"><small>Level 2</small><h3>Bhangra</h3><p>Punjabi folk energy, shoulder work, jumps and rhythmic stamina.</p></article>
           <article class="class-cell"><small>Level 2</small><h3>Indian Semi-Classical</h3><p>Kathak-shaped footwork, mudras, eye expression and precision.</p></article>
         </div>
         <div class="schedule-day fx">
           <div class="schedule-head"><b>Thursday</b><small>18:30–20:30</small></div>
-          <article class="class-cell"><small>Foundation</small><h3>Bollywood</h3><p>Expressive choreography with personality, musicality and drama.</p></article>
-          <article class="class-cell"><small>Advanced</small><h3>Bollywood</h3><p>Technique-first choreography with clean timing and strong posture.</p></article>
+          <article class="class-cell"><small>Level 2</small><h3>Bollywood</h3><p>Expressive choreography with personality, musicality and drama.</p></article>
+          <article class="class-cell"><small>Level 3</small><h3>Bollywood</h3><p>Technique-first choreography with clean timing and strong posture.</p></article>
         </div>
       </div>
     </section>
@@ -165,7 +165,7 @@ const body = `
       <p class="label fx">Questions about classes</p>
       <h2 class="fx" style="margin-bottom:1.6rem">Before your<br><em class="solo">first step.</em></h2>
       <div class="folds fx">
-        <details><summary>Do I need dance experience?</summary><div class="fold-body prose"><p>No prior experience is needed for Wednesday Bollyfolk, Yoga or Indian Dance Technique. Progressive classes list the foundation they expect.</p></div></details>
+        <details><summary>Do I need dance experience?</summary><div class="fold-body prose"><p>No prior experience is needed for Wednesday Bollyfolk, Yoga or Indian Dance Technique. Level 2 and Level 3 classes build on an Indian dance foundation.</p></div></details>
         <details><summary>What does a semester cost?</summary><div class="fold-body prose"><p>Public full price is €173 for a 60-minute weekly class per semester. Indian Semi-Classical, at 75 minutes, is €202. Registration options continue through Shoonya Dance Centre.</p></div></details>
         <details><summary>How long is the semester?</summary><div class="fold-body prose"><p>The semester runs from 14 September 2026 to 30 January 2027, with 14 to 16 weekly sessions depending on the class.</p></div></details>
         <details><summary>Is there an age limit?</summary><div class="fold-body prose"><p>Most classes are open from age 12. Yoga is open from age 16. There is no upper age limit for open-level classes.</p></div></details>

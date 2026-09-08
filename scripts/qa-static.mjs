@@ -138,6 +138,11 @@ const written = (learnPage.match(/\b(eight|nine|ten|eleven)\s+weekly classes/i) 
 check("/learn/ shows nine weekly classes", cells === 9, `${cells} cells`);
 check("/learn/ says the same number it shows", WORDS[String(written).toLowerCase()] === cells, `says ${written}, shows ${cells}`);
 check("/learn/ lists Wednesday Yoga", /Wednesday<\/b><small>17:20/.test(learnPage));
+// Level names must match sep-2026-canonical.md and the personal site. ABC used
+// to say Foundation/Advanced/Progressive for what everyone else calls Level 2
+// and Level 3, and a beginner cannot tell those are the same thing.
+const OLD_LEVELS = /<small>(Foundation|Advanced|Progressive|All levels)<\/small>/;
+check("/learn/ uses the shared level names", !OLD_LEVELS.test(learnPage), (learnPage.match(OLD_LEVELS) || [])[1]);
 
 // The filter above drops anything unclassified, so a new performance added
 // without a "kind" would vanish from /book/ silently rather than loudly.
