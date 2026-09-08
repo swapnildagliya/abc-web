@@ -59,6 +59,26 @@ const NOT_FOUND = `<!doctype html><html lang="en"><head><meta charset="utf-8">
       <a class="button button-outline" href="/">Return home <span>↗</span></a>
     </div>
   </main>
+  <script>
+    /* GitHub Pages is case-sensitive; macOS is not, which is why every local
+       check passed while /tag/bhangra 404'd in production. Squarespace served
+       both casings, so wrong-cased bookmarks exist in the wild. Two casings
+       cannot coexist in a macOS checkout, so the rescue lives here: match the
+       requested path against the build's route manifest ignoring case, and go
+       there when exactly one route matches. Anything ambiguous keeps this page. */
+    (async () => {
+      try {
+        const base = location.pathname.match(/^\\/[^/]+\\/(?=.)/)?.[0] ?? "/";
+        const want = decodeURIComponent(location.pathname).replace(/\\/?$/, "/").toLowerCase();
+        const res = await fetch(base + "routes.json", { cache: "no-store" });
+        if (!res.ok) return;
+        const routes = await res.json();
+        const root = base.replace(/\\/$/, "");
+        const hit = routes.filter(r => decodeURIComponent(root + r).toLowerCase() === want);
+        if (hit.length === 1) location.replace(root + hit[0] + location.search + location.hash);
+      } catch (e) { /* stay on the 404 */ }
+    })();
+  </script>
 </body></html>`;
 
 export const outputs = () => [
