@@ -70,7 +70,7 @@ console.log(`event schemas: ${schemas.length}`);
 // `image` and `blurb` are curated here, not present in the Codex source. A
 // straight overwrite would silently drop them and every event would fall back
 // to one shared photo again — so carry them across on the event id.
-const CURATED = ["image", "blurb"];
+const CURATED = ["image", "blurb", "kind"];
 // Past bodies are hand-edited here and must survive re-extraction. On
 // 2026-09-07 the 21 archive bodies carrying inherited Squarespace marketing
 // copy were rewritten; the Codex source still holds the original text, so a

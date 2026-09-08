@@ -110,6 +110,25 @@ check("every agenda photo belongs to an upcoming event",
   usedEventPhotos.every(f => sets.upcoming.some(e => e.image && e.image.src.endsWith(f))));
 check("past never labelled upcoming", !/data-status="past"[^>]*data-status="upcoming"/.test(whatsOn));
 
+// /book/ invites a booker to "come see the real thing". On 2026-09-08 it was
+// still naming 23 July and 8 August. Every date it offers must be ahead, and
+// must be something you can watch — not a beginners class.
+const bookPage = readFileSync(join(ROOT, "book/index.html"), "utf8");
+const stage = bookPage.slice(bookPage.indexOf("Next on stage"), bookPage.indexOf("Selected road book"));
+const offered = [...stage.matchAll(/href="\.\.\/whats-on\/#([a-z0-9-]+)"/g)].map(m => m[1]);
+for (const id of offered) {
+  const e = sets.events.find(x => x.id === id);
+  check(`"Next on stage" offers ${id}, which is still ahead`, !!e && e.status === "upcoming", e && e.end);
+  check(`"Next on stage" offers ${id} as something to watch`, !!e && e.kind === "performance", e && (e.kind || "unclassified"));
+}
+check("\"Next on stage\" is not empty", offered.length > 0);
+
+// The filter above drops anything unclassified, so a new performance added
+// without a "kind" would vanish from /book/ silently rather than loudly.
+for (const e of sets.upcoming) {
+  check(`upcoming event "${e.id}" is classified`, ["performance", "class", "open-day", "festival"].includes(e.kind), e.kind || "missing kind");
+}
+
 // The archive legitimately carries the marketing voice each event was sold
 // with at the time — 22 of the 40 past bodies say "dive into", "immerse
 // yourself", "unforgettable". That is a record and it is collapsed behind

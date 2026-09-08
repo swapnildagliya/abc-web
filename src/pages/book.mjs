@@ -1,4 +1,26 @@
 import { page, SITE, routeBar, marquee } from "../shell.mjs";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { eventSets, dateParts, BUILD_TODAY } from "../events.mjs";
+
+/* "Next on stage" was a hand-written list. On 8 September 2026 it was still
+   offering 23 July and 8 August as things to come see — a booker's first
+   impression of whether this company keeps its own house in order. It now
+   derives from the same events.json and the same date logic as the agenda, so
+   a date can only appear here while it is genuinely ahead. */
+const rawEvents = JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8"));
+// Only things a booker can come and WATCH. A starter series and an open day are
+// upcoming, but sending a programmer to a beginners class is not evidence of
+// what this company puts on a stage.
+const nextOnStage = eventSets(rawEvents.events).upcoming.filter(e => e.kind === "performance").slice(0, 3);
+
+const stageRow = (e) => {
+  const { big, small } = dateParts(e);
+  const img = e.image ? ` data-preview="../${e.image.src}"` : "";
+  const where = e.blurb ? `${e.city} · ${e.blurb}` : e.city;
+  const title = e.title.split("—")[0].replace(/\s*\d{4}\s*$/, "").trim();
+  return `<a class="fx" href="../whats-on/#${e.id}"${img}><small>${big} ${small}</small><span><strong>${title}</strong><em>${where}</em></span><b>↗</b></a>`;
+};
 
 const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
@@ -113,12 +135,12 @@ const body = `
       <p class="label fx" style="color:var(--yellow)">Next on stage</p>
       <div class="intro">
         <h2 class="fx">Come see<br><em class="solo">the real thing.</em></h2>
-        <div class="intro-copy fx"><p>See ABC live before bringing us to your event. These public dates show the range—from city festivals to original stage work.</p></div>
+        <div class="intro-copy fx"><p>See ABC live before bringing us to your event.${nextOnStage.length > 1
+          ? " These public dates show the range—from city festivals to original stage work."
+          : " Our own production is the next one you can buy a seat for; festival and city dates are announced as they are confirmed."}</p></div>
       </div>
       <div class="act-list">
-        <a class="fx" href="../whats-on/#gentse-feesten-2026" data-preview="../assets/img/events/gentse-feesten-2026.jpg"><small>23 JUL</small><span><strong>Gentse Feesten</strong><em>Ghent · free sessions</em></span><b>↗</b></a>
-        <a class="fx" href="../whats-on/#benenwerk-2026" data-preview="../assets/img/events/benenwerk-2026.jpg"><small>08 AUG</small><span><strong>Benenwerk</strong><em>Bruges · evening of Indian dance</em></span><b>↗</b></a>
-        <a class="fx" href="../whats-on/#sangam-2026"><small>07–08 NOV</small><span><strong>Sangam</strong><em>Ghent · new production</em></span><b>↗</b></a>
+        ${nextOnStage.map(stageRow).join("\n        ")}
       </div>
     </section>
 
@@ -129,7 +151,8 @@ const body = `
         <div class="intro-copy fx"><p>Theatres, city squares, cultural festivals, company stages and television—from Ghent to Brussels, Maastricht, Luxembourg and beyond.</p></div>
       </div>
       <div class="folds fx">
-        <details open><summary>2026–2024</summary><div class="fold-body prose"><ul><li>Ghent India Dance Festival · Ghent</li><li>Diwali Celebration · Luxembourg</li><li>Shoonya Indian Night · Gentse Feesten</li><li>Jump · NTGent</li><li>The Four Loves · Ghent</li><li>Indian dance at Leylet Raqs · Ghent</li></ul></div></details>
+        <details open><summary>2026–2024</summary><div class="fold-body prose"><ul><li>Benenwerk · Bruges</li>
+            <li>Ghent India Dance Festival · Ghent</li><li>Diwali Celebration · Luxembourg</li><li>Shoonya Indian Night · Gentse Feesten</li><li>Jump · NTGent</li><li>The Four Loves · Ghent</li><li>Indian dance at Leylet Raqs · Ghent</li></ul></div></details>
         <details><summary>2023–2020</summary><div class="fold-body prose"><ul><li>McKinsey event · Brussels</li><li>Indian Dance Lab · Liège</li><li>Dansen in ’t Park · Ghent</li><li>Belgium’s Got Talent</li><li>Minard Theatre · Ghent</li><li>Boombal Festival</li></ul></div></details>
         <details><summary>2019–2017</summary><div class="fold-body prose"><ul><li>Gentse Feesten · Ghent</li><li>Cultuurcentrum De Factorij</li><li>Canvas TV · Dans met Hanne</li><li>Chautara vzw · Ghent</li><li>Indian Festival · Ghent</li></ul></div></details>
       </div>
