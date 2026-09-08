@@ -1,5 +1,5 @@
 // Build the Fable 5 Motion Concept site into the folder root.
-import { writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,4 +25,18 @@ function pathFor(def) {
   return def.route ? join(def.route, "index.html") : "index.html";
 }
 
-console.log(`built ${written} files`);
+/* GitHub Pages is case-sensitive; macOS is not. Five routes carry capitals
+   (/tag/Bhangra, /category/Gent+India+dans+festival and friends) and Squarespace
+   served them case-insensitively, so bookmarked lowercase URLs exist in the
+   wild. Two casings cannot both exist in a macOS checkout, so the rescue lives
+   in 404.html instead: this manifest is what it matches against. */
+const routes = [];
+(function walk(dir, base = "") {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name.startsWith(".") || ["node_modules", "src", "scripts", "assets", "checkpoints", "deploy"].includes(entry.name)) continue;
+    if (entry.isDirectory()) walk(join(dir, entry.name), `${base}/${entry.name}`);
+    else if (entry.name === "index.html") routes.push(`${base}/`);
+  }
+})(ROOT);
+writeFileSync(join(ROOT, "routes.json"), JSON.stringify(routes.sort()));
+console.log(`built ${written} files · ${routes.length} routes in the manifest`);

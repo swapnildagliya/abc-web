@@ -91,7 +91,7 @@ for (const p of pages) {
 /* ---------- whats-on specifics ---------- */
 const whatsOn = readFileSync(join(ROOT, "whats-on/index.html"), "utf8");
 const codexEvents = JSON.parse(readFileSync(join(ROOT, "src/data/events.json"), "utf8"));
-check("44 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 44);
+check("45 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 45);
 // Counts are DERIVED, not frozen: a hardcoded "7 upcoming" silently becomes a
 // lie the morning after an event ends, which is exactly how three finished
 // events stayed on the agenda. Compare the page against the same date logic
@@ -149,6 +149,12 @@ check("/learn/ lists Wednesday Yoga", /Wednesday<\/b><small>17:20/.test(learnPag
 // to say Foundation/Advanced/Progressive for what everyone else calls Level 2
 // and Level 3, and a beginner cannot tell those are the same thing.
 const OLD_LEVELS = /<small>(Foundation|Advanced|Progressive|All levels)<\/small>/;
+/* Jekyll turned the repo's own working notes into public pages: AUDIT.html,
+   ASSET_MAP.html, MOTION_SYSTEM.html and CODEX-HANDOFF.html all returned 200 on
+   the preview host, outside the sitemap and outside every indexing control.
+   .nojekyll stops that. Without it they come back silently. */
+check(".nojekyll present, so working docs are not rendered into pages", existsSync(join(ROOT, ".nojekyll")));
+check("route manifest exists for the 404 rescue", existsSync(join(ROOT, "routes.json")));
 check("/learn/ uses the shared level names", !OLD_LEVELS.test(learnPage), (learnPage.match(OLD_LEVELS) || [])[1]);
 
 // The filter above drops anything unclassified, so a new performance added
