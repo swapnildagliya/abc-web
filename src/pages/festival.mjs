@@ -135,7 +135,12 @@ const body = `
             <img src="../assets/media/editions/reel-2024.jpg" alt="Vanisha dancing Kathak on the Shoonya stage" loading="lazy" decoding="async" width="640" height="360">
             <span><b>Kathak</b><small>Vanisha · GIDF 2024</small></span>
           </li>
-          <li data-clip="editions/guest-shreyashee" data-title="Solo" data-scale="2.4" data-origin="56% 66%" data-who="Shreyashee Nag · GIDF 2023">
+          <!-- These three GIDF 2023 guest clips were zoomed 2.4x, which magnified a
+     960x540 source to an effective 400x225. Their originals are missing from
+     both ~/Movies and the Drive backup (the folders survived, the files did
+     not), so the zoom was eased to 1.5x instead. If the footage ever turns
+     up, re-cut at full resolution and the tighter framing can come back. -->
+          <li data-clip="editions/guest-shreyashee" data-title="Solo" data-scale="1.5" data-origin="56% 66%" data-who="Shreyashee Nag · GIDF 2023">
             <img src="../assets/media/editions/guest-shreyashee.jpg" alt="Shreyashee Nag in orange and gold, mid-spin with skirt open" loading="lazy" decoding="async" width="1280" height="720">
             <span><b>Solo</b><small>Shreyashee Nag · GIDF 2023</small></span>
           </li>
@@ -147,7 +152,7 @@ const body = `
             <img src="../assets/media/editions/reel-2025.jpg" alt="Shampa Gopikrishna performing under a blue wash" loading="lazy" decoding="async" width="640" height="360">
             <span><b>Solo</b><small>Shampa Gopikrishna · GIDF 2025</small></span>
           </li>
-          <li data-clip="editions/guest-girish" data-title="Solo" data-scale="2.4" data-origin="48% 56%" data-who="Girish Kumar · GIDF 2023">
+          <li data-clip="editions/guest-girish" data-title="Solo" data-scale="1.5" data-origin="48% 56%" data-who="Girish Kumar · GIDF 2023">
             <img src="../assets/media/editions/guest-girish.jpg" alt="Girish Kumar in a deep lunge under warm light" loading="lazy" decoding="async" width="1280" height="720">
             <span><b>Solo</b><small>Girish Kumar · GIDF 2023</small></span>
           </li>
@@ -159,7 +164,7 @@ const body = `
             <img src="../assets/media/editions/julien-2024.jpg" alt="Julien on a candle-lit platform under a single spotlight" loading="lazy" decoding="async" width="640" height="360">
             <span><b>Solo</b><small>Julien · GIDF 2024</small></span>
           </li>
-          <li data-clip="editions/guest-jana" data-title="Solo" data-scale="2.4" data-origin="62% 56%" data-who="Jana Jayanti · GIDF 2023">
+          <li data-clip="editions/guest-jana" data-title="Solo" data-scale="1.5" data-origin="62% 56%" data-who="Jana Jayanti · GIDF 2023">
             <img src="../assets/media/editions/guest-jana.jpg" alt="Jana Jayanti in a backbend under violet light" loading="lazy" decoding="async" width="1280" height="720">
             <span><b>Solo</b><small>Jana Jayanti · GIDF 2023</small></span>
           </li>
