@@ -216,7 +216,7 @@ const body = `
           <div class="collage" aria-hidden="true">
             <figure style="--start:.06;--depth:-900px;width:52%;aspect-ratio:3/2;right:2%;top:14%"><img src="assets/img/gidf/aakansha-bollypop-kalbeliya-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="2000" height="1333"><figcaption>Kalbeliya · PC Stijn Dejonckheere</figcaption></figure>
             <figure style="--start:.20;--depth:-1400px;width:38%;aspect-ratio:2/3;right:56%;top:22%"><img src="assets/img/gidf/vanisha-kathak-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="933" height="1400"><figcaption>Kathak · PC Stijn Dejonckheere</figcaption></figure>
-            <figure style="--start:.34;--depth:-700px;width:40%;aspect-ratio:3/2;right:6%;bottom:10%"><img src="assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="1400" height="933"><figcaption>Gala Showcase</figcaption></figure>
+            <figure style="--start:.34;--depth:-700px;width:40%;aspect-ratio:3/2;right:6%;bottom:10%"><img src="assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="1400" height="933"><figcaption>Gala Showcase · PC Stijn Dejonckheere</figcaption></figure>
             <figure style="--start:.48;--depth:-1200px;width:32%;aspect-ratio:3/2;right:52%;bottom:6%"><img src="assets/img/gidf/tera-taali-gidf-2023.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1613"><figcaption>Edition One · 2023</figcaption></figure>
           </div>
         </div>
