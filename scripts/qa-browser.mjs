@@ -205,7 +205,7 @@ for (const [engineName, engine] of [["chromium", chromium], ["webkit", webkit]])
   const njCtx = await browser.newContext({ viewport: { width: 1512, height: 982 }, javaScriptEnabled: false });
   const NJ_CHECKS = [
     ["/", [".cap", ".crane-floor img", ".date-list a", ".postcard-strip", ".line-up span", ".finale-ask h2"]],
-    ["/learn/", ["#classes .class-cell h3", "#trial", ".inner-hero h1"]],
+    ["/learn/", ["#classes .class-cell h3", ".inner-hero h1"]],
     ["/whats-on/", [".agenda-feature", ".event-detail summary", "#past-events summary"]],
     ["/book/", ["#productions", "#offers .card", ".inner-hero-visual img"]],
     ["/festival/", ["#edition-five", ".gallery .frame", ".edition-card", ".reel-stills img"]],

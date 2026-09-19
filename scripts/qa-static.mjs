@@ -261,6 +261,10 @@ check("no page links an edit master", !home.includes("_originals/") && !home.inc
 check("hero muted looped playsinline", /<video[^>]*autoplay[^>]*muted[^>]*loop[^>]*playsinline/.test(home));
 const learn = readFileSync(join(ROOT, "learn/index.html"), "utf8");
 check("online coaching is Zoom", learn.includes("Zoom"));
+// ABC = performances only since 2026-09-19: Learn's coaching and Garba-workshop
+// CTAs go to Swapnil personally, never to ABC's contact page.
+check("learn coaching/Garba CTAs point to swapnil.dance", (learn.match(/href="https:\/\/swapnil\.dance\/workshops\/" target="_blank" rel="noopener"/g) || []).length === 3);
+check("no learn coaching/workshop CTA routes to contact", !/href="\.\.\/contact\/"[^>]*>(Ask about (private )?coaching|Bring a Garba)/.test(learn));
 const festival = readFileSync(join(ROOT, "festival/index.html"), "utf8");
 check("Edition Five 7–9 May 2027", /7[—–-]9/.test(festival) && festival.includes("May 2027"));
 check("no invented 2027 faculty/tickets", !/2027 faculty|tickets on sale|buy tickets/i.test(festival));
