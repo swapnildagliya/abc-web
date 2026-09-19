@@ -111,6 +111,7 @@ const body = `
         <p class="fx" style="max-width:36em">Swapnil is from Pune. An IT engineer by training, he studied contemporary dance and ballet at Broadway Dance Center in New York and Opus Ballet in Florence. He has taught and performed Indian dance since 2008.</p>
         <p class="fx" style="max-width:36em">He holds a diploma in Indian folk dance and works across Ghoomar, Chari, Tera Taali, Ghantu, Khoriya, Bhangra and Garba, alongside Bollywood and semi-classical choreography.</p>
         <p class="fx" style="max-width:36em">In Ghent, he co-founded Shoonya Dance Centre, founded ABC in 2017 and began the Ghent India Dance Festival in 2023.</p>
+        <p class="fx" style="max-width:36em">Personal site: <a href="https://swapnil.dance/">swapnil.dance</a>.</p>
         <p class="fx"><a class="button button-yellow" href="../contact/">Work with Swapnil and ABC <span>↗</span></a></p>
       </div>
     </section>

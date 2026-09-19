@@ -1,7 +1,7 @@
 // Shared page shell: head, header, menu, footer. All URLs relative — the
 // site must run from any folder with no absolute local paths.
 
-export const SITE = "https://www.abcbollywoodbelgium.com";
+export const SITE = "https://abcdans.com";
 
 export const ORG_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "Organization",

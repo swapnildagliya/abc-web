@@ -70,7 +70,7 @@ const bannedImages = ["dansen-in-t-park-2026.jpg", "dokfeesten-2026.jpg", "dance
 for (const p of pages) {
   const html = readFileSync(join(ROOT, p), "utf8");
   const name = p.replace("/index.html", "") || "home";
-  check(`${name}: canonical`, /rel="canonical" href="https:\/\/www\.abcbollywoodbelgium\.com\//.test(html));
+  check(`${name}: canonical`, /rel="canonical" href="https:\/\/abcdans\.com\//.test(html));
   check(`${name}: og + twitter meta`, html.includes('property="og:image"') && html.includes('name="twitter:card"'));
   check(`${name}: Organization schema`, html.includes('"@type":"Organization"'));
   check(`${name}: founding year 2017`, html.includes('"foundingDate":"2017"'));
