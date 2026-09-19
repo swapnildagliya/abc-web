@@ -26,7 +26,7 @@ const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: [
     { "@type": "Question", name: "Can the performance be tailored?", acceptedAnswer: { "@type": "Answer", text: "Yes. We shape repertoire, duration, company size and participation around your venue, audience and event format." } },
-    { "@type": "Question", name: "Do workshops require experience?", acceptedAnswer: { "@type": "Answer", text: "No. Event workshops are designed so a complete beginner can join from the first minute. We can also build a deeper session for dancers." } },
+    { "@type": "Question", name: "Can you also teach a workshop at our event?", acceptedAnswer: { "@type": "Answer", text: "Learn with Swapnil for that — workshops, choreography commissions and private coaching are hired directly from Swapnil Dagliya, the company's artistic director, at swapnil.dance/workshops. ABC itself is booked to perform." } },
     { "@type": "Question", name: "Where can ABC travel?", acceptedAnswer: { "@type": "Answer", text: "ABC is based in Ghent and works across Belgium and internationally. Share the city and date in your enquiry so we can discuss the practical setup." } },
     { "@type": "Question", name: "What should a booking enquiry include?", acceptedAnswer: { "@type": "Answer", text: "Please include the date, city, event type, rough audience size and what you want your audience to experience. We normally reply within three working days." } },
   ],
@@ -35,8 +35,8 @@ const FAQ_SCHEMA = JSON.stringify({
 const def = {
   depth: 1,
   nav: "book/",
-  title: "Indian dance performances and workshops in Belgium — ABC",
-  desc: "Book ABC for Bollywood, Bhangra, Garba and Indian folk performances, event workshops and original productions across Belgium and Europe.",
+  title: "Indian dance performances in Belgium — ABC",
+  desc: "Book ABC for Bollywood, Bhangra, Garba and Indian folk stage performances and original productions across Belgium and Europe.",
   canonical: `${SITE}/book/`,
   themeColor: "#10121A",
   ogImage: `${SITE}/assets/img/gidf/finale-hero.jpg`,
@@ -52,7 +52,7 @@ const body = `
       <p class="ghost" aria-hidden="true">LIVE</p>
       <p class="inner-index" aria-hidden="true">01 · Performances</p>
       <div class="inner-hero-copy">
-        <p class="inner-kicker fx">Performances · Workshops · Productions</p>
+        <p class="inner-kicker fx">Performances · Repertoire · Productions</p>
         <h1 id="page-title"><span class="mask-line"><span>Book the</span></span><span class="mask-line"><span><em class="solo">company.</em></span></span></h1>
         <p class="inner-hero-lead fx">Bollywood, Bhangra, Garba, Lavani and Indian folk dance—shaped for theatres, festivals, companies, weddings and public events.</p>
         <div class="button-row fx">
@@ -70,7 +70,7 @@ const body = `
       </div>
     </section>
     ${routeBar("../", "book/")}
-    ${marquee(["Performance", "Workshops", "Weddings", "Theatre", "Festivals", "A full dance floor"], { className: "t-yellow", speed: "26s" })}
+    ${marquee(["Performance", "Productions", "Weddings", "Theatre", "Festivals", "A full dance floor"], { className: "t-yellow", speed: "26s" })}
 
     <section class="scene-pad t-paper" id="offers" data-scene data-cue="the formats">
       <p class="label fx">The performance dossier</p>
@@ -90,9 +90,8 @@ const body = `
       </div>
       <div class="card-grid" style="margin-top:2.4rem">
         <article class="card fx" id="performances"><small>01 · Performance</small><h3>Stage shows</h3><p>From a focused solo or ensemble act to a complete programme of Bollywood, Indian folk and semi-classical work.</p></article>
-        <article class="card fx" id="workshops"><small>02 · Participation</small><h3>Workshops for events</h3><p>A 60–90 minute Bollywood or Bhangra session that gets everyone moving. No dance experience needed.</p></article>
-        <article class="card fx"><small>03 · Celebration</small><h3>Weddings and private events</h3><p>A company performance, a personalised opening dance, or choreography rehearsed with your group and adapted to your music.</p></article>
-        <article class="card fx"><small>04 · Teams and schools</small><h3>Culture in motion</h3><p>Indian dance and yoga workshops for companies, classrooms and youth groups—active, contextual and adapted to the group.</p></article>
+        <article class="card fx"><small>02 · Celebration</small><h3>Weddings and private events</h3><p>The company performing at your celebration—repertoire, costumes and music chosen for the moment rather than dropped in as a set.</p></article>
+        <article class="card fx card-referral" id="workshops"><small>03 · Learn with Swapnil</small><h3>Looking for a workshop?</h3><p>Event workshops, corporate and school sessions, wedding choreography and private coaching are hired directly from <strong>Swapnil Dagliya</strong>, not from the company.</p><p><a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a></p></article>
       </div>
     </section>
 
@@ -163,7 +162,7 @@ const body = `
       <h2 class="fx" style="margin-bottom:1.6rem">Before the<br><em class="solo">music starts.</em></h2>
       <div class="folds fx">
         <details><summary>Can the performance be tailored?</summary><div class="fold-body prose"><p>Yes. We shape repertoire, duration, company size and participation around your venue, audience and event format.</p></div></details>
-        <details><summary>Do workshops require experience?</summary><div class="fold-body prose"><p>No. Event workshops are designed so a complete beginner can join from the first minute. We can also build a deeper session for dancers.</p></div></details>
+        <details><summary>Can you also teach a workshop at our event?</summary><div class="fold-body prose"><p>Not from ABC. The company is booked to perform. Workshops, choreography commissions and private coaching are hired directly from Swapnil Dagliya, the company&rsquo;s artistic director — <a href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">swapnil.dance/workshops</a>. Many events book both; they are simply two different agreements.</p></div></details>
         <details><summary>Where can ABC travel?</summary><div class="fold-body prose"><p>ABC is based in Ghent and works across Belgium and internationally. Share the city and date in your enquiry so we can discuss the practical setup.</p></div></details>
         <details><summary>What should a booking enquiry include?</summary><div class="fold-body prose"><p>Please include the date, city, event type, rough audience size and what you want your audience to experience. We normally reply within three working days.</p></div></details>
       </div>
@@ -202,18 +201,10 @@ const body = `
           <p>Through captivating performances, intricate costumes, and evocative music, "The Four Loves" presents love as it manifests in various relationships. We portray the love of devotion, known as <em>bhakti</em>, the warmth of familial affection, known as <em>vatsalya</em>, the passion of romantic love, known as <em>shringar</em>, and the profound sense of universal connection, known as <em>prema</em>.</p>
           <p>"The Four Loves" explores the breadth of love through Indian dance. The production moves from Bollywood to regional folk forms: <em>Ghoomar</em>, <em>Chari</em> and <em>Tera Taali</em> from Rajasthan, <em>Garba</em> from Gujarat, <em>Bhangra</em> from Punjab, and semi-classical pieces shaped by <em>Kathak</em> vocabulary. Directed by Swapnil Dagliya, it brings these contrasting movement languages together in one stage work.</p>
         </div></details>
-        <details id="services"><summary>Detailed service guide</summary><div class="fold-body prose">
-          <h2>Wedding performances &amp; choreography</h2>
-          <p>A personalised opening dance for the couple, or a group performance for the guests. We choreograph and rehearse it with you, adapted to your music, your space and how much you want to dance yourselves.</p>
-          <h2>Hen party dance workshops</h2>
-          <p><em>Bollywood dance workshop for hen parties &amp; bachelorettes</em></p>
-          <p>A Bollywood or Bhangra dance workshop is one of the most joyful ways to celebrate. We run 60–90 minute sessions for groups of any size — colourful skirts, scarves, and accessories included, easy-to-learn choreography, and a playlist that keeps the energy high from start to finish. No dance experience needed. Available across Belgium.</p>
-          <h2>Your team, out of their chairs.</h2>
-          <p><em>Indian dance &amp; yoga workshops for corporate teams in Belgium</em></p>
-          <p>Led by Swapnil Dagliya, Artistic Director of Shoonya Dance Centre, these 60–90 minute Bollywood dance or yoga workshops bring something genuinely different to team events. Costumes and props optional. Teams learn together, move together, and leave with more energy than they arrived with. Available as a standalone team event or as part of a company offsite — across Belgium.</p>
-          <h2>Culture they can move to, not just hear about.</h2>
-          <p><em>Indian dance workshops for schools &amp; children in Belgium</em></p>
-          <p>Swapnil Dagliya brings Indian culture into classrooms and youth groups through Bollywood choreography and folk dances like Bhangra. Sessions are adapted for all ages and end with a short performance — giving children a direct, active experience of Indian dance traditions. Available for primary and secondary schools across Belgium.</p>
+        <details id="services"><summary>Workshops, coaching &amp; choreography</summary><div class="fold-body prose">
+          <h2>Learn with Swapnil, not the company</h2>
+          <p>Event workshops, hen party and team sessions, school workshops, wedding choreography and private one-to-one coaching are booked directly with Swapnil Dagliya, the company's artistic director — not through ABC. Find them at <a href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">swapnil.dance/workshops</a>.</p>
+          <p>ABC itself is booked to perform — see the formats above, or <a href="../contact/">get in touch about a performance</a>.</p>
         </div></details>
       </div>
     </section>
@@ -222,7 +213,7 @@ const body = `
       <div>
         <p class="label fx" style="color:var(--yellow)">Curtain call</p>
         <h2 class="fx">Have an event<br><em class="solo">in mind?</em></h2>
-        <p class="fx">Tell us the date, city and kind of event. We will help shape the right performance or workshop.</p>
+        <p class="fx">Tell us the date, city and kind of event. We will help shape the right performance for it.</p>
       </div>
       <p class="fx"><a class="button button-yellow" href="../contact/">Start a booking <span>↗</span></a></p>
     </section>`;

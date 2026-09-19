@@ -561,11 +561,11 @@
   },
   {
     "route": "private-online-coaching",
-    "target": "../contact/#coaching",
-    "canonical": "https://abcdans.com/contact/#coaching",
-    "title": "Private online coaching",
-    "desc": "This ABC page now lives in Private coaching.",
-    "dest": "Private coaching"
+    "target": "https://swapnil.dance/workshops/",
+    "canonical": "https://swapnil.dance/workshops/",
+    "title": "Private coaching with Swapnil Dagliya",
+    "desc": "Private coaching is hired directly from Swapnil, not through ABC.",
+    "dest": "Learn with Swapnil"
   },
   {
     "route": "productions",

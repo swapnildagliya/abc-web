@@ -94,7 +94,7 @@ export const BOOKING_FIELDS = [
   { name: "Email", label: "Email", type: "email", required: true, autocomplete: "email" },
   { name: "Phone", label: "Phone", type: "tel", autocomplete: "tel", hint: "Optional. Include the country code if you would rather we called." },
   { name: "Booking type", label: "What are you booking?", type: "select", required: true,
-    options: ["Performance", "Dance workshop", "Performance and workshop", "Something else"] },
+    options: ["Performance", "Wedding or private event", "Something else"] },
   { name: "Preferred date", label: "Preferred date", type: "date" },
   { name: "City and venue", label: "City and venue", placeholder: "Ghent · De Bijloke" },
   { name: "Audience size", label: "Rough audience size", placeholder: "80 people" },

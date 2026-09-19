@@ -1,5 +1,5 @@
 import { page, SITE, routeBar, marquee } from "../shell.mjs";
-import { enquiryForm, BOOKING_FIELDS, COACHING_FIELDS, FALLBACK_URL } from "../forms.mjs";
+import { enquiryForm, BOOKING_FIELDS, FALLBACK_URL } from "../forms.mjs";
 
 const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
@@ -15,7 +15,7 @@ const def = {
   depth: 1,
   nav: "contact/",
   title: "Contact and book ABC a bollywood company",
-  desc: "Contact ABC about an Indian dance performance, event workshop, class question or Ghent India Dance Festival idea.",
+  desc: "Contact ABC about an Indian dance performance, class question or Ghent India Dance Festival idea.",
   canonical: `${SITE}/contact/`,
   themeColor: "#164BD8",
   ogImage: `${SITE}/assets/img/cutouts/tera-taali.png`,
@@ -55,13 +55,13 @@ const body = `
       <div class="intro">
         <h2 class="fx">What kind<br><em class="solo">of question?</em></h2>
         <div class="intro-copy fx">
-          <p>Two of these are forms on this page. Weekly classes and festival enquiries belong to Shoonya Dance Centre, so those routes hand you over there.</p>
+          <p>One of these is a form on this page. Workshops, choreography and private coaching are hired from Swapnil personally, and weekly classes and festival enquiries belong to Shoonya Dance Centre — those routes hand you over.</p>
           <p>We normally reply within three working days.</p>
         </div>
       </div>
       <div class="contact-options">
-        <article class="contact-option fx"><small>01 · Booking</small><h3>Performance or workshop</h3><p>A theatre, a festival, a company party or a wedding. Bring the date, city, venue, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="#book">Invite us to perform <span>↓</span></a></article>
-        <article class="contact-option fx"><small>02 · Coaching</small><h3>One to one, online or here</h3><p>Private sessions with Swapnil for a performance, a wedding, technique or confidence on stage.</p><a class="button button-dark" href="#coaching">Ask about coaching <span>↓</span></a></article>
+        <article class="contact-option fx"><small>01 · Booking</small><h3>A performance by the company</h3><p>A theatre, a festival, a company party or a wedding. Bring the date, city, venue, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="#book">Invite us to perform <span>↓</span></a></article>
+        <article class="contact-option fx"><small>02 · Learn with Swapnil</small><h3>Workshops &amp; coaching</h3><p>Event workshops, choreography commissions and private one-to-one coaching, online or in Ghent — hired from Swapnil personally.</p><a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a></article>
         <article class="contact-option fx"><small>03 · Classes &amp; festival</small><h3>Weekly classes or a GIDF idea</h3><p>Weekly classes run at Shoonya Dance Centre, and the Ghent India Dance Festival keeps its own inbox for artist proposals, partnerships and volunteering.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Go to the Shoonya form <span>↗</span></a></article>
       </div>
     </section>
@@ -77,29 +77,16 @@ const body = `
       </div>
       ${enquiryForm({
         id: "book-abc",
-        subject: "ABC website — performance / workshop booking",
+        subject: "ABC website — performance booking enquiry",
         submit: "Send the booking enquiry",
         fields: BOOKING_FIELDS,
         consent: "Send me occasional ABC news — new shows, festival dates and classes. No more than a few times a year.",
       })}
     </section>
 
-    <section class="scene-pad t-paper form-scene" id="coaching" data-scene data-cue="one to one">
-      <p class="label fx">02 · Coaching</p>
-      <div class="intro">
-        <h2 class="fx">One to one,<br><em class="solo">at your pace.</em></h2>
-        <div class="intro-copy fx">
-          <p>Private coaching with Swapnil — online from anywhere, or in person in Ghent. A first dance, a stage piece, or the technique underneath whichever style you are learning.</p>
-          <p>Tell us where you are starting from; the answer comes back with a format and a next step, not a price list.</p>
-        </div>
-      </div>
-      ${enquiryForm({
-        id: "coaching",
-        subject: "ABC website — private coaching enquiry",
-        submit: "Send the coaching enquiry",
-        fields: COACHING_FIELDS,
-      })}
-    </section>
+    <!-- COACHING FORM REMOVED 2026-09-19. ABC = performances only; private coaching,
+         workshops and choreography commissions are hired from Swapnil personally at
+         https://swapnil.dance/workshops/ — see option 02 above. -->
 
     <section class="perf-break t-night spot" data-scene data-stage data-cue="start with hello">
       <div>
@@ -118,15 +105,15 @@ const body = `
         <h2 class="fx">A useful reply,<br><em class="solo">not a sales script.</em></h2>
         <div class="intro-copy fx">
           <p>For bookings, we first check the date, travel and practical shape of the event. Then we discuss the format, company size and preparation the venue needs.</p>
-          <p>For classes and coaching, we help you find the right level or next step. For the festival, we route the message to the relevant part of the programme.</p>
+          <p>For workshops or private coaching, we point you to Swapnil directly. For classes, we help you find the right level at Shoonya. For the festival, we route the message to the relevant part of the programme.</p>
           <p class="editorial-line">Clear details lead to a better idea.</p>
         </div>
       </div>
       <div class="stat-row fx">
         <div><b>3</b><span>Working days to reply</span></div>
         <div><b>Ghent</b><span>Home base</span></div>
-        <div><b>Europe</b><span>Bookings and workshops</span></div>
-        <div><b>Two</b><span>Forms on this page</span></div>
+        <div><b>Europe</b><span>Where the company travels</span></div>
+        <div><b>One</b><span>Form on this page</span></div>
       </div>
     </section>
 

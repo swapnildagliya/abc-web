@@ -205,16 +205,20 @@ for (const e of sets.upcoming) {
 
 /* ---------- enquiry forms ---------- */
 const contact = readFileSync(join(ROOT, "contact/index.html"), "utf8");
-check("contact carries both enquiry forms", (contact.match(/class="enquiry-form"/g) || []).length === 2);
+// ABC = performances only since 2026-09-19: the private-coaching enquiry form was
+// removed from Contact; only the performance-booking form remains. Coaching,
+// workshops and choreography now route to https://swapnil.dance/workshops/.
+check("contact carries the performance-booking enquiry form", (contact.match(/class="enquiry-form"/g) || []).length === 1);
 check("booking form anchor #book", contact.includes('id="book-abc"') && contact.includes('id="book"'));
-check("coaching form anchor #coaching", contact.includes('id="coaching"'));
-check("forms post to Web3Forms", (contact.match(/action="https:\/\/api\.web3forms\.com\/submit"/g) || []).length === 2);
-check("forms carry an access key", (contact.match(/name="access_key" value="[0-9a-f-]{36}"/g) || []).length === 2);
+check("no leftover coaching form/anchor", !contact.includes('id="coaching"'));
+check("contact points coaching/workshops to swapnil.dance", contact.includes("https://swapnil.dance/workshops/"));
+check("forms post to Web3Forms", (contact.match(/action="https:\/\/api\.web3forms\.com\/submit"/g) || []).length === 1);
+check("forms carry an access key", (contact.match(/name="access_key" value="[0-9a-f-]{36}"/g) || []).length === 1);
 // Must be absolute: Web3Forms redirects server-side, so a relative path would
 // resolve against api.web3forms.com.
-check("forms have an absolute no-JS redirect to the thank-you page", (contact.match(/name="redirect" value="https:\/\/[^"]+\/contact\/thank-you\/"/g) || []).length === 2);
-check("forms carry a honeypot", (contact.match(/name="botcheck"/g) || []).length === 2);
-check("each form has a distinct subject", new Set(contact.match(/name="subject" value="([^"]+)"/g) || []).size === 2);
+check("forms have an absolute no-JS redirect to the thank-you page", (contact.match(/name="redirect" value="https:\/\/[^"]+\/contact\/thank-you\/"/g) || []).length === 1);
+check("forms carry a honeypot", (contact.match(/name="botcheck"/g) || []).length === 1);
+check("each form has a distinct subject", new Set(contact.match(/name="subject" value="([^"]+)"/g) || []).size === 1);
 // D-074: no address may appear in markup we author, on any page.
 for (const [route, html] of Object.entries({ "contact/": contact, "contact/thank-you/": readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8") })) {
   check(`no email address in ${route}`, !/mailto:|[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(html));
