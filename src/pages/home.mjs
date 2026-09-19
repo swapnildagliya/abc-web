@@ -29,7 +29,7 @@ const def = {
   depth: 0,
   nav: null,
   title: "ABC a bollywood company — Indian dance in Belgium",
-  desc: "Indian dance performances, workshops, classes and the Ghent India Dance Festival — from Ghent to stages across Europe.",
+  desc: "Indian dance performances, classes and the Ghent India Dance Festival — from Ghent to stages across Europe.",
   canonical: `${SITE}/`,
   themeColor: "#10121A",
   ogImage: `${SITE}/assets/img/gidf/finale-hero.jpg`,
@@ -119,7 +119,7 @@ const body = `
           <div class="crane-copy">
             <p class="label">Made for the stage</p>
             <h2>Forty-plus shows.<br><em>Zero quiet ones.</em></h2>
-            <p class="lead">Tailored performances and participatory workshops for theatres, festivals, companies, weddings and public events.</p>
+            <p class="lead">Tailored performances for theatres, festivals, companies, weddings and public events.</p>
             <p style="margin-top:1.2rem"><a class="button button-yellow" href="book/">Explore performances <span>↗</span></a></p>
           </div>
         </div>
@@ -265,7 +265,7 @@ const body = `
           <div class="finale-ask">
             <p class="label" style="color:var(--yellow)">Your idea, next?</p>
             <h2>Want to make<br>something <em>move?</em></h2>
-            <p class="lead">A performance, a workshop, a class question or a festival idea—tell us what you are planning.</p>
+            <p class="lead">A performance, a class question or a festival idea—tell us what you are planning.</p>
             <div class="button-row" style="margin-top:1.4rem">
               <a class="button button-yellow" href="contact/">Start a conversation <span>↗</span></a>
               <a class="button button-outline" href="whats-on/">See ABC live <span>→</span></a>

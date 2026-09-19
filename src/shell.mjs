@@ -95,7 +95,7 @@ ${page.curtain ? `  <div class="curtain" role="presentation" aria-hidden="true">
     </div>
     <ol>
       ${[
-        ["book/", "Performances", "Shows, workshops, productions"],
+        ["book/", "Performances", "Shows and productions"],
         ["learn/", "Classes", "Start, return, go deeper"],
         ["whats-on/", "What’s on", "Ghent, Belgium and beyond"],
         ["festival/", "The festival", "GIDF · Edition Five"],
