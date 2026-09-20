@@ -39,7 +39,7 @@ const body = `
         </div>
       </div>
       <div class="inner-hero-visual contain" style="align-self:end">
-        <img class="fx-right drift" data-scrub style="--drift:-26px; max-height:72vh; width:auto; margin-inline:auto; filter: drop-shadow(0 24px 36px rgba(80,60,0,.35))" src="../assets/img/dancers/laurien-de-ridder.png" alt="ABC dancer Laurien De Ridder in a namaste greeting, mid-class costume" width="1168" height="1600">
+        <img class="fx-right drift" data-scrub style="--drift:-26px; max-height:62vh; width:auto; margin-inline:auto; filter: drop-shadow(0 24px 36px rgba(80,60,0,.35))" src="../assets/img/cutouts/tera-taali.png" alt="ABC artistic director Swapnil Dagliya performing Tera Taali, smiling with brass pots balanced on his head" width="1012" height="959">
         <p class="inner-hero-note script-note">no perfect feet required ↗</p>
         <div class="stamp stamp-blue" aria-hidden="true"><strong>Beginners</strong><span>very welcome</span></div>
       </div>
