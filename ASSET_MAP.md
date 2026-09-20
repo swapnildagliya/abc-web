@@ -245,8 +245,8 @@ approved photo get typographic/date-led treatments instead.
 | `students-sticks-jan-vens.jpg` | FESTIVAL gallery (caption: students on stage) |
 
 ### Retired / corrected placements
-- `cutouts/anarkali-wide.png` → LEARN hero **only** (was: home manifesto, home Act IV, about founder).
-- `cutouts/tera-taali.png` → CONTACT hero + HOME finale (unchanged pending decision on `mb-34`).
+- `cutouts/anarkali-wide.png` → retired, unreferenced (was: LEARN hero, home manifesto, home Act IV, about founder).
+- `cutouts/tera-taali.png` → LEARN hero (since 2026-09-20) + CONTACT hero + HOME finale.
 - `events/bhangra-starter-series-2026.jpg` → HOME postcard only (was also About hero).
 - `gidf/kalbeliya-swapnil-*.jpg` → ABOUT founder + FESTIVAL workshop card + HOME postcard (was Book hero).
 - `gidf/swapnil-gidf-2023-pink-smoke.jpg` → HOME manifesto "Not one way to move." (ABC frame; captioned GIDF Gala 2023).
@@ -268,7 +268,7 @@ ambiguity; every one is ABC.**
 | narcisse-merlier | Narcisse Merlier | skirt-spin showpiece; faint side-dancers vignetted | Home manifesto (line 1) · Home strip · About grid |
 | chiara-bisinelli | Chiara Bisinelli | arm raised | Home manifesto (line 2) · Home strip · About grid |
 | kaushika-kumar | Kaushika Kumar | arm reaching | Home strip · About grid |
-| laurien-de-ridder | Laurien De Ridder | namaste | Learn hero (welcoming guide) · Home strip · About grid |
+| laurien-de-ridder | Laurien De Ridder | namaste | Home strip · About grid (roster portrait only — the big `dancers/laurien-de-ridder.png` cutout came off the Learn hero 2026-09-20, Swapnil's call; file kept in assets, now unreferenced) |
 | khushboo-agarwal | Khushboo Agarwal | hand to neck | Home strip · About grid |
 | roshni-tela | Roshni Tela | green nauvari, hand on hip | Home strip · About grid |
 | sara-van-holm | Sara Van Holm | mid-turn, clean | About grid |
@@ -278,9 +278,10 @@ ambiguity; every one is ABC.**
 | svetlana-bubnova | Svetlana Bubnova | **cropped to head-shoulders** — the full cutout retained public bystanders | About grid |
 | srimahavalli-thiyagarajan | Srimahavalli Thiyagarajan | faint second ABC dancer behind (same white costume) | About grid |
 
-Retired: the Swapnil-only `cutouts/anarkali-wide.png` (was Learn hero → now
-Laurien) — kept in assets. `cutouts/tera-taali.png` still on Contact + Home
-finale. Cutout imgs use `object-fit: contain` everywhere so they never distort.
+Retired: the Swapnil-only `cutouts/anarkali-wide.png`, then
+`dancers/laurien-de-ridder.png` (Learn hero until 2026-09-20) — both kept in
+assets, neither served. `cutouts/tera-taali.png` is now Learn hero **and**
+Contact hero, plus the Home finale — the same figure on two heroes, flagged. Cutout imgs use `object-fit: contain` everywhere so they never distort.
 
 ## Showcase reel — festival page `#showcase`
 
