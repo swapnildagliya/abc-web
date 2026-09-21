@@ -105,6 +105,38 @@ const body = `
 
     ${marquee(["ABC performs", "Shoonya teaches", "GIDF gathers", "Ghent → Europe"], { className: "t-yellow", speed: "22s" })}
 
+    <!-- THE REST · the camera stops. Dates are for reading. -->
+    <section class="scene-pad t-paper" id="events" data-scene data-cue="upcoming events">
+      <div class="home-agenda-head">
+        <div>
+          <p class="label fx">Upcoming events · next dates</p>
+          <h2 class="fx">Next places to<br><em class="solo">find us.</em></h2>
+        </div>
+        <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
+      </div>
+      ${upcoming.length ? `<ol class="date-list">
+        ${upcoming.slice(0, 4).map(dateRow).join("\n        ")}
+      </ol>` : `<p class="lead fx">The next season is being programmed — the full archive of where we have danced is on the agenda page.</p>`}
+      <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See all upcoming dates <span>→</span></a></p>
+    </section>
+
+    <!-- THE CURTAIN CALL · the company bows in along the line -->
+    <section class="scene-pad t-night meet-company" id="company" data-scene data-cue="the company">
+      <div class="meet-head">
+        <div>
+          <p class="label fx" style="color:var(--yellow)">Meet the company</p>
+          <h2 class="fx">Thirteen dancers.<br><em class="solo">One company.</em></h2>
+        </div>
+        <div>
+          <p class="intro-copy fx">ABC is a live ensemble, not a name on a poster. Bollywood, Garba, Bhangra, folk and semi-classical — carried by the people who rehearse it every week in Ghent.</p>
+          <p class="fx meet-link"><a href="about/#company">Read their stories <span aria-hidden="true">→</span></a></p>
+        </div>
+      </div>
+      <ul class="line-up">
+        ${dancers.map(([f, name], i) => `<li style="--i:${i}"><a class="card" href="about/#company" data-tilt="7"><figure><img src="assets/img/dancers/portraits/${f}.jpg" alt="ABC dancer ${name}" loading="lazy" decoding="async" width="720" height="900"></figure><span>${name}</span></a></li>`).join("\n        ")}
+      </ul>
+    </section>
+
     <!-- THE CRANE · the company photo rakes flat until you stand level with it -->
     <section class="crane" id="performances" data-pin data-scene data-cue="act i · on stage">
       <div class="crane-fix">
@@ -126,21 +158,6 @@ const body = `
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- THE REST · the camera stops. Dates are for reading. -->
-    <section class="scene-pad t-paper" id="events" data-scene data-cue="upcoming events">
-      <div class="home-agenda-head">
-        <div>
-          <p class="label fx">Upcoming events · next dates</p>
-          <h2 class="fx">Next places to<br><em class="solo">find us.</em></h2>
-        </div>
-        <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
-      </div>
-      ${upcoming.length ? `<ol class="date-list">
-        ${upcoming.slice(0, 4).map(dateRow).join("\n        ")}
-      </ol>` : `<p class="lead fx">The next season is being programmed — the full archive of where we have danced is on the agenda page.</p>`}
-      <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See all upcoming dates <span>→</span></a></p>
     </section>
 
     <!-- THE LETTER · a lateral track into daylight; the pace slows to read -->
@@ -166,23 +183,6 @@ const body = `
         <div><b>4</b><span>Festival editions</span></div>
         <div><b>2017</b><span>On stage since</span></div>
       </div>
-    </section>
-
-    <!-- THE CURTAIN CALL · the company bows in along the line -->
-    <section class="scene-pad t-night meet-company" id="company" data-scene data-cue="the company">
-      <div class="meet-head">
-        <div>
-          <p class="label fx" style="color:var(--yellow)">Meet the company</p>
-          <h2 class="fx">Thirteen dancers.<br><em class="solo">One company.</em></h2>
-        </div>
-        <div>
-          <p class="intro-copy fx">ABC is a live ensemble, not a name on a poster. Bollywood, Garba, Bhangra, folk and semi-classical — carried by the people who rehearse it every week in Ghent.</p>
-          <p class="fx meet-link"><a href="about/#company">Read their stories <span aria-hidden="true">→</span></a></p>
-        </div>
-      </div>
-      <ul class="line-up">
-        ${dancers.map(([f, name], i) => `<li style="--i:${i}"><a class="card" href="about/#company" data-tilt="7"><figure><img src="assets/img/dancers/portraits/${f}.jpg" alt="ABC dancer ${name}" loading="lazy" decoding="async" width="720" height="900"></figure><span>${name}</span></a></li>`).join("\n        ")}
-      </ul>
     </section>
 
     <!-- CUT TO DAYLIGHT · a wipe, not a dissolve. The temperature changes. -->
