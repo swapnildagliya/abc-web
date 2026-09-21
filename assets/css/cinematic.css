@@ -157,6 +157,12 @@
 }
 .no-js .crane-copy, .reduce .crane-copy { opacity: 1; transform: none; }
 .crane-copy h2 { font-size: clamp(2rem, 5vw, 4rem); text-transform: uppercase; font-variation-settings: "wdth" 84; margin-bottom: .8rem; }
+.proof-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem;
+  margin: 1.15rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line-light);
+}
+.proof-stats span { font-size: .69rem; line-height: 1.25; letter-spacing: .1em; text-transform: uppercase; font-weight: 680; }
+.proof-stats b { display: block; margin-bottom: .2rem; color: var(--yellow); font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1; letter-spacing: 0; }
 /* Same reason as the finale: a crane move needs depth to descend through.
    On a phone it degrades to a floating card between two voids, with the
    figcaption landing on the eyebrow. Stack it: photograph, then the copy. */
@@ -170,6 +176,30 @@
   .js:not(.reduce) .crane-floor img { transform: none; height: 100%; }
   .crane .ghost, .crane-scrim, .crane-note { display: none; }
   .crane-copy { position: relative; left: auto; bottom: auto; margin-top: 2.2rem; opacity: 1; transform: none; max-width: none; }
+}
+
+/* The homepage ends its narrative with two short handoffs. Classes and GIDF
+   still have clear routes without becoming separate full-screen acts. */
+.home-pathways { padding-block: clamp(3.4rem, 7vw, 6rem); }
+.home-pathways-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem 3rem;
+  margin-bottom: clamp(1.8rem, 3vw, 2.8rem);
+}
+.home-pathways-head .script-note { margin: 0; color: var(--blue); }
+.home-pathways-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-block: 1.5px solid var(--ink); }
+.home-pathways article { padding: clamp(1.8rem, 4vw, 3.5rem) clamp(0rem, 3vw, 3rem); }
+.home-pathways article + article { border-left: 1.5px solid var(--ink); padding-left: clamp(1.5rem, 4vw, 4rem); }
+.home-pathways h2 { margin: .6rem 0 1rem; font-size: clamp(2.2rem, 4.8vw, 4rem); text-transform: uppercase; font-variation-settings: "wdth" 84; }
+.home-pathways article > p:not(.label) { max-width: 46ch; }
+.home-pathways .button-row { margin-top: 1.4rem; }
+@media (max-width: 760px) {
+  .proof-stats { gap: .55rem; }
+  .proof-stats span { font-size: .62rem; letter-spacing: .06em; }
+  .home-pathways-head { display: block; }
+  .home-pathways-head .script-note { margin-top: .7rem; }
+  .home-pathways-grid { grid-template-columns: 1fr; }
+  .home-pathways article { padding: 2.2rem 0; }
+  .home-pathways article + article { border-left: 0; border-top: 1.5px solid var(--ink); padding-left: 0; }
 }
 .crane-note {
   position: absolute; right: calc(var(--pad) * 1.2); top: calc(var(--header-h) + 2.5rem); z-index: 5;

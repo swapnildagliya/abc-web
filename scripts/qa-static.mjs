@@ -257,6 +257,16 @@ check("hero definition preserves the bold/serif type pairing",
 check("Book ABC opens the enquiry form while Performances remains its own route",
   home.includes('class="button button-yellow" href="contact/#book">Book ABC')
   && home.includes('href="book/">Performances</a>'));
+check("homepage keeps the agreed concise section order",
+  home.indexOf('id="events"') < home.indexOf('id="company"')
+  && home.indexOf('id="company"') < home.indexOf('id="performances"')
+  && home.indexOf('id="performances"') < home.indexOf('class="scene-pad t-yellow home-pathways"')
+  && home.indexOf('class="scene-pad t-yellow home-pathways"') < home.indexOf('id="contact-abc"'));
+check("redundant homepage story, ownership marquee and archive strip are gone",
+  !home.includes('id="story"') && !home.includes('Postcards from the road')
+  && !home.includes('ABC performs') && !home.includes('yes, beginners too'));
+check("performance proof retains the useful company numbers",
+  home.includes('class="proof-stats"') && /44\+/.test(home) && /12\+/.test(home) && /2017/.test(home));
 check("no room metaphor", !/room to move|kind of room/i.test(home));
 // The homepage linked the 17.1 MiB edit master until 2026-09-08, so every
 // desktop visitor downloaded it. Masters live in assets/media/_originals/ and

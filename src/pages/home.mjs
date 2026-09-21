@@ -1,4 +1,4 @@
-import { page, SITE, marquee } from "../shell.mjs";
+import { page, SITE } from "../shell.mjs";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { eventSets } from "../events.mjs";
@@ -52,16 +52,6 @@ const dancers = [
   ["srimahavalli-thiyagarajan", "Srimahavalli Thiyagarajan"],
 ];
 
-const postcards = [
-  ["events/benenwerk-2026.jpg", 1400, 932, "Benenwerk", "Bruges", "ABC performing at an outdoor festival"],
-  ["gidf/finale-hero.jpg", 2000, 1333, "Company finale", "Ghent", "ABC ensemble finale on a theatre stage"],
-  ["abc/garba-ensemble-gala2023-backaert.jpg", 2400, 1613, "Garba ensemble", "GIDF Gala", "ABC Garba ensemble at the GIDF Gala"],
-  ["abc/terah-taali-red-gala2023-jan-vens.jpg", 2400, 1600, "Terah Taali", "Gala", "ABC Terah Taali performers in red stage smoke"],
-  ["abc/kalbeliya-face-safe.png", 347, 520, "Kalbeliya", "Gentse Feesten", "Swapnil performing Kalbeliya at Gentse Feesten", "12%"],
-  ["abc/rajasthani-set-gala2023-jan-vens.jpg", 2400, 1600, "Rajasthani set", "Gala", "ABC Rajasthani set in red light"],
-  ["abc/bhangra-face-safe.png", 346, 520, "Bhangra", "GIDF Gala", "Swapnil performing Bhangra on the GIDF Gala stage", "12%"],
-];
-
 const body = `
     <!-- OPENING · the film carries the statement. There is no separate
          manifesto section: the footage is the evidence, the words the caption. -->
@@ -102,8 +92,6 @@ const body = `
         </div>
       </div>
     </section>
-
-    ${marquee(["ABC performs", "Shoonya teaches", "GIDF gathers", "Ghent → Europe"], { className: "t-yellow", speed: "22s" })}
 
     <!-- THE REST · the camera stops. Dates are for reading. -->
     <section class="scene-pad t-paper" id="events" data-scene data-cue="upcoming events">
@@ -154,101 +142,39 @@ const body = `
             <p class="label">Made for the stage</p>
             <h2>Forty-plus shows.<br><em>Zero quiet ones.</em></h2>
             <p class="lead">Tailored performances for theatres, festivals, companies, weddings and public events.</p>
+            <div class="proof-stats" aria-label="ABC in numbers">
+              <span><b>44+</b>Stages and events</span>
+              <span><b>12+</b>Cities across Europe</span>
+              <span><b>2017</b>On stage since</span>
+            </div>
             <p style="margin-top:1.2rem"><a class="button button-yellow" href="book/">Explore performances <span>↗</span></a></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- THE LETTER · a lateral track into daylight; the pace slows to read -->
-    <section class="scene-pad t-bone story letter" id="story" data-scene data-scrub data-cue="the letter">
-      <div class="stage">
-        <div>
-          <p class="label fx">One live company</p>
-          <h2 class="fx">Wherever Indian dance<br>meets <em class="solo">an audience.</em></h2>
-          <img class="letter-mark fx" src="assets/img/abc-mark-clean.png" alt="" loading="lazy" decoding="async" width="1351" height="1026">
-        </div>
+    <!-- TWO SHORT HANDOFFS · useful routes without another long homepage act -->
+    <section class="scene-pad t-yellow home-pathways" id="learn" data-scene data-cue="more ways to move">
+      <div class="home-pathways-head fx">
+        <p class="label">More ways to move</p>
+        <p class="script-note">Ghent is home. Europe is the dance floor.</p>
       </div>
-      <div class="story-side">
-        <div class="story-letter fx">
-          <p>ABC lives wherever Indian dance meets an audience: a theatre that leans forward, a city square that starts moving, a beginner finding the beat, a festival circle opening wider.</p>
-          <p>Bollywood, Garba, Bhangra, folk and semi-classical forms—shared with context, craft and plenty of joy.</p>
-          <p class="signoff">Ghent is home. Europe is the dance floor.</p>
-        </div>
-        <p class="script-note fx">yes, beginners too.</p>
-      </div>
-      <div class="stat-row fx" aria-label="ABC in numbers">
-        <div><b>44+</b><span>Stages and events</span></div>
-        <div><b>12+</b><span>Cities across Europe</span></div>
-        <div><b>4</b><span>Festival editions</span></div>
-        <div><b>2017</b><span>On stage since</span></div>
-      </div>
-    </section>
-
-    <!-- CUT TO DAYLIGHT · a wipe, not a dissolve. The temperature changes. -->
-    <section class="cut" id="learn" data-pin data-scene data-cue="classes">
-      <div class="cut-fix">
-        <div class="cut-night" aria-hidden="true">
-          <p class="ghost">CURTAIN</p>
-          <div style="max-width:96rem;margin:0 auto;width:100%">
-            <p class="label">Still on stage</p>
-            <h2 style="font-size:clamp(2.2rem,6vw,5rem);text-transform:uppercase;font-variation-settings:'wdth' 82">The performance<br><em style="text-transform:none">ends here.</em></h2>
+      <div class="home-pathways-grid">
+        <article class="fx">
+          <p class="label">Classes · Shoonya Dance Centre</p>
+          <h2>Want to<br><em class="solo">learn?</em></h2>
+          <p>Weekly classes and registration belong to Shoonya. ABC’s free ten-part Bollywood course is also available to learn from home.</p>
+          <div class="button-row">
+            <a class="button button-dark" href="learn/">Find classes <span>→</span></a>
+            <a class="text-link" href="learn-to-dance-bollywood/">Free course <span>→</span></a>
           </div>
-        </div>
-        <div class="cut-day">
-          <div style="max-width:96rem;margin:0 auto;width:100%">
-            <p class="label">Classes at Shoonya · Ghent</p>
-            <h2 style="font-size:clamp(2.2rem,6vw,5rem);text-transform:uppercase;font-variation-settings:'wdth' 82;margin-bottom:1rem">Start where<br><em style="text-transform:none">your feet are.</em></h2>
-            <p class="lead">Weekly classes and registration belong to Shoonya Dance Centre. Workshops and coaching are booked with Swapnil. ABC’s free Bollywood course remains open to learn from home.</p>
-            <div class="act-list" style="max-width:54rem">
-              <a href="learn-to-dance-bollywood/"><small>01</small><span><strong>Free Bollywood course</strong><em>Ten video lessons · at home</em></span><b>→</b></a>
-              <a href="learn/#classes"><small>02</small><span><strong>The full timetable</strong><em>Bollywood, Bhangra, folk and more</em></span><b>→</b></a>
-            </div>
-            <p style="margin-top:1.6rem"><a class="button button-dark" href="learn/">Find your path <span>→</span></a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE GATHERING · many bodies from many places, assembling out of depth -->
-    <section class="gather" id="festival" data-pin data-scene data-cue="the festival">
-      <div class="gather-fix">
-        <div class="stage">
-          <div class="collage" aria-hidden="true">
-            <figure style="--start:.06;--depth:-900px;width:52%;aspect-ratio:3/2;right:2%;top:14%"><img src="assets/img/gidf/aakansha-bollypop-kalbeliya-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="2000" height="1333"><figcaption>Kalbeliya · PC Stijn Dejonckheere</figcaption></figure>
-            <figure style="--start:.20;--depth:-1400px;width:38%;aspect-ratio:2/3;right:56%;top:22%"><img src="assets/img/gidf/vanisha-kathak-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="933" height="1400"><figcaption>Kathak · PC Stijn Dejonckheere</figcaption></figure>
-            <figure style="--start:.34;--depth:-700px;width:40%;aspect-ratio:3/2;right:6%;bottom:10%"><img src="assets/img/gidf/julien-gala-showcase-pc-stijn-dejonckheere.jpg" alt="" loading="lazy" decoding="async" width="1400" height="933"><figcaption>Gala Showcase · PC Stijn Dejonckheere</figcaption></figure>
-            <figure style="--start:.48;--depth:-1200px;width:32%;aspect-ratio:3/2;right:52%;bottom:6%"><img src="assets/img/gidf/tera-taali-gidf-2023.jpg" alt="" loading="lazy" decoding="async" width="2400" height="1613"><figcaption>Edition One · 2023</figcaption></figure>
-          </div>
-        </div>
-        <div class="gather-copy">
-          <p class="label" style="color:var(--yellow)">Ghent India Dance Festival</p>
-          <h2 style="font-size:clamp(2.2rem,5.4vw,4.6rem);text-transform:uppercase;font-variation-settings:'wdth' 84;margin-bottom:1rem">Three days of India<br><em style="text-transform:none">in Ghent.</em></h2>
-          <p class="lead">Artists, students and audiences meeting through workshops, shared stages and the joy of discovering another way to move.</p>
-          <div class="festival-facts">
-            <span><b>Edition Five</b>2027</span>
-            <span><b>7–9 May</b>Three days</span>
-            <span><b>Ghent</b>Shoonya Dance Centre</span>
-          </div>
-          <p><a class="button button-yellow" href="festival/">Enter the festival <span>↗</span></a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE ROAD · the camera tracks sideways; scroll becomes travel -->
-    <section class="road" id="archive" data-pin data-track data-scene data-cue="the road">
-      <div class="road-fix">
-        <div class="postcards-head">
-          <div>
-            <p class="label">Postcards from the road</p>
-            <h2>Where we’ve<br><em>danced.</em></h2>
-          </div>
-          <p class="script-note">keep scrolling — the road moves →</p>
-        </div>
-        <div class="postcard-strip" aria-label="ABC performance archive">
-          ${postcards.map(([src, w, h, title, place, alt, focalY = "50%"]) => `<figure tabindex="0"><span class="pc-img"><img src="assets/img/${src}" alt="${alt}" loading="lazy" decoding="async" width="${w}" height="${h}" style="object-position:center ${focalY}"></span><figcaption><strong>${title}</strong><span>${place}</span></figcaption></figure>`).join("\n          ")}
-        </div>
-        <div class="road-rule" aria-hidden="true"><i></i></div>
+        </article>
+        <article class="fx" id="festival">
+          <p class="label">Ghent India Dance Festival</p>
+          <h2>7–9 May<br><em class="solo">2027.</em></h2>
+          <p>Edition Five brings artists, students and audiences together for three days of workshops and performance in Ghent.</p>
+          <a class="button button-dark" href="festival/">Enter the festival <span>→</span></a>
+        </article>
       </div>
     </section>
 
