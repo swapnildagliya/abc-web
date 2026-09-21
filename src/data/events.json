@@ -505,6 +505,12 @@
    "city": "Brussels",
    "kind": "class",
    "blurb": "Three Fridays · from €25",
+   "image": {
+    "src": "assets/img/events/garba-miniseries-brussels-2026.jpg",
+    "w": 933,
+    "h": 1400,
+    "alt": "Swapnil Dagliya dancing Garba in a colourful costume"
+   },
    "body": "<div class=\"complete-prose\"><div class=\"event-meta\"><span><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><rect x=\"2\" y=\"3\" width=\"12\" height=\"11\" rx=\"2.5\"/><path d=\"M2 6.5h12M5.5 1.5v3M10.5 1.5v3\"/></svg>Fridays 11, 18 &amp; 25 September 2026</span><span><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><path d=\"M13 6.7C13 10 8 14 8 14S3 10 3 6.7a5 5 0 0 1 10 0Z\"/><circle cx=\"8\" cy=\"6.7\" r=\"1.7\"/></svg>KB Dance Hub, Rue d’Arlon 38, 1000 Brussels</span><span><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"><circle cx=\"8\" cy=\"8\" r=\"6.2\"/><path d=\"M8 4.8V8l2.2 1.6\" stroke-linecap=\"round\"/></svg>19:30–21:30</span></div><p class=\"lede\">A three-Friday Garba miniseries in Brussels with Swapnil Dagliya.</p><ul><li>\n<time datetime=\"2026-09-11\">11 – 25 Sep · Brussels · from €25</time>\n</li></ul>\n<p>Three consecutive Fridays of Garba at KB Dance Hub. Full pass €65 for the first ten places, €75 after. A single session is €25 for the first ten places, €28 after. Registrations are non-refundable and non-transferable.</p><p>Hosted with For The Love Of Bollywood, who handle registration.</p><p><a class=\"button button-yellow\" href=\"https://www.fortheloveofbollywood.be/workshops\" target=\"_blank\" rel=\"noopener\">Register<span class=\"btn-orb\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 8h11M9 3.5 13.5 8 9 12.5\"/></svg></span></a></p></div>"
   }
  ],
