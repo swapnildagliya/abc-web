@@ -252,6 +252,11 @@ const home = readFileSync(join(ROOT, "index.html"), "utf8");
 const homeText = home.replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 check("central statement present", /Not one dance/i.test(homeText) && /Not one stage/i.test(homeText)
   && /Not one way to move/i.test(homeText) && /This is ABC/i.test(homeText));
+check("hero definition preserves the bold/serif type pairing",
+  home.includes('<p class="cap"><b>Indian dance with</b> <em>roots, context and joy.</em></p>'));
+check("Book ABC opens the enquiry form while Performances remains its own route",
+  home.includes('class="button button-yellow" href="contact/#book">Book ABC')
+  && home.includes('href="book/">Performances</a>'));
 check("no room metaphor", !/room to move|kind of room/i.test(home));
 // The homepage linked the 17.1 MiB edit master until 2026-09-08, so every
 // desktop visitor downloaded it. Masters live in assets/media/_originals/ and

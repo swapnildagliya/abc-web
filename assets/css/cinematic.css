@@ -62,7 +62,7 @@
     radial-gradient(110% 80% at 14% 100%, rgba(9,10,16,.5), transparent 56%);
 }
 .overture-copy { position: absolute; left: var(--pad); right: var(--pad); bottom: clamp(3rem, 9vh, 6.5rem); z-index: 2; }
-.overture-eyebrow { display: flex; align-items: center; gap: .9rem; margin: 0 0 1rem; font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 720; }
+.overture-eyebrow { display: flex; align-items: center; gap: .9rem; margin: 0 0 1rem; font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 720; }
 .overture-eyebrow i { font-style: normal; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
 .overture-title { font-size: clamp(2.6rem, 8vw, 6.6rem); font-weight: 790; line-height: .92; text-transform: uppercase; font-variation-settings: "wdth" 80; margin: 0; }
 .overture-title em { color: var(--yellow); }
