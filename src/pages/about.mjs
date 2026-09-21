@@ -63,7 +63,7 @@ const body = `
       <div class="intro">
         <h2 class="fx">Not one dance.<br><em class="solo">On purpose.</em></h2>
         <div class="intro-copy fx">
-          <p>ABC a bollywood company is based in Ghent and led by Swapnil Dagliya. Since 2017, the company has performed more than 40 times across Europe—on theatre stages, at festivals, and at weddings and company events.</p>
+          <p>ABC a bollywood company is at home at Shoonya Dance Centre in Ghent, and is led by Swapnil Dagliya. Since 2017, the company has performed more than 40 times across Europe—on theatre stages, at festivals, and at weddings and company events.</p>
           <p>Indian dance is not one thing. Folk, Bollywood and semi-classical work each carry their own history. ABC moves between them deliberately rather than folding everything into a single act.</p>
           <p class="editorial-line">Everybody is welcome here. The form does not have to be watered down to include them.</p>
         </div>

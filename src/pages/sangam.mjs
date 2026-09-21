@@ -13,11 +13,11 @@ const EVENT_SCHEMA = JSON.stringify([
   {
     "@context": "https://schema.org", "@type": "TheaterEvent",
     name: "SANGAM — an Indian dance production",
-    description: "One child. One river. Two worlds that must meet. An ABC a bollywood company production at Shoonya Dance Centre, Ghent.",
+    description: "A village without water, and a child who belongs to no one. An ABC a bollywood company production at Shoonya Dance Centre, Ghent.",
     image: `${SITE}/assets/img/events/sangam-2026.jpg`,
     startDate: "2026-11-07T19:30:00+01:00",
-    endDate: "2026-11-07T20:45:00+01:00",
-    duration: "PT1H15M",
+    endDate: "2026-11-07T21:00:00+01:00",
+    duration: "PT1H30M",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     performer: { "@type": "PerformingGroup", name: "ABC a bollywood company" },
@@ -32,11 +32,11 @@ const EVENT_SCHEMA = JSON.stringify([
   {
     "@context": "https://schema.org", "@type": "TheaterEvent",
     name: "SANGAM — an Indian dance production",
-    description: "One child. One river. Two worlds that must meet. An ABC a bollywood company production at Shoonya Dance Centre, Ghent.",
+    description: "A village without water, and a child who belongs to no one. An ABC a bollywood company production at Shoonya Dance Centre, Ghent.",
     image: `${SITE}/assets/img/events/sangam-2026.jpg`,
     startDate: "2026-11-08T15:00:00+01:00",
-    endDate: "2026-11-08T16:15:00+01:00",
-    duration: "PT1H15M",
+    endDate: "2026-11-08T16:30:00+01:00",
+    duration: "PT1H30M",
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     performer: { "@type": "PerformingGroup", name: "ABC a bollywood company" },
@@ -85,7 +85,7 @@ const def = {
   depth: 1,
   nav: "whats-on/",
   title: "SANGAM — an Indian dance production, 7 & 8 November 2026 | ABC",
-  desc: "One child. One river. Two worlds that must meet. ABC a bollywood company’s Indian dance production, 7 and 8 November 2026 at Shoonya Theatre, Ghent.",
+  desc: "A village without water, and a child who belongs to no one. Sixty minutes of dance without dialogue, 7 and 8 November 2026 at Shoonya Theatre, Ghent.",
   canonical: `${SITE}/sangam/`,
   themeColor: "#10121A",
   ogImage: `${SITE}/assets/img/events/sangam-2026.jpg`,
@@ -114,7 +114,7 @@ const body = `
       <div class="sangam-hero-copy">
         <p class="inner-kicker fx">ABC a bollywood company · at Shoonya Dance Centre</p>
         <h1 id="page-title"><span class="mask-line"><span>SANGAM</span></span><span class="mask-line"><span lang="hi" class="sangam-deva">संगम</span></span></h1>
-        <p class="sangam-tagline fx">One child. One river.<br><em class="solo">Two worlds that must meet.</em></p>
+        <p class="sangam-tagline fx">A village without water,<br><em class="solo">and a child who belongs to no one.</em></p>
         <p class="sangam-when fx">Sat 7 Nov 2026 · 19:30<i>·</i>Sun 8 Nov 2026 · 15:00</p>
         <div class="button-row fx">
           <a class="button button-yellow" href="${TICKETS}" target="_blank" rel="noopener">Book tickets <span>↗</span></a>
@@ -126,11 +126,12 @@ const body = `
 
     <section class="scene-pad t-paper" id="story" data-scene data-cue="the story">
       <div class="intro">
-        <h2 class="fx">A story that moves<br><em class="solo">like water.</em></h2>
+        <h2 class="fx">Where two rivers<br><em class="solo">meet.</em></h2>
         <div class="intro-copy fx">
-          <p>SANGAM begins in a world where water has not yet arrived. In an all-female village shaped by ritual, rhythm and inheritance, a child is born who unsettles the order of things. His presence asks a question the village is not ready to answer: what does it mean to love what you do not understand?</p>
-          <p>Carried between rejection and tenderness, drought and abundance, the human and the divine, SANGAM follows a community as it loses its connection to the very source that sustains it.</p>
-          <p>Through Indian folk, Bollywood, semi-classical movement and theatrical storytelling, the production moves like a river: gathering grief, memory, devotion and celebration into one current. A story of love withheld, love discovered, and the long journey back to wholeness.</p>
+          <p>SANGAM takes its name from the place where two rivers meet.</p>
+          <p>Set in a village of women shaped by ritual, rhythm and inheritance, in a land that has never held water, SANGAM gives voice to a child who arrives belonging to no one, and to the community that must decide what to do with him.</p>
+          <p>Danced in Indian folk, Bollywood and semi-classical forms, the work holds drought against abundance, the human against the divine, and what a village keeps against what it is willing to give away.</p>
+          <p>It asks what a community owes to the one it does not recognise.</p>
         </div>
       </div>
     </section>
@@ -145,7 +146,7 @@ const body = `
     <section class="perf-break t-blue spot" data-scene data-stage data-cue="two shows">
       <div>
         <p class="break-kicker fx">Two performances</p>
-        <h2 class="fx">Sixty minutes,<em class="solo">one interval.</em></h2>
+        <h2 class="fx">Seventy minutes,<em class="solo">one interval.</em></h2>
       </div>
       <div class="break-side">
         <p class="script-note fx">the bar opens half an hour early.</p>
@@ -160,7 +161,7 @@ const body = `
         ${fact("Saturday 7 November 2026", "19:30")}
         ${fact("Sunday 8 November 2026", "15:00")}
         ${fact("Shoonya Theatre", "Shoonya Dance Centre, Stapelplein 41, 9000 Ghent")}
-        ${fact("Running time", "60 minutes plus a 15-minute interval")}
+        ${fact("Running time", "70 minutes plus a 20-minute interval")}
         ${fact("Tickets", "€20")}
         ${fact("Ages", "8 and up")}
         ${fact("Getting there", "10-minute walk from Gent-Dampoort station · paid street parking nearby")}
@@ -178,7 +179,7 @@ const body = `
       </div>
       <ul class="sangam-ensemble fx">${ENSEMBLE.map(n => `<li>${n}</li>`).join("")}</ul>
       <dl class="sangam-credits fx">
-        <div><dt>Presented by</dt><dd>An ABC a bollywood company production at Shoonya Dance Centre</dd></div>
+        <div><dt>Presented by</dt><dd>An ABC a bollywood company production at Shoonya Dance Centre — ABC's home.</dd></div>
         ${CREDITS.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join("\n        ")}
       </dl>
     </section>
