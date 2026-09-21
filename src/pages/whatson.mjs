@@ -104,7 +104,7 @@ const body = `
       <div class="inner-hero-copy">
         <p class="inner-kicker fx">Ghent · Belgium · Europe</p>
         <h1 id="page-title"><span class="mask-line"><span>Meet us</span></span><span class="mask-line"><span><em class="solo">out there.</em></span></span></h1>
-        <p class="inner-hero-lead fx">Outdoor stages, open classes, workshops and a new production. This is where ABC is moving next.</p>
+        <p class="inner-hero-lead fx">ABC is a Ghent-based Indian dance company creating performances and productions across Belgium and Europe. This agenda also points you to classes at Shoonya, workshops with Swapnil and GIDF.</p>
         <div class="button-row fx">
           <a class="button button-yellow" href="#agenda">Upcoming dates <span>↓</span></a>
           <a class="button button-glass" href="#past-events">Past archive <span>↓</span></a>

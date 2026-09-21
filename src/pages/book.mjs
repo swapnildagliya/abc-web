@@ -43,7 +43,7 @@ const def = {
   bodyClass: "page-book",
   cinematic: true,
   firstCue: "enter",
-  headerCta: { href: "../contact/", label: "Book ABC", glyph: "↗" },
+  headerCta: { href: "../contact/#book", label: "Book ABC", glyph: "↗" },
   schemas: [FAQ_SCHEMA],
 };
 

@@ -29,7 +29,7 @@ const def = {
   depth: 0,
   nav: null,
   title: "ABC a bollywood company — Indian dance in Belgium",
-  desc: "Indian dance performances, classes and the Ghent India Dance Festival — from Ghent to stages across Europe.",
+  desc: "ABC is a Ghent-based Indian dance company creating performances and productions for stages, festivals and events across Belgium and Europe.",
   canonical: `${SITE}/`,
   themeColor: "#10121A",
   ogImage: `${SITE}/assets/img/gidf/finale-hero.jpg`,
@@ -56,9 +56,9 @@ const postcards = [
   ["gidf/finale-hero.jpg", 2000, 1333, "Company finale", "Ghent", "ABC ensemble finale on a theatre stage"],
   ["abc/garba-ensemble-gala2023-backaert.jpg", 2400, 1613, "Garba ensemble", "GIDF Gala", "ABC Garba ensemble at the GIDF Gala"],
   ["abc/terah-taali-red-gala2023-jan-vens.jpg", 2400, 1600, "Terah Taali", "Gala", "ABC Terah Taali performers in red stage smoke"],
-  ["gidf/kalbeliya-swapnil-kalbeliya-stijn-dejonckheere.jpg", 800, 1200, "Kalbeliya", "Gentse Feesten", "Swapnil performing Kalbeliya at Gentse Feesten"],
+  ["abc/kalbeliya-face-safe.png", 347, 520, "Kalbeliya", "Gentse Feesten", "Swapnil performing Kalbeliya at Gentse Feesten", "12%"],
   ["abc/rajasthani-set-gala2023-jan-vens.jpg", 2400, 1600, "Rajasthani set", "Gala", "ABC Rajasthani set in red light"],
-  ["events/bhangra-starter-series-2026.jpg", 1400, 2105, "Bhangra", "Belgium", "ABC performing Bhangra on stage"],
+  ["abc/bhangra-face-safe.png", 346, 520, "Bhangra", "GIDF Gala", "Swapnil performing Bhangra on the GIDF Gala stage", "12%"],
 ];
 
 const body = `
@@ -90,6 +90,7 @@ const body = `
                 <p class="cap">Indian dance with <em>roots, context and joy.</em></p>
               </div>
             </div>
+            <p class="overture-definition">ABC is a Ghent-based Indian dance company creating performances and productions for theatres, festivals, companies, weddings and public events across Belgium and Europe.</p>
             <div class="overture-actions">
               <a class="button button-yellow" href="book/">Book ABC <span>↗</span></a>
               <a class="button button-glass" href="whats-on/">See what’s on <span>→</span></a>
@@ -101,7 +102,7 @@ const body = `
       </div>
     </section>
 
-    ${marquee(["We perform", "We teach", "We gather", "Ghent → Europe"], { className: "t-yellow", speed: "22s" })}
+    ${marquee(["ABC performs", "Shoonya teaches", "GIDF gathers", "Ghent → Europe"], { className: "t-yellow", speed: "22s" })}
 
     <!-- THE CRANE · the company photo rakes flat until you stand level with it -->
     <section class="crane" id="performances" data-pin data-scene data-cue="act i · on stage">
@@ -195,9 +196,9 @@ const body = `
         </div>
         <div class="cut-day">
           <div style="max-width:96rem;margin:0 auto;width:100%">
-            <p class="label">Classes in Ghent</p>
+            <p class="label">Classes at Shoonya · Ghent</p>
             <h2 style="font-size:clamp(2.2rem,6vw,5rem);text-transform:uppercase;font-variation-settings:'wdth' 82;margin-bottom:1rem">Start where<br><em style="text-transform:none">your feet are.</em></h2>
-            <p class="lead">At home or in a weekly class in Ghent. There is a clear way in—and a next step when you are ready.</p>
+            <p class="lead">Weekly classes and registration belong to Shoonya Dance Centre. Workshops and coaching are booked with Swapnil. ABC’s free Bollywood course remains open to learn from home.</p>
             <div class="act-list" style="max-width:54rem">
               <a href="learn-to-dance-bollywood/"><small>01</small><span><strong>Free Bollywood course</strong><em>Ten video lessons · at home</em></span><b>→</b></a>
               <a href="learn/#classes"><small>02</small><span><strong>The full timetable</strong><em>Bollywood, Bhangra, folk and more</em></span><b>→</b></a>
@@ -244,7 +245,7 @@ const body = `
           <p class="script-note">keep scrolling — the road moves →</p>
         </div>
         <div class="postcard-strip" aria-label="ABC performance archive">
-          ${postcards.map(([src, w, h, title, place, alt]) => `<figure tabindex="0"><span class="pc-img"><img src="assets/img/${src}" alt="${alt}" loading="lazy" decoding="async" width="${w}" height="${h}"></span><figcaption><strong>${title}</strong><span>${place}</span></figcaption></figure>`).join("\n          ")}
+          ${postcards.map(([src, w, h, title, place, alt, focalY = "50%"]) => `<figure tabindex="0"><span class="pc-img"><img src="assets/img/${src}" alt="${alt}" loading="lazy" decoding="async" width="${w}" height="${h}" style="object-position:center ${focalY}"></span><figcaption><strong>${title}</strong><span>${place}</span></figcaption></figure>`).join("\n          ")}
         </div>
         <div class="road-rule" aria-hidden="true"><i></i></div>
       </div>
@@ -265,9 +266,9 @@ const body = `
           <div class="finale-ask">
             <p class="label" style="color:var(--yellow)">Your idea, next?</p>
             <h2>Want to make<br>something <em>move?</em></h2>
-            <p class="lead">A performance, a class question or a festival idea—tell us what you are planning.</p>
+            <p class="lead">Planning a theatre programme, festival, company event or celebration? Tell ABC the date, city and audience.</p>
             <div class="button-row" style="margin-top:1.4rem">
-              <a class="button button-yellow" href="contact/">Start a conversation <span>↗</span></a>
+              <a class="button button-yellow" href="contact/#book">Book the company <span>↗</span></a>
               <a class="button button-outline" href="whats-on/">See ABC live <span>→</span></a>
             </div>
           </div>

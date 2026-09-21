@@ -79,6 +79,13 @@
 .no-js .caption, .reduce .caption { min-height: 0; height: auto; overflow: visible; }
 .no-js .cap-track, .reduce .cap-track { position: static; }
 .no-js .cap, .reduce .cap { height: auto; margin-bottom: .25rem; }
+.overture-definition {
+  max-width: 68ch;
+  margin-top: .7rem;
+  color: color-mix(in srgb, var(--bone) 90%, transparent);
+  font-size: clamp(.92rem, 1.25vw, 1.08rem);
+  line-height: 1.55;
+}
 
 .overture-actions { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: .8rem 1rem; }
 .js:not(.reduce) .overture-actions { opacity: 0; will-change: opacity, transform; }

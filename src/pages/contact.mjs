@@ -15,7 +15,7 @@ const def = {
   depth: 1,
   nav: "contact/",
   title: "Contact and book ABC a bollywood company",
-  desc: "Contact ABC about an Indian dance performance, class question or Ghent India Dance Festival idea.",
+  desc: "Book ABC for an Indian dance performance in Belgium or Europe, with clear routes to Shoonya classes, Swapnil workshops and GIDF.",
   canonical: `${SITE}/contact/`,
   themeColor: "#164BD8",
   ogImage: `${SITE}/assets/img/cutouts/tera-taali.png`,
@@ -35,7 +35,7 @@ const body = `
       <div class="inner-hero-copy">
         <p class="inner-kicker fx">Performance · Class · Festival</p>
         <h1 id="page-title"><span class="mask-line"><span>Tell us what</span></span><span class="mask-line"><span><em class="solo">you’re planning.</em></span></span></h1>
-        <p class="inner-hero-lead fx">A date, an event, a class question or the beginning of an idea. Give us the useful details; we will help shape the next step.</p>
+        <p class="inner-hero-lead fx">Invite ABC to perform at a theatre, festival, company event or celebration. For classes, workshops and GIDF, the routes below take you to the right organiser.</p>
         <div class="button-row fx">
           <a class="button button-yellow" href="#book">Invite us to perform <span>↓</span></a>
           <a class="button button-glass" href="#start">Other enquiries <span>↓</span></a>

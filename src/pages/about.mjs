@@ -12,7 +12,7 @@ const def = {
   cinematic: true,
   firstCue: "roots",
   headerLight: true,
-  headerCta: { href: "../contact/", label: "Book ABC", glyph: "↗" },
+  headerCta: { href: "../contact/#book", label: "Book ABC", glyph: "↗" },
 };
 
 // the 13-strong roster, each with their cutout — Swapnil (director) opens,

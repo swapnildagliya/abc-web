@@ -59,7 +59,7 @@ ${schemas.map(s => `  <script type="application/ld+json" data-publish-schema>${s
 }
 
 export function header(page, rel) {
-  const cta = page.headerCta || { href: `${rel}book/`, label: "Book ABC", glyph: "↗" };
+  const cta = page.headerCta || { href: `${rel}contact/#book`, label: "Book ABC", glyph: "↗" };
   return `
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
