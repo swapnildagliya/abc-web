@@ -478,6 +478,7 @@
         row.addEventListener("pointerenter", () => {
           if (reduced()) return;
           img.src = row.dataset.preview;
+          img.style.objectPosition = row.dataset.previewPosition || "50% 50%";
           float.classList.add("is-on");
         });
         row.addEventListener("pointerleave", () => float.classList.remove("is-on"));

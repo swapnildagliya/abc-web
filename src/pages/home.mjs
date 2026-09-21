@@ -18,8 +18,9 @@ function dateChip(e) {
 }
 function dateRow(e) {
   const preview = e.image ? ` data-preview="${e.image.src}"` : "";
+  const previewPosition = e.image?.h > e.image?.w ? ` data-preview-position="50% 12%"` : "";
   const sub = e.blurb ? `<small>${e.blurb}</small>` : "";
-  return `<li class="fx"><a href="whats-on/#${e.id}"${preview}>
+  return `<li class="fx"><a href="whats-on/#${e.id}"${preview}${previewPosition}>
           ${dateChip(e)}
           <span><strong>${e.title.split(/\s+[·—]\s+/)[0]}</strong>${sub}</span>
           <span class="city">${e.city}</span><b class="go" aria-hidden="true">\u2197</b></a></li>`;
