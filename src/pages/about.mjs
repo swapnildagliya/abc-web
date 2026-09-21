@@ -15,21 +15,21 @@ const def = {
   headerCta: { href: "../contact/#book", label: "Book ABC", glyph: "↗" },
 };
 
-// the 13-strong roster, each with their cutout — Swapnil (director) opens,
-// then the company. Every dancer appears with a picture.
+// Swapnil opens as founder; the company follows in documented joining order.
+// Keep this order identical to the homepage. Every dancer has a portrait.
 const dancers = [
   { name: "Swapnil Dagliya", file: "swapnil-dagliya", w: 1600, h: 1396 },
   { name: "Narcisse Merlier", file: "narcisse-merlier", w: 1173, h: 1600 },
+  { name: "Svetlana Bubnova", file: "svetlana-bubnova", w: 525, h: 599 },
+  { name: "Sara Van Holm", file: "sara-van-holm", w: 952, h: 1600 },
   { name: "Chiara Bisinelli", file: "chiara-bisinelli", w: 1200, h: 1600 },
   { name: "Kaushika Kumar", file: "kaushika-kumar", w: 1192, h: 1600 },
   { name: "Laurien De Ridder", file: "laurien-de-ridder", w: 1168, h: 1600 },
+  { name: "Haike Bourgeois", file: "haike-bourgeois", w: 541, h: 593 },
+  { name: "Shreya Vaidya", file: "shreya-vaidya", w: 686, h: 679 },
   { name: "Khushboo Agarwal", file: "khushboo-agarwal", w: 1300, h: 1185 },
   { name: "Roshni Tela", file: "roshni-tela", w: 749, h: 1600 },
-  { name: "Sara Van Holm", file: "sara-van-holm", w: 952, h: 1600 },
-  { name: "Shreya Vaidya", file: "shreya-vaidya", w: 686, h: 679 },
   { name: "Siddhy Ganesh Shetty", file: "siddhy-ganesh-shetty", w: 788, h: 813 },
-  { name: "Haike Bourgeois", file: "haike-bourgeois", w: 541, h: 593 },
-  { name: "Svetlana Bubnova", file: "svetlana-bubnova", w: 525, h: 599 },
   { name: "Srimahavalli Thiyagarajan", file: "srimahavalli-thiyagarajan", w: 1600, h: 1454 },
 ];
 

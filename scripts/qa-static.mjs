@@ -267,6 +267,16 @@ check("redundant homepage story, ownership marquee and archive strip are gone",
   && !home.includes('ABC performs') && !home.includes('yes, beginners too'));
 check("performance proof retains the useful company numbers",
   home.includes('class="proof-stats"') && /44\+/.test(home) && /12\+/.test(home) && /2017/.test(home));
+const joiningOrder = ["Swapnil Dagliya", "Narcisse Merlier", "Svetlana Bubnova", "Sara Van Holm",
+  "Chiara Bisinelli", "Kaushika Kumar", "Laurien De Ridder", "Haike Bourgeois",
+  "Shreya Vaidya", "Khushboo Agarwal", "Roshni Tela", "Siddhy Ganesh Shetty",
+  "Srimahavalli Thiyagarajan"];
+const aboutRoster = readFileSync(join(ROOT, "about/index.html"), "utf8");
+for (const [label, html] of [["home", home], ["about", aboutRoster]]) {
+  const positions = joiningOrder.map(name => html.indexOf(`>${name}<`));
+  check(`${label}: dancers follow the documented joining order`,
+    positions.every((position, i) => position >= 0 && (i === 0 || position > positions[i - 1])));
+}
 check("no room metaphor", !/room to move|kind of room/i.test(home));
 // The homepage linked the 17.1 MiB edit master until 2026-09-08, so every
 // desktop visitor downloaded it. Masters live in assets/media/_originals/ and

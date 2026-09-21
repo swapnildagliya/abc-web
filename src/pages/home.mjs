@@ -40,15 +40,15 @@ const def = {
   curtain: true,
 };
 
-// The whole company, in curtain-call order: seven across the front,
-// six offset behind. Same thirteen (and same portraits) as the About page.
+// Swapnil opens as founder; the company follows in documented joining order.
+// Keep this order identical to the About page.
 const dancers = [
   ["swapnil-dagliya", "Swapnil Dagliya"], ["narcisse-merlier", "Narcisse Merlier"],
-  ["kaushika-kumar", "Kaushika Kumar"], ["chiara-bisinelli", "Chiara Bisinelli"],
-  ["khushboo-agarwal", "Khushboo Agarwal"], ["laurien-de-ridder", "Laurien De Ridder"],
-  ["roshni-tela", "Roshni Tela"], ["sara-van-holm", "Sara Van Holm"],
-  ["shreya-vaidya", "Shreya Vaidya"], ["siddhy-ganesh-shetty", "Siddhy Ganesh Shetty"],
-  ["haike-bourgeois", "Haike Bourgeois"], ["svetlana-bubnova", "Svetlana Bubnova"],
+  ["svetlana-bubnova", "Svetlana Bubnova"], ["sara-van-holm", "Sara Van Holm"],
+  ["chiara-bisinelli", "Chiara Bisinelli"], ["kaushika-kumar", "Kaushika Kumar"],
+  ["laurien-de-ridder", "Laurien De Ridder"], ["haike-bourgeois", "Haike Bourgeois"],
+  ["shreya-vaidya", "Shreya Vaidya"], ["khushboo-agarwal", "Khushboo Agarwal"],
+  ["roshni-tela", "Roshni Tela"], ["siddhy-ganesh-shetty", "Siddhy Ganesh Shetty"],
   ["srimahavalli-thiyagarajan", "Srimahavalli Thiyagarajan"],
 ];
 
