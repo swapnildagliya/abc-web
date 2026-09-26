@@ -18,13 +18,15 @@ export function esc(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-/* The site lives on a preview host while the domain is undecided, and every
-   canonical still points at the live Squarespace site. Publishing it crawlable
-   would put a duplicate of the real site on the open web, so every page is
-   noindex UNLESS the build is explicitly a launch build:
-       ABC_LAUNCH=1 node src/build.mjs
-   Anything else — including a plain `node src/build.mjs` — stays noindex. */
-export const PREVIEW = process.env.ABC_LAUNCH !== "1";
+/* abcdans.com is the live ABC site; indexing was approved on 26 Sep 2026.
+   Until then every build was a noindex preview unless ABC_LAUNCH=1 was set —
+   and the daily "Refresh dated events" workflow ran a plain build, so each
+   automatic rebuild re-hid the site from search. The default is now the
+   launch build. A noindex preview is opt-in only:
+       ABC_PREVIEW=1 node src/build.mjs
+   If you ever build a preview, also restore the preview robots.txt
+   (Disallow: /) — qa-static.mjs fails when the two disagree. */
+export const PREVIEW = process.env.ABC_PREVIEW === "1";
 
 export function head(page, rel) {
   const schemas = [ORG_SCHEMA, ...(page.schemas || [])];

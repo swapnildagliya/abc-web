@@ -277,7 +277,9 @@ check("redundant homepage story, ownership marquee and archive strip are gone",
   !home.includes('id="story"') && !home.includes('Postcards from the road')
   && !home.includes('ABC performs') && !home.includes('yes, beginners too'));
 check("performance proof retains the useful company numbers",
-  home.includes('class="proof-stats"') && /44\+/.test(home) && /12\+/.test(home) && /2017/.test(home));
+  // 40+ matches the published record on /book/ (40 entries); the unsourced
+  // 44+ and "12+ cities" were retired on Swapnil's call, 26 Sep 2026.
+  home.includes('class="proof-stats"') && /40\+/.test(home) && !/44\+|12\+/.test(home) && /2017/.test(home));
 const joiningOrder = ["Swapnil Dagliya", "Narcisse Merlier", "Svetlana Bubnova", "Sara Van Holm",
   "Chiara Bisinelli", "Kaushika Kumar", "Laurien De Ridder", "Haike Bourgeois",
   "Shreya Vaidya", "Khushboo Agarwal", "Roshni Tela", "Siddhy Ganesh Shetty",

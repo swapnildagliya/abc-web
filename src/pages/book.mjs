@@ -82,8 +82,7 @@ const body = `
         </div>
       </div>
       <div class="stat-row fx" aria-label="ABC in numbers">
-        <div><b>44+</b><span>Stages and events</span></div>
-        <div><b>12+</b><span>Cities across Europe</span></div>
+        <div><b>40+</b><span>Stages and events</span></div>
         <div><b>5</b><span>Dance languages in one company</span></div>
         <div><b>2017</b><span>On stage since</span></div>
       </div>

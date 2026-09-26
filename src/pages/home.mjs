@@ -152,8 +152,8 @@ const body = `
             <h2>Forty-plus shows.<br><em>Zero quiet ones.</em></h2>
             <p class="lead">Tailored performances for theatres, festivals, companies, weddings and public events.</p>
             <div class="proof-stats" aria-label="ABC in numbers">
-              <span><b>44+</b>Stages and events</span>
-              <span><b>12+</b>Cities across Europe</span>
+              <span><b>40+</b>Stages and events</span>
+              <span><b>5</b>Dance languages</span>
               <span><b>2017</b>On stage since</span>
             </div>
             <p style="margin-top:1.2rem"><a class="button button-yellow" href="book/">Explore performances <span>↗</span></a></p>

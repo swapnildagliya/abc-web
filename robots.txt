@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Preview host. The canonical site is elsewhere and this build is noindex on
-# every page; remove this Disallow only when the real domain is connected.
+Sitemap: https://abcdans.com/sitemap.xml
