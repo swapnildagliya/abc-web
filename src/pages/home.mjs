@@ -13,25 +13,34 @@ const { upcoming } = eventSets(JSON.parse(readFileSync(fileURLToPath(new URL("..
 // sat here as "next dates". They stay on /whats-on/; the homepage links there.
 const homeUpcoming = upcoming.filter(event => event.kind === "performance");
 const MON3 = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
-function dateChip(e) {
+// Poster cards: each date shows its own artwork with a date badge. data-until
+// lets fable.js drop a card the day after it ends, even if the daily rebuild
+// has not run; a sweep can read it without parsing prose.
+function posterCard({ until, href, img, badge, datetime, title, sub, where }) {
+  return `<li class="fx" data-until="${until}"><a class="poster-card" href="${href}">
+          <figure><img src="${img.src}" alt="${img.alt}" loading="lazy" decoding="async" width="${img.w}" height="${img.h}"><time class="poster-date" datetime="${datetime}"><span>${badge[0]}</span><b>${badge[1]}</b></time></figure>
+          <span class="poster-copy"><strong>${title}</strong>${sub ? `<small>${sub}</small>` : ""}<em>${where} <b aria-hidden="true">\u2197</b></em></span></a></li>`;
+}
+function eventCard(e) {
   const [, sm, sd] = e.start.split("-").map(Number);
   const [, em, ed] = e.end.split("-").map(Number);
   const day = e.start === e.end ? String(sd).padStart(2, "0")
             : sm === em ? `${String(sd).padStart(2, "0")}\u2013${String(ed).padStart(2, "0")}`
             : String(sd).padStart(2, "0");
-  return `<time datetime="${e.start}"><b>${day}</b><span>${MON3[sm - 1]}</span></time>`;
+  // an ABC production with its own page links there; anything else to the agenda
+  const href = e.id === "sangam-2026" ? "sangam/" : `whats-on/#${e.id}`;
+  return posterCard({ until: e.end, href, img: e.image, badge: [MON3[sm - 1], day], datetime: e.start,
+    title: e.title.split(/\s+[·—]\s+/)[0], sub: e.blurb, where: e.city });
 }
-function dateRow(e) {
-  const preview = e.image ? ` data-preview="${e.image.src}"` : "";
-  const previewPosition = e.image?.h > e.image?.w ? ` data-preview-position="50% 12%"` : "";
-  const sub = e.blurb ? `<small>${e.blurb}</small>` : "";
-  // data-until lets fable.js drop a row the day after it ends, even if the
-  // daily rebuild has not run; a sweep can read it without parsing prose.
-  return `<li class="fx" data-until="${e.end}"><a href="whats-on/#${e.id}"${preview}${previewPosition}>
-          ${dateChip(e)}
-          <span><strong>${e.title.split(/\s+[·—]\s+/)[0]}</strong>${sub}</span>
-          <span class="city">${e.city}</span><b class="go" aria-hidden="true">\u2197</b></a></li>`;
-}
+// GIDF is organised by ABC, so its next edition is a place to find the company
+// too. It is not in events.json (no agenda entry exists yet), so the card is
+// written here and expires by data-until like every other card.
+const gidfCard = posterCard({
+  until: "2027-05-09", href: "festival/", datetime: "2027-05-07", badge: ["MAY", "07\u201309"],
+  img: { src: "assets/img/gidf/edition-five-2027.jpg", w: 1080, h: 1350,
+    alt: "Gent India Dans Festival Edition Five poster — Until we dance again, 7 to 9 May 2027" },
+  title: "Gent India Dans Festival", sub: "Edition Five · May 2027 · organised by ABC", where: "Ghent",
+});
 
 const def = {
   depth: 0,
@@ -101,20 +110,19 @@ const body = `
     </section>
 
     <!-- THE REST · the camera stops. Dates are for reading. -->
-    <section class="scene-pad t-paper" id="events" data-scene data-cue="upcoming events">
+    <section class="scene-pad t-yellow" id="events" data-scene data-cue="upcoming events">
       <div class="home-agenda-head">
         <div>
-          <p class="label fx">Upcoming events · next dates</p>
+          <p class="label fx">Upcoming · next dates</p>
           <h2 class="fx">Next places to<br><em class="solo">find us.</em></h2>
         </div>
         <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
       </div>
-      ${homeUpcoming.length ? `<ol class="date-list" data-until-list>
-        ${homeUpcoming.slice(0, 4).map(dateRow).join("\n        ")}
-      </ol>` : ""}
-      <p class="lead fx" data-until-empty${homeUpcoming.length ? " hidden" : ""}>The next public date is being programmed — the full archive of where we have danced is on the agenda page.</p>
-      <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See the full agenda <span>→</span></a></p>
-      <p class="fx prose" style="margin-top:.8rem">Looking for a class or workshop? Weekly classes run at Shoonya — see <a href="learn/">Classes</a>. Workshops with Swapnil are on <a href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">swapnil.dance</a>.</p>
+      <ol class="poster-list" data-until-list>
+        ${[...homeUpcoming.slice(0, 3).map(eventCard), gidfCard].join("\n        ")}
+      </ol>
+      <p class="lead fx" data-until-empty hidden>The next public date is being programmed — the full archive of where we have danced is on the agenda page.</p>
+      <p class="fx" style="margin-top:2.2rem"><a class="button button-dark" href="whats-on/">See the full agenda <span>→</span></a></p>
     </section>
 
     <!-- THE CURTAIN CALL · the company bows in along the line -->
@@ -178,11 +186,11 @@ const body = `
             <a class="text-link" href="learn-to-dance-bollywood/">Free course <span>→</span></a>
           </div>
         </article>
-        <article class="fx" id="festival">
-          <p class="label">Gent India Dans Festival</p>
-          <h2>7–9 May<br><em class="solo">2027.</em></h2>
-          <p>Edition Five brings artists, students and audiences together for three days of workshops and performance in Ghent.</p>
-          <a class="button button-dark" href="festival/">Enter the festival <span>→</span></a>
+        <article class="fx" id="workshops">
+          <p class="label">Workshops · Swapnil Dagliya</p>
+          <h2>Want a<br><em class="solo">workshop?</em></h2>
+          <p>Event workshops, choreography and private coaching are hired from Swapnil personally, not from the company.</p>
+          <a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a>
         </article>
       </div>
     </section>

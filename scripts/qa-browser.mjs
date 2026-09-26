@@ -149,7 +149,7 @@ for (const [engineName, engine] of [["chromium", chromium], ["webkit", webkit]])
   // .crane-copy shipped inheriting --ink and rendered near-black on near-black.
   // Narrow and literal on purpose: a general contrast sweep can't tell what is
   // actually behind glyphs on a page layered with scrims and transformed rigs.
-  const NIGHT_COPY = [".crane-copy", ".crane-copy h2", ".gather-copy", ".finale-ask", ".finale-ask h2", ".cap"];
+  const NIGHT_COPY = [".crane-copy", ".crane-copy h2", ".finale-ask", ".finale-ask h2", ".cap"];
   const ctCtx = await browser.newContext({ viewport: { width: 1512, height: 982 } });
   const ct = await ctCtx.newPage();
   await ct.goto(BASE + "/", { waitUntil: "load", timeout: 45000 });
@@ -204,7 +204,7 @@ for (const [engineName, engine] of [["chromium", chromium], ["webkit", webkit]])
   // visible immediately — content may never depend on choreography.
   const njCtx = await browser.newContext({ viewport: { width: 1512, height: 982 }, javaScriptEnabled: false });
   const NJ_CHECKS = [
-    ["/", [".cap", ".crane-floor img", ".date-list a", ".postcard-strip", ".line-up span", ".finale-ask h2"]],
+    ["/", [".cap", ".crane-floor img", ".poster-card", ".line-up span", ".finale-ask h2"]],
     ["/learn/", ["#classes .class-cell h3", ".inner-hero h1"]],
     ["/whats-on/", [".agenda-feature", ".event-detail summary", "#past-events summary"]],
     ["/book/", ["#productions", "#offers .card", ".inner-hero-visual img"]],

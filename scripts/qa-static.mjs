@@ -126,7 +126,9 @@ const homeAgenda = homeDated.slice(homeDated.indexOf('id="events"'), homeDated.i
 const expectedSpotlight = sets.upcoming.find(event => event.id === "sangam-2026")
   || sets.upcoming.find(event => event.kind === "performance")
   || sets.upcoming[0];
-const firstHomeEvent = homeAgenda.match(/href="whats-on\/#([a-z0-9-]+)"/)?.[1];
+// SANGAM's card links to its own page; other cards link to their agenda entry.
+const firstHomeLink = homeAgenda.match(/href="(?:whats-on\/#([a-z0-9-]+)|(sangam)\/)"/);
+const firstHomeEvent = firstHomeLink?.[1] || (firstHomeLink?.[2] && "sangam-2026");
 check("homepage leads with the featured ABC production", firstHomeEvent === expectedSpotlight?.id, firstHomeEvent);
 if (sets.upcoming.some(event => event.id === "sangam-2026")) {
   check("homepage hero links directly to SANGAM", /href="sangam\/">Discover SANGAM/.test(homeDated));
