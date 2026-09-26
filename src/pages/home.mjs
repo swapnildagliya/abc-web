@@ -193,8 +193,8 @@ const body = `
         <div class="stage">
           <div class="finale-wide">
             <figure>
-              <img src="assets/img/gidf/finale-hero.jpg" alt="ABC ensemble taking the stage at the GIDF Gala finale" loading="lazy" decoding="async" width="2000" height="1333">
-              <figcaption>GIDF Gala finale · Photography Stijn Dejonckheere</figcaption>
+              <img src="assets/img/abc/rajasthani-set-gala2023-jan-vens.jpg" alt="The ABC company in a Rajasthani set under red stage light" loading="lazy" decoding="async" width="1200" height="799">
+              <figcaption>ABC company · GIDF Gala 2023 · PC Jan Vens</figcaption>
             </figure>
           </div>
           <div class="finale-house" aria-hidden="true"></div>
