@@ -11,7 +11,7 @@ export const ORG_SCHEMA = JSON.stringify({
   foundingDate: "2017",
   founder: { "@type": "Person", name: "Swapnil Dagliya" },
   address: { "@type": "PostalAddress", streetAddress: "Stapelplein 41", postalCode: "9000", addressLocality: "Ghent", addressCountry: "BE" },
-  sameAs: ["https://instagram.com/abollywoodcompany", "https://facebook.com/abollywoodcompany", "https://www.youtube.com/c/swapkebolly"],
+  sameAs: ["https://instagram.com/abollywoodcompany", "https://facebook.com/abollywoodcompany"],
 });
 
 export function esc(value) {
@@ -128,7 +128,7 @@ export function footer(rel) {
       </div>
       <nav aria-label="Explore"><span>Explore</span><a href="${rel}book/">Performances</a><a href="${rel}learn/">Classes</a><a href="${rel}whats-on/">What’s on</a><a href="${rel}festival/">Festival</a></nav>
       <nav aria-label="Company"><span>Company</span><a href="${rel}about/">About ABC</a><a href="${rel}contact/">Contact</a><a href="${rel}contact/#refunds">Refund policy</a><a href="${rel}privacy/">Privacy</a></nav>
-      <nav aria-label="Follow"><span>Follow</span><a href="https://instagram.com/abollywoodcompany" target="_blank" rel="noopener">Instagram ↗</a><a href="https://facebook.com/abollywoodcompany" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.youtube.com/c/swapkebolly" target="_blank" rel="noopener">YouTube ↗</a></nav>
+      <nav aria-label="Follow"><span>Follow</span><a href="https://instagram.com/abollywoodcompany" target="_blank" rel="noopener">Instagram ↗</a><a href="https://facebook.com/abollywoodcompany" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.youtube.com/c/swapkebolly" target="_blank" rel="noopener">Swapnil on YouTube ↗</a></nav>
       <div class="footer-address"><span>Home base</span><p>Shoonya Dance Centre<br>Stapelplein 41<br>9000 Ghent, Belgium</p></div>
     </div>
     <div class="footer-bottom"><span>© 2017–2026 ABC a bollywood company</span><span>Made in Ghent · Moving across Europe</span></div>

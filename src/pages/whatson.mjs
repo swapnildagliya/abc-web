@@ -162,7 +162,7 @@ const body = `
       <p class="label fx" style="color:var(--yellow)">Past dates</p>
       <div class="intro">
         <h2 class="fx">The road<br><em class="solo">behind us.</em></h2>
-        <div class="intro-copy fx"><p>ABC’s archive holds performances, workshops and festival encounters across Belgium and Europe. Only current and future dates appear above—everything else lives here.</p></div>
+        <div class="intro-copy fx"><p>Every past date listed on this page: ABC performances alongside Shoonya Dance Centre classes, Swapnil’s workshops and GIDF editions, across Belgium and Europe. Only current and future dates appear above—everything else lives here.</p></div>
       </div>
       <figure class="frame fx" style="aspect-ratio: 21/9; margin-bottom: 1.4rem">
         <img src="../assets/img/abc/garba-duo-gala2023-backaert.jpg" alt="Two ABC dancers mid-spin in the dark — skirts catching the light" loading="lazy" decoding="async" width="2400" height="1613" style="object-position: center 30%">

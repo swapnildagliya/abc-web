@@ -28,7 +28,13 @@
      The site is static and rebuilt once a day. If a rebuild is missed, a row
      carrying data-until="YYYY-MM-DD" still disappears the day after it ends
      (Brussels date). An emptied list reveals its [data-until-empty] note. */
-  const brusselsToday = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Brussels" }).format(new Date());
+  // formatToParts, not a locale-formatted string: the ISO shape must not
+  // depend on how a browser renders "en-CA". Mirrors todayISO() in events.mjs.
+  const brusselsToday = (() => {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en", { timeZone: "Europe/Brussels", year: "numeric", month: "2-digit", day: "2-digit" })
+      .formatToParts(new Date()).map(x => [x.type, x.value]));
+    return `${p.year}-${p.month}-${p.day}`;
+  })();
   document.querySelectorAll("[data-until-list]").forEach(list => {
     list.querySelectorAll("[data-until]").forEach(row => {
       if (row.dataset.until < brusselsToday) row.remove();

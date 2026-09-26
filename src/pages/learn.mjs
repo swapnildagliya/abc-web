@@ -33,9 +33,10 @@ const body = `
       <div class="inner-hero-copy">
         <p class="inner-kicker fx">Weekly classes · Shoonya Dance Centre · Ghent</p>
         <h1 id="page-title"><span class="mask-line"><span>Start where</span></span><span class="mask-line"><span><em class="solo">your feet are.</em></span></span></h1>
-        <p class="inner-hero-lead fx">Weekly classes are run by Shoonya Dance Centre: nine weekly classes with Swapnil Dagliya, from your first Bollyfolk step to advanced Bollywood and Indian semi-classical work. Registration is on shoonyadance.com.</p>
+        <p class="inner-hero-lead fx">Weekly classes are run by Shoonya Dance Centre: nine weekly classes with Swapnil Dagliya, from your first Bollyfolk step to advanced Bollywood and Indian semi-classical work.</p>
         <div class="button-row fx">
           <a class="button button-dark" href="#classes">See the timetable <span>↓</span></a>
+          <a class="button button-outline" href="https://www.shoonyadance.com/register" target="_blank" rel="noopener">Register at Shoonya <span>↗</span></a>
         </div>
       </div>
       <div class="inner-hero-visual contain" style="align-self:end">

@@ -358,5 +358,59 @@ for (const doc of ["ASSET_MAP.md", "MOTION_SYSTEM.md", "README.md"]) {
   check(`${doc}: no room metaphor`, !/\broom\b(?![- ]?(free|mate)|s\b)/i.test(t.replace(/shoe-free/g, "")), (t.match(/.{0,30}\broom\b.{0,30}/i) || [""])[0]);
 }
 
+/* ---------- 26 Sep 2026 guards (Codex review of the review fixes) ----------
+   Each one would have caught a defect that stayed live under a green suite. */
+// 1. SANGAM runtime: 70 minutes + a 20-minute interval (owner file:
+//    Design System/events/performance/2026-11-07-sangam-copy.md). The old
+//    "sixty / fifteen" copy survived in events.json and the .ics after the
+//    page itself was fixed.
+const icsFiles = readdirSync(join(ROOT, "abc-calendar")).filter(f => f.endsWith(".ics"));
+const sangamSources = [
+  ["events.json", readFileSync(join(ROOT, "src/data/events.json"), "utf8")],
+  ...fullPages.map(r => [`/${r}/`, readFileSync(join(ROOT, r, "index.html"), "utf8")]),
+  ["/", readFileSync(join(ROOT, "index.html"), "utf8")],
+  ...icsFiles.map(f => [f, readFileSync(join(ROOT, "abc-calendar", f), "utf8")]),
+];
+for (const [where, text] of sangamSources) {
+  check(`${where}: no retired SANGAM runtime`, !/sixty minutes|fifteen-minute interval/i.test(text));
+}
+check("SANGAM page states 70 + 20", readFileSync(join(ROOT, "sangam/index.html"), "utf8").includes("70 minutes plus a 20-minute interval"));
+
+// 2. Event organiser follows ownership: Shoonya runs classes and open days.
+//    Every schema used to default to ABC's @id.
+const kindOf = Object.fromEntries(codexEvents.events.map(e => [e.id, e.kind]));
+for (const s of codexEvents.schemas.map(x => JSON.parse(x))) {
+  const id = s.url.split("#")[1];
+  if (["class", "open-day"].includes(kindOf[id])) {
+    check(`schema ${id}: organiser is Shoonya, not ABC`, s.organizer?.name === "Shoonya Dance Centre", JSON.stringify(s.organizer));
+  }
+}
+
+// 3. No calendar file sends people to the retired domain.
+for (const f of icsFiles) {
+  const t = readFileSync(join(ROOT, "abc-calendar", f), "utf8");
+  check(`${f}: URL on abcdans.com`, !/^URL:.*abcbollywoodbelgium/m.test(t) && /^URL:https:\/\/abcdans\.com\//m.test(t));
+}
+
+// 4. Fragment targets exist. The link check above strips #fragments, so a
+//    removed id (e.g. book/#services, about/#company) would pass silently.
+const idCache = new Map();
+function idsOf(file) {
+  if (!idCache.has(file)) idCache.set(file, new Set([...readFileSync(file, "utf8").matchAll(/\sid="([^"]+)"/g)].map(m => m[1])));
+  return idCache.get(file);
+}
+for (const r of ["", ...routes]) {
+  const file = join(ROOT, r, "index.html");
+  const html = readFileSync(file, "utf8");
+  const dir = dirname(file);
+  const links = [...html.matchAll(/(?:href="|url=)([^"#>]*)#([^"\s>]+)"/g)];
+  for (const [, path, frag] of links) {
+    if (/^https?:/.test(path) || path.endsWith(".ics")) continue;
+    const target = path ? (existsSync(join(resolve(dir, path), "index.html")) ? join(resolve(dir, path), "index.html") : resolve(dir, path)) : file;
+    if (!existsSync(target) || !target.endsWith(".html")) continue;
+    check(`/${r}: #${frag} exists in ${path || "same page"}`, idsOf(target).has(frag));
+  }
+}
+
 console.log(`\nPASS ${pass} · FAIL ${fail}`);
 if (fail) { console.log(failures.map(f => "  ✗ " + f).join("\n")); process.exit(1); }

@@ -99,10 +99,10 @@ const body = `
     <section class="scene-pad t-night showcase" id="watch" data-scene data-cue="watch">
       <div class="intro">
         <div>
-          <p class="label fx" style="color:var(--yellow)">Watch the company</p>
+          <p class="label fx" style="color:var(--yellow)">On stage · GIDF 2026 Gala</p>
           <h2 class="fx">See it<br><em class="solo">move.</em></h2>
         </div>
-        <p class="intro-copy fx lead">Cut from the GIDF 2026 Gala Showcase at Shoonya Theatre, Ghent. For a full production, watch the trailer for <em>The Four Loves</em>.</p>
+        <p class="intro-copy fx lead">ABC’s semi-classical piece, a Bollywood medley ABC danced with Bollywood students, and the full-cast finale — cut from the GIDF 2026 Gala Showcase at Shoonya Theatre, Ghent. For a full ABC production, watch the trailer for <em>The Four Loves</em>.</p>
       </div>
       <figure class="reel" data-reel-stage>
         <div class="reel-frame">
@@ -189,13 +189,13 @@ const body = `
       <p class="label fx">On stage since 2017</p>
       <div class="intro">
         <h2 class="fx">Nine years<br><em class="solo">on the road.</em></h2>
-        <div class="intro-copy fx"><p>Theatres, city squares, cultural festivals, company stages and television—from Ghent to Brussels, Bruges, Kortrijk, Liège, Maastricht and Luxembourg.</p></div>
+        <div class="intro-copy fx"><p>Theatres, city squares, cultural festivals, company stages and television—from Ghent to Brussels, Bruges, Kortrijk, Liège, Maastricht and Luxembourg.</p><p>Company performances unless marked: two entries are a Shoonya Dance Centre production and a solo by Swapnil Dagliya.</p></div>
       </div>
       <div class="prose record-list fx" id="stage-history-full">
         <h3>2026</h3><ul><li>Benenwerk – Bruges August</li><li>Gent India Dans Festival – Ghent May</li></ul>
         <h3>2025</h3><ul><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg November</li><li>Shoonya Indian Night – Gentse Feesten, Ghent July</li><li>Performance at Iyengar Yoga Event – Maastricht May</li><li>Gent India Dans Festival – Ghent April</li></ul>
-        <h3>2024</h3><ul><li>Diwali Celebration – Ghent, ICCR November</li><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg October</li><li>Shoonya Indian Night – Gentse Feesten, with Trefpunt July</li><li>"Jump" – Production by Shoonya Dance Centre at NTGent June</li><li>Entertainment at Ink-Town Tattoo Convention – Kortrijk, with Strange People Brand May</li><li>Gent India Dans Festival – Ghent April</li><li>"The Four Loves" – A full-length Indian dance production by ABC, Ghent March</li><li>Indian Dance Performance – Leylet Raqs Bellydance Festival, Ghent February</li></ul>
-        <h3>2023</h3><ul><li>Bollywood Show – McKinsey Event, Brussels, concept by Strange People December</li><li>Indian Dance Showcase – Liège, organised by Indian Dance Lab October</li><li>Indian Food Festival – Brussels, organised by Indian Confluence Belgium August</li><li>Performance at Dansen in het Park – Ghent August</li><li>The Four Loves (Excerpts) – Gent India Dans Festival May</li><li>Solo Performance by Swapnil Dagliya – Shimmy for Animals, Brussels March</li></ul>
+        <h3>2024</h3><ul><li>Diwali Celebration – Ghent, ICCR November</li><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg October</li><li>Shoonya Indian Night – Gentse Feesten, with Trefpunt July</li><li>"Jump" – Production by Shoonya Dance Centre at NTGent June <small>(Shoonya production)</small></li><li>Entertainment at Ink-Town Tattoo Convention – Kortrijk, with Strange People Brand May</li><li>Gent India Dans Festival – Ghent April</li><li>"The Four Loves" – A full-length Indian dance production by ABC, Ghent March</li><li>Indian Dance Performance – Leylet Raqs Bellydance Festival, Ghent February</li></ul>
+        <h3>2023</h3><ul><li>Bollywood Show – McKinsey Event, Brussels, concept by Strange People December</li><li>Indian Dance Showcase – Liège, organised by Indian Dance Lab October</li><li>Indian Food Festival – Brussels, organised by Indian Confluence Belgium August</li><li>Performance at Dansen in het Park – Ghent August</li><li>The Four Loves (Excerpts) – Gent India Dans Festival May</li><li>Solo Performance by Swapnil Dagliya – Shimmy for Animals, Brussels March <small>(Swapnil solo)</small></li></ul>
       </div>
       <div class="folds fx" style="margin-top:1.4rem">
         <details><summary>Archive 2017–2022</summary><div class="fold-body prose">
