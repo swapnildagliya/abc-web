@@ -9,6 +9,9 @@ const raw = JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json",
 // a finished event must not keep advertising itself to search engines.
 const { upcoming, past } = eventSets(raw.events);
 const schemas = currentEventSchemas(raw.schemas);
+const spotlight = upcoming.find(event => event.id === "sangam-2026")
+  || upcoming.find(event => event.kind === "performance")
+  || upcoming[0];
 
 const def = {
   depth: 1,
@@ -73,7 +76,8 @@ function agendaFeature(e, kicker) {
 // The "go deeper" scene picks the next upcoming event that actually has a
 // picture and is not already the lead feature. Its lead sentence is read out of
 // the event body, so the scene can never describe an event it is not showing.
-const deeper = upcoming.slice(1).find(e => e.image) || upcoming.slice(1)[0];
+const deeperCandidates = upcoming.filter(event => event.id !== spotlight?.id);
+const deeper = deeperCandidates.find(e => e.image) || deeperCandidates[0];
 function leadOf(e) {
   const m = e.body.match(/<p\s*>([\s\S]*?)<\/p>/);
   return m ? m[1].replace(/<[^>]+>/g, "").trim() : "";
@@ -133,14 +137,14 @@ const body = `
     <section class="scene-pad t-paper" id="agenda" data-scene data-cue="upcoming">
       <p class="label fx">Upcoming events${upcoming.length ? ` · ${upcoming.length} date${upcoming.length > 1 ? "s" : ""}` : ""}</p>
       <div class="intro">
-        <h2 class="fx">Next on<br><em class="solo">the floor.</em></h2>
+        <h2 class="fx">Featured<br><em class="solo">right now.</em></h2>
         <div class="intro-copy fx">
           <p>Open days, starter series, workshops and full stage productions — every ABC date in Ghent, across Belgium and on the road.</p>
           <p>Programme times can vary across multi-day events. Use the event organiser’s final schedule before travelling.</p>
         </div>
       </div>
 
-      ${agendaFeature(upcoming[0], "Next on the floor")}
+      ${agendaFeature(spotlight, "Featured ABC production")}
 
       <div class="event-board" data-event-library>
         <p class="event-board-lead fx">${upcoming.length

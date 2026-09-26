@@ -1,0 +1,40 @@
+name: Refresh dated events
+
+on:
+  schedule:
+    # Rebuild every morning after the Brussels date has changed. GitHub cron
+    # uses UTC, so this runs at 05:15/06:15 local time across DST changes.
+    - cron: "15 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-dated-events
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rebuild dated pages
+        run: node src/build.mjs
+      - name: Verify generated site
+        run: node scripts/qa-static.mjs
+      - name: Publish changed event status
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No dated content changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all
+          git commit -m "Refresh dated events"
+          git push

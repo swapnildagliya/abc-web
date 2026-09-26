@@ -121,6 +121,17 @@ const usedEventPhotos = [...agenda.matchAll(/assets\/img\/events\/[a-z0-9._-]+/g
 check("every agenda photo belongs to an upcoming event",
   usedEventPhotos.every(f => sets.upcoming.some(e => e.image && e.image.src.endsWith(f))));
 check("past never labelled upcoming", !/data-status="past"[^>]*data-status="upcoming"/.test(whatsOn));
+const homeDated = readFileSync(join(ROOT, "index.html"), "utf8");
+const homeAgenda = homeDated.slice(homeDated.indexOf('id="events"'), homeDated.indexOf('id="company"'));
+const expectedSpotlight = sets.upcoming.find(event => event.id === "sangam-2026")
+  || sets.upcoming.find(event => event.kind === "performance")
+  || sets.upcoming[0];
+const firstHomeEvent = homeAgenda.match(/href="whats-on\/#([a-z0-9-]+)"/)?.[1];
+check("homepage leads with the featured ABC production", firstHomeEvent === expectedSpotlight?.id, firstHomeEvent);
+if (sets.upcoming.some(event => event.id === "sangam-2026")) {
+  check("homepage hero links directly to SANGAM", /href="sangam\/">Discover SANGAM/.test(homeDated));
+  check("What's On spotlights SANGAM", whatsOn.includes('id="spotlight-sangam-2026"'));
+}
 
 // /book/ invites a booker to "come see the real thing". On 2026-09-08 it was
 // still naming 23 July and 8 August. Every date it offers must be ahead, and

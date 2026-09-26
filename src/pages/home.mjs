@@ -7,6 +7,15 @@ import { eventSets } from "../events.mjs";
 // that had already happened. It now reads the same derived upcoming set as
 // /whats-on/, so both pages age together.
 const { upcoming } = eventSets(JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8")).events);
+// The public ABC homepage should lead with ABC's own current production. The
+// full agenda remains chronological, while this short homepage selection gives
+// the company work priority over classes and workshops run by related brands.
+const featuredProduction = upcoming.find(event => event.id === "sangam-2026")
+  || upcoming.find(event => event.kind === "performance")
+  || upcoming[0];
+const homeUpcoming = featuredProduction
+  ? [featuredProduction, ...upcoming.filter(event => event.id !== featuredProduction.id)]
+  : upcoming;
 const MON3 = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 function dateChip(e) {
   const [, sm, sd] = e.start.split("-").map(Number);
@@ -84,7 +93,7 @@ const body = `
             <p class="overture-definition">ABC is a Ghent-based Indian dance company creating performances and productions for theatres, festivals, companies, weddings and public events across Belgium and Europe.</p>
             <div class="overture-actions">
               <a class="button button-yellow" href="contact/#book">Book ABC <span>↗</span></a>
-              <a class="button button-glass" href="whats-on/">See what’s on <span>→</span></a>
+              <a class="button button-glass" href="sangam/">Discover SANGAM <span>→</span></a>
             </div>
           </div>
 
@@ -102,8 +111,8 @@ const body = `
         </div>
         <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
       </div>
-      ${upcoming.length ? `<ol class="date-list">
-        ${upcoming.slice(0, 4).map(dateRow).join("\n        ")}
+      ${homeUpcoming.length ? `<ol class="date-list">
+        ${homeUpcoming.slice(0, 4).map(dateRow).join("\n        ")}
       </ol>` : `<p class="lead fx">The next season is being programmed — the full archive of where we have danced is on the agenda page.</p>`}
       <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See all upcoming dates <span>→</span></a></p>
     </section>
