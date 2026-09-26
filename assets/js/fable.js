@@ -24,6 +24,22 @@
     syncVideo();
   });
 
+  /* ---------- dated rows drop themselves ----------
+     The site is static and rebuilt once a day. If a rebuild is missed, a row
+     carrying data-until="YYYY-MM-DD" still disappears the day after it ends
+     (Brussels date). An emptied list reveals its [data-until-empty] note. */
+  const brusselsToday = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Brussels" }).format(new Date());
+  document.querySelectorAll("[data-until-list]").forEach(list => {
+    list.querySelectorAll("[data-until]").forEach(row => {
+      if (row.dataset.until < brusselsToday) row.remove();
+    });
+    if (!list.querySelector("[data-until]")) {
+      list.hidden = true;
+      const empty = list.parentElement.querySelector("[data-until-empty]");
+      if (empty) empty.hidden = false;
+    }
+  });
+
   /* ---------- header + progress ---------- */
   const header = document.querySelector("[data-header]");
   const progress = document.querySelector(".progress i");

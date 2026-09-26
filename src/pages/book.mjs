@@ -26,7 +26,6 @@ const FAQ_SCHEMA = JSON.stringify({
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: [
     { "@type": "Question", name: "Can the performance be tailored?", acceptedAnswer: { "@type": "Answer", text: "Yes. We shape repertoire, duration, company size and participation around your venue, audience and event format." } },
-    { "@type": "Question", name: "Can you also teach a workshop at our event?", acceptedAnswer: { "@type": "Answer", text: "Learn with Swapnil for that — workshops, choreography commissions and private coaching are hired directly from Swapnil Dagliya, the company's artistic director, at swapnil.dance/workshops. ABC itself is booked to perform." } },
     { "@type": "Question", name: "Where can ABC travel?", acceptedAnswer: { "@type": "Answer", text: "ABC is based in Ghent and works across Belgium and internationally. Share the city and date in your enquiry so we can discuss the practical setup." } },
     { "@type": "Question", name: "What should a booking enquiry include?", acceptedAnswer: { "@type": "Answer", text: "Please include the date, city, event type, rough audience size and what you want your audience to experience. We normally reply within three working days." } },
   ],
@@ -56,7 +55,7 @@ const body = `
         <h1 id="page-title"><span class="mask-line"><span>Book the</span></span><span class="mask-line"><span><em class="solo">company.</em></span></span></h1>
         <p class="inner-hero-lead fx">Bollywood, Bhangra, Garba, Lavani and Indian folk dance—shaped for theatres, festivals, companies, weddings and public events.</p>
         <div class="button-row fx">
-          <a class="button button-yellow" href="../contact/">Plan a booking <span>↗</span></a>
+          <a class="button button-yellow" href="../contact/#book">Plan a booking <span>↗</span></a>
           <a class="button button-glass" href="#offers">See the formats <span>↓</span></a>
         </div>
       </div>
@@ -91,8 +90,45 @@ const body = `
       <div class="card-grid" style="margin-top:2.4rem">
         <article class="card fx" id="performances"><small>01 · Performance</small><h3>Stage shows</h3><p>From a focused solo or ensemble act to a complete programme of Bollywood, Indian folk and semi-classical work.</p></article>
         <article class="card fx"><small>02 · Celebration</small><h3>Weddings and private events</h3><p>The company performing at your celebration—repertoire, costumes and music chosen for the moment rather than dropped in as a set.</p></article>
-        <article class="card fx card-referral" id="workshops"><small>03 · Learn with Swapnil</small><h3>Looking for a workshop?</h3><p>Event workshops, corporate and school sessions, wedding choreography and private coaching are hired directly from <strong>Swapnil Dagliya</strong>, not from the company.</p><p><a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a></p></article>
+        <article class="card fx card-referral" id="workshops"><span id="services"></span><small>03 · Learn with Swapnil</small><h3>Looking for a workshop?</h3><p>Event workshops, corporate and school sessions, wedding choreography and private coaching are hired directly from <strong>Swapnil Dagliya</strong>, not from the company.</p><p><a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a></p></article>
       </div>
+    </section>
+
+    <!-- WATCH · proof a booker can see. The clips already exist for the
+         festival reel; the same fable.js reel plays them here. Credits say
+         exactly who is on stage, so nothing student- or guest-led passes as ABC. -->
+    <section class="scene-pad t-night showcase" id="watch" data-scene data-cue="watch">
+      <div class="intro">
+        <div>
+          <p class="label fx" style="color:var(--yellow)">Watch the company</p>
+          <h2 class="fx">See it<br><em class="solo">move.</em></h2>
+        </div>
+        <p class="intro-copy fx lead">Cut from the GIDF 2026 Gala Showcase at Shoonya Theatre, Ghent. For a full production, watch the trailer for <em>The Four Loves</em>.</p>
+      </div>
+      <figure class="reel" data-reel-stage>
+        <div class="reel-frame">
+          <video class="reel-v" muted playsinline preload="none"></video>
+          <video class="reel-v" muted playsinline preload="none"></video>
+          <div class="reel-wash" aria-hidden="true"></div>
+          <figcaption class="reel-cap"><b data-reel-title>Semi-classical</b><small data-reel-who>ABC · GIDF 2026</small></figcaption>
+          <div class="reel-ticks" aria-hidden="true"></div>
+        </div>
+        <ul class="reel-stills">
+          <li data-clip="showcase/semiclassical-abc" data-title="Semi-classical" data-who="ABC · GIDF 2026">
+            <img src="../assets/media/showcase/semiclassical-abc.jpg" alt="The ABC company dancing semi-classical" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Semi-classical</b><small>ABC · GIDF 2026</small></span>
+          </li>
+          <li data-clip="showcase/madhuri-medley" data-title="Madhuri Medley" data-who="Bollywood students &amp; ABC · GIDF 2026">
+            <img src="../assets/media/showcase/madhuri-medley.jpg" alt="Dancers spinning, skirts opened into full circles" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Madhuri Medley</b><small>Bollywood students &amp; ABC · GIDF 2026</small></span>
+          </li>
+          <li data-clip="showcase/grand-finale" data-title="Grand Finale" data-who="Full cast · GIDF 2026">
+            <img src="../assets/media/showcase/grand-finale.jpg" alt="The full cast on stage at the curtain call" loading="lazy" decoding="async" width="640" height="360">
+            <span><b>Grand Finale</b><small>Full cast · GIDF 2026</small></span>
+          </li>
+        </ul>
+      </figure>
+      <p class="fx" style="margin-top:1.6rem"><a class="button button-yellow" href="https://www.youtube.com/watch?v=2efQqxnI8s0" target="_blank" rel="noopener">Watch The Four Loves trailer <span>↗</span></a></p>
     </section>
 
     <section class="scene-pad t-night media-led spot" id="productions" data-scene data-stage data-cue="original work">
@@ -114,8 +150,12 @@ const body = `
           <article class="fx"><small>01</small><span><strong>The Four Loves</strong><em>Full production · premiered 2024</em></span></article>
           <a class="fx" href="../whats-on/#sangam-2026"><small>02</small><span><strong>Sangam</strong><em>7–8 Nov 2026 · Ghent</em></span><b>↗</b></a>
         </div>
-        <p class="lead fx" style="margin-top:1.4rem"><em>The Four Loves</em> explores devotion, familial affection, romance and universal connection through Ghoomar, Chari, Tera Taali, Garba, Bhangra, Bollywood and Kathak-shaped semi-classical work.</p>
-        <p class="fx"><a class="button button-yellow" href="../contact/">Discuss a production <span>↗</span></a></p>
+        <p class="lead fx" style="margin-top:1.4rem"><em>The Four Loves</em> explores devotion (<em>bhakti</em>), familial affection (<em>vatsalya</em>), romance (<em>shringar</em>) and universal connection (<em>prema</em>) through Ghoomar, Chari, Tera Taali, Garba, Bhangra, Bollywood and Kathak-shaped semi-classical work.</p>
+        <p class="fx production-credits" id="production-archive"><strong>The Four Loves credits</strong> · Choreography: Swapnil Dagliya · Production: Wim Boussery &amp; Swapnil Dagliya · Dancers: Chiara Bisinelli, Kaushika Kumar, Khushboo Agarwal, Laurien De Ridder, Narcisse Merlier, Roshni Tela, Sara Van Holm, Shreya Vaidya, Svetlana Bubnova, Siddhy Shetty &amp; Swapnil Dagliya · Guest performer: Pranali Sanghmitra Bhagwat · Lights: Johan Van Compernolle · Sound: Wim Boussery · Dramaturgy: Rita Hendricks · Trailer: shot by Marc Antoine, edited by Rajat Senjaliya · Supported by Shoonya Dance Centre</p>
+        <div class="button-row fx">
+          <a class="button button-yellow" href="../contact/#book">Discuss a production <span>↗</span></a>
+          <a class="button button-outline" href="https://www.youtube.com/watch?v=2efQqxnI8s0" target="_blank" rel="noopener">Four Loves trailer <span>↗</span></a>
+        </div>
       </div>
     </section>
 
@@ -143,17 +183,30 @@ const body = `
       </div>
     </section>
 
-    <section class="scene-pad t-bone" data-scene data-cue="the road book">
-      <p class="label fx">Selected road book</p>
+    <!-- THE RECORD · one list, not two. Recent years open, because named
+         clients and venues are the proof a booker checks; the archive stays
+         folded. The old road book was a partial copy of this list. -->
+    <section class="scene-pad t-bone" id="record" data-scene data-cue="the record">
+      <p class="label fx">On stage since 2017</p>
       <div class="intro">
         <h2 class="fx">Nine years<br><em class="solo">on the road.</em></h2>
-        <div class="intro-copy fx"><p>Theatres, city squares, cultural festivals, company stages and television—from Ghent to Brussels, Maastricht, Luxembourg and beyond.</p></div>
+        <div class="intro-copy fx"><p>Theatres, city squares, cultural festivals, company stages and television—from Ghent to Brussels, Bruges, Kortrijk, Liège, Maastricht and Luxembourg.</p></div>
       </div>
-      <div class="folds fx">
-        <details open><summary>2026–2024</summary><div class="fold-body prose"><ul><li>Benenwerk · Bruges</li>
-            <li>Ghent India Dance Festival · Ghent</li><li>Diwali Celebration · Luxembourg</li><li>Shoonya Indian Night · Gentse Feesten</li><li>Jump · NTGent</li><li>The Four Loves · Ghent</li><li>Indian dance at Leylet Raqs · Ghent</li></ul></div></details>
-        <details><summary>2023–2020</summary><div class="fold-body prose"><ul><li>McKinsey event · Brussels</li><li>Indian Dance Lab · Liège</li><li>Dansen in ’t Park · Ghent</li><li>Belgium’s Got Talent</li><li>Minard Theatre · Ghent</li><li>Boombal Festival</li></ul></div></details>
-        <details><summary>2019–2017</summary><div class="fold-body prose"><ul><li>Gentse Feesten · Ghent</li><li>Cultuurcentrum De Factorij</li><li>Canvas TV · Dans met Hanne</li><li>Chautara vzw · Ghent</li><li>Indian Festival · Ghent</li></ul></div></details>
+      <div class="prose record-list fx" id="stage-history-full">
+        <h3>2026</h3><ul><li>Benenwerk – Bruges August</li><li>Gent India Dans Festival – Ghent May</li></ul>
+        <h3>2025</h3><ul><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg November</li><li>Shoonya Indian Night – Gentse Feesten, Ghent July</li><li>Performance at Iyengar Yoga Event – Maastricht May</li><li>Gent India Dans Festival – Ghent April</li></ul>
+        <h3>2024</h3><ul><li>Diwali Celebration – Ghent, ICCR November</li><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg October</li><li>Shoonya Indian Night – Gentse Feesten, with Trefpunt July</li><li>"Jump" – Production by Shoonya Dance Centre at NTGent June</li><li>Entertainment at Ink-Town Tattoo Convention – Kortrijk, with Strange People Brand May</li><li>Gent India Dans Festival – Ghent April</li><li>"The Four Loves" – A full-length Indian dance production by ABC, Ghent March</li><li>Indian Dance Performance – Leylet Raqs Bellydance Festival, Ghent February</li></ul>
+        <h3>2023</h3><ul><li>Bollywood Show – McKinsey Event, Brussels, concept by Strange People December</li><li>Indian Dance Showcase – Liège, organised by Indian Dance Lab October</li><li>Indian Food Festival – Brussels, organised by Indian Confluence Belgium August</li><li>Performance at Dansen in het Park – Ghent August</li><li>The Four Loves (Excerpts) – Gent India Dans Festival May</li><li>Solo Performance by Swapnil Dagliya – Shimmy for Animals, Brussels March</li></ul>
+      </div>
+      <div class="folds fx" style="margin-top:1.4rem">
+        <details><summary>Archive 2017–2022</summary><div class="fold-body prose">
+          <h4>2022</h4><ul><li>Shoonya Bollywood Nights December</li><li>Glimpse of India – Indian Festival, Gent August</li><li>Dansen in het Park – Ghent August</li><li>Gentse Feesten – Bollywood Showcase July</li><li>Minard Theatre – Ghent June</li><li>Shoonya Day – Bollywood Performance February</li></ul>
+          <h4>2021</h4><ul><li>Navratri Celebration – Garba Performance, Ghent October</li><li>Belgium's Got Talent – Bhangra Fusion Performance September</li><li>Dansen in het Park – Ghent August</li></ul>
+          <h4>2020</h4><ul><li>Online Performance – Bolly-Belly Party June</li></ul>
+          <h4>2019</h4><ul><li>Indian Festival – Ghent October</li><li>Minard Theatre – Ghent September</li><li>Boombal Festival August</li><li>Dansen in 't Park – Ghent August</li><li>Gentse Feesten – Performances July</li><li>Cultuurcentrum De Factorij – Workshop and Performance June</li></ul>
+          <h4>2018</h4><ul><li>Dhoom Taana – In-Studio Performance November</li><li>Featured in "Dans met Hanne" on Canvas TV – Top 10 Dance Companies August</li><li>Gentse Feesten – Performances July</li></ul>
+          <h4>2017</h4><ul><li>Gentse Feesten – Performances July</li><li>Performance for Chautara vzw – Ghent</li></ul>
+        </div></details>
       </div>
     </section>
 
@@ -162,50 +215,8 @@ const body = `
       <h2 class="fx" style="margin-bottom:1.6rem">Before the<br><em class="solo">music starts.</em></h2>
       <div class="folds fx">
         <details><summary>Can the performance be tailored?</summary><div class="fold-body prose"><p>Yes. We shape repertoire, duration, company size and participation around your venue, audience and event format.</p></div></details>
-        <details><summary>Can you also teach a workshop at our event?</summary><div class="fold-body prose"><p>Not from ABC. The company is booked to perform. Workshops, choreography commissions and private coaching are hired directly from Swapnil Dagliya, the company&rsquo;s artistic director — <a href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">swapnil.dance/workshops</a>. Many events book both; they are simply two different agreements.</p></div></details>
         <details><summary>Where can ABC travel?</summary><div class="fold-body prose"><p>ABC is based in Ghent and works across Belgium and internationally. Share the city and date in your enquiry so we can discuss the practical setup.</p></div></details>
         <details><summary>What should a booking enquiry include?</summary><div class="fold-body prose"><p>Please include the date, city, event type, rough audience size and what you want your audience to experience. We normally reply within three working days.</p></div></details>
-      </div>
-    </section>
-
-    <section class="scene-pad t-blue" data-scene data-cue="the full dossier">
-      <div class="intro">
-        <div>
-          <p class="label fx">The complete dossier</p>
-          <h2 class="fx">The complete<br><em class="solo">dossier.</em></h2>
-        </div>
-        <p class="intro-copy fx">The headline offer stays quick. Open these only when you need the full performance record, production credits or service detail.</p>
-      </div>
-      <div class="folds fx">
-        <details id="stage-history-full"><summary>Bollywood, Bhangra &amp; Garba performances in Belgium</summary><div class="fold-body prose">
-          <h2>Indian dance company available for events in Belgium and Europe</h2>
-          <p>ABC a bollywood company brings Bollywood, Bhangra, Garba, Lavani and Indian folk dance to events across Belgium and Europe. Led by Swapnil Dagliya, we have performed more than 40 shows at weddings, cultural festivals, corporate stages and theatres since 2017. Each performance is shaped for the event, with original costumes, curated music and a repertoire that moves between classical tradition and contemporary energy.</p>
-          <h3>On stage since 2017</h3>
-          <h4>2026</h4><ul><li>Gent India Dans Festival – Ghent May</li></ul>
-          <h4>2025</h4><ul><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg November</li><li>Shoonya Indian Night – Gentse Feesten, Ghent July</li><li>Performance at Iyengar Yoga Event – Maastricht May</li><li>Gent India Dans Festival – Ghent April</li></ul>
-          <h4>2024</h4><ul><li>Diwali Celebration – Ghent, ICCR November</li><li>Diwali Celebration – Luxembourg, Indian Association Luxembourg October</li><li>Shoonya Indian Night – Gentse Feesten, with Trefpunt July</li><li>"Jump" – Production by Shoonya Dance Centre at NTGent June</li><li>Entertainment at Ink-Town Tattoo Convention – Kortrijk, with Strange People Brand May</li><li>Gent India Dans Festival – Ghent April</li><li>"The Four Loves" – A full-length Indian dance production by ABC, Ghent March</li><li>Indian Dance Performance – Leylet Raqs Bellydance Festival, Ghent February</li></ul>
-          <h4>2023</h4><ul><li>Bollywood Show – McKinsey Event, Brussels, concept by Strange People December</li><li>Indian Dance Showcase – Liège, organised by Indian Dance Lab October</li><li>Indian Food Festival – Brussels, organised by Indian Confluence Belgium August</li><li>Performance at Dansen in het Park – Ghent August</li><li>The Four Loves (Excerpts) – Gent India Dans Festival May</li><li>Solo Performance by Swapnil Dagliya – Shimmy for Animals, Brussels March</li></ul>
-          <h3>Archive 2017–2022</h3>
-          <h4>2022</h4><ul><li>Shoonya Bollywood Nights December</li><li>Glimpse of India – Indian Festival, Gent August</li><li>Dansen in het Park – Ghent August</li><li>Gentse Feesten – Bollywood Showcase July</li><li>Minard Theatre – Ghent June</li><li>Shoonya Day – Bollywood Performance February</li></ul>
-          <h4>2021</h4><ul><li>Navratri Celebration – Garba Performance, Ghent October</li><li>Belgium's Got Talent – Bhangra Fusion Performance September</li><li>Dansen in het Park – Ghent August</li></ul>
-          <h4>2020</h4><ul><li>Online Performance – Bolly-Belly Party June</li></ul>
-          <h4>2019</h4><ul><li>Indian Festival – Ghent October</li><li>Minard Theatre – Ghent September</li><li>Boombal Festival August</li><li>Dansen in 't Park – Ghent August</li><li>Gentse Feesten – Performances July</li><li>Cultuurcentrum De Factorij – Workshop and Performance June</li></ul>
-          <h4>2018</h4><ul><li>Dhoom Taana – In-Studio Performance November</li><li>Featured in "Dans met Hanne" on Canvas TV – Top 10 Dance Companies August</li><li>Gentse Feesten – Performances July</li></ul>
-          <h4>2017</h4><ul><li>Gentse Feesten – Performances July</li><li>Performance for Chautara vzw – Ghent</li></ul>
-        </div></details>
-        <details id="production-archive"><summary>Dance productions &amp; archive</summary><div class="fold-body prose">
-          <h2>The Four Loves</h2>
-          <p><strong>An Indian dance show by ABC a bollywood company</strong></p>
-          <p><strong>Choreography:</strong> Swapnil Dagliya<br><strong>Production:</strong> Wim Boussery &amp; Swapnil Dagliya<br><strong>Dancers:</strong> Chiara Bisinelli, Kaushika Kumar, Khushboo Agarwal, Laurien De Ridder, Narcisse Merlier, Roshni Tela, Sara Van Holm, Shreya Vaidya, Svetlana Bubnova, Siddhy Shetty &amp; Swapnil Dagliya<br><strong>Guest Performer:</strong> Pranali Sanghmitra Bhagwat<br><strong>Lights:</strong> Johan Van Compernolle<br><strong>Sound:</strong> Wim Boussery<br><strong>Dramaturgy:</strong> Rita Hendricks<br><br><strong>Video of the trailer shot by:</strong> Marc Antoine<br><strong>Video edit by:</strong> Rajat Senjaliya<br><br><strong>Supported by:</strong> Shoonya Dance Centre</p>
-          <p>"The Four Loves" is a vibrant Indian dance production, presented by ABC, that explores the diverse dimensions of love through the expressive language of Indian dance. This production draws inspiration from the rich cultural understanding of love in India, showcasing its many forms and expressions.</p>
-          <p>Through captivating performances, intricate costumes, and evocative music, "The Four Loves" presents love as it manifests in various relationships. We portray the love of devotion, known as <em>bhakti</em>, the warmth of familial affection, known as <em>vatsalya</em>, the passion of romantic love, known as <em>shringar</em>, and the profound sense of universal connection, known as <em>prema</em>.</p>
-          <p>"The Four Loves" explores the breadth of love through Indian dance. The production moves from Bollywood to regional folk forms: <em>Ghoomar</em>, <em>Chari</em> and <em>Tera Taali</em> from Rajasthan, <em>Garba</em> from Gujarat, <em>Bhangra</em> from Punjab, and semi-classical pieces shaped by <em>Kathak</em> vocabulary. Directed by Swapnil Dagliya, it brings these contrasting movement languages together in one stage work.</p>
-        </div></details>
-        <details id="services"><summary>Workshops, coaching &amp; choreography</summary><div class="fold-body prose">
-          <h2>Learn with Swapnil, not the company</h2>
-          <p>Event workshops, hen party and team sessions, school workshops, wedding choreography and private one-to-one coaching are booked directly with Swapnil Dagliya, the company's artistic director — not through ABC. Find them at <a href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">swapnil.dance/workshops</a>.</p>
-          <p>ABC itself is booked to perform — see the formats above, or <a href="../contact/">get in touch about a performance</a>.</p>
-        </div></details>
       </div>
     </section>
 
@@ -215,7 +226,7 @@ const body = `
         <h2 class="fx">Have an event<br><em class="solo">in mind?</em></h2>
         <p class="fx">Tell us the date, city and kind of event. We will help shape the right performance for it.</p>
       </div>
-      <p class="fx"><a class="button button-yellow" href="../contact/">Start a booking <span>↗</span></a></p>
+      <p class="fx"><a class="button button-yellow" href="../contact/#book">Start a booking <span>↗</span></a></p>
     </section>`;
 
 export default { def, body: () => page({ ...def, route: "book" }, body) };

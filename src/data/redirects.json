@@ -404,8 +404,8 @@
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "gentle-feesten-shoonya-indian-night",
@@ -420,8 +420,8 @@
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "home",
@@ -548,16 +548,16 @@
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "performances",
     "target": "../book/#performances",
     "canonical": "https://abcdans.com/book/#performances",
     "title": "Bollywood, Bhangra &amp; Garba Performances in Belgium",
-    "desc": "This ABC page now lives in Performances and workshops.",
-    "dest": "Performances and workshops"
+    "desc": "This ABC page now lives in Performances.",
+    "dest": "Performances"
   },
   {
     "route": "private-online-coaching",
@@ -572,8 +572,8 @@
     "target": "../book/#productions",
     "canonical": "https://abcdans.com/book/#productions",
     "title": "ABC Dance Productions - Uniting Cultures Through Indian Dance | Belgium",
-    "desc": "This ABC page now lives in Performances and workshops.",
-    "dest": "Performances and workshops"
+    "desc": "This ABC page now lives in Performances.",
+    "dest": "Performances"
   },
   {
     "route": "refund-policy",
@@ -588,8 +588,8 @@
     "target": "../book/#services",
     "canonical": "https://abcdans.com/book/#services",
     "title": "ABC - Premier Indian Dance Company in Belgium | Bollywood, Bhangra, Garba &amp; More",
-    "desc": "This ABC page now lives in Performances and workshops.",
-    "dest": "Performances and workshops"
+    "desc": "This ABC page now lives in Performances.",
+    "dest": "Performances"
   },
   {
     "route": "start-dancing",
@@ -604,40 +604,40 @@
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "the-artists",
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "the-gala-showcase",
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "the-opening-party",
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "the-workshops",
     "target": "../festival/",
     "canonical": "https://abcdans.com/festival/",
     "title": "ABC",
-    "desc": "This ABC page now lives in Ghent India Dance Festival.",
-    "dest": "Ghent India Dance Festival"
+    "desc": "This ABC page now lives in Gent India Dans Festival.",
+    "dest": "Gent India Dans Festival"
   },
   {
     "route": "abc-calendar/bhangra-starter-series-september",

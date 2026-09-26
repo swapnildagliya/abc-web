@@ -85,7 +85,7 @@ const def = {
   depth: 1,
   nav: "whats-on/",
   title: "SANGAM — an Indian dance production, 7 & 8 November 2026 | ABC",
-  desc: "A village without water, and a child who belongs to no one. Sixty minutes of dance without dialogue, 7 and 8 November 2026 at Shoonya Theatre, Ghent.",
+  desc: "A village without water, and a child who belongs to no one. Seventy minutes of dance plus a 20-minute interval, 7 and 8 November 2026 at Shoonya Theatre, Ghent. Tickets €20.",
   canonical: `${SITE}/sangam/`,
   themeColor: "#10121A",
   ogImage: `${SITE}/assets/img/events/sangam-2026.jpg`,
@@ -115,7 +115,7 @@ const body = `
         <p class="inner-kicker fx">ABC a bollywood company · at Shoonya Dance Centre</p>
         <h1 id="page-title"><span class="mask-line"><span>SANGAM</span></span><span class="mask-line"><span lang="hi" class="sangam-deva">संगम</span></span></h1>
         <p class="sangam-tagline fx">A village without water,<br><em class="solo">and a child who belongs to no one.</em></p>
-        <p class="sangam-when fx">Sat 7 Nov 2026 · 19:30<i>·</i>Sun 8 Nov 2026 · 15:00</p>
+        <p class="sangam-when fx">Sat 7 Nov 2026 · 19:30<i>·</i>Sun 8 Nov 2026 · 15:00<i>·</i>€20</p>
         <div class="button-row fx">
           <a class="button button-yellow" href="${TICKETS}" target="_blank" rel="noopener">Book tickets <span>↗</span></a>
           <a class="button button-outline" href="#story">Read the story <span>↓</span></a>
@@ -143,17 +143,6 @@ const body = `
       </ol>
     </section>
 
-    <section class="perf-break t-blue spot" data-scene data-stage data-cue="two shows">
-      <div>
-        <p class="break-kicker fx">Two performances</p>
-        <h2 class="fx">Seventy minutes,<em class="solo">one interval.</em></h2>
-      </div>
-      <div class="break-side">
-        <p class="script-note fx">the bar opens half an hour early.</p>
-        <img class="break-mark fx" src="../assets/img/abc-mark-clean.png" alt="" loading="lazy" decoding="async" width="1351" height="1026">
-      </div>
-    </section>
-
     <section class="scene-pad t-paper" id="practical" data-scene data-cue="practical">
       <p class="label fx">Before you come</p>
       <h2 class="fx" style="margin-bottom:1.4rem">Everything<br><em class="solo">you need to know.</em></h2>
@@ -168,9 +157,14 @@ const body = `
         ${fact("The bar", "Opens 30 minutes before each performance — come early, have a drink, find your seat")}
       </div>
       <p class="script-note fx" style="margin-top:1.2rem">both performances start sharp.</p>
+      <p class="fx" style="margin-top:1.2rem; max-width:40em">Tickets are sold by Shoonya Dance Centre. “Book tickets” opens Shoonya’s ticket form: choose <strong>Buy tickets for a Performance</strong>.</p>
     </section>
 
     <section class="scene-pad t-bone" id="company" data-scene data-cue="the company">
+      <figure class="frame fx" style="aspect-ratio: 3/2; max-width: 760px; margin-bottom:1.8rem">
+        <img src="../assets/img/abc/anarkali-ensemble-gala2023-jan-vens.jpg" alt="ABC company dancers in white and dark anarkalis moving in a line under red and blue stage light" loading="lazy" decoding="async" width="1200" height="799">
+        <figcaption><span>ABC company · GIDF Gala 2023 · PC Jan Vens</span></figcaption>
+      </figure>
       <div class="intro">
         <h2 class="fx">Danced by<br><em class="solo">the company.</em></h2>
         <div class="intro-copy fx">
@@ -188,7 +182,7 @@ const body = `
       <div>
         <p class="label fx" style="color:var(--yellow)">7 &amp; 8 November 2026 · Ghent</p>
         <h2 class="fx">Two worlds,<br><em class="solo">one evening.</em></h2>
-        <p class="fx">Sixty minutes of Indian folk, Bollywood and semi-classical dance at Shoonya Theatre.</p>
+        <p class="fx">Seventy minutes of Indian folk, Bollywood and semi-classical dance, plus a 20-minute interval, at Shoonya Theatre. Tickets €20.</p>
       </div>
       <p class="fx"><a class="button button-yellow" href="${TICKETS}" target="_blank" rel="noopener">Book tickets <span>↗</span></a></p>
     </section>`;

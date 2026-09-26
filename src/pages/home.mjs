@@ -7,15 +7,11 @@ import { eventSets } from "../events.mjs";
 // that had already happened. It now reads the same derived upcoming set as
 // /whats-on/, so both pages age together.
 const { upcoming } = eventSets(JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8")).events);
-// The public ABC homepage should lead with ABC's own current production. The
-// full agenda remains chronological, while this short homepage selection gives
-// the company work priority over classes and workshops run by related brands.
-const featuredProduction = upcoming.find(event => event.id === "sangam-2026")
-  || upcoming.find(event => event.kind === "performance")
-  || upcoming[0];
-const homeUpcoming = featuredProduction
-  ? [featuredProduction, ...upcoming.filter(event => event.id !== featuredProduction.id)]
-  : upcoming;
+// "Next places to find us" means places to watch the company. Shoonya class
+// series and Swapnil workshops are upcoming too, but they belong to their own
+// organisers — on 26 Sep 2026 two starter series that began on 16 Sep still
+// sat here as "next dates". They stay on /whats-on/; the homepage links there.
+const homeUpcoming = upcoming.filter(event => event.kind === "performance");
 const MON3 = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 function dateChip(e) {
   const [, sm, sd] = e.start.split("-").map(Number);
@@ -29,7 +25,9 @@ function dateRow(e) {
   const preview = e.image ? ` data-preview="${e.image.src}"` : "";
   const previewPosition = e.image?.h > e.image?.w ? ` data-preview-position="50% 12%"` : "";
   const sub = e.blurb ? `<small>${e.blurb}</small>` : "";
-  return `<li class="fx"><a href="whats-on/#${e.id}"${preview}${previewPosition}>
+  // data-until lets fable.js drop a row the day after it ends, even if the
+  // daily rebuild has not run; a sweep can read it without parsing prose.
+  return `<li class="fx" data-until="${e.end}"><a href="whats-on/#${e.id}"${preview}${previewPosition}>
           ${dateChip(e)}
           <span><strong>${e.title.split(/\s+[·—]\s+/)[0]}</strong>${sub}</span>
           <span class="city">${e.city}</span><b class="go" aria-hidden="true">\u2197</b></a></li>`;
@@ -111,10 +109,12 @@ const body = `
         </div>
         <p class="script-note fx">see you there — we’ll be the colourful ones ↘</p>
       </div>
-      ${homeUpcoming.length ? `<ol class="date-list">
+      ${homeUpcoming.length ? `<ol class="date-list" data-until-list>
         ${homeUpcoming.slice(0, 4).map(dateRow).join("\n        ")}
-      </ol>` : `<p class="lead fx">The next season is being programmed — the full archive of where we have danced is on the agenda page.</p>`}
-      <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See all upcoming dates <span>→</span></a></p>
+      </ol>` : ""}
+      <p class="lead fx" data-until-empty${homeUpcoming.length ? " hidden" : ""}>The next public date is being programmed — the full archive of where we have danced is on the agenda page.</p>
+      <p class="fx" style="margin-top:2rem"><a class="button button-dark" href="whats-on/">See the full agenda <span>→</span></a></p>
+      <p class="fx prose" style="margin-top:.8rem">Looking for a class or workshop? Weekly classes run at Shoonya — see <a href="learn/">Classes</a>. Workshops with Swapnil are on <a href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">swapnil.dance</a>.</p>
     </section>
 
     <!-- THE CURTAIN CALL · the company bows in along the line -->
@@ -126,11 +126,11 @@ const body = `
         </div>
         <div>
           <p class="intro-copy fx">ABC is a live ensemble, not a name on a poster. Bollywood, Garba, Bhangra, folk and semi-classical — carried by the people who rehearse it every week in Ghent.</p>
-          <p class="fx meet-link"><a href="about/#company">Read their stories <span aria-hidden="true">→</span></a></p>
+          <p class="fx meet-link"><a href="about/#ensemble">Meet the company <span aria-hidden="true">→</span></a></p>
         </div>
       </div>
       <ul class="line-up">
-        ${dancers.map(([f, name], i) => `<li style="--i:${i}"><a class="card" href="about/#company" data-tilt="7"><figure><img src="assets/img/dancers/portraits/${f}.jpg" alt="ABC dancer ${name}" loading="lazy" decoding="async" width="720" height="900"></figure><span>${name}</span></a></li>`).join("\n        ")}
+        ${dancers.map(([f, name], i) => `<li style="--i:${i}"><a class="card" href="about/#ensemble" data-tilt="7"><figure><img src="assets/img/dancers/portraits/${f}.jpg" alt="ABC dancer ${name}" loading="lazy" decoding="async" width="720" height="900"></figure><span>${name}</span></a></li>`).join("\n        ")}
       </ul>
     </section>
 
@@ -179,7 +179,7 @@ const body = `
           </div>
         </article>
         <article class="fx" id="festival">
-          <p class="label">Ghent India Dance Festival</p>
+          <p class="label">Gent India Dans Festival</p>
           <h2>7–9 May<br><em class="solo">2027.</em></h2>
           <p>Edition Five brings artists, students and audiences together for three days of workshops and performance in Ghent.</p>
           <a class="button button-dark" href="festival/">Enter the festival <span>→</span></a>

@@ -6,7 +6,7 @@ const FAQ_SCHEMA = JSON.stringify({
   mainEntity: [
     { "@type": "Question", name: "Are tickets and event registrations refundable?", acceptedAnswer: { "@type": "Answer", text: "Tickets for showcases, workshops and events are non-transferable and non-refundable. Missed sessions are not refunded." } },
     { "@type": "Question", name: "Can a class registration be transferred?", acceptedAnswer: { "@type": "Answer", text: "Membership, workshop and miniseries fees are non-refundable and non-transferable. After an absence of at least five weeks with a valid medical certificate, an eligible registration may be frozen and transferred to another season, to be used within one year of the original start date." } },
-    { "@type": "Question", name: "What happens if ABC cancels?", acceptedAnswer: { "@type": "Answer", text: "If ABC cancels a class, workshop or miniseries session, a replacement or rescheduled session will be provided." } },
+    { "@type": "Question", name: "What happens if a session is cancelled?", acceptedAnswer: { "@type": "Answer", text: "If Shoonya Dance Centre cancels a class, workshop or miniseries session, a replacement or rescheduled session will be provided." } },
     { "@type": "Question", name: "What should I include in an enquiry?", acceptedAnswer: { "@type": "Answer", text: "For bookings include the date, city, venue, event type and audience. For classes include your experience and goals. ABC normally replies within three working days." } },
   ],
 });
@@ -50,22 +50,6 @@ const body = `
     ${routeBar("../", "contact/")}
     ${marquee(["Date", "City", "Audience", "Idea", "Let’s move"], { className: "t-yellow", speed: "22s" })}
 
-    <section class="scene-pad t-paper" id="start" data-scene data-cue="choose a door">
-      <p class="label fx">Choose the shortest route</p>
-      <div class="intro">
-        <h2 class="fx">What kind<br><em class="solo">of question?</em></h2>
-        <div class="intro-copy fx">
-          <p>One of these is a form on this page. Workshops, choreography and private coaching are hired from Swapnil personally, and weekly classes and festival enquiries belong to Shoonya Dance Centre — those routes hand you over.</p>
-          <p>We normally reply within three working days.</p>
-        </div>
-      </div>
-      <div class="contact-options">
-        <article class="contact-option fx"><small>01 · Booking</small><h3>A performance by the company</h3><p>A theatre, a festival, a company party or a wedding. Bring the date, city, venue, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="#book">Invite us to perform <span>↓</span></a></article>
-        <article class="contact-option fx"><small>02 · Learn with Swapnil</small><h3>Workshops &amp; coaching</h3><p>Event workshops, choreography commissions and private one-to-one coaching, online or in Ghent — hired from Swapnil personally.</p><a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a></article>
-        <article class="contact-option fx"><small>03 · Classes &amp; festival</small><h3>Weekly classes or a GIDF idea</h3><p>Weekly classes run at Shoonya Dance Centre, and the Ghent India Dance Festival keeps its own inbox for artist proposals, partnerships and volunteering.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Go to the Shoonya form <span>↗</span></a></article>
-      </div>
-    </section>
-
     <section class="scene-pad t-bone form-scene" id="book" data-scene data-cue="invite us">
       <p class="label fx">01 · Booking</p>
       <div class="intro">
@@ -82,6 +66,22 @@ const body = `
         fields: BOOKING_FIELDS,
         consent: "Send me occasional ABC news — new shows, festival dates and classes. No more than a few times a year.",
       })}
+    </section>
+
+    <section class="scene-pad t-paper" id="start" data-scene data-cue="choose a door">
+      <p class="label fx">Choose the shortest route</p>
+      <div class="intro">
+        <h2 class="fx">What kind<br><em class="solo">of question?</em></h2>
+        <div class="intro-copy fx">
+          <p>One of these is a form on this page. Workshops, choreography and private coaching are hired from Swapnil personally. Weekly classes run at Shoonya Dance Centre, and the Gent India Dans Festival takes enquiries through the same Shoonya contact form — those routes hand you over.</p>
+          <p>We normally reply within three working days.</p>
+        </div>
+      </div>
+      <div class="contact-options">
+        <article class="contact-option fx"><small>01 · Booking</small><h3>A performance by the company</h3><p>A theatre, a festival, a company party or a wedding. Bring the date, city, venue, rough audience size and the feeling you want to create.</p><a class="button button-dark" href="#book">Invite us to perform <span>↓</span></a></article>
+        <article class="contact-option fx"><small>02 · Learn with Swapnil</small><h3>Workshops &amp; coaching</h3><p>Event workshops, choreography commissions and private one-to-one coaching, online or in Ghent — hired from Swapnil personally.</p><a class="button button-dark" href="https://swapnil.dance/workshops/" target="_blank" rel="noopener">Visit swapnil.dance <span>↗</span></a></article>
+        <article class="contact-option fx"><small>03 · Classes &amp; festival</small><h3>Weekly classes or a GIDF idea</h3><p>Weekly classes, artist proposals, partnerships and volunteering for the Gent India Dans Festival all go through the Shoonya contact form.</p><a class="button button-dark" href="${FORM}" target="_blank" rel="noopener">Go to the Shoonya form <span>↗</span></a></article>
+      </div>
     </section>
 
     <!-- COACHING FORM REMOVED 2026-09-19. ABC = performances only; private coaching,
@@ -105,7 +105,7 @@ const body = `
         <h2 class="fx">A useful reply,<br><em class="solo">not a sales script.</em></h2>
         <div class="intro-copy fx">
           <p>For bookings, we first check the date, travel and practical shape of the event. Then we discuss the format, company size and preparation the venue needs.</p>
-          <p>For workshops or private coaching, we point you to Swapnil directly. For classes, we help you find the right level at Shoonya. For the festival, we route the message to the relevant part of the programme.</p>
+          <p>For workshops or private coaching, we point you to Swapnil directly. Class and festival questions go to Shoonya Dance Centre through its contact form.</p>
           <p class="editorial-line">Clear details lead to a better idea.</p>
         </div>
       </div>
@@ -133,25 +133,17 @@ const body = `
     </section>
 
     <section class="scene-pad t-paper" id="refunds" data-scene data-cue="small print">
-      <p class="label fx">Refund policy</p>
+      <p class="label fx">Refund policy · Shoonya Dance Centre</p>
       <h2 class="fx" style="margin-bottom:1.6rem">The practical<br><em class="solo">small print.</em></h2>
       <div class="folds fx">
         <details><summary>Tickets and event registrations</summary><div class="fold-body prose"><p>Tickets for showcases, workshops and events are non-transferable and non-refundable. If you do not come, the ticket is not refunded.</p></div></details>
         <details><summary>Classes and miniseries</summary><div class="fold-body prose"><p>Membership, workshop and miniseries fees are non-refundable and non-transferable. They are fixed amounts and cannot be divided. Missed lessons or sessions are not refunded.</p><p>Medical exception: after an absence of at least five weeks with a valid medical certificate, you may request to freeze a membership or miniseries registration and transfer it to another season. A transfer must be used within one year of your original start date.</p></div></details>
-        <details><summary>If ABC cancels</summary><div class="fold-body prose"></div></details>
+        <details><summary>If a session is cancelled</summary><div class="fold-body prose"><p>If Shoonya Dance Centre cancels a class, workshop or miniseries session, you get a replacement or a rescheduled session.</p></div></details>
         <details><summary>Where you actually pay</summary><div class="fold-body prose"><p>ABC does not take payment on this site. Registrations and tickets are handled at Shoonya Dance Centre — through shoonyadance.com and its registration system — and this policy is the one that applies there.</p><p>Some dates are sold by the festival or venue hosting them, through their own box office. Those sales run under that organiser’s terms, not these, so check theirs before you buy.</p></div></details>
         <details><summary>Force majeure and administration</summary><div class="fold-body prose"><p>Two different situations, kept apart on purpose. <strong>If you cannot come</strong> — a no-show, a missed lesson, a change of plan — the fee is not refunded. <strong>If we cancel</strong> a class, workshop or session, you get a replacement or a rescheduled session.</p><p>In the event of force majeure — war, uprising, fire and the like — refunds are not possible.</p><p>Where a refund is granted as an exception, an administration fee of €25 is deducted from the amount refunded.</p></div></details>
       </div>
     </section>
-
-    <section class="closing t-night" data-scene data-cue="the useful details">
-      <div>
-        <p class="label fx" style="color:var(--yellow)">One good message</p>
-        <h2 class="fx">Start with the<br><em class="solo">useful details.</em></h2>
-        <p class="fx">Date, city and audience for a booking. Experience and goals for a class. The kind of idea for the festival.</p>
-      </div>
-      <p class="fx"><a class="button button-yellow" href="#book">Invite us to perform <span>↑</span></a></p>
-    </section>`;
+`;
 
 // Where a native (no-JS) form POST lands. Web3Forms redirects here itself, so
 // people without JavaScript still get a branded confirmation rather than the

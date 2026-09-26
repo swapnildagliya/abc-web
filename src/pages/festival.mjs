@@ -3,8 +3,8 @@ import { page, SITE, routeBar, marquee } from "../shell.mjs";
 const def = {
   depth: 1,
   nav: "festival/",
-  title: "Ghent India Dance Festival — ABC",
-  desc: "Ghent India Dance Festival brings artists, students and audiences together through Indian dance workshops, performances and shared cultural space.",
+  title: "Gent India Dans Festival — organised by ABC",
+  desc: "Gent India Dans Festival brings artists, students and audiences together through Indian dance workshops, performances and shared cultural space.",
   canonical: `${SITE}/festival/`,
   themeColor: "#164BD8",
   ogImage: `${SITE}/assets/img/gidf/edition-five-2027.jpg`,
@@ -250,7 +250,8 @@ const body = `
       </div>
       <div class="button-row fx">
         <a class="button button-yellow" href="https://www.instagram.com/gentindiadansfestival" target="_blank" rel="noopener">Follow GIDF <span>↗</span></a>
-        <a class="button button-outline" href="../contact/">Contact the festival <span>→</span></a>
+        <a class="button button-outline" href="https://gidf.abcdans.com/" target="_blank" rel="noopener">Festival site <span>↗</span></a>
+        <a class="button button-outline" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Contact the festival <span>↗</span></a>
       </div>
     </section>`;
 

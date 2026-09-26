@@ -73,15 +73,8 @@ function agendaFeature(e, kicker) {
       </article>`;
 }
 
-// The "go deeper" scene picks the next upcoming event that actually has a
-// picture and is not already the lead feature. Its lead sentence is read out of
-// the event body, so the scene can never describe an event it is not showing.
-const deeperCandidates = upcoming.filter(event => event.id !== spotlight?.id);
-const deeper = deeperCandidates.find(e => e.image) || deeperCandidates[0];
-function leadOf(e) {
-  const m = e.body.match(/<p\s*>([\s\S]*?)<\/p>/);
-  return m ? m[1].replace(/<[^>]+>/g, "").trim() : "";
-}
+// The "go deeper" scene was removed on 26 Sep 2026: it promoted the next
+// non-ABC event a second time, directly below the list that already held it.
 
 function eventDetail(e) {
   const d = dateParts(e);
@@ -139,7 +132,7 @@ const body = `
       <div class="intro">
         <h2 class="fx">Featured<br><em class="solo">right now.</em></h2>
         <div class="intro-copy fx">
-          <p>Open days, starter series, workshops and full stage productions — every ABC date in Ghent, across Belgium and on the road.</p>
+          <p>ABC performances and productions first. Starter series and open days run by Shoonya Dance Centre, and workshops with Swapnil, are listed here too so you can find them in one place — each entry names its own booking route.</p>
           <p>Programme times can vary across multi-day events. Use the event organiser’s final schedule before travelling.</p>
         </div>
       </div>
@@ -153,18 +146,6 @@ const body = `
         ${upcoming.map(eventDetail).join("\n        ")}
       </div>
     </section>
-
-    ${deeper ? `<section class="scene-pad t-yellow media-led" data-scene data-scrub data-cue="go deeper">
-      ${deeper.image ? `<figure class="frame fx-scale" style="aspect-ratio: 4/5; align-self:start; max-width: 460px">
-        <img src="../${deeper.image.src}" alt="${deeper.image.alt}" loading="lazy" decoding="async" width="${deeper.image.w}" height="${deeper.image.h}"${deeper.image.h > deeper.image.w ? ` style="object-position:50% 12%"` : ""}>${deeper.image.credit ? `<figcaption><span>\u00A9 ${deeper.image.credit}</span></figcaption>` : ""}
-      </figure>` : ""}
-      <div>
-        <p class="label fx">${longRange(deeper)} · ${deeper.city}</p>
-        <h2 class="fx">Go deeper<br><em class="solo">with us.</em></h2>
-        <p class="lead fx">${leadOf(deeper)}</p>
-        <p class="fx" style="margin-top:1.4rem"><a class="button button-dark" href="#${deeper.id}">Full programme &amp; pricing <span>↑</span></a></p>
-      </div>
-    </section>` : ""}
 
     <section class="perf-break t-night-2 spot" data-scene data-stage data-cue="meet us there">
       <div>
@@ -202,7 +183,7 @@ const body = `
       <div>
         <p class="label fx" style="color:var(--yellow)">Or put ABC on your stage</p>
         <h2 class="fx">Want this energy<br><em class="solo">at your event?</em></h2>
-        <p class="fx">Performances, workshops and productions travel across Belgium and Europe.</p>
+        <p class="fx">Performances and productions travel across Belgium and Europe.</p>
       </div>
       <p class="fx"><a class="button button-yellow" href="../contact/#book">Book ABC <span>↗</span></a></p>
     </section>`;

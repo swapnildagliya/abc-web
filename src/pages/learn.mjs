@@ -31,9 +31,9 @@ const body = `
       <p class="ghost" aria-hidden="true">TRY</p>
       <p class="inner-index" aria-hidden="true">02 · Classes</p>
       <div class="inner-hero-copy">
-        <p class="inner-kicker fx">Weekly classes · Ghent · Sep 2026</p>
+        <p class="inner-kicker fx">Weekly classes · Shoonya Dance Centre · Ghent</p>
         <h1 id="page-title"><span class="mask-line"><span>Start where</span></span><span class="mask-line"><span><em class="solo">your feet are.</em></span></span></h1>
-        <p class="inner-hero-lead fx">Nine weekly classes with Swapnil Dagliya—from your first Bollyfolk step to advanced Bollywood and Indian semi-classical work.</p>
+        <p class="inner-hero-lead fx">Weekly classes are run by Shoonya Dance Centre: nine weekly classes with Swapnil Dagliya, from your first Bollyfolk step to advanced Bollywood and Indian semi-classical work. Registration is on shoonyadance.com.</p>
         <div class="button-row fx">
           <a class="button button-dark" href="#classes">See the timetable <span>↓</span></a>
         </div>
@@ -45,7 +45,7 @@ const body = `
       </div>
     </section>
     ${routeBar("../", "learn/")}
-    ${marquee(["Start here", "Try free", "Ten classes", "Go deeper", "Perform"], { className: "t-night", speed: "24s" })}
+    ${marquee(["Start here", "Try free", "Nine classes", "Go deeper", "Perform"], { className: "t-night", speed: "24s" })}
 
     <section class="scene-pad t-paper" data-scene data-cue="ways in">
       <p class="label fx">Find your way in</p>
@@ -154,13 +154,6 @@ const body = `
       </div>
     </section>
 
-    <section class="scene-pad t-night" data-scene data-cue="ten steps">
-      <blockquote class="big-quote fx">
-        <p>Ten steps. Zero audience. Your pace.</p>
-        <cite><a class="text-link" href="../learn-to-dance-bollywood/">Start the free Bollywood course <span>→</span></a></cite>
-      </blockquote>
-    </section>
-
     <section class="scene-pad t-paper" data-scene data-cue="all the detail">
       <div class="intro">
         <div>
@@ -172,7 +165,7 @@ const body = `
       <div class="folds fx">
         <details id="class-guide"><summary>Weekly classes in Ghent</summary><div class="fold-body prose">
           <h2>Indian dance classes in Ghent — with Swapnil Dagliya</h2>
-          <p>Swapnil Dagliya — Artistic Director of ABC a bollywood company, trained at Broadway Dance Center (New York) and Opus Ballet (Florence) — teaches 10 weekly Indian dance classes at Shoonya Dance Centre in Ghent. Bollywood, Bhangra, Bollyfolk, Garba, Semi-Classical, Indian Technique, and Yoga. Semester: Sep 2026 – Jan 2027.</p>
+          <p>Swapnil Dagliya — Artistic Director of ABC a bollywood company, trained at Broadway Dance Center (New York) and Opus Ballet (Florence) — teaches nine weekly Indian dance classes at Shoonya Dance Centre in Ghent. Bollywood, Bhangra, Bollyfolk, Garba, Semi-Classical, Indian Technique, and Yoga. Semester: Sep 2026 – Jan 2027.</p>
           <h3>Which class is right for me?</h3>
           <p><strong>I'm a total beginner and just want to have fun.</strong> Start with Bollyfolk (Wed) or Yoga — no experience needed.</p>
           <p><strong>I want a massive cardio workout.</strong> You'll love Bhangra — high-energy, full-body, loud. Bollyfolk (Wed) is a great entry point first.</p>
@@ -181,14 +174,15 @@ const body = `
           <h3>Enrollment opens twice a year. Your first week is always free.</h3>
           <p><strong>🍂 Fall/Winter semester (Sept – Feb).</strong> The fall semester runs from 14 September 2026 to 30 January 2027, with breaks for autumn (1–8 Nov) and winter holidays (20 Dec – 10 Jan). Registration opens at <a href="https://shoonyadance.com" target="_blank" rel="noopener">shoonyadance.com</a>.</p>
           <p><strong>🌷 Spring/Summer semester (Feb – June).</strong> The spring semester runs from mid-February to mid-June 2027, with a break for Easter holidays. Free trial week: 15–20 February 2027. Registration opens in December 2026.</p>
-          <p><strong>🔥 Winter &amp; Summer intensives.</strong> Between semesters, Swapnil Dagliya hosts multi-day Indian dance intensives at Shoonya Dance Centre. These bootcamps are designed to fast-track technique and act as a bridge into Level 2 or Level 3 classes the following semester. Next intensive: Indian Dance Summer Intensive — 26–29 August 2026 in Ghent. <a href="https://www.shoonyadance.com/calendar/indian-dance-summer-intensive-2026" target="_blank" rel="noreferrer noopener">See details →</a></p>
+          <p><strong>🔥 Winter &amp; Summer intensives.</strong> Between semesters, Swapnil Dagliya hosts multi-day Indian dance intensives at Shoonya Dance Centre. These bootcamps are designed to fast-track technique and act as a bridge into Level 2 or Level 3 classes the following semester.</p>
           <h3>Swapnil's classes · Sep 2026 – Jan 2027 · Shoonya Dance Centre, Ghent</h3>
           <h4>Tuesday evenings · 18:30–21:40</h4>
           <p><strong>Bollyfolk.</strong> Taught by Swapnil Dagliya. One or two regional folk traditions per semester — more complex choreography and a faster pace. This semester: Cheraw (bamboo dance from Mizoram) and Lavani (theatrical folk dance from Maharashtra). Best after a semester of Wednesday Bollyfolk. Age 12+.</p>
           <p><strong>Yoga.</strong> Iyengar-influenced yoga taught by Swapnil Dagliya, who completed his training in Pune in 2011. Emphasis on alignment, breath, and stillness. Open to all bodies and all levels. Age 16+.</p>
           <p><strong>Indian Dance Technique.</strong> Taught by Swapnil Dagliya. No choreography — just foundations: alignment, footwork, Kathak turns (chakkars), mudras, and body control. The class that makes every other Indian dance style feel cleaner and stronger. All levels. Age 12+.</p>
-          <h4>Wednesday evenings · 18:30–21:45</h4>
-          <p><strong>Bollyfolk.</strong> Taught by Swapnil Dagliya. The main entry point into Indian dance at ABC — a different regional folk tradition each semester. This semester: Garba from Gujarat and Khoriya from Haryana. No experience needed. Age 12+.</p>
+          <h4>Wednesday evenings · 17:20–21:45</h4>
+          <p><strong>Yoga.</strong> The early slot, before the dance evening starts — the same Iyengar-influenced work as Tuesday. Open to all bodies and all levels. Age 16+.</p>
+          <p><strong>Bollyfolk.</strong> Taught by Swapnil Dagliya. The main entry point into Indian dance at Shoonya — a different regional folk tradition each semester. This semester: Garba from Gujarat and Khoriya from Haryana. No experience needed. Age 12+.</p>
           <p><strong>Bhangra.</strong> Taught by Swapnil Dagliya. The harvest dance of Punjab — high-energy, strong shoulder work, big jumps, and the unmistakable lift of the dhol drum. For dancers with an Indian dance foundation or one year of experience. Age 12+.</p>
           <p><strong>Indian Semi-Classical.</strong> Taught by Swapnil Dagliya. Between Kathak and Bollywood — precise footwork, mudras, and eye expression. For dancers with an Indian dance foundation or two years of experience. Age 12+.</p>
           <h4>Thursday evenings · 18:30–20:30</h4>
@@ -198,7 +192,7 @@ const body = `
         <details id="online"><summary>Learn online</summary><div class="fold-body prose">
           <p class="lede">1:1 private coaching · Online via Zoom · Worldwide</p>
           <h2>Learn the dance. Not just the steps.</h2>
-          <p>Private coaching is a 60-minute one-to-one Zoom session shaped around your goals, starting level and chosen style. It is separate from ABC’s in-person semester classes at Shoonya Dance Centre.</p>
+          <p>Private coaching is a 60-minute one-to-one Zoom session shaped around your goals, starting level and chosen style. It is separate from the in-person semester classes at Shoonya Dance Centre.</p>
           <h3>Styles</h3>
           <p>Choose from Kalbeliya, Bollywood, Bhangra, Indian folk or Indian semi-classical work. Complete beginners and experienced dancers are both welcome.</p>
           <h3>How it works</h3>
@@ -218,9 +212,9 @@ const body = `
       <div>
         <p class="label fx" style="color:var(--yellow)">Your first count</p>
         <h2 class="fx">Ready<br><em class="solo">to start?</em></h2>
-        <p class="fx">Ask which class best fits your experience and goals.</p>
+        <p class="fx">Registration and questions about levels go to Shoonya Dance Centre, which runs the weekly classes.</p>
       </div>
-      <p class="fx"><a class="button button-yellow" href="../contact/">Ask about classes <span>↗</span></a></p>
+      <p class="fx"><a class="button button-yellow" href="https://www.shoonyadance.com/contact" target="_blank" rel="noopener">Ask Shoonya about classes <span>↗</span></a></p>
     </section>`;
 
 export const outputs = () => [{ path: "learn/index.html", html: page(def, body) }];
