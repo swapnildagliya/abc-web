@@ -39,4 +39,11 @@ const routes = [];
   }
 })(ROOT);
 writeFileSync(join(ROOT, "routes.json"), JSON.stringify(routes.sort()));
+
+// robots.txt follows the build mode, so a preview build can never ship
+// crawl-allowing robots next to noindex pages (or the reverse).
+const { PREVIEW } = await import("./shell.mjs");
+writeFileSync(join(ROOT, "robots.txt"), PREVIEW
+  ? `User-agent: *\nDisallow: /\n\n# Preview build (ABC_PREVIEW=1): every page is noindex.\n`
+  : `User-agent: *\nAllow: /\n\nSitemap: https://abcdans.com/sitemap.xml\n`);
 console.log(`built ${written} files · ${routes.length} routes in the manifest`);

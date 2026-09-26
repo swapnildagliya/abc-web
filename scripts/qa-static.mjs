@@ -414,5 +414,9 @@ for (const r of ["", ...routes]) {
   }
 }
 
+// 5. Experiments never reach Pages: exports/ and checkpoints/ stay gitignored.
+const gitignore = readFileSync(join(ROOT, ".gitignore"), "utf8");
+for (const dir of ["exports/", "checkpoints/"]) check(`.gitignore keeps ${dir} out of the deploy`, gitignore.split("\n").includes(dir));
+
 console.log(`\nPASS ${pass} · FAIL ${fail}`);
 if (fail) { console.log(failures.map(f => "  ✗ " + f).join("\n")); process.exit(1); }

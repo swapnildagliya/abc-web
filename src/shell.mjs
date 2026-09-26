@@ -24,8 +24,8 @@ export function esc(value) {
    automatic rebuild re-hid the site from search. The default is now the
    launch build. A noindex preview is opt-in only:
        ABC_PREVIEW=1 node src/build.mjs
-   If you ever build a preview, also restore the preview robots.txt
-   (Disallow: /) — qa-static.mjs fails when the two disagree. */
+   build.mjs writes robots.txt to match (Disallow in a preview, Allow +
+   sitemap in a launch build); qa-static.mjs fails if the two disagree. */
 export const PREVIEW = process.env.ABC_PREVIEW === "1";
 
 export function head(page, rel) {

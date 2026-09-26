@@ -107,7 +107,7 @@ const hubBody = `
       <div>
         <p class="label fx" style="color:var(--yellow)">After the ten steps</p>
         <h2 class="fx">Want to learn<br><em class="solo">with a teacher?</em></h2>
-        <p class="fx">Continue online or join ABC’s weekly Indian dance classes at Shoonya Dance Centre in Ghent.</p>
+        <p class="fx">Continue online, or join the weekly Indian dance classes at Shoonya Dance Centre in Ghent, taught by Swapnil Dagliya.</p>
       </div>
       <p class="fx"><a class="button button-yellow" href="../learn/">Explore classes <span>↗</span></a></p>
     </section>`;

@@ -1,5 +1,10 @@
 import { page, SITE, routeBar, marquee } from "../shell.mjs";
 
+/* Name and contact route, as the festival itself publishes them (read live
+   26 Sep 2026): gidf.abcdans.com titles itself "Gent India Dans Festival",
+   its Instagram is @gentindiadansfestival, and its own "Contact" link goes to
+   https://www.shoonyadance.com/contact. This page follows the festival's own
+   site. If the festival gets a dedicated inbox, change it there and here. */
 const def = {
   depth: 1,
   nav: "festival/",
