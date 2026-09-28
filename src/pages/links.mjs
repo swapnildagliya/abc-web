@@ -75,6 +75,8 @@ const evergreen = [
     href: "../contact/#book", img: { src: "../assets/img/abc/garba-ensemble-gala2023-backaert.jpg", w: 1200, h: 806 } }),
   row({ tag: "Watch", meta: "GIDF 2026 Gala · The Four Loves trailer", title: "See the company on stage",
     href: "../book/#watch", img: { src: "../assets/media/showcase/semiclassical-abc.jpg", w: 640, h: 360 } }),
+  row({ tag: "News", meta: "A few emails a year", title: "Get ABC news", sub: "New shows, productions and festival dates",
+    href: "https://www.shoonyadance.com/abc-news", external: true }),
   row({ tag: "Free", meta: "Ten lessons · at home", title: "Learn Bollywood basics", sub: "ABC’s free online course",
     href: "../learn-to-dance-bollywood/" }),
   row({ tag: "Classes · Shoonya", meta: "Tue · Wed · Thu evenings · Ghent", title: "Weekly classes with Swapnil", sub: "Run by Shoonya Dance Centre",

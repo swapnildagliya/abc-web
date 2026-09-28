@@ -92,7 +92,7 @@ const body = `
       <h2 class="fx" style="margin-bottom:1rem">As long as the<br><em class="solo">conversation needs.</em></h2>
       <div class="prose fx">
         <p>Enquiries live in our mailbox. An enquiry that turns into a booking is kept with the rest of that booking's paperwork, because Belgian bookkeeping rules require it. An enquiry that goes nowhere is deleted once it is clear nothing will come of it.</p>
-        <p>If you asked for news, your address sits in our own mailbox at Shoonya Dance VZW. There is no mailing platform behind this site — no Mailchimp, no Brevo, no list held by anyone else — so nothing about you is passed to a marketing service. You stay on it until you ask to come off, and replying to any of those messages is enough.</p>
+        <p>If you sign up for ABC news, your address is kept on the ABC newsletter list in Squarespace Email Campaigns, the service Shoonya Dance VZW uses to send it. That list is used only for ABC news — never for Shoonya Dance Centre's own newsletter. You stay on it until you unsubscribe: every email has an unsubscribe link, and asking us through the contact page works too.</p>
         <p>The lawful basis is our legitimate interest in answering people who contact us about work, and your consent for the optional news.</p>
       </div>
     </section>

@@ -64,8 +64,8 @@ const body = `
         subject: "ABC website — performance booking enquiry",
         submit: "Send the booking enquiry",
         fields: BOOKING_FIELDS,
-        consent: "Send me occasional ABC news — new shows, festival dates and classes. No more than a few times a year.",
       })}
+      <p class="fx prose" style="margin-top:1.4rem">Just want to hear about new shows? <a href="https://www.shoonyadance.com/abc-news" target="_blank" rel="noopener">Get ABC news</a> — a few emails a year.</p>
     </section>
 
     <section class="scene-pad t-paper" id="start" data-scene data-cue="choose a door">
@@ -84,6 +84,8 @@ const body = `
       </div>
     </section>
 
+    <!-- The news tick box was removed 2026-09-28: sign-ups now go straight onto the
+         ABC newsletter list (Shoonya's Squarespace) via the page linked below. -->
     <!-- COACHING FORM REMOVED 2026-09-19. ABC = performances only; private coaching,
          workshops and choreography commissions are hired from Swapnil personally at
          https://swapnil.dance/workshops/ — see option 02 above. -->
