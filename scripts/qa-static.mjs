@@ -32,7 +32,9 @@ const stubs = routes.filter(r => readFileSync(join(ROOT, r, "index.html"), "utf8
 // 19 route dirs since 2026-09-07: sangam/ is the production's own page.
 // 18 route dirs since 2026-09-06: contact/thank-you/ is where a no-JS form POST
 // lands. It is noindex and deliberately absent from sitemap.xml.
-check("21 full pages (20 route dirs + homepage)", fullPages.length === 20, `got ${fullPages.length}: ${fullPages.join(", ")}`);
+// 21 route dirs since 2026-09-28: links/ is ABC's Instagram link-in-bio (kept
+// out of sitemap.xml like thank-you/: a hub, not a destination).
+check("22 full pages (21 route dirs + homepage)", fullPages.length === 21, `got ${fullPages.length}: ${fullPages.join(", ")}`);
 check("thank-you page is noindex", readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8").includes('name="robots" content="noindex'));
 check("thank-you page stays out of the sitemap", !readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes("thank-you"));
 check("83 redirect stubs", stubs.length === 83, `got ${stubs.length}`);
