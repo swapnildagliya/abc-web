@@ -7,7 +7,7 @@
    English only — the Dutch synopsis has never been signed off. */
 import { page, SITE, routeBar } from "../shell.mjs";
 
-const TICKETS = "https://links.shoonyadance.com/go/ticket";
+const TICKETS = "https://tickets.shoonyadance.com/register/ticket";
 
 const EVENT_SCHEMA = JSON.stringify([
   {

@@ -11,7 +11,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { eventSets } from "../events.mjs";
 
-const TICKETS = "https://links.shoonyadance.com/go/ticket";
+const TICKETS = "https://tickets.shoonyadance.com/register/ticket";
 const { upcoming } = eventSets(JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.json", import.meta.url)), "utf8")).events);
 const performances = upcoming.filter(e => e.kind === "performance");
 
