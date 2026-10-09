@@ -74,11 +74,10 @@ const ENSEMBLE = [
 ];
 
 const CREDITS = [
-  ["Concept", "Swapnil Dagliya with ABC a bollywood company"],
-  ["Artistic direction", "Swapnil Dagliya"],
-  ["Choreography", "Swapnil Dagliya"],
-  ["Costumes", "ABC a bollywood company"],
+  ["Concept, direction &amp; choreography", "Swapnil Dagliya, in collaboration with the ABC dancers"],
   ["Production", "Wim Boussery &amp; Swapnil Dagliya"],
+  ["Lighting", "Leander Leeman"],
+  ["Costumes", "ABC a bollywood company"],
 ];
 
 const def = {
@@ -88,7 +87,7 @@ const def = {
   desc: "A village without water, and a child who belongs to no one. Seventy minutes of dance plus a 20-minute interval, 7 and 8 November 2026 at Shoonya Theatre, Ghent. Tickets €20.",
   canonical: `${SITE}/sangam/`,
   themeColor: "#10121A",
-  ogImage: `${SITE}/assets/img/events/sangam-2026.jpg`,
+  ogImage: `${SITE}/assets/img/sangam/og.jpg`,
   bodyClass: "page-sangam",
   firstCue: "the river",
   headerCta: { href: TICKETS, label: "Book tickets", glyph: "↗" },
