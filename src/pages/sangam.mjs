@@ -124,6 +124,17 @@ const body = `
     </section>
     ${routeBar("../", "whats-on/")}
 
+    <section class="scene-pad t-night sangam-open" id="open" data-scene data-cue="imagine">
+      <div class="intro">
+        <div class="intro-copy fx sangam-open-copy">
+          <p>Imagine a village that has never seen water. Not a river, not rain. Never.</p>
+          <p>And then a child arrives. A child who belongs to no one.</p>
+          <p>The village has to choose: keep him, or give him away. A queen who has to make that call. A wind that carries every plea nobody answers. And somewhere out there, a mother who is a river.</p>
+          <p class="sangam-cue">We’re not going to tell you what they choose. That’s why you come.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="scene-pad t-paper" id="story" data-scene data-cue="the story">
       <div class="intro">
         <h2 class="fx">Where two rivers<br><em class="solo">meet.</em></h2>
@@ -172,6 +183,12 @@ const body = `
         </div>
       </div>
       <ul class="sangam-ensemble fx">${ENSEMBLE.map(n => `<li>${n}</li>`).join("")}</ul>
+      <blockquote class="sangam-why fx">
+        <p class="label">Why I made it</p>
+        <p>“Every dancer on that stage came to Indian dance from somewhere else. Different countries, different mother tongues, different reasons for walking into a studio in Ghent. None of them grew up with this. All of them chose it.</p>
+        <p>So a story about what a village does with someone who doesn’t fit, I had to make it with them. They are the village. They were also, once, the stranger.”</p>
+        <cite>Swapnil Dagliya</cite>
+      </blockquote>
       <dl class="sangam-credits fx">
         <div><dt>Presented by</dt><dd>An ABC a bollywood company production at Shoonya Dance Centre — ABC's home.</dd></div>
         ${CREDITS.map(([t, v]) => `<div><dt>${t}</dt><dd>${v}</dd></div>`).join("\n        ")}
@@ -182,7 +199,7 @@ const body = `
       <div>
         <p class="label fx" style="color:var(--yellow)">7 &amp; 8 November 2026 · Ghent</p>
         <h2 class="fx">Two worlds,<br><em class="solo">one evening.</em></h2>
-        <p class="fx">Seventy minutes of Indian folk, Bollywood and semi-classical dance, plus a 20-minute interval, at Shoonya Theatre. Tickets €20.</p>
+        <p class="fx">Seventy minutes of Indian folk, Bollywood and semi-classical dance, plus a 20-minute interval, at Shoonya Theatre. Tickets €20. Bring someone who has never seen Indian dance.</p>
       </div>
       <p class="fx"><a class="button button-yellow" href="${TICKETS}" target="_blank" rel="noopener">Book tickets <span>↗</span></a></p>
     </section>`;
