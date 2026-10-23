@@ -154,7 +154,7 @@ const body = `
           <p class="fx"><span class="l">Two lights took you in.</span><span class="l">One warmed you. One watched.</span><span class="l">Between them you learned</span><span class="l">that love can shelter</span><span class="l">without holding on.</span></p></div>
           <div class="sangam-poem-col"><p class="fx"><span class="l">You walked back barefoot,</span><span class="l">and we opened every door.</span><span class="l">One heart stayed closed,</span><span class="l">clenched like a fist,</span><span class="l">and the whole sky held its breath.</span></p>
           <p class="fx"><span class="l">So we danced together for the Queen.</span><span class="l">We stamped until the earth answered,</span><span class="l">we sang, we lit the old fires,</span><span class="l">we poured out every rhythm we had,</span><span class="l">until the fist uncurled.</span></p>
-          <p class="sangam-poem-end fx"><strong class="sangam-poem-title">Sangam, where hearts meet.</strong><span class="l">She gave you hers,</span><span class="l">and you became one.</span><span class="l">When she was gone,</span><span class="l">you carried her.</span><span class="l">Then the rain came at last,</span><span class="l">and the whole village danced.</span></p></div>
+          <p class="sangam-poem-end fx"><strong class="sangam-poem-title">Sangam, where souls meet.</strong><span class="l">She gave you hers,</span><span class="l">and you became one.</span><span class="l">When she was gone,</span><span class="l">you carried her.</span><span class="l">Then the rain came at last,</span><span class="l">and the whole village danced.</span></p></div>
       </div>
     </section>
 
