@@ -135,9 +135,9 @@ const body = `
 
     <section class="scene-pad t-paper" id="story" data-scene data-cue="the story">
       <div class="intro">
-        <h2 class="fx">Where two rivers<br><em class="solo">meet.</em></h2>
+        <h2 class="fx">Where souls<br><em class="solo">meet.</em></h2>
         <div class="intro-copy fx">
-          <p>SANGAM takes its name from the place where two rivers meet.</p>
+          <p>SANGAM means a meeting point: the place where two souls meet and become one.</p>
           <p>Set in a village of women shaped by ritual, rhythm and inheritance, in a land that has never held water, SANGAM gives voice to a child who arrives belonging to no one, and to the community that must decide what to do with him.</p>
           <p>Danced in Indian folk, Bollywood and semi-classical forms, the work holds drought against abundance, the human against the divine, and what a village keeps against what it is willing to give away.</p>
           <p>It asks what a community owes to the one it does not recognise.</p>
