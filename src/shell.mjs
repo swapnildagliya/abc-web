@@ -134,6 +134,7 @@ export function footer(rel) {
     <div class="footer-bottom"><span>© 2017–2026 ABC a bollywood company</span><span>Made in Ghent · Moving across Europe</span></div>
   </footer>
   <script src="${rel}assets/js/fable.js" defer></script>
+  <script src="https://links.shoonyadance.com/announce-bar.js" data-brand="abc" data-push=".site-header" defer></script>
 </body>
 </html>`;
 }
