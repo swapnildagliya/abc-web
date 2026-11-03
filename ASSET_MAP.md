@@ -449,3 +449,13 @@ short `avconvert` probe cuts instead. Filenames and metadata are never enough �
 Drive note: these files are online-only placeholders (0 bytes on disk) that
 stream on read at roughly 3.5 MB/s. `mdls` returns null for them — force with
 `cat file > /dev/null` before probing.
+
+## Booking reel — 2026-11-03 (local review)
+Company-only sequence: desi-girl → garba → showcase/semiclassical-abc → ghagra → namak. Existing runtime displays each for 3 seconds with 700 ms blends; muted, viewport-triggered. Reduced-motion fallback uses first poster.
+- `booking/desi-girl`, `booking/ghagra`, `booking/namak`: local `~/Movies/Bollywood & ABC/ABC Bollywood Dance  Item Song Medley (Desi Girl, Namak, Ghagra)  Gent India Dans Festival 2025.mp4`, starts 60/108/240 seconds, each 6 seconds. Public source https://www.youtube.com/watch?v=QQepxRyLCiw; ABC company, GIDF 2025, filmed Marc Antoine.
+- `booking/garba`: Drive `My Drive/Swapnil Dagliya — Toulouse 2026/Video/Videos/Performances/Garba ABC a bollywood company.mp4`, 35–41 seconds. Caption deliberately says ABC · On stage; event/year not established.
+- `showcase/semiclassical-abc`: existing verified ABC GIDF 2026 clip, reused in place.
+Recipe: `scripts/prepare-booking-glimpses.py`. New MP4s 640px and 960px (`-hd`), H.264, 30 fps, no audio, faststart; JPG posters. Original sources untouched. No new routes.
+
+### Seven-piece expansion
+Added `booking/ghoomar`: same Drive Performances folder, `Ghoomar ABC a bollywood company.mp4`, 63–69s; event/year unspecified. Added `booking/raataan-lambiyan`: same local Movies folder, `Raataan Lambiyan Dance Cover  Bollywood at Minard Theatre Ghent  ABC by Swapnil Dagliya .mp4`, 35–41s. Both visually inspected authentic company ensembles; 640/960px silent H.264 plus poster. Recipe accepts clip-name arguments to avoid re-encoding unchanged media. Sequence: Desi Girl / Garba / semi-classical / Ghoomar / Ghagra / Raataan Lambiyan / Namak. 21s loop.

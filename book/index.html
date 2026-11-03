@@ -115,41 +115,36 @@
       </div>
     </section>
 
-    <!-- WATCH · proof a booker can see. The clips already exist for the
-         festival reel; the same fable.js reel plays them here. Credits say
-         exactly who is on stage, so nothing student- or guest-led passes as ABC. -->
+    <!-- Company-only continuous glimpses; original clips and provenance:
+         scripts/prepare-booking-glimpses.py. Uses the existing reel runtime. -->
     <section class="scene-pad t-night showcase" id="watch" data-scene data-cue="watch">
       <div class="intro">
-        <div>
-          <p class="label fx" style="color:var(--yellow)">On stage · GIDF 2026 Gala</p>
-          <h2 class="fx">See it<br><em class="solo">move.</em></h2>
-        </div>
-        <p class="intro-copy fx lead">ABC’s semi-classical piece, a Bollywood medley ABC danced with Bollywood students, and the full-cast finale — cut from the GIDF 2026 Gala Showcase at Shoonya Theatre, Ghent. For a full ABC production, watch the trailer for <em>The Four Loves</em>.</p>
+        <div><p class="label fx" style="color:var(--yellow)">ABC on stage</p>
+          <h2 class="fx">See it<br><em class="solo">move.</em></h2></div>
+        <p class="intro-copy fx lead">A glimpse of ABC: Bollywood, Garba, Ghoomar and semi-classical dance, moving from one performance to the next.</p>
       </div>
       <figure class="reel" data-reel-stage>
         <div class="reel-frame">
-          <video class="reel-v" muted playsinline preload="none"></video>
-          <video class="reel-v" muted playsinline preload="none"></video>
+          <video class="reel-v live" poster="../assets/media/booking/desi-girl.jpg" muted playsinline preload="none" aria-label="ABC performance glimpses"></video>
+          <video class="reel-v" muted playsinline preload="none" aria-hidden="true"></video>
           <div class="reel-wash" aria-hidden="true"></div>
-          <figcaption class="reel-cap"><b data-reel-title>Semi-classical</b><small data-reel-who>ABC · GIDF 2026</small></figcaption>
+          <figcaption class="reel-cap"><b data-reel-title>Bollywood</b><small data-reel-who>ABC · GIDF 2025</small></figcaption>
           <div class="reel-ticks" aria-hidden="true"></div>
         </div>
-        <ul class="reel-stills">
-          <li data-clip="showcase/semiclassical-abc" data-title="Semi-classical" data-who="ABC · GIDF 2026">
-            <img src="../assets/media/showcase/semiclassical-abc.jpg" alt="The ABC company dancing semi-classical" loading="lazy" decoding="async" width="640" height="360">
-            <span><b>Semi-classical</b><small>ABC · GIDF 2026</small></span>
-          </li>
-          <li data-clip="showcase/madhuri-medley" data-title="Madhuri Medley" data-who="Bollywood students &amp; ABC · GIDF 2026">
-            <img src="../assets/media/showcase/madhuri-medley.jpg" alt="Dancers spinning, skirts opened into full circles" loading="lazy" decoding="async" width="640" height="360">
-            <span><b>Madhuri Medley</b><small>Bollywood students &amp; ABC · GIDF 2026</small></span>
-          </li>
-          <li data-clip="showcase/grand-finale" data-title="Grand Finale" data-who="Full cast · GIDF 2026">
-            <img src="../assets/media/showcase/grand-finale.jpg" alt="The full cast on stage at the curtain call" loading="lazy" decoding="async" width="640" height="360">
-            <span><b>Grand Finale</b><small>Full cast · GIDF 2026</small></span>
-          </li>
+        <ul class="reel-stills" style="display:none" aria-hidden="true">
+<li data-clip="booking/desi-girl" data-title="Bollywood" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/desi-girl.jpg" alt="Bollywood performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood</b><small>ABC · GIDF 2025</small></span></li>
+<li data-clip="booking/garba" data-title="Garba" data-who="ABC · On stage"><img src="../assets/media/booking/garba.jpg" alt="Garba performance by ABC" width="640" height="360" loading="lazy"><span><b>Garba</b><small>ABC · On stage</small></span></li>
+<li data-clip="showcase/semiclassical-abc" data-title="Semi-classical" data-who="ABC · GIDF 2026"><img src="../assets/media/showcase/semiclassical-abc.jpg" alt="Semi-classical performance by ABC" width="640" height="360" loading="lazy"><span><b>Semi-classical</b><small>ABC · GIDF 2026</small></span></li>
+<li data-clip="booking/ghoomar" data-title="Ghoomar" data-who="ABC · On stage"><img src="../assets/media/booking/ghoomar.jpg" alt="Ghoomar performance by ABC" width="640" height="360" loading="lazy"><span><b>Ghoomar</b><small>ABC · On stage</small></span></li>
+<li data-clip="booking/ghagra" data-title="Bollywood · Ghagra" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/ghagra.jpg" alt="Bollywood · Ghagra performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood · Ghagra</b><small>ABC · GIDF 2025</small></span></li>
+<li data-clip="booking/raataan-lambiyan" data-title="Raataan Lambiyan" data-who="ABC · Minard Theatre"><img src="../assets/media/booking/raataan-lambiyan.jpg" alt="Raataan Lambiyan performance by ABC" width="640" height="360" loading="lazy"><span><b>Raataan Lambiyan</b><small>ABC · Minard Theatre</small></span></li>
+<li data-clip="booking/namak" data-title="Bollywood · Namak" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/namak.jpg" alt="Bollywood · Namak performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood · Namak</b><small>ABC · GIDF 2025</small></span></li>
         </ul>
       </figure>
-      <p class="fx" style="margin-top:1.6rem"><a class="button button-yellow" href="https://www.youtube.com/watch?v=2efQqxnI8s0" target="_blank" rel="noopener">Watch The Four Loves trailer <span>↗</span></a></p>
+      <div class="button-row" style="margin-top:1.6rem">
+        <a class="button button-yellow" href="../contact/#book">Bring ABC to your event <span>↗</span></a>
+        <a class="button button-outline" href="https://www.youtube.com/watch?v=2efQqxnI8s0" target="_blank" rel="noopener">Watch The Four Loves trailer <span>↗</span></a>
+      </div>
     </section>
 
     <section class="scene-pad t-night media-led spot" id="productions" data-scene data-stage data-cue="original work">
