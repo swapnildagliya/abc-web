@@ -56,7 +56,7 @@ const body = `
         <h2 class="fx">Invite us<br><em class="solo">to perform.</em></h2>
         <div class="intro-copy fx">
           <p>Forty-plus stages since 2017 — theatres, city squares, festivals, company evenings and weddings, from a solo to the full company.</p>
-          <p>Nothing here is binding. A rough date and a rough budget are enough to start a useful conversation.</p>
+          <p>Nothing here is binding. Share your preferred date, number of sets, duration, preferred dancer count and approximate total budget so we can suggest a suitable performance.</p>
         </div>
       </div>
       ${enquiryForm({
@@ -96,7 +96,7 @@ const body = `
         <h2 class="fx">Rough ideas<em class="solo"> welcome. Really.</em></h2>
       </div>
       <div class="break-side">
-        <p class="script-note fx">dates can come later.</p>
+        <p class="script-note fx">provisional dates welcome.</p>
         <img class="break-mark fx" src="../assets/img/abc-mark-clean.png" alt="" loading="lazy" decoding="async" width="1351" height="1026">
       </div>
     </section>

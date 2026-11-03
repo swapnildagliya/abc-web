@@ -614,8 +614,9 @@
 
     const say = (state, text) => { status.dataset.state = state; status.textContent = text; };
 
-    // `novalidate` is on the markup so we can style our own invalid state;
-    // ask the browser for the verdict ourselves before sending anything.
+    // Keep native validation when JavaScript is unavailable. With this handler
+    // installed, style invalid fields and check validity before sending.
+    form.noValidate = true;
     form.addEventListener("submit", async event => {
       form.querySelectorAll("[aria-invalid]").forEach(el => el.removeAttribute("aria-invalid"));
       if (!form.checkValidity()) {

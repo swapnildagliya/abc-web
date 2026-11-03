@@ -29,6 +29,7 @@ function field(f, formId) {
   const id = `${formId}-${f.name}`;
   const req = f.required ? " required" : "";
   const mark = f.required ? ` <abbr title="required">*</abbr>` : "";
+  const limits = ["min", "step"].filter(k => f[k] !== undefined).map(k => ` ${k}="${esc(f[k])}"`).join("");
   const span = f.wide ? ' data-wide="true"' : "";
   let control;
   if (f.type === "select") {
@@ -39,7 +40,7 @@ function field(f, formId) {
   } else if (f.type === "textarea") {
     control = `<textarea id="${id}" name="${esc(f.name)}" rows="${f.rows || 5}"${req} placeholder="${esc(f.placeholder || "")}"></textarea>`;
   } else {
-    control = `<input id="${id}" type="${f.type || "text"}" name="${esc(f.name)}"${req}${f.autocomplete ? ` autocomplete="${f.autocomplete}"` : ""} placeholder="${esc(f.placeholder || "")}">`;
+    control = `<input id="${id}" type="${f.type || "text"}" name="${esc(f.name)}"${req}${limits}${f.autocomplete ? ` autocomplete="${f.autocomplete}"` : ""} placeholder="${esc(f.placeholder || "")}">`;
   }
   return `<p class="field"${span}>
           <label for="${id}">${esc(f.label)}${mark}</label>
@@ -57,7 +58,7 @@ function field(f, formId) {
  * @param {string} [o.consent] optional opt-in checkbox label
  */
 export function enquiryForm({ id, subject, submit, fields, thanks = `${SITE}/contact/thank-you/`, consent }) {
-  return `<form class="enquiry-form" id="${id}" data-web3form method="POST" action="https://api.web3forms.com/submit" novalidate>
+  return `<form class="enquiry-form" id="${id}" data-web3form method="POST" action="https://api.web3forms.com/submit">
         <input type="hidden" name="access_key" value="${FORM_ACCESS_KEY}">
         <input type="hidden" name="subject" value="${esc(subject)}">
         <input type="hidden" name="from_name" value="ABC a bollywood company — website">
@@ -95,10 +96,16 @@ export const BOOKING_FIELDS = [
   { name: "Phone", label: "Phone", type: "tel", autocomplete: "tel", hint: "Optional. Include the country code if you would rather we called." },
   { name: "Booking type", label: "What are you booking?", type: "select", required: true,
     options: ["Performance", "Wedding or private event", "Something else"] },
-  { name: "Preferred date", label: "Preferred date", type: "date" },
+  { name: "Preferred date", label: "Preferred date", type: "date", required: true },
+  { name: "Date status", label: "Is this date confirmed?", type: "select", required: true,
+    options: ["Confirmed", "Provisional"] },
+  { name: "Number of sets", label: "Number of performances / sets", type: "number", required: true, min: 1, step: 1 },
+  { name: "Duration per set", label: "Duration per performance / set (minutes)", type: "number", required: true, min: 1, step: 1 },
+  { name: "Preferred number of dancers", label: "Preferred number of dancers", type: "select", required: true,
+    options: ["Solo", "Duo", "Group of 3–5", "Group of 6+", "Recommend within my budget"] },
   { name: "City and venue", label: "City and venue", placeholder: "Ghent · De Bijloke" },
   { name: "Audience size", label: "Rough audience size", placeholder: "80 people" },
-  { name: "Budget", label: "Budget", hint: "Optional, and a range or \u201cnot decided yet\u201d is fine \u2014 it tells us what shape of company fits." },
+  { name: "Budget", label: "Total performance budget (€)", type: "number", required: true, min: 1, step: "0.01", hint: "Please provide an approximate amount for all performances and dancers combined. This helps us propose a realistic option." },
   { name: "Heard about us", label: "How did you hear about us?", type: "select",
     options: ["Google search", "Instagram", "Facebook", "Through friends", "Saw us perform", "Other"] },
   { name: "Message", label: "What are you planning?", type: "textarea", required: true, wide: true,

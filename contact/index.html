@@ -96,10 +96,10 @@
         <h2 class="fx">Invite us<br><em class="solo">to perform.</em></h2>
         <div class="intro-copy fx">
           <p>Forty-plus stages since 2017 — theatres, city squares, festivals, company evenings and weddings, from a solo to the full company.</p>
-          <p>Nothing here is binding. A rough date and a rough budget are enough to start a useful conversation.</p>
+          <p>Nothing here is binding. Share your preferred date, number of sets, duration, preferred dancer count and approximate total budget so we can suggest a suitable performance.</p>
         </div>
       </div>
-      <form class="enquiry-form" id="book-abc" data-web3form method="POST" action="https://api.web3forms.com/submit" novalidate>
+      <form class="enquiry-form" id="book-abc" data-web3form method="POST" action="https://api.web3forms.com/submit">
         <input type="hidden" name="access_key" value="2bb1d384-ba9a-4c74-b300-09087117f016">
         <input type="hidden" name="subject" value="ABC website — performance booking enquiry">
         <input type="hidden" name="from_name" value="ABC a bollywood company — website">
@@ -136,8 +136,35 @@
           </select>
         </p>
           <p class="field">
-          <label for="book-abc-Preferred date">Preferred date</label>
-          <input id="book-abc-Preferred date" type="date" name="Preferred date" placeholder="">
+          <label for="book-abc-Preferred date">Preferred date <abbr title="required">*</abbr></label>
+          <input id="book-abc-Preferred date" type="date" name="Preferred date" required placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-Date status">Is this date confirmed? <abbr title="required">*</abbr></label>
+          <select id="book-abc-Date status" name="Date status" required>
+            <option value="">Select an option</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Provisional">Provisional</option>
+          </select>
+        </p>
+          <p class="field">
+          <label for="book-abc-Number of sets">Number of performances / sets <abbr title="required">*</abbr></label>
+          <input id="book-abc-Number of sets" type="number" name="Number of sets" required min="1" step="1" placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-Duration per set">Duration per performance / set (minutes) <abbr title="required">*</abbr></label>
+          <input id="book-abc-Duration per set" type="number" name="Duration per set" required min="1" step="1" placeholder="">
+        </p>
+          <p class="field">
+          <label for="book-abc-Preferred number of dancers">Preferred number of dancers <abbr title="required">*</abbr></label>
+          <select id="book-abc-Preferred number of dancers" name="Preferred number of dancers" required>
+            <option value="">Select an option</option>
+            <option value="Solo">Solo</option>
+            <option value="Duo">Duo</option>
+            <option value="Group of 3–5">Group of 3–5</option>
+            <option value="Group of 6+">Group of 6+</option>
+            <option value="Recommend within my budget">Recommend within my budget</option>
+          </select>
         </p>
           <p class="field">
           <label for="book-abc-City and venue">City and venue</label>
@@ -148,9 +175,9 @@
           <input id="book-abc-Audience size" type="text" name="Audience size" placeholder="80 people">
         </p>
           <p class="field">
-          <label for="book-abc-Budget">Budget</label>
-          <input id="book-abc-Budget" type="text" name="Budget" placeholder="">
-          <small class="field-hint">Optional, and a range or “not decided yet” is fine — it tells us what shape of company fits.</small>
+          <label for="book-abc-Budget">Total performance budget (€) <abbr title="required">*</abbr></label>
+          <input id="book-abc-Budget" type="number" name="Budget" required min="1" step="0.01" placeholder="">
+          <small class="field-hint">Please provide an approximate amount for all performances and dancers combined. This helps us propose a realistic option.</small>
         </p>
           <p class="field">
           <label for="book-abc-Heard about us">How did you hear about us?</label>
@@ -210,7 +237,7 @@
         <h2 class="fx">Rough ideas<em class="solo"> welcome. Really.</em></h2>
       </div>
       <div class="break-side">
-        <p class="script-note fx">dates can come later.</p>
+        <p class="script-note fx">provisional dates welcome.</p>
         <img class="break-mark fx" src="../assets/img/abc-mark-clean.png" alt="" loading="lazy" decoding="async" width="1351" height="1026">
       </div>
     </section>
