@@ -119,6 +119,15 @@ const body = `
 <li data-clip="booking/namak" data-title="Bollywood · Namak" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/namak.jpg" alt="Bollywood · Namak performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood · Namak</b><small>ABC · GIDF 2025</small></span></li>
         </ul>
       </figure>
+      <div style="margin-top:2rem" aria-labelledby="full-performances-title">
+        <h3 id="full-performances-title">Watch full performances on YouTube</h3>
+        <div class="button-row" style="margin-top:1rem">
+          <a class="button button-outline" href="https://www.youtube.com/watch?v=QQepxRyLCiw" target="_blank" rel="noopener">Bollywood medley · 5:21 <span>↗</span></a>
+          <a class="button button-outline" href="https://www.youtube.com/watch?v=Vhddd75LQCU" target="_blank" rel="noopener">Ghoomar · 4:24 <span>↗</span></a>
+          <a class="button button-outline" href="https://www.youtube.com/watch?v=BBAAFFImV7E" target="_blank" rel="noopener">Raataan Lambiyan · 2:40 <span>↗</span></a>
+          <a class="button button-outline" href="https://www.youtube.com/watch?v=kar8d5Spvwc" target="_blank" rel="noopener">Garba fusion · 3:00 <span>↗</span></a>
+        </div>
+      </div>
       <div class="button-row" style="margin-top:1.6rem">
         <a class="button button-yellow" href="../contact/#book">Bring ABC to your event <span>↗</span></a>
         <a class="button button-outline" href="https://www.youtube.com/watch?v=2efQqxnI8s0" target="_blank" rel="noopener">Watch The Four Loves trailer <span>↗</span></a>
