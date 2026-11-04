@@ -123,24 +123,18 @@
           <h2 class="fx">See it<br><em class="solo">move.</em></h2></div>
         <p class="intro-copy fx lead">A glimpse of ABC: Bollywood, Garba, Ghoomar and semi-classical dance, moving from one performance to the next.</p>
       </div>
-      <figure class="reel" data-reel-stage>
-        <div class="reel-frame">
-          <video class="reel-v live" poster="../assets/media/booking/desi-girl.jpg" muted playsinline preload="none" aria-label="ABC performance glimpses"></video>
-          <video class="reel-v" muted playsinline preload="none" aria-hidden="true"></video>
-          <div class="reel-wash" aria-hidden="true"></div>
-          <figcaption class="reel-cap"><b data-reel-title>Bollywood</b><small data-reel-who>ABC · GIDF 2025</small></figcaption>
-          <div class="reel-ticks" aria-hidden="true"></div>
-        </div>
-        <ul class="reel-stills" style="display:none" aria-hidden="true">
-<li data-clip="booking/desi-girl" data-title="Bollywood" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/desi-girl.jpg" alt="Bollywood performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood</b><small>ABC · GIDF 2025</small></span></li>
-<li data-clip="booking/garba" data-title="Garba" data-who="ABC · On stage"><img src="../assets/media/booking/garba.jpg" alt="Garba performance by ABC" width="640" height="360" loading="lazy"><span><b>Garba</b><small>ABC · On stage</small></span></li>
-<li data-clip="showcase/semiclassical-abc" data-title="Semi-classical" data-who="ABC · GIDF 2026"><img src="../assets/media/showcase/semiclassical-abc.jpg" alt="Semi-classical performance by ABC" width="640" height="360" loading="lazy"><span><b>Semi-classical</b><small>ABC · GIDF 2026</small></span></li>
-<li data-clip="booking/ghoomar" data-title="Ghoomar" data-who="ABC · On stage"><img src="../assets/media/booking/ghoomar.jpg" alt="Ghoomar performance by ABC" width="640" height="360" loading="lazy"><span><b>Ghoomar</b><small>ABC · On stage</small></span></li>
-<li data-clip="booking/ghagra" data-title="Bollywood · Ghagra" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/ghagra.jpg" alt="Bollywood · Ghagra performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood · Ghagra</b><small>ABC · GIDF 2025</small></span></li>
-<li data-clip="booking/raataan-lambiyan" data-title="Raataan Lambiyan" data-who="ABC · Minard Theatre"><img src="../assets/media/booking/raataan-lambiyan.jpg" alt="Raataan Lambiyan performance by ABC" width="640" height="360" loading="lazy"><span><b>Raataan Lambiyan</b><small>ABC · Minard Theatre</small></span></li>
-<li data-clip="booking/namak" data-title="Bollywood · Namak" data-who="ABC · GIDF 2025"><img src="../assets/media/booking/namak.jpg" alt="Bollywood · Namak performance by ABC" width="640" height="360" loading="lazy"><span><b>Bollywood · Namak</b><small>ABC · GIDF 2025</small></span></li>
-        </ul>
+      <figure class="reel">
+        <video data-booking-video controls muted loop playsinline preload="metadata" poster="../assets/media/booking/desi-girl.jpg" aria-label="ABC performance highlights" style="display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#000;border-radius:12px">
+          <source src="../assets/media/booking/highlights.mp4?v=20261104" type="video/mp4">
+          Your browser cannot play this video. Watch the full performances using the links below.
+        </video>
+        <figcaption style="margin-top:1rem">
+          <button class="button button-outline" type="button" data-booking-play>Play highlights</button>
+          <p data-booking-status role="status" aria-live="polite" style="margin-top:.75rem"></p>
+          <p class="small">ABC on stage · Bollywood, Garba, semi-classical, Ghoomar, Ghagra, Raataan Lambiyan and Namak.</p>
+        </figcaption>
       </figure>
+      <script src="../assets/js/booking-reel.js?v=20261104" defer></script>
       <div style="margin-top:2rem" aria-labelledby="full-performances-title">
         <h3 id="full-performances-title">Watch full performances on YouTube</h3>
         <div class="button-row" style="margin-top:1rem">

@@ -462,3 +462,6 @@ Added `booking/ghoomar`: same Drive Performances folder, `Ghoomar ABC a bollywoo
 
 ### Booking reel revision — 4 November 2026
 Raataan Lambiyan now uses63–69s of the original Minard Theatre video; Namak uses287.5–293.5s of the original GIDF2025 medley. Both selected for clearer ensemble movement. Updated640/960px silent MP4s and posters, recipe, and media cache revisions in place.
+
+### Booking player reliability — 4 November 2026
+The seven approved clips now render into one21.7s silent960px H.264 highlights.mp4 with700ms dissolves, using scripts/prepare-booking-reel.py. The booking page uses native video controls, an explicit play/pause button and readable load/playback fallback. No CSS zoom or timed poster switching. Original clip assets retained as build inputs.
