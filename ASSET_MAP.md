@@ -459,3 +459,6 @@ Recipe: `scripts/prepare-booking-glimpses.py`. New MP4s 640px and 960px (`-hd`),
 
 ### Seven-piece expansion
 Added `booking/ghoomar`: same Drive Performances folder, `Ghoomar ABC a bollywood company.mp4`, 63–69s; event/year unspecified. Added `booking/raataan-lambiyan`: same local Movies folder, `Raataan Lambiyan Dance Cover  Bollywood at Minard Theatre Ghent  ABC by Swapnil Dagliya .mp4`, 35–41s. Both visually inspected authentic company ensembles; 640/960px silent H.264 plus poster. Recipe accepts clip-name arguments to avoid re-encoding unchanged media. Sequence: Desi Girl / Garba / semi-classical / Ghoomar / Ghagra / Raataan Lambiyan / Namak. 21s loop.
+
+### Booking reel revision — 4 November 2026
+Raataan Lambiyan now uses63–69s of the original Minard Theatre video; Namak uses287.5–293.5s of the original GIDF2025 medley. Both selected for clearer ensemble movement. Updated640/960px silent MP4s and posters, recipe, and media cache revisions in place.

@@ -10,7 +10,7 @@ GHOOMAR=GARBA.with_name('Ghoomar ABC a bollywood company.mp4')
 RAATAAN=MEDLEY.with_name('Raataan Lambiyan Dance Cover  Bollywood at Minard Theatre Ghent  ABC by Swapnil Dagliya .mp4')
 # Existing company footage only. Six seconds per source supports the site's
 # 3-second display plus crossfade and preload. Original sources remain intact.
-CLIPS=[('desi-girl',MEDLEY,60),('ghagra',MEDLEY,108),('namak',MEDLEY,240),('garba',GARBA,35),('ghoomar',GHOOMAR,63),('raataan-lambiyan',RAATAAN,35)]
+CLIPS=[('desi-girl',MEDLEY,60),('ghagra',MEDLEY,108),('namak',MEDLEY,287.5),('garba',GARBA,35),('ghoomar',GHOOMAR,63),('raataan-lambiyan',RAATAAN,63)]
 for name,source,start in CLIPS:
  if len(sys.argv)>1 and name not in sys.argv[1:]: continue
  for suffix,width in [('',640),('-hd',960)]:

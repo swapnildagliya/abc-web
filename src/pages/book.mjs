@@ -233,4 +233,4 @@ const body = `
     </section>`;
 
 export default { def, body: () => page({ ...def, route: "book" }, body) };
-export const outputs = () => [{ path: "book/index.html", html: page(def, body) }];
+export const outputs = () => [{ path: "book/index.html", html: page(def, body).replace('assets/js/fable.js"', 'assets/js/fable.js?v=20261104-namak"') }];

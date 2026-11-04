@@ -89,7 +89,8 @@ for (const p of pages) {
   const hrefs = [...html.matchAll(/(?:href|src)="([^"#]+?)(?:#[^"]*)?"/g)].map(m => m[1])
     .filter(h => !h.startsWith("http") && !h.startsWith("data:") && !h.startsWith("mailto"));
   for (const h of hrefs) {
-    const target = h.startsWith("/") ? join(ROOT, h) : resolve(dir, h);
+    const assetPath = h.split("?")[0];
+    const target = assetPath.startsWith("/") ? join(ROOT, assetPath) : resolve(dir, assetPath);
     const okTarget = existsSync(target) && (statSync(target).isFile() || existsSync(join(target, "index.html")));
     check(`${name}: link resolves ${h}`, okTarget);
   }

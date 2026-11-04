@@ -360,7 +360,8 @@
     if (items.length && vids.length === 2) {
       // data-clip carries the folder too, so the reel can mix showcase acts
       // with archive clips from earlier editions
-      const src = n => `../assets/media/${n}${wide ? "-hd" : ""}.mp4`;
+      const revision = n => ["booking/raataan-lambiyan", "booking/namak"].includes(n) ? "?v=20261104-namak" : "";
+      const src = n => `../assets/media/${n}${wide ? "-hd" : ""}.mp4${revision(n)}`;
       const blend = Math.min(BLEND, Math.max(0, CLIP_MS - BEAT - 150));
       items.forEach(() => ticksEl.insertAdjacentHTML("beforeend", "<i></i>"));
       let i = 0, cur = vids[0], nxt = vids[1], timer = null, live = false;
@@ -372,7 +373,7 @@
           v.poster = `../assets/media/${it.f}.jpg`;
           return;
         }
-        v.poster = `../assets/media/${it.f}.jpg`; v.src = src(it.f); v.load();
+        v.poster = `../assets/media/${it.f}.jpg${revision(it.f)}`; v.src = src(it.f); v.load();
         const seek = () => { try { v.currentTime = IN; } catch (e) {} };
         if (v.readyState >= 1) seek();
         else v.addEventListener("loadedmetadata", seek, { once: true });
