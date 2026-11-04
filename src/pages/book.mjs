@@ -34,7 +34,7 @@ const FAQ_SCHEMA = JSON.stringify({
 const def = {
   depth: 1,
   nav: "book/",
-  title: "Indian dance performances in Belgium — ABC",
+  title: "Bollywood & Indian Dance Performances in Belgium | ABC",
   desc: "Book ABC for Bollywood, Bhangra, Garba and Indian folk stage performances and original productions across Belgium and Europe.",
   canonical: `${SITE}/book/`,
   themeColor: "#10121A",
@@ -53,7 +53,7 @@ const body = `
       <div class="inner-hero-copy">
         <p class="inner-kicker fx">Performances · Repertoire · Productions</p>
         <h1 id="page-title"><span class="mask-line"><span>Book the</span></span><span class="mask-line"><span><em class="solo">company.</em></span></span></h1>
-        <p class="inner-hero-lead fx">Bollywood, Bhangra, Garba, Lavani and Indian folk dance—shaped for theatres, festivals, companies, weddings and public events.</p>
+        <p class="inner-hero-lead fx">Book ABC for Bollywood and Indian dance performances at corporate events, conferences, festivals and weddings. Based in Ghent, our company performs across Belgium and Europe, with programmes shaped around your audience and occasion.</p>
         <div class="button-row fx">
           <a class="button button-yellow" href="../contact/#book">Plan a booking <span>↗</span></a>
           <a class="button button-glass" href="#offers">See the formats <span>↓</span></a>
