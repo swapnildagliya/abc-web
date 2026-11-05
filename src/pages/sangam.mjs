@@ -26,7 +26,7 @@ const EVENT_SCHEMA = JSON.stringify([
       "@type": "Place", name: "Shoonya Theatre, Shoonya Dance Centre",
       address: { "@type": "PostalAddress", streetAddress: "Stapelplein 41", postalCode: "9000", addressLocality: "Ghent", addressCountry: "BE" },
     },
-    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/InStock" },
+    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/InStock", validFrom: "2026-08-17" },
     typicalAgeRange: "8-",
   },
   {
@@ -45,7 +45,7 @@ const EVENT_SCHEMA = JSON.stringify([
       "@type": "Place", name: "Shoonya Theatre, Shoonya Dance Centre",
       address: { "@type": "PostalAddress", streetAddress: "Stapelplein 41", postalCode: "9000", addressLocality: "Ghent", addressCountry: "BE" },
     },
-    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/InStock" },
+    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/InStock", validFrom: "2026-08-17" },
     typicalAgeRange: "8-",
   },
   {
