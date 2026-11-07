@@ -26,7 +26,7 @@ const EVENT_SCHEMA = JSON.stringify([
       "@type": "Place", name: "Shoonya Theatre, Shoonya Dance Centre",
       address: { "@type": "PostalAddress", streetAddress: "Stapelplein 41", postalCode: "9000", addressLocality: "Ghent", addressCountry: "BE" },
     },
-    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/InStock", validFrom: "2026-08-17" },
+    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/SoldOut", validFrom: "2026-08-17" },
     typicalAgeRange: "8-",
   },
   {
@@ -45,7 +45,7 @@ const EVENT_SCHEMA = JSON.stringify([
       "@type": "Place", name: "Shoonya Theatre, Shoonya Dance Centre",
       address: { "@type": "PostalAddress", streetAddress: "Stapelplein 41", postalCode: "9000", addressLocality: "Ghent", addressCountry: "BE" },
     },
-    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/InStock", validFrom: "2026-08-17" },
+    offers: { "@type": "Offer", price: "20", priceCurrency: "EUR", url: TICKETS, availability: "https://schema.org/SoldOut", validFrom: "2026-08-17" },
     typicalAgeRange: "8-",
   },
   {
@@ -90,7 +90,7 @@ const def = {
   ogImage: `${SITE}/assets/img/sangam/og.jpg`,
   bodyClass: "page-sangam",
   firstCue: "the river",
-  headerCta: { href: TICKETS, label: "Book tickets", glyph: "↗" },
+  headerCta: { href: "../whats-on/", label: "What's on", glyph: "→" }, // SANGAM sold out 2026-11-07
   schemas: [EVENT_SCHEMA],
 };
 
@@ -116,7 +116,7 @@ const body = `
         <p class="sangam-tagline fx">A village without water,<br><em class="solo">and a child who belongs to no one.</em></p>
         <p class="sangam-when fx">Premiere · Sat 7 Nov 2026 · 19:30<i>/</i>Matinee · Sun 8 Nov 2026 · 15:00<i>/</i>€20</p>
         <div class="button-row fx">
-          <a class="button button-yellow" href="${TICKETS}" target="_blank" rel="noopener">Book tickets <span>↗</span></a>
+          <span class="button button-yellow" aria-disabled="true">Sold out</span>
           <a class="button button-outline" href="#story">Read the story <span>↓</span></a>
         </div>
       </div>
@@ -179,7 +179,7 @@ const body = `
         ${fact("The bar", "Opens 30 minutes before each performance — come early, have a drink, find your seat")}
       </div>
       <p class="script-note fx" style="margin-top:1.2rem">both performances start sharp.</p>
-      <p class="fx" style="margin-top:1.2rem; max-width:40em">Tickets are sold by Shoonya Dance Centre. “Book tickets” opens Shoonya’s ticket form: choose <strong>Buy tickets for a Performance</strong>.</p>
+      <p class="fx" style="margin-top:1.2rem; max-width:40em">Both performances are sold out.</p>
     </section>
 
     <section class="scene-pad t-bone" id="company" data-scene data-cue="the company">
@@ -212,7 +212,7 @@ const body = `
         <h2 class="fx">Two worlds,<br><em class="solo">one evening.</em></h2>
         <p class="fx">Seventy minutes of Indian folk, Bollywood and semi-classical dance, plus a 20-minute interval, at Shoonya Theatre. Tickets €20. Bring someone who has never seen Indian dance.</p>
       </div>
-      <p class="fx"><a class="button button-yellow" href="${TICKETS}" target="_blank" rel="noopener">Book tickets <span>↗</span></a></p>
+      <p class="fx"><span class="button button-yellow" aria-disabled="true">Sold out</span></p>
     </section>`;
 
 export const outputs = () => [{ path: "sangam/index.html", html: page(def, body) }];

@@ -28,9 +28,9 @@ function range(e) {
 const sangam = performances.find(e => e.id === "sangam-2026");
 const pinned = sangam ? `
     <section class="lb-pin" data-until="${sangam.end}">
-      <a class="lb-pin-card" href="${TICKETS}" target="_blank" rel="noopener">
+      <a class="lb-pin-card" href="../sangam/">
         <img src="../assets/img/sangam/hero-mobile.jpg" alt="SANGAM artwork: a Madhubani river between a dry village and a green forest" width="1600" height="1200">
-        <span class="lb-pin-top"><i>Pinned</i><b>Buy tickets · €20</b></span>
+        <span class="lb-pin-top"><i>Pinned</i><b>Sold out</b></span>
         <span class="lb-pin-copy">
           <strong>SANGAM</strong>
           <span class="lb-count" data-countdown="2026-11-07T19:30:00+01:00">Sat 7 Nov · 19:30 · Sun 8 Nov · 15:00</span>

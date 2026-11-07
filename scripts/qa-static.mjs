@@ -216,7 +216,9 @@ for (const e of sets.upcoming) {
   const actionable = [...body.matchAll(/href="([^"]+)"/g)]
     .map(m => m[1])
     .some(h => !/\.ics$/i.test(h) && (/^https?:/i.test(h) || /\/(book|contact)\//.test(h)));
-  check(`upcoming event "${e.id}" offers a booking or ticket link`, actionable);
+  // A sold-out event has no ticket link on purpose; its body says so.
+  const soldOut = /aria-disabled="true">Sold out</.test(body);
+  check(`upcoming event "${e.id}" offers a booking or ticket link (or says sold out)`, actionable || soldOut);
 }
 
 /* ---------- enquiry forms ---------- */
