@@ -150,17 +150,12 @@ const body = `
         <h2 class="fx">Original<br><em class="solo">productions.</em></h2>
         <p class="lead fx">ABC also creates full-length Indian dance productions. Folk, Bollywood and semi-classical forms meet without losing their individual histories.</p>
         <div class="act-list">
-          <article class="fx"><small>01</small><span><strong>The Four Loves</strong><em>Full production · premiered 2024</em></span></article>
-          <a class="fx" href="../sangam/"><small>02</small><span><strong>Sangam</strong><em>Full production · premiered 7 Nov 2026 · Ghent</em></span><b>↗</b></a>
+          <a class="fx" href="../productions/#sangam"><small>02</small><span><strong>Sangam</strong><em>Full production · premiered 7 Nov 2026 · Ghent</em></span><b>→</b></a>
+          <a class="fx" href="../productions/#the-four-loves"><small>01</small><span><strong>The Four Loves</strong><em>Full production · premiered 2024</em></span><b>→</b></a>
         </div>
-        <p class="lead fx" style="margin-top:1.4rem"><em>The Four Loves</em> explores devotion (<em>bhakti</em>), familial affection (<em>vatsalya</em>), romance (<em>shringar</em>) and universal connection (<em>prema</em>) through Ghoomar, Chari, Tera Taali, Garba, Bhangra, Bollywood and Kathak-shaped semi-classical work.</p>
-        <p class="fx production-credits" id="production-archive"><strong>The Four Loves credits</strong> · Choreography: Swapnil Dagliya · Production: Wim Boussery &amp; Swapnil Dagliya · Dancers: Chiara Bisinelli, Kaushika Kumar, Khushboo Agarwal, Laurien De Ridder, Narcisse Merlier, Roshni Tela, Sara Van Holm, Shreya Vaidya, Svetlana Bubnova, Siddhy Shetty &amp; Swapnil Dagliya · Guest performer: Pranali Sanghmitra Bhagwat · Lights: Johan Van Compernolle · Sound: Wim Boussery · Dramaturgy: Rita Hendricks · Trailer: shot by Marc Antoine, edited by Rajat Senjaliya · Supported by Shoonya Dance Centre</p>
-        <p class="lead fx" style="margin-top:1.4rem"><em>Sangam</em>: a village without water, and a child who belongs to no one. Seventy minutes of Indian folk, Bollywood and semi-classical dance. It premiered at Shoonya Theatre, Ghent, on 7 November 2026, and both performances, on 7 and 8 November, sold out.</p>
-        <p class="fx production-credits"><strong>Sangam credits</strong> · Concept, direction &amp; choreography: Swapnil Dagliya, in collaboration with the ABC dancers · Production: Wim Boussery &amp; Swapnil Dagliya · Dancers: Swapnil Dagliya, Narcisse Merlier, Sara Van Holm, Svetlana Bubnova, Chiara Bisinelli, Kaushika Kumar, Laurien De Ridder, Khushboo Agarwal, Shreya Vaidya, Roshni Tela, Haike Bourgeois &amp; Srimahavalli Thiyagarajan · Lighting: Leander Leeman · Costumes: ABC a bollywood company · An ABC a bollywood company production at Shoonya Dance Centre</p>
-        <div class="button-row fx">
-          <a class="button button-yellow" href="../contact/#book">Discuss a production <span>↗</span></a>
-          <a class="button button-outline" href="https://www.youtube.com/watch?v=2efQqxnI8s0" target="_blank" rel="noopener">Four Loves trailer <span>↗</span></a>
-          <a class="button button-outline" href="../sangam/">About Sangam <span>→</span></a>
+        <div class="button-row fx" style="margin-top:1.4rem">
+          <a class="button button-yellow" href="../productions/">See the productions <span>→</span></a>
+          <a class="button button-outline" href="../contact/#book">Discuss a production <span>↗</span></a>
         </div>
       </div>
     </section>

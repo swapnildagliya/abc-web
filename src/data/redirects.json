@@ -568,14 +568,6 @@
     "dest": "Learn with Swapnil"
   },
   {
-    "route": "productions",
-    "target": "../book/#productions",
-    "canonical": "https://abcdans.com/book/#productions",
-    "title": "ABC Dance Productions - Uniting Cultures Through Indian Dance | Belgium",
-    "desc": "This ABC page now lives in Performances.",
-    "dest": "Performances"
-  },
-  {
     "route": "refund-policy",
     "target": "../contact/#refunds",
     "canonical": "https://abcdans.com/contact/#refunds",

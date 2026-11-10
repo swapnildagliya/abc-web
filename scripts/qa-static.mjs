@@ -34,16 +34,17 @@ const stubs = routes.filter(r => readFileSync(join(ROOT, r, "index.html"), "utf8
 // lands. It is noindex and deliberately absent from sitemap.xml.
 // 21 route dirs since 2026-09-28: links/ is ABC's Instagram link-in-bio (kept
 // out of sitemap.xml like thank-you/: a hub, not a destination).
-check("22 full pages (21 route dirs + homepage)", fullPages.length === 21, `got ${fullPages.length}: ${fullPages.join(", ")}`);
+// 22 route dirs since 2026-11-10: productions/ is ABC's own stage work (was a redirect to /book/).
+check("23 full pages (22 route dirs + homepage)", fullPages.length === 22, `got ${fullPages.length}: ${fullPages.join(", ")}`);
 check("thank-you page is noindex", readFileSync(join(ROOT, "contact/thank-you/index.html"), "utf8").includes('name="robots" content="noindex'));
 check("thank-you page stays out of the sitemap", !readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes("thank-you"));
-check("83 redirect stubs", stubs.length === 83, `got ${stubs.length}`);
+check("82 redirect stubs", stubs.length === 82, `got ${stubs.length}`);
 check("homepage exists", existsSync(join(ROOT, "index.html")));
 check("404.html exists", existsSync(join(ROOT, "404.html")));
 check("404 uses root-absolute assets", readFileSync(join(ROOT, "404.html"), "utf8").includes('href="/assets/'));
 const redirectsFile = readFileSync(join(ROOT, "_redirects"), "utf8");
 const rules = redirectsFile.split("\n").filter(l => l.trim() && !l.startsWith("#"));
-check("_redirects has 83 rules", rules.length === 83, String(rules.length));
+check("_redirects has 82 rules", rules.length === 82, String(rules.length));
 // Unforced rules lose to the HTML stubs on Netlify. All of them must be forced.
 check("every redirect rule is forced", rules.every(l => l.trim().endsWith("301!")),
   rules.find(l => !l.trim().endsWith("301!")));
@@ -60,7 +61,7 @@ check("every page is noindex in a preview build, or none is",
 // last written by hand, and a page missing from the sitemap on launch day is a
 // page Google has no reason to look for.
 const sitemapUrls = (readFileSync(join(ROOT, "sitemap.xml"), "utf8").match(/<loc>/g) || []).length;
-check("sitemap has 20 URLs", sitemapUrls === 20, String(sitemapUrls));
+check("sitemap has 21 URLs", sitemapUrls === 21, String(sitemapUrls));
 for (const route of ["sangam", "privacy"]) {
   check(`sitemap lists /${route}/`, readFileSync(join(ROOT, "sitemap.xml"), "utf8").includes(`/${route}/`));
 }
@@ -149,7 +150,9 @@ for (const id of offered) {
   check(`"Next on stage" offers ${id}, which is still ahead`, !!e && e.status === "upcoming", e && e.end);
   check(`"Next on stage" offers ${id} as something to watch`, !!e && e.kind === "performance", e && (e.kind || "unclassified"));
 }
-check("\"Next on stage\" is not empty", offered.length > 0);
+// With no ABC performance ahead, the GIDF row (organised by ABC, links to festival/) fills the list until 9 May 2027.
+const gidfOffered = /href="\.\.\/festival\/"/.test(stage);
+check("\"Next on stage\" is not empty", offered.length > 0 || gidfOffered);
 
 /* /learn/ claimed "Ten weekly classes" over a grid of eight, with Wednesday
    Yoga 17:20 missing altogether. The authority is Event Submission's
@@ -257,7 +260,7 @@ for (const l of lessons) {
 
 /* ---------- redirects parity with Codex ---------- */
 const dataRedirects = JSON.parse(readFileSync(join(ROOT, "src/data/redirects.json"), "utf8"));
-check("83 redirect definitions", dataRedirects.length === 83);
+check("82 redirect definitions", dataRedirects.length === 82);
 for (const r of dataRedirects) {
   const f = join(ROOT, r.route, "index.html");
   check(`stub ${r.route}`, existsSync(f) && readFileSync(f, "utf8").includes(`url=${r.target}`));
