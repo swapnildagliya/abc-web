@@ -13,6 +13,12 @@ const rawEvents = JSON.parse(readFileSync(fileURLToPath(new URL("../data/events.
 // upcoming, but sending a programmer to a beginners class is not evidence of
 // what this company puts on a stage.
 const nextOnStage = eventSets(rawEvents.events).upcoming.filter(e => e.kind === "performance").slice(0, 3);
+// GIDF is organised by ABC, so its next edition is a place to see the company too.
+// Not in events.json (same as the homepage gidfCard), so the row is written here
+// and drops out at build time once the festival has ended.
+const gidfRow = BUILD_TODAY <= "2027-05-09"
+  ? `<a class="fx" href="../festival/" data-preview="../assets/img/gidf/edition-five-2027.jpg"><small>7–9 MAY</small><span><strong>Gent India Dans Festival</strong><em>Ghent · Edition Five · organised by ABC</em></span><b>↗</b></a>`
+  : "";
 
 const stageRow = (e) => {
   const { big, small } = dateParts(e);
@@ -173,10 +179,12 @@ const body = `
         <h2 class="fx">Come see<br><em class="solo">the real thing.</em></h2>
         <div class="intro-copy fx"><p>See ABC live before bringing us to your event.${nextOnStage.length > 1
           ? " These public dates show the range—from city festivals to original stage work."
-          : " Our own production is the next one you can buy a seat for; festival and city dates are announced as they are confirmed."}</p></div>
+          : nextOnStage.length === 1
+          ? " Our own production is the next one you can buy a seat for; festival and city dates are announced as they are confirmed."
+          : " Next up is Gent India Dans Festival, which ABC organises; city dates are announced as they are confirmed."}</p></div>
       </div>
       <div class="act-list">
-        ${nextOnStage.map(stageRow).join("\n        ")}
+        ${[...nextOnStage.map(stageRow), gidfRow].filter(Boolean).join("\n        ")}
       </div>
     </section>
 
