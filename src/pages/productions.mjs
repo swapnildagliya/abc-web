@@ -40,7 +40,7 @@ const body = `
     </section>
 
     <section class="scene-pad t-night" id="sangam" data-scene data-cue="sangam">
-      <p class="label fx" style="color:var(--yellow)">02 · Premiered 7 November 2026 · Shoonya Theatre, Ghent</p>
+      <p class="label fx" style="color:var(--yellow)">01 · Premiered 7 November 2026 · Shoonya Theatre, Ghent</p>
       <div class="intro">
         <h2 class="fx">Sangam</h2>
         <div class="intro-copy fx">
@@ -55,7 +55,7 @@ const body = `
     </section>
 
     <section class="scene-pad t-night-2" id="the-four-loves" data-scene data-cue="the four loves">
-      <p class="label fx" style="color:var(--yellow)">01 · Premiered 2024</p>
+      <p class="label fx" style="color:var(--yellow)">02 · Premiered 2024</p>
       <div class="intro">
         <h2 class="fx">The Four Loves</h2>
         <div class="intro-copy fx">
