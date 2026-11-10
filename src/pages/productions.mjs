@@ -45,7 +45,7 @@ const body = `
         <h2 class="fx">Sangam</h2>
         <div class="intro-copy fx">
           <p>A village without water, and a child who belongs to no one. Seventy minutes of Indian folk, Bollywood and semi-classical dance.</p>
-          <p>It premiered at Shoonya Theatre, Ghent, on 7 November 2026, and both performances, on 7 and 8 November, sold out.</p>
+          <p>Both performances, on 7 and 8 November, sold out.</p>
         </div>
       </div>
       <p class="fx production-credits"><strong>Sangam credits</strong> · Concept, direction &amp; choreography: Swapnil Dagliya, in collaboration with the ABC dancers · Production: Wim Boussery &amp; Swapnil Dagliya · Dancers: Swapnil Dagliya, Narcisse Merlier, Sara Van Holm, Svetlana Bubnova, Chiara Bisinelli, Kaushika Kumar, Laurien De Ridder, Khushboo Agarwal, Shreya Vaidya, Roshni Tela, Haike Bourgeois &amp; Srimahavalli Thiyagarajan · Lighting: Leander Leeman · Costumes: ABC a bollywood company · An ABC a bollywood company production at Shoonya Dance Centre</p>
