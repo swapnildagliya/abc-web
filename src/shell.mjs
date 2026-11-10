@@ -80,7 +80,7 @@ ${page.curtain ? `  <div class="curtain" role="presentation" aria-hidden="true">
     </a>
     <nav class="header-nav" aria-label="Primary">
       ${[
-        ["book/", "Performances"], ["learn/", "Classes"], ["whats-on/", "What’s on"],
+        ["book/", "Performances"], ["productions/", "Productions"], ["learn/", "Classes"], ["whats-on/", "What’s on"],
         ["festival/", "Festival"], ["about/", "About"], ["contact/", "Contact"],
       ].map(([href, label]) => `<a href="${rel}${href}"${page.nav === href ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
     </nav>
@@ -93,11 +93,12 @@ ${page.curtain ? `  <div class="curtain" role="presentation" aria-hidden="true">
   <nav class="site-menu" id="site-menu" aria-hidden="true">
     <div class="menu-intro menu-step">
       <p class="label">Choose where to enter</p>
-      <p>Five doors into one live company. Every one of them leads to the dance floor.</p>
+      <p>Six doors into one live company. Every one of them leads to the dance floor.</p>
     </div>
     <ol>
       ${[
-        ["book/", "Performances", "Shows and productions"],
+        ["book/", "Performances", "Book the company"],
+        ["productions/", "Productions", "Sangam · The Four Loves"],
         ["learn/", "Classes", "Start, return, go deeper"],
         ["whats-on/", "What’s on", "Ghent, Belgium and beyond"],
         ["festival/", "The festival", "GIDF · Edition Five"],
@@ -126,7 +127,7 @@ export function footer(rel) {
         </a>
         <p class="footer-tag">Indian dance with roots, context and joy.</p>
       </div>
-      <nav aria-label="Explore"><span>Explore</span><a href="${rel}book/">Performances</a><a href="${rel}learn/">Classes</a><a href="${rel}whats-on/">What’s on</a><a href="${rel}festival/">Festival</a></nav>
+      <nav aria-label="Explore"><span>Explore</span><a href="${rel}book/">Performances</a><a href="${rel}productions/">Productions</a><a href="${rel}learn/">Classes</a><a href="${rel}whats-on/">What’s on</a><a href="${rel}festival/">Festival</a></nav>
       <nav aria-label="Company"><span>Company</span><a href="${rel}about/">About ABC</a><a href="${rel}contact/">Contact</a><a href="${rel}contact/#refunds">Refund policy</a><a href="${rel}privacy/">Privacy</a></nav>
       <nav aria-label="Follow"><span>Follow</span><a href="https://instagram.com/abollywoodcompany" target="_blank" rel="noopener">Instagram ↗</a><a href="https://facebook.com/abollywoodcompany" target="_blank" rel="noopener">Facebook ↗</a><a href="https://www.youtube.com/c/swapkebolly" target="_blank" rel="noopener">Swapnil on YouTube ↗</a><a href="https://www.shoonyadance.com/abc-news" target="_blank" rel="noopener">ABC news ↗</a></nav>
       <div class="footer-address"><span>Home base</span><p>Shoonya Dance Centre<br>Stapelplein 41<br>9000 Ghent, Belgium</p></div>

@@ -6,7 +6,7 @@ import { page, SITE } from "../shell.mjs";
 
 const def = {
   depth: 1,
-  nav: "book/",
+  nav: "productions/",
   title: "Original Indian dance productions — Sangam & The Four Loves | ABC",
   desc: "ABC's full-length Indian dance productions: Sangam (premiered 7 November 2026, Ghent) and The Four Loves (premiered 2024). Story, credits and trailer.",
   canonical: `${SITE}/productions/`,
