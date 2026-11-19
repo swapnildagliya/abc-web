@@ -95,6 +95,15 @@ const body = `
           <article class="class-cell"><small>Level 3</small><h3>Bollywood</h3><p>Technique-first choreography with clean timing and strong posture.</p></article>
         </div>
       </div>
+      <div class="intro" style="margin-top:3rem">
+        <h2 class="fx">Coming<br><em class="solo">spring 2027.</em></h2>
+        <div class="intro-copy fx">
+          <p>Shoonya’s preliminary spring timetable runs from 15 February to 12 June 2027. Swapnil has eight weekly classes at Studio Aakash.</p>
+          <p>Tuesday: Bollyfolk Level 2 at 18:30, Yoga at 19:35, Dance Flow at 20:40. Wednesday: Yoga at 17:20, Bhangra Level 2 at 19:30, Indian Semi-Classical Level 2 at 20:30–21:45. Thursday: Bollywood Level 2 at 18:30 and Level 3 at 19:30.</p>
+          <p>Bhangra and Indian Semi-Classical have linked four-week starter series from 17 February to 10 March. Check Shoonya for updates and registration.</p>
+          <p><a class="button button-dark" href="https://schedule.shoonyadance.com/schedule-spring-2027/" target="_blank" rel="noopener">Spring timetable at Shoonya <span>↗</span></a></p>
+        </div>
+      </div>
     </section>
 
     <section class="perf-break t-blue spot" data-scene data-stage data-cue="count it in">
