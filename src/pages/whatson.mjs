@@ -150,7 +150,7 @@ const body = `
     <section class="perf-break t-night-2 spot" data-scene data-stage data-cue="meet us there">
       <div>
         <p class="break-kicker fx">Meet us there</p>
-        <h2 class="fx">Plans, but louder.<em class="solo">${upcoming.length} dates ahead.</em></h2>
+        <h2 class="fx">Plans, but louder.<em class="solo">${upcoming.length} date${upcoming.length === 1 ? "" : "s"} ahead.</em></h2>
       </div>
       <div class="break-side">
         <p class="script-note fx">the next beat is waiting.</p>
