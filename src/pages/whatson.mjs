@@ -137,7 +137,7 @@ const body = `
         </div>
       </div>
 
-      ${agendaFeature(spotlight, "Featured ABC production")}
+      ${agendaFeature(spotlight, "Featured ABC event")}
 
       <div class="event-board" data-event-library>
         <p class="event-board-lead fx">${upcoming.length

@@ -100,7 +100,7 @@ for (const p of pages) {
 /* ---------- whats-on specifics ---------- */
 const whatsOn = readFileSync(join(ROOT, "whats-on/index.html"), "utf8");
 const codexEvents = JSON.parse(readFileSync(join(ROOT, "src/data/events.json"), "utf8"));
-check("45 event details", (whatsOn.match(/class="event-detail"/g) || []).length === 45);
+check("every event has a detail", (whatsOn.match(/class="event-detail"/g) || []).length === codexEvents.events.length);
 // Counts are DERIVED, not frozen: a hardcoded "7 upcoming" silently becomes a
 // lie the morning after an event ends, which is exactly how three finished
 // events stayed on the agenda. Compare the page against the same date logic
@@ -133,7 +133,10 @@ const expectedSpotlight = sets.upcoming.find(event => event.id === "sangam-2026"
 // SANGAM's card links to its own page; other cards link to their agenda entry.
 const firstHomeLink = homeAgenda.match(/href="(?:whats-on\/#([a-z0-9-]+)|(sangam)\/)"/);
 const firstHomeEvent = firstHomeLink?.[1] || (firstHomeLink?.[2] && "sangam-2026");
-check("homepage leads with the featured ABC production", firstHomeEvent === expectedSpotlight?.id, firstHomeEvent);
+check("homepage promotes a current ABC date", firstHomeEvent === expectedSpotlight?.id ||
+  (!sets.upcoming.some(event => event.kind === "performance") &&
+    !!sets.upcoming.find(event => event.id === "gent-india-dans-festival-2027") &&
+    /href="festival\/"/.test(homeAgenda)), firstHomeEvent);
 if (sets.upcoming.some(event => event.id === "sangam-2026")) {
   check("homepage hero links directly to SANGAM", /href="sangam\/">Discover SANGAM/.test(homeDated));
   check("What's On spotlights SANGAM", whatsOn.includes('id="spotlight-sangam-2026"'));

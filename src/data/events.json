@@ -1,5 +1,23 @@
 {
  "events": [
+{
+ "id": "gent-india-dans-festival-2027",
+ "start": "2027-05-07",
+ "end": "2027-05-09",
+ "year": "2027",
+ "date": "7–9 May",
+ "title": "Gent India Dans Festival 2027 — Edition Five",
+ "city": "Ghent",
+ "body": "<div class=\"complete-prose\"><div class=\"event-meta\"><span>Fri, 7 May 2027 → Sun, 9 May 2027</span><span>Shoonya Dance Centre, Stapelplein 41, 9000 Gent</span></div><p>Edition Five of Gent India Dans Festival, organised by ABC a bollywood company. Three days of Indian dance in Ghent.</p><p><a class=\"button button-yellow\" href=\"https://gidf.abcdans.com/\">Explore the festival <span>→</span></a><a class=\"button button-outline\" href=\"https://gidf.abcdans.com/assets/gidf-edition-five.ics\">Add to calendar <span>↓</span></a></p></div>",
+ "image": {
+  "src": "assets/img/gidf/edition-five-2027.jpg",
+  "w": 1080,
+  "h": 1350,
+  "alt": "Gent India Dans Festival Edition Five poster — Until we dance again, 7 to 9 May 2027"
+ },
+ "blurb": "Three days of Indian dance in Ghent, organised by ABC.",
+ "kind": "festival"
+},
   {
    "id": "gentse-feesten-2026",
    "start": "2026-07-23",
@@ -515,6 +533,7 @@
   }
  ],
  "schemas": [
+  "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Gent India Dans Festival 2027 — Edition Five\",\"startDate\":\"2027-05-07\",\"endDate\":\"2027-05-09\",\"url\":\"https://abcdans.com/festival/\",\"location\":{\"@type\":\"Place\",\"name\":\"Shoonya Dance Centre\",\"address\":\"Stapelplein 41, 9000 Gent, Belgium\"},\"organizer\":{\"@id\":\"https://abcdans.com/#organization\"},\"image\":[\"https://abcdans.com/assets/img/gidf/edition-five-2027.jpg\"]}",
   "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Gentse Feesten 2026 — Indian dance at Het Bal\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"startDate\":\"2026-07-23\",\"endDate\":\"2026-07-26\",\"url\":\"https://abcdans.com/whats-on/#gentse-feesten-2026\",\"image\":[\"https://abcdans.com/assets/img/events/gentse-feesten-2026.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Ghent\",\"address\":\"Ghent\"},\"organizer\":{\"@id\":\"https://abcdans.com/#organization\"}}",
   "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Benenwerk · Indian dance day — Brugge\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"startDate\":\"2026-08-08\",\"endDate\":\"2026-08-08\",\"url\":\"https://abcdans.com/whats-on/#benenwerk-2026\",\"image\":[\"https://abcdans.com/assets/img/events/benenwerk-2026.jpg\"],\"location\":{\"@type\":\"Place\",\"name\":\"Brugge\",\"address\":\"Brugge\"},\"organizer\":{\"@id\":\"https://abcdans.com/#organization\"}}",
   "{\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"name\":\"Indian Dance Summer Intensive 2026\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"startDate\":\"2026-08-26\",\"endDate\":\"2026-08-29\",\"url\":\"https://abcdans.com/whats-on/#indian-dance-summer-intensive-2026\",\"image\":[\"https://abcdans.com/assets/img/events/summer-intensive-2026.png\"],\"location\":{\"@type\":\"Place\",\"name\":\"Ghent\",\"address\":\"Ghent\"},\"organizer\":{\"@type\":\"Organization\",\"name\":\"Shoonya Dance Centre\",\"url\":\"https://www.shoonyadance.com/\"}}",
