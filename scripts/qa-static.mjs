@@ -333,7 +333,7 @@ const FULL_PAGES = [
       "lesson-5-shoulder-step","lesson-5-touch-up-revision"].map(s => `learn-to-dance-bollywood/${s}/index.html`),
 ];
 const BANNED = [
-  [/\broom\b/i, "room metaphor"],
+  [/(?<!green |dressing |changing )\broom\b/i, "room metaphor"], // literal backstage rooms are facts, not the banned metaphor (20 Nov 2026)
   [/barefoot[^.<]*\b(probably|you do you)\b/i, "hedged barefoot joke"],
   [/mailto:/i, "mailto link"],
   [/[\w.+-]+@[\w-]+\.[a-z]{2,}/i, "raw e-mail address"],
